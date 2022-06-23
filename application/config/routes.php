@@ -59,6 +59,8 @@ $route['default_controller'] = 'welcome/landing';
 $route['login'] = 'Welcome/VLogin';
 
 //admin
-$route['beranda'] = 'Welcome/VBeranda';
+$route['profil'] = 'Welcome/VProfil';
 $route['mobildonor'] = 'Welcome/VMobilDonor';
 $route['stokdarah'] = 'Welcome/VStokDarah';
+$route['informasi'] = 'Welcome/VInformasi';
+$route['agenda'] = 'Welcome/VAgenda';

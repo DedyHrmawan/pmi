@@ -18,17 +18,60 @@
 
 <!--end::Javascript-->
 <script type="text/javascript">
-	$("#jambuka").flatpickr({
+	// Jadwal mobil donor 
+	$("#add_jadwal").flatpickr();
+
+	$("#add_jambuka").flatpickr({
 		enableTime: true,
 		noCalendar: true,
 		dateFormat: "H:i",
 	});
-	$("#jamtutup").flatpickr({
+	$("#add_jamtutup").flatpickr({
 		enableTime: true,
 		noCalendar: true,
 		dateFormat: "H:i",
 	});
-	$("#jadwal").flatpickr();
+
+	$("#edit_jadwal").flatpickr();
+
+	$("#edit_jambuka").flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+	});
+	$("#edit_jamtutup").flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+	});
+
+	// agenda
+	$("#add_tanggal").flatpickr();
+
+	$("#add_jammulai").flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+	});
+	$("#add_jamselesai").flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+	});
+
+	$("#edit_tanggal").flatpickr();
+
+	$("#edit_jammulai").flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+	});
+	$("#edit_jamselesai").flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+	}); 
+	
 </script>
 </body>
 <!--end::Body-->

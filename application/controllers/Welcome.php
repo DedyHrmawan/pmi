@@ -34,19 +34,44 @@ class Welcome extends CI_Controller {
 	}
 
 	//admin
-	public function VBeranda()
+	public function VProfil()
 	{
-		$this->template->admin('pmi-admin/VBeranda');
+		$data = array(
+            'nav_title' => 'Profil PMI Kota Malang'
+        );			
+		$this->template->admin('pmi-admin/VProfil', $data);
 	}
 
 	public function VMobilDonor()
 	{
-		$this->template->admin('pmi-admin/VMobilDonor');
+		$data = array(
+            'nav_title' => 'Jadwal Mobil Donor PMI Kota Malang'
+        );	
+		$this->template->admin('pmi-admin/VMobilDonor', $data);
 	}
 
 	public function VStokDarah()
 	{
-		$this->template->admin('pmi-admin/VStokDarah');
+		$data = array(
+            'nav_title' => 'Stok Darah PMI Kota Malang'
+        );	
+		$this->template->admin('pmi-admin/VStokDarah', $data);
+	}
+
+	public function VInformasi()
+	{
+		$data = array(
+            'nav_title' => 'Informasi Donor PMI Kota Malang'
+        );	
+		$this->template->admin('pmi-admin/VInformasi', $data);
+	}
+
+	public function VAgenda()
+	{
+		$data = array(
+            'nav_title' => 'Agenda PMI Kota Malang'
+        );	
+		$this->template->admin('pmi-admin/VAgenda', $data);
 	}
 
 }
