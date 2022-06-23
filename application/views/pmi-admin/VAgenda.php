@@ -31,6 +31,7 @@
 				<!--end::Aside-->
 				<!--begin::Wrapper-->
 				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+					
 					<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 						 <!--begin::Post-->
@@ -42,11 +43,10 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Stok Darah</span>
+                                        <span class="card-label fw-bolder fs-3 mb-1">Agenda PMI Kota Malang</span>
                                     </h3>
                                     <div class="card-toolbar">
-                                        <a href="#" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#mdl_addstok">Tambah Stok Darah</a>
-                                        <a href="#" class="btn btn-info ms-xl-4" data-bs-toggle="modal" data-bs-target="#mdl_addjenis">Tambah Jenis Darah</a>
+                                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdl_addagenda">Tambah Agenda</a>
                                     </div>
                                 </div>
                                 <!--end::Header-->
@@ -59,12 +59,10 @@
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted">
-                                                    <th class="min-w-120px">Produk</th>
-                                                    <th class="min-w-120px">A</th>
-                                                    <th class="min-w-140px">B</th>
-                                                    <th class="min-w-120px">AB</th>
-                                                    <th class="min-w-120px">O</th>
-                                                    <th class="min-w-120px">Jumlah</th>
+                                                    <th class="min-w-120px">Lokasi</th>
+                                                    <th class="min-w-120px">Jadwal</th>
+                                                    <th class="min-w-140px">Jam Buka</th>
+                                                    <th class="min-w-120px">Jam Tutup</th>
                                                     <th class="min-w-100px text-end">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -72,26 +70,18 @@
                                             <!--begin::Table body-->
                                             <tbody>
                                                 <tr>
+                                                <td class="text-dark fw-bolder text-hover-primary fs-6">Rumah Sakit Ngudi Waluyo Malang</td>
                                                     <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        AHF
+                                                        19/20/2022
                                                     </td>
                                                     <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        10
+                                                        08:10
                                                     </td>
                                                     <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        9
-                                                    </td>
-                                                    <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        6
-                                                    </td>
-                                                    <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        4
-                                                    </td>
-                                                    <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        50
+                                                        09:10
                                                     </td>
                                                     <td class="text-end">
-                                                        <a href="" title="Edit Stok Darah" data-bs-toggle="modal" data-bs-target="#mdl_editstok" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                        <a href="" title="Edit Jadwal" data-bs-toggle="modal" data-bs-target="#mdl_editagenda" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -101,7 +91,7 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-                                                        <a href="#" title="Hapus Stok Darah" data-bs-toggle="modal" data-bs-target="#mdl_delstok"  class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                        <a href="" title="Hapus Jadwal" data-bs-toggle="modal" data-bs-target="#mdl_delagenda"  class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
