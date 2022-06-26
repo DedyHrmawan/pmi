@@ -73,6 +73,142 @@
 	}); 
 	
 </script>
+
+<script>
+	//Profil
+    $('#dataTableProfil tbody').on('click', '.mdl_detailProfil', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('profil/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_profil: id
+            },
+            success: res => {
+                $('#judul_profil').html(res[0].judul_profil)
+                $('#deskripsi').html(res[0].deskripsi)
+            }
+        })
+    })
+
+	$('#dataTableProfil tbody').on('click', '.editProfil', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('profil/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_profil: id
+            },
+            success: res => {
+                $('#judulProfil_edit').val(res[0].judul_profil)
+                $('#deskripsi_edit').val(res[0].deskripsi)
+                $('#id_edit').val(res[0].id_profil)
+            }
+        })
+    })
+
+	$('#dataTableProfil tbody').on('click', '.hapusProfil', function() {
+        const id = $(this).data("id")
+        $('#hapusProfil_id').val(id)
+    })
+
+	//Mobil Donor   
+	$('#dataTableMobil tbody').on('click', '.editJadwal', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('mobildonor/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_mobil: id
+            },
+            success: res => {
+                $('#lokasi_edit').val(res[0].lokasi)
+                $('#edit_jadwal').val(res[0].jadwal)
+                $('#edit_jambuka').val(res[0].jambuka)
+                $('#edit_jamtutup').val(res[0].jamtutup)
+                $('#editmobil_id').val(res[0].id_mobil)
+            }
+        })
+    })
+
+	$('#dataTableMobil tbody').on('click', '.hapusJadwal', function() {
+        const id = $(this).data("id")
+		const name = $(this).data("name")
+		const jadwal = $(this).data("jadwal")
+        $('#lokasi_text').html(name)
+        $('#jadwal_text').html(jadwal)
+        $('#hapusmobil_id').val(id)
+    })
+
+    //Informasi  
+    $('#informasiTable tbody').on('click', '.detailInfo', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('informasi/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_informasi: id
+            },
+            success: res => {
+                $('#detail_judul').html(res[0].judul_informasi)
+                $('#detail_deskripsi').html(res[0].deskripsi)
+            }
+        })
+    })
+
+	$('#informasiTable tbody').on('click', '.editInfo', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('informasi/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_informasi: id
+            },
+            success: res => {                
+                $('#judul_edit').val(res[0].judul_informasi)
+                $('#deskripsiInfo_edit').val(res[0].deskripsi)
+                $('#idInfo_edit').val(res[0].id_informasi)
+            }
+        })
+    })
+
+	$('#informasiTable tbody').on('click', '.hapusInfo', function() {
+        const id = $(this).data("id")
+        $('#hapusInfo_id').val(id)
+    })
+
+    //Agenda
+	$('#tableAgenda tbody').on('click', '.editAgenda', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('agenda/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_agenda: id
+            },
+            success: res => {
+                $('#lokasiAgenda_edit').val(res[0].lokasi_agenda)
+                $('#namaAgenda_edit').val(res[0].nama_agenda)
+                $('#edit_tanggal').val(res[0].tgl_agenda)
+                $('#edit_jammulai').val(res[0].jambuka)
+                $('#edit_jamselesai').val(res[0].jamtutup)
+                $('#editAgenda_id').val(res[0].id_agenda)
+            }
+        })
+    })
+
+	$('#tableAgenda tbody').on('click', '.hapusAgenda', function() {
+        const id = $(this).data("id")
+        $('#hapusAgenda_id').val(id)
+    })
+
+</script>
 </body>
 <!--end::Body-->
 
