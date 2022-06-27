@@ -72,6 +72,12 @@
 		dateFormat: "H:i",
 	}); 
 	
+    //pendonor
+    $("#add_donorTerakhir").flatpickr();
+    $("#add_donorSelanjutnya").flatpickr();
+
+    $("#edit_donorTerakhir").flatpickr();
+    $("#edit_donorSelanjutnya").flatpickr();
 </script>
 
 <script>
@@ -252,6 +258,24 @@
         $('#id_jenis_darah_edit').val(1).change()
     });
 
+</script>
+
+<!-- upload image di pendonor  -->
+<script>
+    var myDropzone = new Dropzone("#uploadFoto", {
+    url: "", // Set the url for your upload script location
+    paramName: "file", // The name that will be used to transfer the file
+    maxFiles: 10,
+    maxFilesize: 10, // MB
+    addRemoveLinks: true,
+    accept: function(file, done) {
+        if (file.name == "wow.jpg") {
+            done("Naha, you don't.");
+        } else {
+            done();
+        }
+    }
+});
 </script>
 </body>
 <!--end::Body-->

@@ -97,3 +97,6 @@ $route['stokdarah/ajxGet']  = 'DarahController/ajxGet';
 $route['stokdarah/getStock']= 'DarahController/getStock';
 $route['stokdarah/edit']    = 'DarahController/edit';
 $route['stokdarah/delete']  = 'DarahController/delete';
+
+//pendonor
+$route['pendonor']         = 'Welcome/VPendonor';
