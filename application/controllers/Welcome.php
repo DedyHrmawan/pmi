@@ -32,4 +32,12 @@ class Welcome extends CI_Controller {
 		// $this->load->view('pmi-depan/demo-medical');
 		$this->template->depan('pmi-depan/demo-medical');
 	}
+
+	public function VPendonor()
+	{
+		$data = array(
+            'nav_title' => 'Pendonor PMI Kota Malang'
+        );			
+		$this->template->admin('pmi-admin/VPendonor', $data);
+	}
 }
