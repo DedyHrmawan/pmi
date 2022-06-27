@@ -60,7 +60,6 @@ $route['login']         = 'Welcome/VLogin';
 $route['login/auth']    = 'AuthController/auth';
 
 //admin
-$route['stokdarah'] = 'Welcome/VStokDarah';
 
 //profil
 $route['profil']        = 'ProfileController/VProfil';
@@ -89,3 +88,12 @@ $route['agenda/store']  = 'AgendaController/store';
 $route['agenda/ajxGet'] = 'AgendaController/ajxGet';
 $route['agenda/edit']   = 'AgendaController/edit';
 $route['agenda/delete'] = 'AgendaController/delete';
+
+//stok darah
+$route['stokdarah']         = 'DarahController/VStokDarah';
+$route['stokdarah/addType'] = 'DarahController/addType';
+$route['stokdarah/addStock']= 'DarahController/addStock';
+$route['stokdarah/ajxGet']  = 'DarahController/ajxGet';
+$route['stokdarah/getStock']= 'DarahController/getStock';
+$route['stokdarah/edit']    = 'DarahController/edit';
+$route['stokdarah/delete']  = 'DarahController/delete';
