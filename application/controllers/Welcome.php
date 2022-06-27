@@ -32,13 +32,4 @@ class Welcome extends CI_Controller {
 		// $this->load->view('pmi-depan/demo-medical');
 		$this->template->depan('pmi-depan/demo-medical');
 	}
-
-	public function VStokDarah()
-	{
-		$data = array(
-            'nav_title' => 'Stok Darah PMI Kota Malang'
-        );	
-		$this->template->admin('pmi-admin/VStokDarah', $data);
-	}
-
 }

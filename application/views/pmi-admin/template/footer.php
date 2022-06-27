@@ -208,6 +208,50 @@
         $('#hapusAgenda_id').val(id)
     })
 
+    //Stok darah
+    $('#tableStok tbody').on('click', '.hapusStok', function() {
+        const id = $(this).data("id")
+        $('#hapusStok_id').val(id)
+    })
+
+    $('#tableStok tbody').on('click', '.editStok', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('stokdarah/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_darah: id
+            },
+            success: res => {
+                $('#id_darah_edit').val(res[0].id_darah).change()
+                $('#stok_edit').val(res[0].stok)
+                $('#edit_darah').val(res[0].id_darah)
+            }
+        })
+    })
+
+    $('#id_jenis_darah_edit').change(function(){
+        let idjenisdarah=$(this).val();
+        let iddarah=$('#id_darah_edit').val();
+        $.ajax({
+            url: "<?= site_url('stokdarah/getStock') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_darah: iddarah,
+                id_jenis_darah: idjenisdarah
+            },
+            success: res => {
+                $('#stok_edit').val(res[0].stok)
+            }
+        });
+    });
+
+    $('#edit_tutup').click(function() {
+        $('#id_jenis_darah_edit').val(1).change()
+    });
+
 </script>
 </body>
 <!--end::Body-->
