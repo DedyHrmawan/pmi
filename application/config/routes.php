@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -92,9 +92,9 @@ $route['agenda/delete'] = 'AgendaController/delete';
 //stok darah
 $route['stokdarah']         = 'DarahController/VStokDarah';
 $route['stokdarah/addType'] = 'DarahController/addType';
-$route['stokdarah/addStock']= 'DarahController/addStock';
+$route['stokdarah/addStock'] = 'DarahController/addStock';
 $route['stokdarah/ajxGet']  = 'DarahController/ajxGet';
-$route['stokdarah/getStock']= 'DarahController/getStock';
+$route['stokdarah/getStock'] = 'DarahController/getStock';
 $route['stokdarah/edit']    = 'DarahController/edit';
 $route['stokdarah/delete']  = 'DarahController/delete';
 
@@ -106,3 +106,11 @@ $route['berita']         = 'Welcome/VBerita';
 
 //signup
 $route['signup']         = 'Welcome/VSignUp';
+
+//depan
+$route['beranda']         = 'Welcome/landing';
+$route['profile']      = 'Welcome/VProfile';
+$route['informasi']      = 'Welcome/VInformasi';
+$route['stokdarah']      = 'Welcome/VStokDarah';
+$route['news']      = 'Welcome/VNews';
+$route['agenda-pmi']      = 'Welcome/VAgendaPMI';

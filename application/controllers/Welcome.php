@@ -45,7 +45,31 @@ class Welcome extends CI_Controller {
 	public function landing()
 	{
 		$this->template->depan('pmi-depan/VBeranda');
-		// $this->load->view('pmi-depan/VBeranda');
+	}
+
+	public function VProfile()
+	{
+		$this->template->depan('pmi-depan/VProfil');
+	}
+
+	public function VInformasi()
+	{
+		$this->template->depan('pmi-depan/VInformasi');
+	}
+
+	public function VStokDarah()
+	{
+		$this->template->depan('pmi-depan/VStokDarah');
+	}
+
+	public function VNews()
+	{
+		$this->template->depan('pmi-depan/VBerita');
+	}
+
+	public function VAgendaPMI()
+	{
+		$this->template->depan('pmi-depan/VAgenda');
 	}
 
 	//signup penodnor
