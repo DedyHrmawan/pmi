@@ -75,42 +75,42 @@
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#beranda" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Beranda</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('beranda'); ?> " data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Beranda</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#profil" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Profil</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('profile'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Profil</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#informasi" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('informasi'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#stok" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Stok Darah</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('stokdarah'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Stok Darah</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#agenda" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Agenda</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('agenda-pmi'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Agenda</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#berita" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Berita</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('news'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Berita</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
