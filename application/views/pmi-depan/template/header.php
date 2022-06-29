@@ -1,130 +1,132 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+
+<html lang="en">
+<!--begin::Head-->
+
 <head>
-
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="SemiColonWeb" />
-
-	<!-- Stylesheets
-	============================================= -->
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Montserrat:400,700|Crete+Round:400i&display=swap" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/style.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/swiper.css" type="text/css" />
-
-	<!-- Medical Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/demos/medical/medical.css" type="text/css" />
-	<!-- / -->
-
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/demos/medical/css/medical-icons.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/demos/medical/fonts.css" type="text/css" />
-
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/depan/css/colors.php?color=DE6262" type="text/css" />
-
-	<!-- Document Title
-	============================================= -->
+	<base href="<?= base_url(); ?>">
 	<title>PMI - Malang</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Palang Merah Indonesia Kota Malang" />
+	<meta name="keywords" content="PMI, Palang Merah Indonesia, Malang, Stok Darah" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="PMI - Malang" />
+	<meta property="og:site_name" content="PMI | Malang" />
 	<link rel="shortcut icon" href="<?= base_url(); ?>assets/admin/media/ic_pmi.png" />
+	<!-- <meta property="og:url" content="https://keenthemes.com/metronic" /> -->
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Page Vendor Stylesheets(used by this page)-->
+	<link href="<?= base_url(); ?>assets/admin/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="<?= base_url(); ?>assets/admin/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Page Vendor Stylesheets-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="<?= base_url(); ?>assets/admin/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="<?= base_url(); ?>assets/admin/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
 </head>
+<!--end::Head-->
+<!--begin::Body-->
 
-<body class="stretched page-transition" data-loader-html="<div id='css3-spinner-svg-pulse-wrapper'><svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='https://www.w3.org/2000/svg' viewport='0 0 60 60' xmlns:xlink='https://www.w3.org/1999/xlink'><path id='css3-spinner-pulse' stroke='#DE6262' fill='none' stroke-width='2' stroke-linejoin='round' d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' /></svg></div>">
-
-	<!-- Document Wrapper
-	============================================= -->
-	<div id="wrapper" class="clearfix">
-
-		<!-- Top Bar
-		============================================= -->
-		<div id="top-bar">
-			<div class="container clearfix">
-
-				<div class="row justify-content-between">
-					<div class="col-12 col-md-auto d-none d-md-flex">
-
-						<!-- Top Links
-						============================================= -->
-						<div class="top-links">
-							<ul class="top-links-container">
-								<li class="top-links-item"><a href="#"><i class="icon-phone3"></i> 0341-364617</a></li>
-								<li class="top-links-item"><a href="#" class="nott"><i class="icon-instagram"></i> @pmimalangkota</a></li>
-							</ul>
-						</div><!-- .top-links end -->
-
-					</div>
-
-					<div class="col-12 col-md-auto">
-
-						<!-- Top Links
-						============================================= -->
-						<div class="top-links">
-							<ul class="top-links-container">
-								<li class="top-links-item"><a href="https://s.id/fatrainingpmi" class="bg-color text-white">Pelatihan</a></li>
-							</ul>
-						</div><!-- .top-links end -->
-
-					</div>
-				</div>
-
-			</div>
-		</div><!-- #top-bar end -->
-
-		<!-- Header
-		============================================= -->
-		<header id="header" data-menu-padding="28" data-sticky-menu-padding="8">
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row">
-
-						<!-- Logo
-						============================================= -->
-						<div id="logo">
-							<a href="<?=site_url('') ?>" class="standard-logo"><img src="<?= base_url(); ?>assets/depan/images/logo-pmi.svg" alt="Canvas Logo"></a>
-							
-						</div><!-- #logo end -->
-
-						<div id="primary-menu-trigger">
-							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+<body id="beranda" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200" class="position-relative">
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Header Section-->
+		<div class="mb-0" id="home">
+			<!--begin::Wrapper-->
+			<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom">
+				<!--begin::Header-->
+				<div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+					<!--begin::Container-->
+					<div class="container ">
+						<!--begin::Wrapper-->
+						<div class="d-flex align-items-center justify-content-between">
+							<!--begin::Logo-->
+							<div class="d-flex align-items-center flex-equal">
+								<!--begin::Mobile menu toggle-->
+								<button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none" id="kt_landing_menu_toggle">
+									<!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+									<span class="svg-icon svg-icon-2hx">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="currentColor" />
+											<path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="currentColor" />
+										</svg>
+									</span>
+									<!--end::Svg Icon-->
+								</button>
+								<!--end::Mobile menu toggle-->
+								<!--begin::Logo image-->
+								<a href="">
+									<img alt="Logo" src="<?= base_url(); ?>assets/admin/media/logo-pmi-black.svg" class="logo-default h-50px h-lg-60px" />
+									<img alt="Logo" src="<?= base_url(); ?>assets/admin/media/logo-pmi-black.svg" class="logo-sticky h-40px h-lg-50px" />
+								</a>
+								<!--end::Logo image-->
+							</div>
+							<!--end::Logo-->
+							<!--begin::Menu wrapper-->
+							<div class="d-lg-block" id="kt_header_nav_wrapper">
+								<div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
+									<!--begin::Menu-->
+									<div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-primary nav nav-flush fs-5 fw-bold" id="kt_landing_menu">
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#beranda" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Beranda</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#profil" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Profil</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#informasi" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#stok" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Stok Darah</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#agenda" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Agenda</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="#berita" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Berita</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+									</div>
+									<!--end::Menu-->
+								</div>
+							</div>
+							<!--end::Menu wrapper-->
+							<!--begin::Toolbar-->
+							<div class="flex-equal text-end ms-1">
+								<a href="<?php echo site_url('login'); ?>" class="btn btn-danger btn-color-white">Sign In</a>
+							</div>
+							<!--end::Toolbar-->
 						</div>
-
-						<!-- Primary Navigation
-						============================================= -->
-						<nav class="primary-menu style-3 menu-spacing-margin">
-
-							<ul class="menu-container">
-								<li class="menu-item current"><a class="menu-link" href="#"><div>Beranda</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="#"><div>Tentang Kami</div></a>
-									<ul class="sub-menu-container">
-										<li class="menu-item"><a class="menu-link" href="#"><div>Sejarah</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="#"><div>Profil</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="#"><div>Alamat</div></a></li>
-									</ul>
-								</li>
-								<li class="menu-item"><a class="menu-link" href="#"><div>Layanan</div></a>
-									<ul class="sub-menu-container">
-										<li class="menu-item"><a class="menu-link" href="#"><div>Donor Darah</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="#"><div>Diklat</div></a></li>
-									</ul>
-								</li>
-								<li class="menu-item"><a class="menu-link" href="#"><div>Publikasi</div></a>
-									<ul class="sub-menu-container">
-										<li class="menu-item"><a class="menu-link" href="#"><div>Berita</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="#"><div>Artikel</div></a></li>
-									</ul>
-								</li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
-
+						<!--end::Wrapper-->
 					</div>
+					<!--end::Container-->
 				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header><!-- #header end -->
+				<!--end::Header-->

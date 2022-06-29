@@ -76,7 +76,7 @@
                                 <!--end::Title-->
                                 <!--begin::Link-->
                                 <div class="text-gray-400 fw-bold fs-4">New Here?
-                                    <a href="" class="link-primary fw-bolder">Create an Account</a>
+                                    <a href="<?php echo site_url('signup'); ?>" class="link-primary fw-bolder">Create an Account</a>
                                 </div>
                                 <!--end::Link-->
                             </div>

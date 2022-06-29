@@ -25,14 +25,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('pmi-admin/VLogin');
 	}
 
-
-	//depan
-	public function landing()
-	{
-		// $this->load->view('pmi-depan/demo-medical');
-		$this->template->depan('pmi-depan/demo-medical');
-	}
-
 	public function VPendonor()
 	{
 		$data = array(
@@ -40,4 +32,26 @@ class Welcome extends CI_Controller {
         );			
 		$this->template->admin('pmi-admin/VPendonor', $data);
 	}
+
+	public function VBerita()
+	{
+		$data = array(
+            'nav_title' => 'Berita PMI Kota Malang'
+        );			
+		$this->template->admin('pmi-admin/VBerita', $data);
+	}
+
+	//depan
+	public function landing()
+	{
+		$this->template->depan('pmi-depan/VBeranda');
+		// $this->load->view('pmi-depan/VBeranda');
+	}
+
+	//signup penodnor
+	public function VSignUp()
+	{
+		$this->load->view('pmi-depan/VSignUp');
+	}
+
 }
