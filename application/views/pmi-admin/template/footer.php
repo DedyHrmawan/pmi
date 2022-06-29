@@ -1,7 +1,6 @@
-
 <!--begin::Javascript-->
 <script>
-	var hostUrl = "<?= base_url(); ?>assets/";
+    var hostUrl = "<?= base_url(); ?>assets/";
 </script>
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="<?= base_url(); ?>assets/admin/js/scripts.bundle.js"></script>
@@ -18,70 +17,74 @@
 
 <!--end::Javascript-->
 <script type="text/javascript">
-	// Jadwal mobil donor 
-	$("#add_jadwal").flatpickr();
+    // Jadwal mobil donor 
+    $("#add_jadwal").flatpickr();
 
-	$("#add_jambuka").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
-	$("#add_jamtutup").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
+    $("#add_jambuka").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+    $("#add_jamtutup").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
 
-	$("#edit_jadwal").flatpickr();
+    $("#edit_jadwal").flatpickr();
 
-	$("#edit_jambuka").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
-	$("#edit_jamtutup").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
+    $("#edit_jambuka").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+    $("#edit_jamtutup").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
 
-	// agenda
-	$("#add_tanggal").flatpickr();
+    // agenda
+    $("#add_tanggal").flatpickr();
 
-	$("#add_jammulai").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
-	$("#add_jamselesai").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
+    $("#add_jammulai").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+    $("#add_jamselesai").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
 
-	$("#edit_tanggal").flatpickr();
+    $("#edit_tanggal").flatpickr();
 
-	$("#edit_jammulai").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	});
-	$("#edit_jamselesai").flatpickr({
-		enableTime: true,
-		noCalendar: true,
-		dateFormat: "H:i",
-	}); 
-	
+    $("#edit_jammulai").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+    $("#edit_jamselesai").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+
     //pendonor
     $("#add_donorTerakhir").flatpickr();
     $("#add_donorSelanjutnya").flatpickr();
 
     $("#edit_donorTerakhir").flatpickr();
     $("#edit_donorSelanjutnya").flatpickr();
+
+    //berita
+    $("#add_tanggalBerita").flatpickr();
+    $("#edit_tanggalBerita").flatpickr();
 </script>
 
 <script>
-	//Profil
+    //Profil
     $('#dataTableProfil tbody').on('click', '.mdl_detailProfil', function() {
         const id = $(this).data('id');
         $.ajax({
@@ -98,7 +101,7 @@
         })
     })
 
-	$('#dataTableProfil tbody').on('click', '.editProfil', function() {
+    $('#dataTableProfil tbody').on('click', '.editProfil', function() {
         const id = $(this).data('id');
         $.ajax({
             url: "<?= site_url('profil/ajxGet') ?>",
@@ -115,13 +118,13 @@
         })
     })
 
-	$('#dataTableProfil tbody').on('click', '.hapusProfil', function() {
+    $('#dataTableProfil tbody').on('click', '.hapusProfil', function() {
         const id = $(this).data("id")
         $('#hapusProfil_id').val(id)
     })
 
-	//Mobil Donor   
-	$('#dataTableMobil tbody').on('click', '.editJadwal', function() {
+    //Mobil Donor   
+    $('#dataTableMobil tbody').on('click', '.editJadwal', function() {
         const id = $(this).data('id');
         $.ajax({
             url: "<?= site_url('mobildonor/ajxGet') ?>",
@@ -140,10 +143,10 @@
         })
     })
 
-	$('#dataTableMobil tbody').on('click', '.hapusJadwal', function() {
+    $('#dataTableMobil tbody').on('click', '.hapusJadwal', function() {
         const id = $(this).data("id")
-		const name = $(this).data("name")
-		const jadwal = $(this).data("jadwal")
+        const name = $(this).data("name")
+        const jadwal = $(this).data("jadwal")
         $('#lokasi_text').html(name)
         $('#jadwal_text').html(jadwal)
         $('#hapusmobil_id').val(id)
@@ -166,7 +169,7 @@
         })
     })
 
-	$('#informasiTable tbody').on('click', '.editInfo', function() {
+    $('#informasiTable tbody').on('click', '.editInfo', function() {
         const id = $(this).data('id');
         $.ajax({
             url: "<?= site_url('informasi/ajxGet') ?>",
@@ -175,7 +178,7 @@
             data: {
                 id_informasi: id
             },
-            success: res => {                
+            success: res => {
                 $('#judul_edit').val(res[0].judul_informasi)
                 $('#deskripsiInfo_edit').val(res[0].deskripsi)
                 $('#idInfo_edit').val(res[0].id_informasi)
@@ -183,13 +186,13 @@
         })
     })
 
-	$('#informasiTable tbody').on('click', '.hapusInfo', function() {
+    $('#informasiTable tbody').on('click', '.hapusInfo', function() {
         const id = $(this).data("id")
         $('#hapusInfo_id').val(id)
     })
 
     //Agenda
-	$('#tableAgenda tbody').on('click', '.editAgenda', function() {
+    $('#tableAgenda tbody').on('click', '.editAgenda', function() {
         const id = $(this).data('id');
         $.ajax({
             url: "<?= site_url('agenda/ajxGet') ?>",
@@ -209,7 +212,7 @@
         })
     })
 
-	$('#tableAgenda tbody').on('click', '.hapusAgenda', function() {
+    $('#tableAgenda tbody').on('click', '.hapusAgenda', function() {
         const id = $(this).data("id")
         $('#hapusAgenda_id').val(id)
     })
@@ -237,9 +240,9 @@
         })
     })
 
-    $('#id_jenis_darah_edit').change(function(){
-        let idjenisdarah=$(this).val();
-        let iddarah=$('#id_darah_edit').val();
+    $('#id_jenis_darah_edit').change(function() {
+        let idjenisdarah = $(this).val();
+        let iddarah = $('#id_darah_edit').val();
         $.ajax({
             url: "<?= site_url('stokdarah/getStock') ?>",
             type: "post",
@@ -257,25 +260,84 @@
     $('#edit_tutup').click(function() {
         $('#id_jenis_darah_edit').val(1).change()
     });
-
 </script>
 
 <!-- upload image di pendonor  -->
 <script>
-    var myDropzone = new Dropzone("#uploadFoto", {
-    url: "", // Set the url for your upload script location
-    paramName: "file", // The name that will be used to transfer the file
-    maxFiles: 10,
-    maxFilesize: 10, // MB
-    addRemoveLinks: true,
-    accept: function(file, done) {
-        if (file.name == "wow.jpg") {
-            done("Naha, you don't.");
-        } else {
-            done();
+    var myDropzone = new Dropzone("#imgPendonor", {
+        url: "http://localhost/pmi/images", // Set the url for your upload script location
+        paramName: "file", // The name that will be used to transfer the file
+        maxFiles: 1,
+        maxFilesize: 2, // MB
+        addRemoveLinks: true,
+        accept: function(file, done) {
+            if (file.name == "wow.jpg") {
+                done("Naha, you don't.");
+            } else {
+                done();
+            }
         }
-    }
-});
+    });
+
+    var myDropzone = new Dropzone("#imgAgenda", {
+        url: "http://localhost/pmi/", // Set the url for your upload script location
+        paramName: "file", // The name that will be used to transfer the file
+        maxFiles: 1,
+        maxFilesize: 5, // MB
+        addRemoveLinks: true,
+        accept: function(file, done) {
+            if (file.name == "wow.jpg") {
+                done("Naha, you don't.");
+            } else {
+                done();
+            }
+        }
+    });
+
+    var myDropzone = new Dropzone("#editImgAgenda", {
+        url: "http://localhost/pmi/", // Set the url for your upload script location
+        paramName: "file", // The name that will be used to transfer the file
+        maxFiles: 1,
+        maxFilesize: 5, // MB
+        addRemoveLinks: true,
+        accept: function(file, done) {
+            if (file.name == "wow.jpg") {
+                done("Naha, you don't.");
+            } else {
+                done();
+            }
+        }
+    });
+
+    var myDropzone = new Dropzone("#imgBerita", {
+        url: "http://localhost/pmi/", // Set the url for your upload script location
+        paramName: "file", // The name that will be used to transfer the file
+        maxFiles: 1,
+        maxFilesize: 5, // MB
+        addRemoveLinks: true,
+        accept: function(file, done) {
+            if (file.name == "wow.jpg") {
+                done("Naha, you don't.");
+            } else {
+                done();
+            }
+        }
+    });
+
+    var myDropzone = new Dropzone("#editimgBerita", {
+        url: "http://localhost/pmi/", // Set the url for your upload script location
+        paramName: "file", // The name that will be used to transfer the file
+        maxFiles: 1,
+        maxFilesize: 5, // MB
+        addRemoveLinks: true,
+        accept: function(file, done) {
+            if (file.name == "wow.jpg") {
+                done("Naha, you don't.");
+            } else {
+                done();
+            }
+        }
+    });
 </script>
 </body>
 <!--end::Body-->
