@@ -73,7 +73,7 @@
 																<td class="text-dark fw-bolder text-hover-primary fs-6">
 																	' . $item->judul_profil . '
 																</td>
-																<td class="text-dark fw-bolder text-hover-primary fs-6">
+																<td class="text-dark text-hover-primary fs-6">
 																	' . $item->deskripsi . '
 																</td>
 																<td class="text-end">

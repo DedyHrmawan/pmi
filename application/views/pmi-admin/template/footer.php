@@ -339,6 +339,19 @@
         }
     });
 </script>
+<!-- <script>
+    // add tiny informasi
+    var addTiny = {
+        selector: ".textTiny",
+        menubar: false,
+        toolbar: ["styleselect fontselect fontsizeselect",
+            "undo redo | cut copy paste | bold italic | link image | alignleft aligncenter alignright alignjustify",
+            "bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code"
+        ]
+    };
+
+    tinymce.init(addTiny);
+</script> -->
 </body>
 <!--end::Body-->
 

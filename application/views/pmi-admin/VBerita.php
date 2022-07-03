@@ -70,9 +70,9 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="text-dark fw-bolder text-hover-primary fs-6">PMI Jaksel Lantik 8 Pengurus PMI Tingkat Kecamatan</td>
-                                                    <td class="text-dark fw-bolder text-hover-primary fs-6">Wulan Yustiara</td>
-                                                    <td class="text-dark fw-bolder text-hover-primary fs-6">27 Juni 2022</td>
-                                                    <td class="text-dark fw-bolder text-hover-primary fs-6">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</td>
+                                                    <td class="text-dark text-hover-primary fs-6">Wulan Yustiara</td>
+                                                    <td class="text-dark text-hover-primary fs-6">27 Juni 2022</td>
+                                                    <td class="text-dark text-hover-primary fs-6">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</td>
                                                     <td class="text-end">
                                                         <a href="" title="Detail Berita" data-bs-toggle="modal" data-bs-target="#detailBerita" data-id="'.$item->id_informasi.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm detailInfo me-1">
                                                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
