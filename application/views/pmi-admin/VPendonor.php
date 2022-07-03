@@ -54,7 +54,7 @@
 									<!--begin::Table container-->
 									<div class="table-responsive">
 										<!--begin::Table-->
-										<table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="">
+										<table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="tablePendonor">
 											<!--begin::Table head-->
 											<thead>
 												<tr class="fw-bolder text-muted">

@@ -85,6 +85,32 @@
 
 <script>
     //Profil
+    $('#dataTableProfil').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
     $('#dataTableProfil tbody').on('click', '.mdl_detailProfil', function() {
         const id = $(this).data('id');
         $.ajax({
@@ -124,6 +150,32 @@
     })
 
     //Mobil Donor   
+    $('#dataTableMobil').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
     $('#dataTableMobil tbody').on('click', '.editJadwal', function() {
         const id = $(this).data('id');
         $.ajax({
@@ -169,6 +221,32 @@
         })
     })
 
+    $('#informasiTable').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
     $('#informasiTable tbody').on('click', '.editInfo', function() {
         const id = $(this).data('id');
         $.ajax({
@@ -192,6 +270,32 @@
     })
 
     //Agenda
+    $('#tableAgenda').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
     $('#tableAgenda tbody').on('click', '.editAgenda', function() {
         const id = $(this).data('id');
         $.ajax({
@@ -218,6 +322,32 @@
     })
 
     //Stok darah
+    $('#tableStok').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
     $('#tableStok tbody').on('click', '.hapusStok', function() {
         const id = $(this).data("id")
         $('#hapusStok_id').val(id)
@@ -259,6 +389,60 @@
 
     $('#edit_tutup').click(function() {
         $('#id_jenis_darah_edit').val(1).change()
+    });
+
+    //Pendonor
+    $('#tablePendonor').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
+    //berita
+    $('#tableBerita').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
     });
 </script>
 
