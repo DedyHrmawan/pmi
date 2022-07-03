@@ -89,14 +89,14 @@
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('informasi'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('informasi-pmi'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('stokdarah'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Stok Darah</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('stokdarah-pmi'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Stok Darah</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->

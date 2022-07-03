@@ -22,7 +22,16 @@
 								<!--begin::Description-->
 								<div class="fs-5 fw-bold text-dark">
 									<!--begin::Text-->
-									<p class="mb-17">I can hear your objections already. “But Dan, I have to blog for a cardboard box manufacturing company.” I feel your pain, I really do. During the course of my career, I’ve written content for dozens of clients in some less-than-thrilling industries (such as financial regulatory compliance and corporate housing), but the hallmark of a professional blogger is the ability to write well about any topic, no matter how dry it may be. Blogging is a lot easier, however, if you can muster at least a little enthusiasm for the topic at hand.</p>
+									<p class="mb-17">PROSEDUR DAN SYARAT DONOR DARAH
+										<br>
+										1. Berusia minimum 17 tahun <br>
+										2. Memiliki berat badan minimal 45 kg <br>
+										3. Kadar hemoglobin darah minimal 12,5 g/dl <br>
+										4. Tekanan darah Sistolik 110 - 160 mmHg, dan Diastolik 60 - 100 mmHg <br>
+										5. Bagi penyumbang darah wanita tidak sedang hamil atau menyusui ataupun haid <br>
+										6. Tidak dalam pengaruh obat-obatan seperti misalnya golongan narkotika dan alkohol <br>
+										7. Tidak sedang menderita penyakit seperti : jantung, hati, paru-paru, ginjla, kencing manis, penyakit darah, gangguan pembekuan darah, epilepsi, kanker atau penyakit kulit <br>
+									</p>
 									<!--end::Text-->
 								</div>
 								<!--end::Description-->

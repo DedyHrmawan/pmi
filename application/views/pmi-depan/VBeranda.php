@@ -1,20 +1,20 @@
 <!--begin::Product slider-->
 <div class="tns tns-default landing-red-bg">
 	<!--begin::Slider-->
-	<div data-tns="true" data-tns-loop="true" data-tns-swipe-angle="false" data-tns-speed="2000" data-tns-autoplay="true" data-tns-autoplay-timeout="18000" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-center="false" data-tns-dots="false" data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
+	<div data-tns="true" data-tns-loop="true" data-tns-swipe-angle="false" data-tns-speed="2000" data-tns-autoplay="true" data-tns-autoplay-timeout="5000" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-center="false" data-tns-dots="false" data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
 		<!--begin::Item-->
 		<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-			<img src="<?= base_url(); ?>assets/admin/media/demo1.jpg" width="1000" min-width="900" class="card-rounded shadow mw-100" alt="" />
+			<img src="<?= base_url(); ?>assets/admin/media/demo1.jpg" width="800" min-width="700" class="card-rounded shadow mw-100" alt="" />
 		</div>
 		<!--end::Item-->
 		<!--begin::Item-->
 		<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-			<img src="<?= base_url(); ?>assets/admin/media/demo2.jpeg" width="1000" min-width="900 class="card-rounded shadow mw-100" alt="" />
+			<img src="<?= base_url(); ?>assets/admin/media/demo2.jpeg" width="800" min-width="700" class=" card-rounded shadow mw-100" alt="" />
 		</div>
 		<!--end::Item-->
 		<!--begin::Item-->
 		<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-			<img src="<?= base_url(); ?>assets/admin/media/demo3.jpg" width="1000" min-width="900 class="card-rounded shadow mw-100" alt="" />
+			<img src="<?= base_url(); ?>assets/admin/media/demo3.jpg" width="800" min-width="700" class=" card-rounded shadow mw-100" alt="" />
 		</div>
 		<!--end::Item-->
 	</div>
@@ -46,7 +46,7 @@
 </div>
 <!--end::Wrapper-->
 <!--begin::Curve bottom-->
-<div class="landing-curve landing-red-color mb-10 mb-lg-20">
+<div class="landing-curve landing-red-color mb-10 mb-lg-10">
 	<svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z" fill="currentColor"></path>
 	</svg>
@@ -55,13 +55,13 @@
 </div>
 <!--end::Header Section-->
 <!--begin::How It Works Section-->
-<div class="mb-n10 mb-lg-20 z-index-2">
+<div class="mb-n10 mb-lg-10 z-index-2">
 	<!--begin::Container-->
 	<div class="container">
 		<!--begin::Heading-->
-		<div class="text-center mb-17">
+		<div class="text-center mb-10">
 			<!--begin::Title-->
-			<h3 class="fs-2hx text-dark mb-5" id="" data-kt-scroll-offset="{default: 100, lg: 150}">Layanan PMI Untuk Kalian</h3>
+			<h3 class="fs-2hx text-dark" id="" data-kt-scroll-offset="{default: 100, lg: 150}">Layanan PMI Untuk Kalian</h3>
 			<!--end::Title-->
 		</div>
 		<!--end::Heading-->
@@ -167,12 +167,12 @@
 			<!--begin::Heading-->
 			<div class="text-center mt-8 mb-8" id="" data-kt-scroll-offset="{default: 100, lg: 150}">
 				<!--begin::Title-->
-				<h3 class="fs-2hx text-white fw-bolder mb-5">Ketersediaan Darah</h3>
+				<h3 class="fs-2hx text-white fw-bolder mb-5">Agenda PMI</h3>
 				<!--end::Title-->
 				<!--begin::Description-->
 				<div class="fs-5 fw-bold text-white">
 					<br />
-					Stok dapat berubah sewaktu-waktu. Untuk konfirmasi stok, silahkan menghubungi UDD
+					Agenda PMI Malang yang akan datang !
 				</div>
 				<!--end::Description-->
 			</div>
@@ -181,24 +181,24 @@
 			<div class="d-flex flex-center">
 				<div class="table">
 					<table class="table table-rounded table-striped border gy-7 gs-7">
-						<thead class="p-xxl-5">
-							<tr class="fw-bold fs-2 text-white border-bottom border-gray-200">
-								<th class="mx-10">Produk</th>
-								<th class="mx-10">A</th>
-								<th class="mx-10">B</th>
-								<th class="mx-10">AB</th>
-								<th class="mx-10">O</th>
-								<th class="mx-10">Jumlah</th>
+						<thead>
+							<tr class="fw-bold fs-6 text-dark border-bottom border-dark">
+								<th class="min-w-120px">Nama Agenda</th>
+								<th class="min-w-120px">Lokasi</th>
+								<th class="min-w-120px">Jadwal</th>
+								<th class="min-w-140px">Jam Buka</th>
+								<th class="min-w-120px">Jam Tutup</th>
 							</tr>
 						</thead>
-						<tbody class="text-white p-xxl-5 fs-4">
+						<tbody>
 							<tr>
-								<td class="mx-10">Plasma Konvalesen</td>
-								<td class="mx-10">1</td>
-								<td class="mx-10">2</td>
-								<td class="mx-10">61</td>
-								<td class="mx-10">25</td>
-								<td class="mx-10">100</td>
+								<td>
+									<a href="https://www.instagram.com/pmimalangkota" target="_blank" class="text-dark text-hover-primary">Seminar Protokol Kesehatan</a>
+								</td>
+								<td>Rumah Sakit Persada</td>
+								<td>2022-07-02</td>
+								<td>10:00 </td>
+								<td>12:00</td>
 							</tr>
 						</tbody>
 					</table>
@@ -218,43 +218,6 @@
 	<!--end::Curve bottom-->
 </div>
 <!--end::Statistics Section-->
-<!--begin::Team Section-->
-<div class="py-10 py-lg-20">
-	<!--begin::Container-->
-	<div class="container">
-		<!--begin::Heading-->
-		<div class="text-center mb-12">
-			<!--begin::Title-->
-			<h3 class="fs-2hx text-dark mb-5" id="" data-kt-scroll-offset="{default: 100, lg: 150}">Agenda</h3>
-			<!--end::Title-->
-			<div class="table-responsive">
-				<table class="table table-rounded table-striped border gy-7 gs-7">
-					<thead>
-						<tr class="fw-bold fs-6 text-dark border-bottom border-dark">
-							<th class="min-w-120px">Nama Agenda</th>
-							<th class="min-w-120px">Lokasi</th>
-							<th class="min-w-120px">Jadwal</th>
-							<th class="min-w-140px">Jam Buka</th>
-							<th class="min-w-120px">Jam Tutup</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Seminar Protokol Kesehatan</td>
-							<td>Rumah Sakit Persada</td>
-							<td>2022-07-02</td>
-							<td>10:00 </td>
-							<td>12:00</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<!--end::Heading-->
-	</div>
-	<!--end::Container-->
-</div>
-<!--end::Team Section-->
 <!--begin::Projects Section-->
 <div class="mb-lg-n15 position-relative z-index-2 ">
 	<!--begin::Container-->
