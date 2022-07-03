@@ -34,7 +34,7 @@
                             <span class="required">Deskripsi</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid" placeholder="Masukan Deskripsi" type="text" name="deskripsi" id="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Deskripsi" type="text" name="deskripsi" cols="30" rows="10"></textarea>
                     </div>
             </div>
 
@@ -342,7 +342,7 @@
                             <span class="required">Deskripsi</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid" placeholder="Masukan Deskripsi" type="text" name="deskripsi" id="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Deskripsi" type="text" name="deskripsi" cols="30" rows="10"></textarea>
                     </div>
                 </div>
 
@@ -566,6 +566,14 @@
                             <!--end::Datepicker-->
                         </div>
                     </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Link Agenda</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Link Agenda" name="lokasi_agenda" />
+                    </div>
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
                         <!--begin::Col-->
@@ -656,6 +664,14 @@
                         </label>
                         <!--end::Label-->
                         <input type="text" class="form-control form-control-solid" name="lokasi_agenda" id="lokasiAgenda_edit" />
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Link Agenda</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" value="Link" name="" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1281,7 +1297,7 @@
                             <span class="required">Isi Berita</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid" placeholder="Masukan Isi Berita" name="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Isi Berita" name="" cols="30" rows="10"></textarea>
                         <!--begin::Input group-->
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -1311,10 +1327,10 @@
                     </div>
                 </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
             </form>
         </div>
     </div>
@@ -1405,10 +1421,10 @@
                     </div>
                 </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
             </form>
         </div>
     </div>

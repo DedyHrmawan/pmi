@@ -25,6 +25,9 @@
 		<link href="<?= base_url(); ?>assets/admin/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="<?= base_url(); ?>assets/admin/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
+
+		<!-- tinymce -->
+		<script src="<?= base_url(); ?>assets/admin/plugins/custom/tinymce/tinymce.bundle.js"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->

@@ -35,7 +35,7 @@
         <!--begin::Authentication - Sign-in -->
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
             <!--begin::Aside-->
-            <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background-color: #13263C">
+            <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background-color: #DA251D">
                 <!--begin::Wrapper-->
                 <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
                     <!--begin::Content-->
@@ -87,7 +87,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Email</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="EMAIL_USER" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" placeholder="Masukan Email" type="text" name="EMAIL_USER" autocomplete="off" />
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -104,7 +104,7 @@
                                 </div>
                                 <!--end::Wrapper-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="password" name="PASSWORD_USER" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" placeholder="Masukan Password" type="password" name="PASSWORD_USER" autocomplete="off" />
                                 <!--end::Input-->
                             </div>
                             <!-- begin alert  -->
