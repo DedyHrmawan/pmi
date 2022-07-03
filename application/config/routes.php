@@ -110,7 +110,7 @@ $route['signup']         = 'Welcome/VSignUp';
 //depan
 $route['beranda']         = 'Welcome/landing';
 $route['profile']      = 'Welcome/VProfile';
-$route['informasi']      = 'Welcome/VInformasi';
-$route['stokdarah']      = 'Welcome/VStokDarah';
+$route['informasi-pmi']      = 'Welcome/VInformasi';
+$route['stokdarah-pmi']      = 'Welcome/VStokDarah';
 $route['news']      = 'Welcome/VNews';
 $route['agenda-pmi']      = 'Welcome/VAgendaPMI';
