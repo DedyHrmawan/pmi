@@ -26,8 +26,8 @@
         <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('profil'); ?>" title="Berisi Profil, Visi & Misi, Struktur Organisasi / Kepengurusan" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                <div class="menu-item"> 
+                    <a <?= $this->uri->segment(1)== 'profil' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('profil'); ?>" title="Berisi Profil, Visi & Misi, Struktur Organisasi / Kepengurusan" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -44,7 +44,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('mobildonor'); ?>" title="Menu penjadwalan mobil donor keliling" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1)== 'mobildonor' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('mobildonor'); ?>" title="Menu penjadwalan mobil donor keliling" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen014.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('stokdarah'); ?>" title="Menu informasi dan manajemen stok darah" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1)== 'stokdarah' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('stokdarah'); ?>" title="Menu informasi dan manajemen stok darah" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/medicine/med004.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -71,7 +71,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('informasi'); ?>" title="Menu manajemen informasi donor darah" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1)== 'informasi' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('informasi'); ?>" title="Menu manajemen informasi donor darah" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -85,7 +85,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('agenda'); ?>" title="Menu manajemen event atau agenda PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1)== 'agenda' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('agenda'); ?>" title="Menu manajemen event atau agenda PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/layouts/lay007.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -98,7 +98,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('pendonor'); ?>" title="Menu berisi data pendonor darah PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1)== 'pendonor' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('pendonor'); ?>" title="Menu berisi data pendonor darah PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen049.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -112,7 +112,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('berita'); ?>" title="Menu berisi berita atau publikasi PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1)== 'berita' || $this->uri->segment(1)== '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('berita'); ?>" title="Menu berisi berita atau publikasi PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/coding/cod010.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
