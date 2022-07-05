@@ -27,6 +27,7 @@
     <link href="<?= base_url(); ?>assets/admin/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url(); ?>assets/admin/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -70,7 +71,7 @@
                     <!--begin::Wrapper-->
                     <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                         <!--begin::Form-->
-                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('login/auth') ?>" method="post">
+                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('profil') ?>" method="post">
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
@@ -83,6 +84,16 @@
                                 <!--end::Link-->
                             </div>
                             <!--begin::Heading-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="" placeholder="Masukan Nama" autocomplete="off" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
                             <!--begin::Input group-->
                             <div class="fv-row mb-10">
                                 <!--begin::Label-->
@@ -112,26 +123,6 @@
                             <!--begin::Input group-->
                             <div class="fv-row mb-10">
                                 <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">NIK</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="" placeholder="Masukan NIK" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="" placeholder="Masukan Nama" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
                                 <label class="form-label fs-6 fw-bolder text-dark">Umur</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
@@ -145,7 +136,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Alamat</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="" placeholder="Masukan Alamat" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="" placeholder="Masukan Alamat" autocomplete="off" />
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -165,13 +156,15 @@
                                     <span class="required">Jenis Golongan Darah</span>
                                 </label>
                                 <!--end::Label-->
-                                <select name="" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-control form-control-lg form-control-solid">
+                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih Jenis Golongan Darah">
+                                    <option></option>
                                     <option value="1">A</option>
                                     <option value="2">B</option>
                                     <option value="3">AB</option>
                                     <option value="4">O</option>
                                 </select>
                             </div>
+
                             <div class="d-flex flex-column mb-8 fv-row">
                                 <!--begin::Label-->
                                 <label class="d-flex align-items-center fs-6 fw-bold mb-2">
@@ -196,9 +189,13 @@
                                 </div>
                                 <!--end::Dropzone-->
                             </div>
+
+                            <div class="g-recaptcha" data-sitekey="6LcNBMggAAAAAOPrzPV9x9EuPV8rZEv9_nHoXRAt"></div>
+                            <br />
+
                             <!-- begin alert  -->
                             <?php
-                            if ($this->session->flashdata('error_login')) {
+                            if ($this->session->flashdata('error_signup')) {
                                 echo '
                                     <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
@@ -211,7 +208,7 @@
                                         <!--end::Svg Icon-->
                                         <div class="d-flex flex-column">
                                             <h4 class="mb-1 text-danger">Opps!</h4>
-                                            <span>' . $this->session->flashdata('error_login') . '</span>
+                                            <span>' . $this->session->flashdata('error_signup') . '</span>
                                         </div>
                                     </div>
                                     ';
@@ -227,7 +224,6 @@
                                     <span class="indicator-progress">Please wait...
                                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 </button>
-
                             </div>
                             <!--end::Actions-->
                         </form>
@@ -255,21 +251,21 @@
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
     <script>
-		var myDropzone = new Dropzone("#fotoPendonor", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
+        var myDropzone = new Dropzone("#fotoPendonor", {
+            url: "http://localhost/pmi/", // Set the url for your upload script location
+            paramName: "file", // The name that will be used to transfer the file
+            maxFiles: 1,
+            maxFilesize: 5, // MB
+            addRemoveLinks: true,
+            accept: function(file, done) {
+                if (file.name == "wow.jpg") {
+                    done("Naha, you don't.");
+                } else {
+                    done();
+                }
             }
-        }
-    });
-	</script>
+        });
+    </script>
 </body>
 <!--end::Body-->
 

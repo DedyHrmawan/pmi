@@ -80,8 +80,8 @@ tttd?
 																	' . $item->deskripsi . '
 																</td>
 																<td class="text-dark text-hover-primary fs-6">
-																<span class="badge badge-success">Tampil</span>
-																<span class="badge badge-danger">Tidak Tampil</span>
+																<span class="badge badge-success">Diunggah</span>
+																<span class="badge badge-danger">Diarsipkan</span>
 																</td>
 																<td class="text-end">
 																	<a href="" title="Detail Profil" data-bs-toggle="modal" data-bs-target="#mdl_detailProfil" data-id="' . $item->id_profil . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailProfil me-1">

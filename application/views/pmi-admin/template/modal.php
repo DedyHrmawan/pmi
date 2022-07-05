@@ -1,5 +1,5 @@
 <!-- begin modal Tambah profil -->
-<div class="modal fade" tabindex="-1" id="mdl_addprofil">
+<div class="modal fade" id="mdl_addprofil">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -41,13 +41,14 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
-                            <option value="1">Tampil</option>
-                            <option value="2">Tidak Tampil</option>
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                            <option></option>
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
                         </select>
                     </div>
             </div>
+            <!--end::Label-->
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
@@ -60,7 +61,7 @@
 <!-- end modal tambah profil-->
 
 <!-- begin modal Edit profil -->
-<div class="modal fade" tabindex="-1" id="editProfil">
+<div class="modal fade" id="editProfil">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -101,10 +102,10 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
-                            <option value="1">Tampil</option>
-                            <option value="2">Tidak Tampil</option>
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                            <option></option>
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
                         </select>
                     </div>
                 </div>
@@ -121,7 +122,7 @@
 <!-- end modal Edit profil-->
 
 <!-- begin hapus Profil-->
-<div class="modal fade" tabindex="-1" id="hapusProfil">
+<div class="modal fade" id="hapusProfil">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -156,7 +157,7 @@
 <!-- end modal hapus profil -->
 
 <!-- begin modal detail Profil-->
-<div class="modal fade" tabindex="-1" id="mdl_detailProfil">
+<div class="modal fade" id="mdl_detailProfil">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -199,7 +200,7 @@
 <!-- end modal detail Profil -->
 
 <!-- begin modal Tambah Jadwal mobil donor -->
-<div class="modal fade" tabindex="-1" id="mdl_addjadwal">
+<div class="modal fade" id="mdl_addjadwal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -268,7 +269,7 @@
 <!-- end modal tambah jadwal mobil donor-->
 
 <!-- begin edit Jadwal mobil donor-->
-<div class="modal fade" tabindex="-1" id="editJadwal">
+<div class="modal fade" id="editJadwal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -338,7 +339,7 @@
 <!-- end modal edit jadwal mobil donor -->
 
 <!-- begin hapus Jadwal mobil donor-->
-<div class="modal fade" tabindex="-1" id="hapusJadwal">
+<div class="modal fade" id="hapusJadwal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -373,7 +374,7 @@
 <!-- end modal hapus  jadwal mobil donor -->
 
 <!-- begin modal Tambah Informasi -->
-<div class="modal fade" tabindex="-1" id="mdl_addinfo">
+<div class="modal fade" id="mdl_addinfo">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -414,10 +415,10 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
-                            <option value="1">Tampil</option>
-                            <option value="2">Tidak Tampil</option>
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                            <option></option>
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
                         </select>
                     </div>
                 </div>
@@ -433,7 +434,7 @@
 <!-- end modal tambah Informasi-->
 
 <!-- begin modal Edit Informasi -->
-<div class="modal fade" tabindex="-1" id="editInfo">
+<div class="modal fade" id="editInfo">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -474,10 +475,10 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
-                            <option value="1">Tampil</option>
-                            <option value="2">Tidak Tampil</option>
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                            <option></option>
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
                         </select>
                     </div>
                 </div>
@@ -494,7 +495,7 @@
 <!-- end modal Edit Informasi-->
 
 <!-- begin modal hapus Informasi-->
-<div class="modal fade" tabindex="-1" id="hapusInfo">
+<div class="modal fade" id="hapusInfo">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -529,7 +530,7 @@
 <!-- end modal hapus Informasi -->
 
 <!-- begin modal detail Informasi-->
-<div class="modal fade" tabindex="-1" id="detailInfo">
+<div class="modal fade" id="detailInfo">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -572,7 +573,7 @@
 <!-- end modal detail Informasi -->
 
 <!-- begin modal Tambah Agenda -->
-<div class="modal fade" tabindex="-1" id="mdl_addagenda">
+<div class="modal fade" id="mdl_addagenda">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -681,7 +682,7 @@
 <!-- end modal tambah Agenda-->
 
 <!-- begin edit Agenda-->
-<div class="modal fade" tabindex="-1" id="editAgenda">
+<div class="modal fade" id="editAgenda">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -791,7 +792,7 @@
 <!-- end modal edit Agenda -->
 
 <!-- begin hapus Agenda-->
-<div class="modal fade" tabindex="-1" id="hapusAgenda">
+<div class="modal fade" id="hapusAgenda">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -827,7 +828,7 @@
 
 
 <!-- begin modal Tambah Pendonor -->
-<div class="modal fade" tabindex="-1" id="mdl_addpendonor">
+<div class="modal fade" id="mdl_addpendonor">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -970,7 +971,7 @@
 <!-- end modal tambah Pendonor-->
 
 <!-- begin modal Edit Pendonor -->
-<div class="modal fade" tabindex="-1" id="editPendonor">
+<div class="modal fade" id="editPendonor">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1121,7 +1122,7 @@
 <!-- end modal Edit Pendonor-->
 
 <!-- begin hapus Pendonor-->
-<div class="modal fade" tabindex="-1" id="hapusPendonor">
+<div class="modal fade" id="hapusPendonor">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1156,7 +1157,7 @@
 <!-- end modal hapus Pendonor -->
 
 <!-- begin modal detail Pendonor-->
-<div class="modal fade" tabindex="-1" id="mdl_detailpendonor">
+<div class="modal fade" id="mdl_detailpendonor">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1296,7 +1297,7 @@
 <!-- end modal detail pendonor -->
 
 <!-- begin modal Tambah Berita -->
-<div class="modal fade" tabindex="-1" id="mdl_addBerita">
+<div class="modal fade" id="mdl_addBerita">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1375,10 +1376,10 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
-                            <option value="1">Tampil</option>
-                            <option value="2">Tidak Tampil</option>
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                            <option></option>
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
                         </select>
                     </div>
                 </div>
@@ -1394,7 +1395,7 @@
 <!-- end modal tambah Berita-->
 
 <!-- begin modal Edit Berita -->
-<div class="modal fade" tabindex="-1" id="editBerita">
+<div class="modal fade" id="editBerita">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1480,10 +1481,10 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
-                            <option value="1">Tampil</option>
-                            <option value="2">Tidak Tampil</option>
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                            <option></option>
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
                         </select>
                     </div>
                 </div>
@@ -1499,7 +1500,7 @@
 <!-- end modal Edit Berita-->
 
 <!-- begin hapus Berita-->
-<div class="modal fade" tabindex="-1" id="hapusBerita">
+<div class="modal fade" id="hapusBerita">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1534,7 +1535,7 @@
 <!-- end modal hapus Berita -->
 
 <!-- begin modal detail Berita-->
-<div class="modal fade" tabindex="-1" id="detailBerita">
+<div class="modal fade" id="detailBerita">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
