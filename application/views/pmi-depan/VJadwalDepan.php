@@ -16,9 +16,9 @@
 						<thead>
 							<tr class="fw-bold fs-6 text-dark border-bottom border-dark">
 								<th class="min-w-120px">No</th>
+								<th class="min-w-120px">Tanggal</th>
 								<th class="min-w-120px">Lokasi</th>
 								<th class="min-w-120px">Target</th>
-								<th class="min-w-120px">Tanggal</th>
 								<th class="min-w-140px">Jam Buka</th>
 								<th class="min-w-120px">Jam Tutup</th>
 							</tr>
@@ -26,17 +26,9 @@
 						<tbody>
 							<tr>
 								<td>1</td>
+								<td>1 Januari 2022</td>
 								<td>Rumah Sakit Persada</td>
 								<td>50</td>
-								<td>2022-07-02</td>
-								<td>10:00 </td>
-								<td>12:00</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Rumah Sakit Persada</td>
-								<td>50</td>
-								<td>2022-07-02</td>
 								<td>10:00 </td>
 								<td>12:00</td>
 							</tr>
