@@ -30,7 +30,7 @@
 				<div class="col-lg-6 pe-lg-16 mb-10 mb-lg-10">
 					<!--begin::Block-->
 					<div class="rounded landing-dark-border p-9 mb-10">
-						<h4 class="fw-bolder text-white mb-6">Alamat Markas</h4>
+						<h4 class="fw-bolder text-white mb-6">Alamat UDD PMI Kota Malang</h4>
 						<!--begin::Title-->
 						<p class="text-white">Jl. Buring No.10, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119</p>
 						<!--end::Title-->
@@ -97,6 +97,7 @@
 <script src="<?= base_url(); ?>assets/admin/plugins/global/plugins.bundle.js"></script>
 <script src="<?= base_url(); ?>assets/admin/js/scripts.bundle.js"></script>
 <!--end::Global Javascript Bundle-->
+<script src="<?= base_url(); ?>assets/admin/plugins/custom/datatables/datatables.bundle.js"></script>
 <!--begin::Page Vendors Javascript(used by this page)-->
 <script src="<?= base_url(); ?>assets/admin/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
 <script src="<?= base_url(); ?>assets/admin/plugins/custom/typedjs/typedjs.bundle.js"></script>
@@ -106,6 +107,51 @@
 <script src="<?= base_url(); ?>assets/admin/js/custom/pages/pricing/general.js"></script>
 <!--end::Page Custom Javascript-->
 <!--end::Javascript-->
+
+<script>
+	 $('#tableJadwalDepan').dataTable({
+        "info": false,
+		"lengthMenu": [5, 10],
+		"pagelength": 5,
+		"language": {
+            "zeroRecords": "Tidak ada data",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+	 $('#tableJadwal').dataTable({
+        "info": false,
+		"lengthMenu": [10,25,50,100],
+		"pagelength": 5,
+		"language": {
+            "zeroRecords": "Tidak ada data",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+</script>
 </body>
 <!--end::Body-->
 

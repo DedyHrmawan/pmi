@@ -62,6 +62,7 @@
                                                     <th class="min-w-120px text-center">Penulis</th>
                                                     <th class="min-w-120px text-center">Tanggal</th>
                                                     <th class="min-w-120px text-center">Deskripsi</th>
+                                                    <th class="min-w-120px text-center">Status</th>
                                                     <th class="min-w-150px text-center">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -73,6 +74,10 @@
                                                     <td class="text-dark text-hover-primary fs-6">Wulan Yustiara</td>
                                                     <td class="text-dark text-hover-primary fs-6">27 Juni 2022</td>
                                                     <td class="text-dark text-hover-primary fs-6">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</td>
+                                                    <td class="text-dark text-hover-primary fs-6">
+                                                        <span class="badge badge-success">Tampil</span>
+                                                        <span class="badge badge-danger">Tidak Tampil</span>
+                                                    </td>
                                                     <td class="text-end">
                                                         <a href="" title="Detail Berita" data-bs-toggle="modal" data-bs-target="#detailBerita" data-id="'.$item->id_informasi.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm detailInfo me-1">
                                                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
@@ -129,7 +134,7 @@
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
                             <span class="text-muted fw-bold me-1">2022©</span>
-                            <a href="" target="_blank" class="text-gray-800 text-hover-primary">PMI Malang</a>
+                            <a href="" target="_blank" class="text-gray-800 text-hover-primary">PMI Kota Malang</a>
                         </div>
                         <!--end::Copyright-->
                     </div>

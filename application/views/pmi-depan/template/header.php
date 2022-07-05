@@ -5,7 +5,7 @@
 
 <head>
 	<base href="<?= base_url(); ?>">
-	<title>PMI - Malang</title>
+	<title>PMI - UDD Kota Malang</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="Palang Merah Indonesia Kota Malang" />
 	<meta name="keywords" content="PMI, Palang Merah Indonesia, Malang, Stok Darah" />
@@ -103,7 +103,7 @@
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('agenda-pmi'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Agenda</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('jadwal'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Jadwal Mobil Donor</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->

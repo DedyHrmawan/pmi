@@ -100,7 +100,7 @@
 
         },
         "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
             "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
             ">" +
             "<'table-responsive'tr>" +
@@ -165,7 +165,7 @@
 
         },
         "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
             "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
             ">" +
             "<'table-responsive'tr>" +
@@ -285,7 +285,7 @@
 
         },
         "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
             "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
             ">" +
             "<'table-responsive'tr>" +
@@ -337,7 +337,7 @@
 
         },
         "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
             "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
             ">" +
             "<'table-responsive'tr>" +
@@ -407,7 +407,7 @@
 
         },
         "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
             "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
             ">" +
             "<'table-responsive'tr>" +
@@ -434,7 +434,7 @@
 
         },
         "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
             "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
             ">" +
             "<'table-responsive'tr>" +
@@ -523,7 +523,7 @@
         }
     });
 </script>
-<!-- <script>
+<script>
     // add tiny informasi
     var addTiny = {
         selector: ".textTiny",
@@ -535,7 +535,7 @@
     };
 
     tinymce.init(addTiny);
-</script> -->
+</script>
 </body>
 <!--end::Body-->
 

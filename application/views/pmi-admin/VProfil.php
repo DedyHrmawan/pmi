@@ -1,3 +1,5 @@
+tttd?
+
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled aside-fixed">
 	<!--begin::Main-->
 	<!--begin::Root-->
@@ -60,6 +62,7 @@
 												<tr class="fw-bolder text-muted">
 													<th class="min-w-120px text-center">Judul</th>
 													<th class="min-w-120px text-center">Deskripsi</th>
+													<th class="min-w-120px text-center">Status</th>
 													<th class="min-w-150px text-center">Aksi</th>
 												</tr>
 											</thead>
@@ -67,8 +70,8 @@
 											<!--begin::Table body-->
 											<tbody>
 												<?php
-													foreach ($profile as $item) {                                 
-														echo '
+												foreach ($profile as $item) {
+													echo '
 															<tr>
 																<td class="text-dark fw-bolder text-hover-primary fs-6">
 																	' . $item->judul_profil . '
@@ -76,8 +79,12 @@
 																<td class="text-dark text-hover-primary fs-6">
 																	' . $item->deskripsi . '
 																</td>
+																<td class="text-dark text-hover-primary fs-6">
+																<span class="badge badge-success">Tampil</span>
+																<span class="badge badge-danger">Tidak Tampil</span>
+																</td>
 																<td class="text-end">
-																	<a href="" title="Detail Profil" data-bs-toggle="modal" data-bs-target="#mdl_detailProfil" data-id="'. $item->id_profil .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailProfil me-1">
+																	<a href="" title="Detail Profil" data-bs-toggle="modal" data-bs-target="#mdl_detailProfil" data-id="' . $item->id_profil . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailProfil me-1">
 																		<!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
 																		<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 																				<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -86,7 +93,7 @@
 																			</svg></span>
 																		<!--end::Svg Icon-->
 																	</a>
-																	<a href="" title="Edit Profil" data-bs-toggle="modal" data-bs-target="#editProfil" data-id="'. $item->id_profil .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editProfil me-1">
+																	<a href="" title="Edit Profil" data-bs-toggle="modal" data-bs-target="#editProfil" data-id="' . $item->id_profil . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editProfil me-1">
 																		<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
 																		<span class="svg-icon svg-icon-3">
 																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -96,7 +103,7 @@
 																		</span>
 																		<!--end::Svg Icon-->
 																	</a>
-																	<a href="#" title="Hapus Profil" data-bs-toggle="modal" data-bs-target="#hapusProfil" data-id="'. $item->id_profil .'" class="btn btn-icon btn-bg-light btn-active-color-primary hapusProfil btn-sm">
+																	<a href="#" title="Hapus Profil" data-bs-toggle="modal" data-bs-target="#hapusProfil" data-id="' . $item->id_profil . '" class="btn btn-icon btn-bg-light btn-active-color-primary hapusProfil btn-sm">
 																		<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
 																		<span class="svg-icon svg-icon-3">
 																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -110,8 +117,8 @@
 																</td>
 															</tr>
 														';
-													}
-												?> 
+												}
+												?>
 											</tbody>
 											<!--end::Table body-->
 										</table>
@@ -135,7 +142,7 @@
 						<!--begin::Copyright-->
 						<div class="text-dark order-2 order-md-1">
 							<span class="text-muted fw-bold me-1">2022©</span>
-							<a href="" target="_blank" class="text-gray-800 text-hover-primary">PMI Malang</a>
+							<a href="" target="_blank" class="text-gray-800 text-hover-primary">PMI Kota Malang</a>
 						</div>
 						<!--end::Copyright-->
 					</div>
@@ -165,4 +172,3 @@
 
 
 </body>
-

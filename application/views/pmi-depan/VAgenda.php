@@ -10,7 +10,7 @@
 			<!--begin::Description-->
 			<div class="fs-5 fw-bold text-white">
 				<br />
-				Agenda PMI Malang yang akan datang !
+				Agenda PMI Kota Malang yang akan datang !
 			</div>
 			<!--end::Description-->
 		</div>
@@ -47,7 +47,7 @@
 			<!--begin::Description-->
 			<div class="fs-5 fw-bold text-white">
 				<br />
-				Agenda PMI Malang yang telah selesai !
+				Agenda PMI Kota Malang yang telah selesai !
 			</div>
 			<!--end::Description-->
 		</div>

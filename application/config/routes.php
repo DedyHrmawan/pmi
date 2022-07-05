@@ -114,3 +114,4 @@ $route['informasi-pmi']      = 'Welcome/VInformasi';
 $route['stokdarah-pmi']      = 'Welcome/VStokDarah';
 $route['news']      = 'Welcome/VNews';
 $route['agenda-pmi']      = 'Welcome/VAgendaPMI';
+$route['jadwal']      = 'Welcome/VJadwalDepan';

@@ -48,7 +48,7 @@
                         </a>
                         <!--end::Logo-->
                         <!--begin::Title-->
-                        <h1 class="fw-bolder fs-2qx pb-5 pb-md-10" style="color: #ffffff;">Welcome to PMI Malang</h1>
+                        <h1 class="fw-bolder fs-2qx pb-5 pb-md-10" style="color: #ffffff;">Welcome to UDD PMI Kota Malang</h1>
                         <!--end::Title-->
                         <!--begin::Description-->
                         <p class="fw-bold fs-2" style="color: #ffffff;">Keep Calm and Donate Blood
@@ -74,7 +74,7 @@
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
-                                <h1 class="text-dark mb-3">Sign Up to PMI Malang</h1>
+                                <h1 class="text-dark mb-3">Sign Up to PMI Kota Malang</h1>
                                 <!--end::Title-->
                                 <!--begin::Link-->
                                 <div class="text-gray-400 fw-bold fs-4">Already have an account?
