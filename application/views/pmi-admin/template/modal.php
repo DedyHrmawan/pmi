@@ -36,6 +36,17 @@
                         <!--end::Label-->
                         <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Deskripsi" type="text" name="deskripsi" cols="30" rows="10"></textarea>
                     </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
+                            <option value="1">Tampil</option>
+                            <option value="2">Tidak Tampil</option>
+                        </select>
+                    </div>
             </div>
 
             <div class="modal-footer">
@@ -83,7 +94,18 @@
                             <span class="required">Deskripsi</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid" type="text" name="deskripsi" id="deskripsi_edit" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid textTiny" type="text" name="deskripsi" id="deskripsi_edit" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
+                            <option value="1">Tampil</option>
+                            <option value="2">Tidak Tampil</option>
+                        </select>
                     </div>
                 </div>
 
@@ -132,6 +154,49 @@
     </div>
 </div>
 <!-- end modal hapus profil -->
+
+<!-- begin modal detail Profil-->
+<div class="modal fade" tabindex="-1" id="mdl_detailProfil">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-3">Detail Profil</h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                            <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                            <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                        </svg></span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <h6>Judul</h6>
+                    <p><span id="judul_profil"></p>
+                </div>
+                <div class="form-group">
+                    <h6>Deskripsi</h6>
+                    <p><span id="deskripsi"></p>
+                </div>
+                <div class="form-group">
+                    <h6>Status</h6>
+                    <p><span class="badge badge-success" id="">Tampil</span></p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal detail Profil -->
 
 <!-- begin modal Tambah Jadwal mobil donor -->
 <div class="modal fade" tabindex="-1" id="mdl_addjadwal">
@@ -344,6 +409,17 @@
                         <!--end::Label-->
                         <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Deskripsi" type="text" name="deskripsi" cols="30" rows="10"></textarea>
                     </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
+                            <option value="1">Tampil</option>
+                            <option value="2">Tidak Tampil</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="modal-footer">
@@ -392,6 +468,17 @@
                         </label>
                         <!--end::Label-->
                         <textarea class="form-control form-control-solid" type="text" name="deskripsi" id="deskripsiInfo_edit" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
+                            <option value="1">Tampil</option>
+                            <option value="2">Tidak Tampil</option>
+                        </select>
                     </div>
                 </div>
 
@@ -470,6 +557,10 @@
                     <h6>Deskripsi</h6>
                     <p><span id="detail_deskripsi"></span></p>
                 </div>
+                <div class="form-group">
+                    <h6>Status</h6>
+                    <p><span class="badge badge-success" id="">Tampil</span></p>
+                </div>
             </div>
 
             <div class="modal-footer">
@@ -479,45 +570,6 @@
     </div>
 </div>
 <!-- end modal detail Informasi -->
-
-<!-- begin modal detail Profil-->
-<div class="modal fade" tabindex="-1" id="mdl_detailProfil">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="mb-3">Detail Profil</h3>
-
-                <!--begin::Close-->
-                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
-                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
-                            <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
-                            <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
-                        </svg></span>
-                    <!--end::Svg Icon-->
-                </div>
-                <!--end::Close-->
-            </div>
-
-            <div class="modal-body">
-                <div class="form-group">
-                    <h6>Judul</h6>
-                    <p><span id="judul_profil"></p>
-                </div>
-                <div class="form-group">
-                    <h6>Deskripsi</h6>
-                    <p><span id="deskripsi"></p>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end modal detail Profil -->
 
 <!-- begin modal Tambah Agenda -->
 <div class="modal fade" tabindex="-1" id="mdl_addagenda">
@@ -1298,32 +1350,36 @@
                         </label>
                         <!--end::Label-->
                         <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Isi Berita" name="" cols="30" rows="10"></textarea>
-                        <!--begin::Input group-->
-                        <div class="d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
-                                <span>Gambar</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Dropzone-->
-                            <div class="dropzone" id="imgBerita">
-                                <!--begin::Message-->
-                                <div class="dz-message needsclick">
-                                    <!--begin::Icon-->
-                                    <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
-                                    <!--end::Icon-->
-
-                                    <!--begin::Info-->
-                                    <div class="ms-4">
-                                        <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
-                                        <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
-                                    </div>
-                                    <!--end::Info-->
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                            <span>Gambar</span>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Dropzone-->
+                        <div class="dropzone" id="imgBerita">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick">
+                                <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                <div class="ms-4">
+                                    <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
+                                    <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
                                 </div>
                             </div>
-                            <!--end::Dropzone-->
                         </div>
-                        <!--end::Input group-->
+                        <!--end::Dropzone-->
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
+                            <option value="1">Tampil</option>
+                            <option value="2">Tidak Tampil</option>
+                        </select>
                     </div>
                 </div>
 
@@ -1392,32 +1448,43 @@
                         </label>
                         <!--end::Label-->
                         <textarea class="form-control form-control-solid" name="" cols="30" rows="10">isi berita</textarea>
-                        <!--begin::Input group-->
-                        <div class="d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
-                                <span>Gambar</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Dropzone-->
-                            <div class="dropzone" id="editimgBerita">
-                                <!--begin::Message-->
-                                <div class="dz-message needsclick">
-                                    <!--begin::Icon-->
-                                    <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
-                                    <!--end::Icon-->
+                    </div>
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                            <span>Gambar</span>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Dropzone-->
+                        <div class="dropzone" id="editimgBerita">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick">
+                                <!--begin::Icon-->
+                                <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                <!--end::Icon-->
 
-                                    <!--begin::Info-->
-                                    <div class="ms-4">
-                                        <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
-                                        <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
-                                    </div>
-                                    <!--end::Info-->
+                                <!--begin::Info-->
+                                <div class="ms-4">
+                                    <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
+                                    <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
                                 </div>
+                                <!--end::Info-->
                             </div>
-                            <!--end::Dropzone-->
                         </div>
-                        <!--end::Input group-->
+                        <!--end::Dropzone-->
+                    </div>
+                    <!--end::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select name="" aria-label="Pilih Status" data-control="select2" class="form-select form-select-sm form-select-solid">
+                            <option value="1">Tampil</option>
+                            <option value="2">Tidak Tampil</option>
+                        </select>
                     </div>
                 </div>
 
@@ -1540,6 +1607,18 @@
                         <!--begin::Col-->
                         <div class="col-lg-8 fv-row">
                             <span class="fw-bold text-gray-800 fs-6">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</span>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-5">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-bold text-muted">Status</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8 fv-row">
+                            <p><span class="badge badge-success" id="">Tampil</span></p>
                         </div>
                         <!--end::Col-->
                     </div>

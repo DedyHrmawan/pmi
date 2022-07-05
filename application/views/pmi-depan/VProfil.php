@@ -45,7 +45,7 @@
 								<!--begin::Item-->
 								<div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
 									<!--begin::Text-->
-									<a href="#" class="text-muted text-hover-danger pe-2">Profil PMI Malang</a>
+									<a href="#" class="text-muted text-hover-danger pe-2">Profil PMI Kota Malang</a>
 									<!--end::Text-->
 									<!--end::Number-->
 								</div>

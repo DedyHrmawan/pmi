@@ -3,7 +3,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="<?= base_url(); ?>">
-		<title>PMI - Malang</title>
+		<title>PMI - UDD Kota Malang</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Palang Merah Indonesia Kota Malang" />
 		<meta name="keywords" content="PMI, Palang Merah Indonesia, Malang, Stok Darah" />

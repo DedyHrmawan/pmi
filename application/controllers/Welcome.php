@@ -72,6 +72,11 @@ class Welcome extends CI_Controller {
 		$this->template->depan('pmi-depan/VAgenda');
 	}
 
+	public function VJadwalDepan()
+	{
+		$this->template->depan('pmi-depan/VJadwalDepan');
+	}
+
 	//signup penodnor
 	public function VSignUp()
 	{

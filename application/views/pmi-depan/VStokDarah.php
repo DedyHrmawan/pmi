@@ -13,6 +13,12 @@
                 Stok dapat berubah sewaktu-waktu. Untuk konfirmasi stok, silahkan menghubungi UDD
             </div>
             <!--end::Description-->
+            <!--begin::Description-->
+            <div class="fs-5 fw-bold text-white">
+                <br />
+                Terakhir diupdate pada <?= date('d-m-Y H:i:s') ?>
+            </div>
+            <!--end::Description-->
         </div>
         <!--end::Heading-->
         <!--begin::Statistics-->
