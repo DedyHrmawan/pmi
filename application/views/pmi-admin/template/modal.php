@@ -26,7 +26,7 @@
                             <span class="required">Judul</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul" name="judul_profil" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul" name="judul_profil" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -86,7 +86,7 @@
                             <span class="required">Judul</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" id="judulProfil_edit" name="judul_profil"/>
+                        <input type="text" class="form-control form-control-solid" id="judulProfil_edit" name="judul_profil" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -101,7 +101,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid"  id="statusProfil_edit" name="status">
+                        <select class="form-select form-select-solid" id="statusProfil_edit" name="status">
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
                         </select>
@@ -224,7 +224,7 @@
                             <span class="required">Lokasi</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi" name="lokasi" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi" name="lokasi" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -233,7 +233,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="add_jadwal" class="form-control form-control-solid " placeholder="Pilih Jadwal" name="jadwal" required/>
+                            <input id="add_jadwal" class="form-control form-control-solid " placeholder="Pilih Jadwal" name="jadwal" required />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -243,21 +243,21 @@
                             <span class="required">Target</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Target" name="target" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Target" name="target" required />
                     </div>
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Jam Buka</label>
-                            <input id="add_jambuka" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Buka" name="jam_buka" required/>
+                            <input id="add_jambuka" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Buka" name="jam_buka" required />
                         </div>
                         <!--end::Col-->
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Jam Tutup</label>
                             <!--begin::Input-->
-                            <input id="add_jamtutup" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Tutup" name="jam_tutup" required/>
+                            <input id="add_jamtutup" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Tutup" name="jam_tutup" required />
                             <!--end::Input-->
                         </div>
                         <!--end::Col-->
@@ -301,7 +301,7 @@
                             <span class="required">Lokasi</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" id="lokasi_edit" name="lokasi"/>
+                        <input type="text" class="form-control form-control-solid" id="lokasi_edit" name="lokasi" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -310,7 +310,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="edit_jadwal" class="form-control form-control-solid " name="jadwal"/>
+                            <input id="edit_jadwal" class="form-control form-control-solid " name="jadwal" />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -320,21 +320,21 @@
                             <span class="required">Target</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" id="target_edit" name="target"/>
+                        <input type="text" class="form-control form-control-solid" id="target_edit" name="target" />
                     </div>
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Jam Buka</label>
-                            <input id="edit_jambuka" type="text" class="form-control form-control-solid" name="jam_buka"/>
+                            <input id="edit_jambuka" type="text" class="form-control form-control-solid" name="jam_buka" />
                         </div>
                         <!--end::Col-->
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Jam Tutup</label>
                             <!--begin::Input-->
-                            <input id="edit_jamtutup" type="text" class="form-control form-control-solid" name="jam_tutup"/>
+                            <input id="edit_jamtutup" type="text" class="form-control form-control-solid" name="jam_tutup" />
                             <!--end::Input-->
                         </div>
                         <!--end::Col-->
@@ -414,7 +414,7 @@
                             <span class="required">Judul</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul" name="judul_informasi" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul" name="judul_informasi" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -429,7 +429,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid"  name="status" required>
+                        <select class="form-select form-select-solid" name="status" required>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
                         </select>
@@ -473,7 +473,7 @@
                             <span class="required">Judul</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" name="judul_informasi" id="judul_edit"/>
+                        <input type="text" class="form-control form-control-solid" name="judul_informasi" id="judul_edit" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -488,7 +488,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid"  name="status" id="statusInfo_edit">
+                        <select class="form-select form-select-solid" name="status" id="statusInfo_edit">
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
                         </select>
@@ -610,7 +610,7 @@
                             <span class="required">Judul Agenda</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Agenda" name="nama_agenda" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Agenda" name="nama_agenda" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -627,7 +627,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="add_tanggal" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tgl_agenda" required/>
+                            <input id="add_tanggal" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tgl_agenda" required />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -637,21 +637,21 @@
                             <span class="required">Link Agenda</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Link Agenda" name="lokasi_agenda" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Link Agenda" name="lokasi_agenda" required />
                     </div>
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Jam Buka</label>
-                            <input id="add_jammulai" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Buka" name="jam_buka" required/>
+                            <input id="add_jammulai" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Buka" name="jam_buka" required />
                         </div>
                         <!--end::Col-->
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Jam Tutup</label>
                             <!--begin::Input-->
-                            <input id="add_jamselesai" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Tutup" name="jam_tutup" required/>
+                            <input id="add_jamselesai" type="text" class="form-control form-control-solid" placeholder="Masukan Jam Tutup" name="jam_tutup" required />
                             <!--end::Input-->
                         </div>
                         <!--end::Col-->
@@ -720,7 +720,7 @@
                             <span class="required">Judul Agenda</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" name="nama_agenda" id="namaAgenda_edit"/>
+                        <input type="text" class="form-control form-control-solid" name="nama_agenda" id="namaAgenda_edit" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -728,7 +728,7 @@
                             <span class="required">Lokasi</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" name="lokasi_agenda" id="lokasiAgenda_edit" required/>
+                        <input type="text" class="form-control form-control-solid" name="lokasi_agenda" id="lokasiAgenda_edit" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -736,7 +736,7 @@
                             <span class="required">Link Agenda</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" value="Link" name="" required/>
+                        <input type="text" class="form-control form-control-solid" value="Link" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -867,7 +867,7 @@
                             <span class="required">NIK</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan NIK" name="" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan NIK" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -875,7 +875,7 @@
                             <span class="required">Password</span>
                         </label>
                         <!--end::Label-->
-                        <input type="password" class="form-control form-control-solid" placeholder="Masukan Password" name="" required/>
+                        <input type="password" class="form-control form-control-solid" placeholder="Masukan Password" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -883,7 +883,7 @@
                             <span class="required">Nama</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -916,7 +916,7 @@
                             <span class="required">Umur</span>
                         </label>
                         <!--end::Label-->
-                        <input type="number" class="form-control form-control-solid" placeholder="Masukan Umur" name="" required/>
+                        <input type="number" class="form-control form-control-solid" placeholder="Masukan Umur" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -937,7 +937,7 @@
                             <span class="required">Alamat</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -945,7 +945,7 @@
                             <span class="required">Nomor Telepon</span>
                         </label>
                         <!--end::Label-->
-                        <input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="" required/>
+                        <input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -954,7 +954,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="add_donorTerakhir" class="form-control form-control-solid " placeholder="Tanggal Donor Terakhir" name="jadwal" required/>
+                            <input id="add_donorTerakhir" class="form-control form-control-solid " placeholder="Tanggal Donor Terakhir" name="jadwal" required />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -965,7 +965,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="add_donorSelanjutnya" class="form-control form-control-solid " placeholder="Tanggal Donor Selanjutnya" name="jadwal" required/>
+                            <input id="add_donorSelanjutnya" class="form-control form-control-solid " placeholder="Tanggal Donor Selanjutnya" name="jadwal" required />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -1335,7 +1335,7 @@
                             <span class="required">Judul Berita</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Berita" name="judul_berita" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Berita" name="judul_berita" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1343,7 +1343,7 @@
                             <span class="required">Penulis</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Penulis" name="penulis_berita" required/>
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Penulis" name="penulis_berita" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1352,7 +1352,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="add_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tanggal_berita" required/>
+                            <input id="add_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tanggal_berita" required />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -1388,14 +1388,14 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid"  name="status">
+                        <select class="form-select form-select-solid" name="status">
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="modal-footer">                    
+                <div class="modal-footer">
                     <input type="hidden" id="imageBerita" name="link">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
@@ -1493,8 +1493,8 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid"  id="statusBerita_edit" name="status">
-                         
+                        <select class="form-select form-select-solid" id="statusBerita_edit" name="status">
+
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
                         </select>
@@ -1573,7 +1573,7 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4 text-center">
                         <div class="">
-                            <img src="assets/admin/media/books/1.png" alt="image" />
+                            <img src="assets/admin/media/books/1.png" alt="image" style="max-width: 500px; min-width:400px;"  />
                         </div>
                     </div>
                     <!--end::Pic-->
@@ -1592,7 +1592,7 @@
                     <!--begin::Input group-->
                     <div class="row mb-5">
                         <!--begin::Label-->
-                        <label class="col-lg-4 fw-bold text-muted" >Penulis</label>
+                        <label class="col-lg-4 fw-bold text-muted">Penulis</label>
                         <!--end::Label-->
                         <!--begin::Col-->
                         <div class="col-lg-8 fv-row">
@@ -1648,3 +1648,220 @@
     </div>
 </div>
 <!-- end modal detail Berita -->
+
+<!-- begin modal Tambah Foto Carousel -->
+<div class="modal fade" id="mdl_addcarousel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-3">Tambah Foto Beranda</h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                            <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                            <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                        </svg></span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <form action="<?= site_url('') ?>" method="post">
+                <div class="modal-body">
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                            <span>Gambar</span>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Dropzone-->
+                        <div class="dropzone" id="imgBerita">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick">
+                                <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                <div class="ms-4">
+                                    <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
+                                    <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Dropzone-->
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <select class="form-select form-select-solid" name="status">
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="imageBerita" name="link">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end modal tambah Foto Carousel-->
+
+<!-- begin modal Edit Foto Carousel -->
+<div class="modal fade" id="editCarousel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-3">Edit Foto Beranda</h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                            <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                            <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                        </svg></span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <form action="<?= site_url('') ?>" method="post">
+                <div class="modal-body">
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                            <span>Gambar</span>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Dropzone-->
+                        <div class="dropzone" id="editimgBerita">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick">
+                                <!--begin::Icon-->
+                                <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                <!--end::Icon-->
+
+                                <!--begin::Info-->
+                                <div class="ms-4">
+                                    <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
+                                    <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
+                                </div>
+                                <!--end::Info-->
+                            </div>
+                        </div>
+                        <!--end::Dropzone-->
+                    </div>
+                    <!--end::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Status</span>
+                        </label>
+                        <select class="form-select form-select-solid" id="statusBerita_edit" name="status">
+                            <option value="1">Diunggah</option>
+                            <option value="2">Diarsipkan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="idBerita_edit" name="id_berita">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end modal Edit Foto Carousel-->
+
+<!-- begin hapus Foto Carousel-->
+<div class="modal fade" id="hapusCarousel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-3">Hapus Foto</h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                            <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                            <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                        </svg></span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <form action="<?= site_url('') ?>" method="post">
+                <div class="modal-body">
+                    <p>Apakah anda yakin ingin menghapus Foto tersebut ?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="hapusBerita_id" name="id_berita">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Hapus</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end modal hapus Foto Carousel -->
+
+<!-- begin modal detail Foto Carousel-->
+<div class="modal fade" id="detailCarousel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-3">Detail Foto</h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                            <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                            <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                        </svg></span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+                <!--begin::Card body-->
+                <div class="card-body">
+                    <!--begin: Pic-->
+                    <div class="form-group">
+                        <h6>Detail Foto</h6>
+                        <div class="me-7 mb-4 text-center">
+                            <div class="">
+                                <img src="assets/admin/media/demo1.jpg" alt="image" style="max-width: 500px; min-width:300px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Pic-->
+                    <div class="form-group">
+                        <h6>Status</h6>
+                        <p id=""><span class="badge badge-success">Diunggah</span></p>
+                    </div>
+                </div>
+                <!--end::Card body-->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal detail Foto Carousel -->

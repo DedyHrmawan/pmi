@@ -39,4 +39,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('pmi-depan/VSignUp');
 	}
 
+	//Carousel
+	public function VCarousel()
+	{
+		$data = array(
+			'nav_title' => 'Carousel Foto Beranda PMI Kota Malang'
+		);			
+		$this->template->admin('pmi-admin/VCarousel', $data);
+	}
+
 }

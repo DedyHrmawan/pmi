@@ -104,6 +104,8 @@ $route['pendonor']         = 'Welcome/VPendonor';
 //berita
 $route['berita']         = 'BeritaController/VBerita';
 
+$route['carousel']         = 'Welcome/VCarousel';
+
 //signup
 $route['signup']         = 'Welcome/VSignUp';
 
