@@ -53,7 +53,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //depan
-$route['default_controller'] = 'welcome/landing';
+$route['default_controller'] = 'DepanController/landing';
 
 //authentication
 $route['login']         = 'Welcome/VLogin';
@@ -105,7 +105,7 @@ $route['pendonor']         = 'Welcome/VPendonor';
 $route['berita']         = 'BeritaController/VBerita';
 
 //signup
-$route['signup']         = 'AuthController/VSignUp';
+$route['signup']         = 'Welcome/VSignUp';
 
 //depan
 $route['beranda']            = 'DepanController/landing';
