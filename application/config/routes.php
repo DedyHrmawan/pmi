@@ -102,7 +102,7 @@ $route['stokdarah/delete']  = 'DarahController/delete';
 $route['pendonor']         = 'Welcome/VPendonor';
 
 //berita
-$route['berita']         = 'Welcome/VBerita';
+$route['berita']         = 'BeritaController/VBerita';
 
 //signup
 $route['signup']         = 'Welcome/VSignUp';

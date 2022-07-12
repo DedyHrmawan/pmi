@@ -137,7 +137,7 @@
                 id_profil: id
             },
             success: res => {
-                $('#judulProfil_edit').val(res[0].judul_profil)  
+                $('#judulProfil_edit').val(res[0].judul_profil)
                 tinymce.get('deskripsiProfil_edit').setContent(res[0].deskripsi)
                 $('#statusProfil_edit').val(res[0].status).change()
                 $('#id_edit').val(res[0].id_profil)
@@ -264,7 +264,7 @@
                 id_informasi: id
             },
             success: res => {
-                $('#judul_edit').val(res[0].judul_informasi)               
+                $('#judul_edit').val(res[0].judul_informasi)
                 tinymce.get('deskripsiInfo_edit').setContent(res[0].deskripsi);
                 $('#statusInfo_edit').val(res[0].status).change()
                 $('#idInfo_edit').val(res[0].id_informasi)
@@ -311,9 +311,9 @@
                 id_berita: id
             },
             success: res => {
-                $('#judulBerita_edit').val(res[0].judul_berita) 
-                $('#penulisBerita_edit').val(res[0].penulis_berita)  
-                $('#edit_tanggalBerita').val(res[0].tanggal_berita)           
+                $('#judulBerita_edit').val(res[0].judul_berita)
+                $('#penulisBerita_edit').val(res[0].penulis_berita)
+                $('#edit_tanggalBerita').val(res[0].tanggal_berita)
                 $('#statusBerita_edit').val(res[0].status).change()
                 $('#idBerita_edit').val(res[0].id_berita)
             }
@@ -584,6 +584,11 @@
     var addTiny = {
         selector: ".textTiny",
         menubar: false,
+        setup: function (editor) {
+        editor.on('change', function () {
+            tinymce.triggerSave();
+        });
+    },
         toolbar: ["styleselect fontselect fontsizeselect",
             "undo redo | cut copy paste | bold italic | link image | alignleft aligncenter alignright alignjustify",
             "bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code"
@@ -591,6 +596,63 @@
     };
 
     tinymce.init(addTiny);
+
+        $("#submitprofil").click(function() {
+        var editorContent = tinyMCE.get('tinyprofil').getContent();
+        if (editorContent == '' || editorContent == null)
+        {
+            // Add error message if not already present
+            if (!$('#message-profil').length)
+            {
+                $('<span id="message-profil">Deskripsi Tidak Boleh Kosong !</span>').insertAfter($(tinyMCE.get('tinyprofil').getContainer()));
+            }
+        }
+        else
+        {
+            // Remove error message
+            if ($('#message-profil'))
+                $('#message-profil').remove();
+        }
+
+    })
+
+        $("#submitinformasi").click(function() {
+        var editorContent = tinyMCE.get('tinyinformasi').getContent();
+        if (editorContent == '' || editorContent == null)
+        {
+            // Add error message if not already present
+            if (!$('#message-informasi').length)
+            {
+                $('<span id="message-informasi">Deskripsi Tidak Boleh Kosong !</span>').insertAfter($(tinyMCE.get('tinyinformasi').getContainer()));
+            }
+        }
+        else
+        {
+            // Remove error message
+            if ($('#message-informasi'))
+                $('#message-informasi').remove();
+        }
+
+    })
+        $("#submitberita").click(function() {
+        var editorContent = tinyMCE.get('tinyberita').getContent();
+        if (editorContent == '' || editorContent == null)
+        {
+            // Add error message if not already present
+            if (!$('#message-berita').length)
+            {
+                $('<span id="message-informasi">Deskripsi Tidak Boleh Kosong !</span>').insertAfter($(tinyMCE.get('tinyberita').getContainer()));
+            }
+        }
+        else
+        {
+            // Remove error message
+            if ($('#message-berita'))
+                $('#message-berita').remove();
+        }
+
+    })
+    
 </script>
 </body>
 <!--end::Body-->
