@@ -4,7 +4,9 @@ class AuthController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('User');
+        $this->load->model('User');        
+        $this->load->library('form_validation');
+        $this->load->library('upload');
     }
 
     public function auth()
@@ -24,4 +26,55 @@ class AuthController extends CI_Controller
             redirect('login');
         }
     }    
+
+    public function register(){        
+        $param = $_POST;
+
+        $store['nama_pendonor']     = $_POST['nama_pendonor'];
+        $store['email_pendonor']    = $_POST['email_pendonor'];
+        $store['password']          = $_POST['password'];
+        $store['umur_pendonor']     = $_POST['umur_pendonor'];
+        $store['alamat_pendonor']   = $_POST['alamat_pendonor'];
+        $store['telepon_pendonor']  = $_POST['telepon_pendonor'];
+        $store['id_jenis_darah']    = $_POST['id_jenis_darah'];
+        $store['foto_pendonor']     = $_POST['link'];
+
+        $this->User->signup($store);
+        $this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
+
+        redirect('login');
+        
+    }
+
+    function upload_image(){
+        $config['upload_path'] = './uploads/pendonor/'; //path folder
+        $config['allowed_types'] = 'jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = FALSE; //Enkripsi nama yang terupload
+ 
+        $this->upload->initialize($config);
+        if(!empty($_FILES['file']['name'])){
+ 
+            if ($this->upload->do_upload('file')){
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./uploads/pendonor/'.$gbr['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= true;
+                $config['width']= 600;
+                $config['new_image']= './uploads/pendonor/'.$gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+ 
+                $gambar=$gbr['file_name'];
+
+                return ['status' => true, 'link' => base_url('uploads/pendonor/'.$gambar)];
+            }else{
+                return ['status' => false, 'msg' => $this->upload->display_errors()];
+            }
+                      
+        }else{
+            return ['status' => false, 'msg' => "Upload image is required"];
+        }         
+    }
 }

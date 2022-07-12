@@ -22,6 +22,11 @@ class Darah extends CI_Model{
         $res    = $this->db->get_where('detail_darah', $filter)->result();
         return $res;
     }
+    public function getUpdated(){
+        $sql = "SELECT updated_at FROM detail_darah ORDER BY updated_at DESC LIMIT 1;";
+        $result = $this->db->query($sql);
+        return $result->row()->updated_at;
+    }
     public function getStock($darah,$jenis){
         $sql = "SELECT stok 
         FROM detail_darah

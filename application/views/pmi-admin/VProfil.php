@@ -71,17 +71,27 @@ tttd?
 											<tbody>
 												<?php
 												foreach ($profile as $item) {
+													$status = "";
+													$text = "";
+													if($item->status == 1){
+														$status = "badge badge-success";
+														$text = "Diunggah";
+													}else{
+														$status = "badge badge-danger";
+														$text = "Diarsipkan";
+													}
+													$desc = mb_strimwidth($item->deskripsi, 0, 80, "...");
 													echo '
 															<tr>
 																<td class="text-dark fw-bolder text-hover-primary fs-6">
 																	' . $item->judul_profil . '
 																</td>
 																<td class="text-dark text-hover-primary fs-6">
-																	' . $item->deskripsi . '
+																	' . $desc . '
 																</td>
 																<td class="text-dark text-hover-primary fs-6">
-																<span class="badge badge-success">Diunggah</span>
-																<span class="badge badge-danger">Diarsipkan</span>
+																
+																<span class="'.$status.'">'.$text.'</span>
 																</td>
 																<td class="text-end">
 																	<a href="" title="Detail Profil" data-bs-toggle="modal" data-bs-target="#mdl_detailProfil" data-id="' . $item->id_profil . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailProfil me-1">

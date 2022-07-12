@@ -41,7 +41,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status" name="status">
                             <option></option>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
@@ -95,14 +95,14 @@
                             <span class="required">Deskripsi</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid textTiny" type="text" name="deskripsi" id="deskripsi_edit" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid textTiny" type="text" name="deskripsi" cols="30" rows="10" id="deskripsiProfil_edit"></textarea>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status" id="statusProfil_edit" name="status">
                             <option></option>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="form-group">
                     <h6>Status</h6>
-                    <p><span class="badge badge-success" id="">Tampil</span></p>
+                    <p id="statusProfil_detail"></p>
                 </div>
             </div>
 
@@ -238,6 +238,14 @@
                             <input id="add_jadwal" class="form-control form-control-solid " placeholder="Pilih Jadwal" name="jadwal" />
                             <!--end::Datepicker-->
                         </div>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Target</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Target" name="target" />
                     </div>
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
@@ -307,6 +315,14 @@
                             <input id="edit_jadwal" class="form-control form-control-solid " name="jadwal" />
                             <!--end::Datepicker-->
                         </div>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Target</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" id="target_edit" name="target" />
                     </div>
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
@@ -415,7 +431,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status" name="status">
                             <option></option>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
@@ -468,14 +484,14 @@
                             <span class="required">Deskripsi</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid" type="text" name="deskripsi" id="deskripsiInfo_edit" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid textTiny" type="text" name="deskripsi" id="deskripsiInfo_edit" cols="30" rows="10"></textarea>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status" name="status" id="statusInfo_edit">
                             <option></option>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
@@ -560,7 +576,7 @@
                 </div>
                 <div class="form-group">
                     <h6>Status</h6>
-                    <p><span class="badge badge-success" id="">Tampil</span></p>
+                    <p id="statusInfo_detail"><span class="badge badge-success">Tampil</span></p>
                 </div>
             </div>
 
@@ -1315,7 +1331,7 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('') ?>" method="post">
+            <form action="<?= site_url('berita/store') ?>" method="post">
                 <div class="modal-body">
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1323,7 +1339,7 @@
                             <span class="required">Judul Berita</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Berita" name="" />
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Berita" name="judul_berita" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1331,7 +1347,7 @@
                             <span class="required">Penulis</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Penulis" name="" />
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Penulis" name="penulis_berita" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1340,7 +1356,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="add_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="" />
+                            <input id="add_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tanggal_berita" />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -1350,7 +1366,7 @@
                             <span class="required">Isi Berita</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Isi Berita" name="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Isi Berita" name="deskripsi" cols="30" rows="10"></textarea>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1376,7 +1392,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status" name="status">
                             <option></option>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
@@ -1384,7 +1400,8 @@
                     </div>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer">                    
+                    <input type="hidden" id="imageBerita" name="link">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
@@ -1413,7 +1430,7 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('') ?>" method="post">
+            <form action="<?= site_url('berita/edit') ?>" method="post">
                 <div class="modal-body">
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1421,7 +1438,7 @@
                             <span class="required">Judul Berita</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" value="Judul Berita" name="" />
+                        <input type="text" class="form-control form-control-solid" id="judulBerita_edit" placeholder="Judul Berita" name="judul_berita" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1429,7 +1446,7 @@
                             <span class="required">Penulis</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" value="Nama Penulis" name="" />
+                        <input type="text" class="form-control form-control-solid" id="penulisBerita_edit" placeholder="Nama Penulis" name="penulis_berita" />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1438,7 +1455,7 @@
                         </label>
                         <div class="position-relative d-flex align-items-center">
                             <!--begin::Datepicker-->
-                            <input id="edit_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="" />
+                            <input id="edit_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tanggal_berita" />
                             <!--end::Datepicker-->
                         </div>
                     </div>
@@ -1448,7 +1465,7 @@
                             <span class="required">Isi Berita</span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid" name="" cols="30" rows="10">isi berita</textarea>
+                        <textarea class="form-control form-control-solid" id="deskripsiBerita_edit" name="deskripsi" cols="30" rows="10"></textarea>
                     </div>
                     <!--begin::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
@@ -1481,7 +1498,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status">
+                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Status" id="statusBerita_edit" name="status">
                             <option></option>
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
@@ -1490,6 +1507,7 @@
                 </div>
 
                 <div class="modal-footer">
+                    <input type="hidden" id="idBerita_edit" name="id_berita">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
@@ -1518,13 +1536,13 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('') ?>" method="post">
+            <form action="<?= site_url('berita/delete') ?>" method="post">
                 <div class="modal-body">
                     <p>Apakah anda yakin ingin menghapus Berita tersebut ?</p>
                 </div>
 
                 <div class="modal-footer">
-                    <input type="hidden" id="" name="">
+                    <input type="hidden" id="hapusBerita_id" name="id_berita">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Hapus</button>
                 </div>
@@ -1571,7 +1589,7 @@
                         <!--end::Label-->
                         <!--begin::Col-->
                         <div class="col-lg-8">
-                            <span class="fw-bold fs-6 text-gray-800">My Life as and ICS</span>
+                            <span class="fw-bold fs-6 text-gray-800" id="judulBerita_detail"></span>
                         </div>
                         <!--end::Col-->
                     </div>
@@ -1579,11 +1597,11 @@
                     <!--begin::Input group-->
                     <div class="row mb-5">
                         <!--begin::Label-->
-                        <label class="col-lg-4 fw-bold text-muted">Penulis</label>
+                        <label class="col-lg-4 fw-bold text-muted" >Penulis</label>
                         <!--end::Label-->
                         <!--begin::Col-->
                         <div class="col-lg-8 fv-row">
-                            <span class="fw-bold text-gray-800 fs-6">Wulan Yustiara</span>
+                            <span class="fw-bold text-gray-800 fs-6" id="penulisBerita_detail"></span>
                         </div>
                         <!--end::Col-->
                     </div>
@@ -1595,7 +1613,7 @@
                         <!--end::Label-->
                         <!--begin::Col-->
                         <div class="col-lg-8 fv-row">
-                            <span class="fw-bold text-gray-800 fs-6">27 Juni 2022</span>
+                            <span class="fw-bold text-gray-800 fs-6" id="tanggalBerita_detail"></span>
                         </div>
                         <!--end::Col-->
                     </div>
@@ -1607,7 +1625,7 @@
                         <!--end::Label-->
                         <!--begin::Col-->
                         <div class="col-lg-8 fv-row">
-                            <span class="fw-bold text-gray-800 fs-6">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</span>
+                            <span class="fw-bold text-gray-800 fs-6" id="deskripsiBerita_detail"></span>
                         </div>
                         <!--end::Col-->
                     </div>
@@ -1619,7 +1637,7 @@
                         <!--end::Label-->
                         <!--begin::Col-->
                         <div class="col-lg-8 fv-row">
-                            <p><span class="badge badge-success" id="">Tampil</span></p>
+                            <p id="statusBerita_detail"></p>
                         </div>
                         <!--end::Col-->
                     </div>

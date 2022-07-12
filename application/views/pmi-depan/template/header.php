@@ -4,7 +4,7 @@
 <!--begin::Head-->
 
 <head>
-	<base href="<?= base_url(); ?>">
+	<base href="<?= base_url('beranda'); ?>">
 	<title>PMI - UDD Kota Malang</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="Palang Merah Indonesia Kota Malang" />

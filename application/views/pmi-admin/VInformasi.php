@@ -58,7 +58,7 @@
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted">
-                                                    <th class="min-w-120px text-center">Judul</th>
+                                                    <th class="min-w-120px text-center" style="width:20%">Judul</th>
                                                     <th class="min-w-120px text-center">Deskripsi</th>
                                                     <th class="min-w-120px text-center">Status</th>
                                                     <th class="min-w-150px text-center">Aksi</th>
@@ -69,17 +69,26 @@
                                             <tbody>
                                                 <?php
                                                 foreach ($informasi as $item) {
+                                                    $status = "";
+													$text = "";
+													if($item->status == 1){
+														$status = "badge badge-success";
+														$text = "Diunggah";
+													}else{
+														$status = "badge badge-danger";
+														$text = "Diarsipkan";
+													}
+													$desc = mb_strimwidth($item->deskripsi, 0, 180, "...");
                                                     echo '
                                                     <tr>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                             ' . $item->judul_informasi . '
                                                         </td>
                                                         <td class="text-dark text-hover-primary fs-6">
-                                                            ' . $item->deskripsi . '
+                                                            ' . $desc . '
                                                         </td>
                                                         <td class="text-dark text-hover-primary fs-6">
-                                                                <span class="badge badge-success">Diunggah</span>
-                                                                <span class="badge badge-danger">Diarsipkan</span>
+                                                            <span class="'.$status.'">'.$text.'</span>
 														</td>
                                                         <td class="text-end">
                                                             <a href="" title="Detail Informasi" data-bs-toggle="modal" data-bs-target="#detailInfo" data-id="' . $item->id_informasi . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm detailInfo me-1">
