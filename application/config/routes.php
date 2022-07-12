@@ -105,13 +105,13 @@ $route['pendonor']         = 'Welcome/VPendonor';
 $route['berita']         = 'BeritaController/VBerita';
 
 //signup
-$route['signup']         = 'Welcome/VSignUp';
+$route['signup']         = 'AuthController/VSignUp';
 
 //depan
-$route['beranda']         = 'Welcome/landing';
-$route['profile']      = 'Welcome/VProfile';
-$route['informasi-pmi']      = 'Welcome/VInformasi';
-$route['stokdarah-pmi']      = 'Welcome/VStokDarah';
-$route['news']      = 'Welcome/VNews';
-$route['agenda-pmi']      = 'Welcome/VAgendaPMI';
-$route['jadwal']      = 'Welcome/VJadwalDepan';
+$route['beranda']            = 'DepanController/landing';
+$route['profile']            = 'DepanController/VProfile';
+$route['informasi-pmi']      = 'DepanController/VInformasi';
+$route['stokdarah-pmi']      = 'DepanController/VStokDarah';
+$route['news']               = 'DepanController/VNews';
+$route['agenda-pmi']         = 'DepanController/VAgendaPMI';
+$route['jadwal']             = 'DepanController/VJadwalDepan';
