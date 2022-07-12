@@ -16,7 +16,10 @@
             <!--begin::Description-->
             <div class="fs-5 fw-bold text-white">
                 <br />
-                Terakhir diupdate pada <?= date('d-m-Y H:i:s') ?>
+                <?php 
+                    $newDate = date("d M Y H:i:s", strtotime($last_update));
+                ?>
+                Terakhir diupdate pada <?= $newDate ?>
             </div>
             <!--end::Description-->
         </div>
@@ -36,14 +39,32 @@
                         </tr>
                     </thead>
                     <tbody class="text-white p-xxl-5 fs-4">
-                        <tr>
-                            <td class="mx-10">Plasma Konvalesen</td>
-                            <td class="mx-10">1</td>
-                            <td class="mx-10">2</td>
-                            <td class="mx-10">61</td>
-                            <td class="mx-10">25</td>
-                            <td class="mx-10">100</td>
-                        </tr>
+                        <?php
+                            $count = 0;
+                            $limit = 4;
+                            foreach($darah as $item){
+                                $jumlah = 0;
+                                echo '
+                                    <tr>
+                                        <td class="mx-10">'.$item->jenis_darah.'</td>
+                                ';
+                                for($count; $count < $limit; $count++){
+                                    $jumlah += $detail[$count]->stok;
+                                    echo '
+                                        <td class="mx-10">
+                                            '.$detail[$count]->stok.'
+                                        </td>       
+                                    ';
+                                }
+                                $limit += 4;
+                                echo '
+                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                            '.$jumlah.'
+                                        </td>
+                                    </tr>
+                                ';
+                            }
+                        ?>                        
                     </tbody>
                 </table>
             </div>

@@ -15,21 +15,14 @@
 								<!--begin::Wrapper-->
 								<div class="mb-8">
 									<!--begin::Title-->
-									<h2 href="#" class="text-dark  fs-2 fw-bolder">Profil PMI Kota Malang
+									<h2 href="#" class="text-dark  fs-2 fw-bolder"><?= $profil[0]->judul_profil ?>
 										<!--end::Title-->
 								</div>
 								<!--end::Wrapper-->
 								<!--begin::Description-->
 								<div class="fs-5 fw-bold text-dark">
 									<!--begin::Text-->
-									<p class="mb-17">Product/service <br>
-										Official IG PMI Kota Malang <br>
-										Telp/Fax. 0341-364617 <br>
-										 <br>
-										Info Stok & Donor Darah 0341-325443 <br>
-										Info Rapid & Swab PCR 081222237131 <br>
-										Info Pelatihan 08113646717 <br>
-										s.id/FATrainingpmi</p>
+									<?= $profil[0]->deskripsi ?>
 									<!--end::Text-->
 								</div>
 								<!--end::Description-->
@@ -43,26 +36,18 @@
 							<div class="mb-16">
 								<h4 class="text-black mb-7">Daftar Menu</h4>
 								<!--begin::Item-->
-								<div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
-									<!--begin::Text-->
-									<a href="#" class="text-muted text-hover-danger pe-2">Profil PMI Kota Malang</a>
-									<!--end::Text-->
-									<!--end::Number-->
-								</div>
-								<!--end::Item-->
-								<!--begin::Item-->
-								<div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
-									<!--begin::Text-->
-									<a href="#" class="text-muted text-hover-danger pe-2">Moto, Visi & Misi</a>
-									<!--end::Text-->
-								</div>
-								<!--end::Item-->
-								<!--begin::Item-->
-								<div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
-									<!--begin::Text-->
-									<a href="#" class="text-muted text-hover-danger pe-2">Struktur Organisasi</a>
-									<!--end::Text-->
-								</div>
+								<?php
+									foreach($list as $item){
+										echo'
+										<div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
+											<!--begin::Text-->
+											<a href="'.site_url('profile/'.$item->id_profil).'" class="text-muted text-hover-danger pe-2">'.$item->judul_profil.'</a>
+											<!--end::Text-->
+											<!--end::Number-->
+										</div>
+										';
+									}
+								?>
 								<!--end::Item-->
 							</div>
 							<!--end::Catigories-->

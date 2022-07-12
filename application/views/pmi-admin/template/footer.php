@@ -118,6 +118,11 @@
             success: res => {
                 $('#judul_profil').html(res[0].judul_profil)
                 $('#deskripsi').html(res[0].deskripsi)
+                if (res[0].status == 1) {
+                    $('#statusProfil_detail').html('<span class="badge badge-success" >Diunggah</span>')
+                } else {
+                    $('#statusProfil_detail').html('<span class="badge badge-danger" >Diarsipkan</span>')
+                }
             }
         })
     })
@@ -132,8 +137,9 @@
                 id_profil: id
             },
             success: res => {
-                $('#judulProfil_edit').val(res[0].judul_profil)
-                $('#deskripsi_edit').val(res[0].deskripsi)
+                $('#judulProfil_edit').val(res[0].judul_profil)  
+                tinymce.get('deskripsiProfil_edit').setContent(res[0].deskripsi)
+                $('#statusProfil_edit').val(res[0].status).change()
                 $('#id_edit').val(res[0].id_profil)
             }
         })
@@ -184,6 +190,7 @@
                 $('#lokasi_edit').val(res[0].lokasi)
                 $('#edit_jadwal').val(res[0].jadwal)
                 $('#edit_jambuka').val(res[0].jambuka)
+                $('#target_edit').val(res[0].target)
                 $('#edit_jamtutup').val(res[0].jamtutup)
                 $('#editmobil_id').val(res[0].id_mobil)
             }
@@ -212,6 +219,11 @@
             success: res => {
                 $('#detail_judul').html(res[0].judul_informasi)
                 $('#detail_deskripsi').html(res[0].deskripsi)
+                if (res[0].status == 1) {
+                    $('#statusInfo_detail').html('<span class="badge badge-success" >Diunggah</span>')
+                } else {
+                    $('#statusInfo_detail').html('<span class="badge badge-danger" >Diarsipkan</span>')
+                }
             }
         })
     })
@@ -252,8 +264,9 @@
                 id_informasi: id
             },
             success: res => {
-                $('#judul_edit').val(res[0].judul_informasi)
-                $('#deskripsiInfo_edit').val(res[0].deskripsi)
+                $('#judul_edit').val(res[0].judul_informasi)               
+                tinymce.get('deskripsiInfo_edit').setContent(res[0].deskripsi);
+                $('#statusInfo_edit').val(res[0].status).change()
                 $('#idInfo_edit').val(res[0].id_informasi)
             }
         })
@@ -262,6 +275,54 @@
     $('#informasiTable tbody').on('click', '.hapusInfo', function() {
         const id = $(this).data("id")
         $('#hapusInfo_id').val(id)
+    })
+
+    //Berita  
+    $('#tableBerita tbody').on('click', '.detailBerita', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('berita/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_berita: id
+            },
+            success: res => {
+                $('#judulBerita_detail').html(res[0].judul_berita)
+                $('#deskripsiBerita_detail').html(res[0].deskripsi)
+                $('#penulisBerita_detail').html(res[0].penulis_berita)
+                $('#tanggalBerita_detail').html(res[0].tanggal_berita)
+                if (res[0].status == 1) {
+                    $('#statusBerita_detail').html('<span class="badge badge-success" >Diunggah</span>')
+                } else {
+                    $('#statusBerita_detail').html('<span class="badge badge-danger" >Diarsipkan</span>')
+                }
+            }
+        })
+    })
+
+    $('#tableBerita tbody').on('click', '.editBerita', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('berita/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_berita: id
+            },
+            success: res => {
+                $('#judulBerita_edit').val(res[0].judul_berita) 
+                $('#penulisBerita_edit').val(res[0].penulis_berita)  
+                $('#edit_tanggalBerita').val(res[0].tanggal_berita)           
+                $('#statusBerita_edit').val(res[0].status).change()
+                $('#idBerita_edit').val(res[0].id_berita)
+            }
+        })
+    })
+
+    $('#tableBerita tbody').on('click', '.hapusBerita', function() {
+        const id = $(this).data("id")
+        $('#hapusBerita_id').val(id)
     })
 
     //Agenda

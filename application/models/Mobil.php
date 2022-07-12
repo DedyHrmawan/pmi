@@ -13,6 +13,7 @@ class Mobil extends CI_Model{
     public function get($param){
         $sql = "SELECT 
         id_mobil,
+        target,
         jadwal,
         TIME_FORMAT(jam_buka, '%H:%i') as jambuka,
         TIME_FORMAT(jam_tutup, '%H:%i') as jamtutup,

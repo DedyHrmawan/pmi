@@ -71,7 +71,7 @@
                     <!--begin::Wrapper-->
                     <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                         <!--begin::Form-->
-                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('profil') ?>" method="post">
+                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('register') ?>" method="post" enctype="multipart/form-data">
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
@@ -84,115 +84,6 @@
                                 <!--end::Link-->
                             </div>
                             <!--begin::Heading-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="" placeholder="Masukan Nama" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Email</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="" placeholder="Masukan Email" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Wrapper-->
-                                <div class="d-flex flex-stack mb-2">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
-                                    <!--end::Label-->
-                                    <!--begin::Link-->
-                                    <!-- <a href="../../demo3/dist/authentication/flows/aside/password-reset.html" class="link-primary fs-6 fw-bolder">Forgot Password ?</a> -->
-                                    <!--end::Link-->
-                                </div>
-                                <!--end::Wrapper-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="password" name="" placeholder="Masukan Password" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Umur</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="" placeholder="Masukan Umur" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Alamat</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="" placeholder="Masukan Alamat" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Nomor Telepon</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="" placeholder="Masukan Nomor Telepon" autocomplete="off" />
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="d-flex align-items-center fs-6 fw-bold mb-10">
-                                    <span class="required">Jenis Golongan Darah</span>
-                                </label>
-                                <!--end::Label-->
-                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih Jenis Golongan Darah">
-                                    <option></option>
-                                    <option value="1">A</option>
-                                    <option value="2">B</option>
-                                    <option value="3">AB</option>
-                                    <option value="4">O</option>
-                                </select>
-                            </div>
-
-                            <div class="d-flex flex-column mb-8 fv-row">
-                                <!--begin::Label-->
-                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                    <span class="required">Foto</span>
-                                </label>
-                                <!--end::Label-->
-                                <!--begin::Dropzone-->
-                                <div class="dropzone" id="fotoPendonor">
-                                    <!--begin::Message-->
-                                    <div class="dz-message needsclick">
-                                        <!--begin::Icon-->
-                                        <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
-                                        <!--end::Icon-->
-
-                                        <!--begin::Info-->
-                                        <div class="ms-4">
-                                            <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
-                                            <span class="fs-7 fw-bold text-gray-400">Unggah foto Anda di bawah 2 Mb</span>
-                                        </div>
-                                        <!--end::Info-->
-                                    </div>
-                                </div>
-                                <!--end::Dropzone-->
-                            </div>
-
-                            <div class="g-recaptcha" data-sitekey="6LcNBMggAAAAAOPrzPV9x9EuPV8rZEv9_nHoXRAt"></div>
-                            <br />
-
                             <!-- begin alert  -->
                             <?php
                             if ($this->session->flashdata('error_signup')) {
@@ -215,6 +106,108 @@
                             }
                             ?>
                             <!-- end alert  -->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="nama_pendonor" placeholder="Masukan Nama" autocomplete="off" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">Email</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="email_pendonor" placeholder="Masukan Email" autocomplete="off" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Wrapper-->
+                                <div class="d-flex flex-stack mb-2">
+                                    <!--begin::Label-->
+                                    <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+                                    <!--end::Label-->
+                                    <!--begin::Link-->
+                                    <!-- <a href="../../demo3/dist/authentication/flows/aside/password-reset.html" class="link-primary fs-6 fw-bolder">Forgot Password ?</a> -->
+                                    <!--end::Link-->
+                                </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="Masukan Password" autocomplete="off" />
+                                <!--end::Input-->
+                            </div>
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">Umur</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="number" name="umur_pendonor" placeholder="Masukan Umur" autocomplete="off" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">Alamat</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="alamat_pendonor" placeholder="Masukan Alamat" required />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">Nomor Telepon</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="number" name="telepon_pendonor" placeholder="Masukan Nomor Telepon" required/>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="d-flex align-items-center fs-6 fw-bold mb-10">
+                                    <span class="required">Jenis Golongan Darah</span>
+                                </label>
+                                <!--end::Label-->
+                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih Jenis Golongan Darah" name="id_jenis_darah">
+                                    <option></option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">AB</option>
+                                    <option value="4">O</option>
+                                </select>
+                            </div>
+
+                            <div class="d-flex flex-column mb-8 fv-row">
+                                <!--begin::Label-->
+                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                    <span class="required">Foto</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Dropzone-->
+                                <div class="dropzone" id="fotoPendonor">
+                                    <!--begin::Message-->
+                                    <div class="dz-message" data-dz-message><span>Click or Drop photo here to upload</span></div>
+                                    <div class="fallback">
+                                        <input name="file" type="file"/>
+                                    </div>
+                                </div>
+                                <!--end::Dropzone-->
+                            </div>
+
+                            <div class="g-recaptcha" data-sitekey="6LcNBMggAAAAAOPrzPV9x9EuPV8rZEv9_nHoXRAt"></div>
+                            <br />
+
+                            <input type="hidden" id="imageupload" name="link">
                             <!--end::Input group-->
                             <!--begin::Actions-->
                             <div class="text-center">
@@ -252,17 +245,18 @@
     <!--end::Javascript-->
     <script>
         var myDropzone = new Dropzone("#fotoPendonor", {
-            url: "http://localhost/pmi/", // Set the url for your upload script location
+            url: "<?= site_url('uploadimage') ?>", // Set the url for your upload script location
             paramName: "file", // The name that will be used to transfer the file
             maxFiles: 1,
             maxFilesize: 5, // MB
             addRemoveLinks: true,
-            accept: function(file, done) {
-                if (file.name == "wow.jpg") {
-                    done("Naha, you don't.");
-                } else {
-                    done();
-                }
+            renameFile: function (file) {                
+                let anu = new Date().getTime() + '_' + file.name;                
+                $('#imageupload').val("<?= site_url() ?>uploads/pendonor/"+anu);
+                return anu;
+            },
+            accept: function(file, done) {                
+                done();
             }
         });
     </script>

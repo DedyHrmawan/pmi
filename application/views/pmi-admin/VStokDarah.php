@@ -48,6 +48,13 @@
                                         <a href="#" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#tambahDarah">Tambah Stok Darah</a>
                                         <a href="#" class="btn btn-info ms-xl-4" data-bs-toggle="modal" data-bs-target="#tambahJenis">Tambah Jenis Darah</a>
                                     </div>
+                                </div>                                
+                                <div class="card-header border-0 pt-5">
+                                    <?php 
+                                        $newDate = date("d M Y H:i:s", strtotime($last_update));
+                                    ?>
+                                    <p>Terakhir diperbarui : <?= $newDate ?>
+                                    </p>
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->

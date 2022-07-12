@@ -24,14 +24,25 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>1 Januari 2022</td>
-								<td>Rumah Sakit Persada</td>
-								<td>50</td>
-								<td>10:00 </td>
-								<td>12:00</td>
-							</tr>
+							<?php
+								$no = 1;
+								foreach($jadwal_mobil as $item){
+									$newDate = date("d F Y", strtotime($item->jadwal));
+									$jambuka = date("H:i", strtotime($item->jam_buka));
+									$jamtutup = date("H:i", strtotime($item->jam_tutup));
+									echo'
+										<tr>
+											<td>'.$no.'</td>
+											<td>'.$newDate.'</td>
+											<td>'.$item->lokasi.'</td>
+											<td>'.$item->target.'</td>
+											<td>'.$jambuka.'</td>
+											<td>'.$jamtutup.'</td>
+										</tr>
+									';
+									$no++;
+								}
+							?>
 						</tbody>
 					</table>
 				</div>

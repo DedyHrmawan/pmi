@@ -61,7 +61,8 @@
                                                 <tr class="fw-bolder text-muted">
                                                     <th class="min-w-120px">Lokasi</th>
                                                     <th class="min-w-120px">Jadwal</th>
-                                                    <th class="min-w-140px">Jam Buka</th>
+                                                    <th class="min-w-120px">Target</th>
+                                                    <th class="min-w-120px">Jam Buka</th>
                                                     <th class="min-w-120px">Jam Tutup</th>
                                                     <th class="min-w-100px text-end">Aksi</th>
                                                 </tr>
@@ -80,6 +81,9 @@
                                                             </td>
                                                             <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 ' . $item->jadwal . '
+                                                            </td>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                ' . $item->target . '
                                                             </td>
                                                             <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 ' . $jambuka . '

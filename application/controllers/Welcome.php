@@ -33,50 +33,6 @@ class Welcome extends CI_Controller {
 		$this->template->admin('pmi-admin/VPendonor', $data);
 	}
 
-	public function VBerita()
-	{
-		$data = array(
-            'nav_title' => 'Berita PMI Kota Malang'
-        );			
-		$this->template->admin('pmi-admin/VBerita', $data);
-	}
-
-	//depan
-	public function landing()
-	{
-		$this->template->depan('pmi-depan/VBeranda');
-	}
-
-	public function VProfile()
-	{
-		$this->template->depan('pmi-depan/VProfil');
-	}
-
-	public function VInformasi()
-	{
-		$this->template->depan('pmi-depan/VInformasi');
-	}
-
-	public function VStokDarah()
-	{
-		$this->template->depan('pmi-depan/VStokDarah');
-	}
-
-	public function VNews()
-	{
-		$this->template->depan('pmi-depan/VBerita');
-	}
-
-	public function VAgendaPMI()
-	{
-		$this->template->depan('pmi-depan/VAgenda');
-	}
-
-	public function VJadwalDepan()
-	{
-		$this->template->depan('pmi-depan/VJadwalDepan');
-	}
-
 	//signup penodnor
 	public function VSignUp()
 	{
