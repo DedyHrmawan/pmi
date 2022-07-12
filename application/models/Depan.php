@@ -31,8 +31,8 @@ class Depan extends CI_Model{
     }
 
     public function getInfo(){
-        $this->db->order_by('id_informasi','ASC');
-        $res = $this->db->get('informasi')->result();
+        $sql = "SELECT * FROM informasi WHERE status=1 ORDER BY id_informasi ASC";
+        $res = $this->db->query($sql)->result();
         return $res;
     }
 }
