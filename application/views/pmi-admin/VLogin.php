@@ -68,7 +68,7 @@
                     <!--begin::Wrapper-->
                     <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                         <!--begin::Form-->
-                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('login/auth') ?>" method="post">
+                        <form class="form w-100" id="kt_sign_in_form" action="<?= site_url('login/auth') ?>" method="post">
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
@@ -87,7 +87,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Email</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" placeholder="Masukan Email" type="text" name="EMAIL_USER" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" placeholder="Masukan Email" type="email" name="EMAIL_USER" required/>
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -104,7 +104,7 @@
                                 </div>
                                 <!--end::Wrapper-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" placeholder="Masukan Password" type="password" name="PASSWORD_USER" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" placeholder="Masukan Password" type="password" name="PASSWORD_USER" required/>
                                 <!--end::Input-->
                             </div>
                             <!-- begin alert  -->

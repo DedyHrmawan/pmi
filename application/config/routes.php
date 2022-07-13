@@ -108,6 +108,7 @@ $route['carousel']         = 'Welcome/VCarousel';
 
 //signup
 $route['signup']         = 'Welcome/VSignUp';
+$route['register']   = 'AuthController/register';
 
 //depan
 $route['beranda']            = 'DepanController/landing';
