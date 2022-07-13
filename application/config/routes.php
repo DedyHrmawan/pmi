@@ -58,6 +58,8 @@ $route['default_controller'] = 'DepanController/landing';
 //authentication
 $route['login']         = 'Welcome/VLogin';
 $route['login/auth']    = 'AuthController/auth';
+$route['register']      = 'AuthController/register';
+$route['uploadimage']   = 'AuthController/upload_image';
 
 //admin
 
@@ -100,21 +102,25 @@ $route['stokdarah/delete']  = 'DarahController/delete';
 
 //pendonor
 $route['pendonor']         = 'Welcome/VPendonor';
+$route['carousel']         = 'Welcome/VCarousel';
 
 //berita
 $route['berita']         = 'BeritaController/VBerita';
-
-$route['carousel']         = 'Welcome/VCarousel';
+$route['berita/store']  = 'BeritaController/store';
+$route['berita/ajxGet'] = 'BeritaController/ajxGet';
+$route['berita/edit']   = 'BeritaController/edit';
+$route['berita/delete'] = 'BeritaController/delete';
 
 //signup
 $route['signup']         = 'Welcome/VSignUp';
-$route['register']   = 'AuthController/register';
 
 //depan
-$route['beranda']            = 'DepanController/landing';
-$route['profile']            = 'DepanController/VProfile';
-$route['informasi-pmi']      = 'DepanController/VInformasi';
-$route['stokdarah-pmi']      = 'DepanController/VStokDarah';
-$route['news']               = 'DepanController/VNews';
-$route['agenda-pmi']         = 'DepanController/VAgendaPMI';
-$route['jadwal']             = 'DepanController/VJadwalDepan';
+$route['beranda']               = 'DepanController/landing';
+$route['profile']               = 'DepanController/VProfile';
+$route['profile/(:any)']        = 'DepanController/OthersProfile/$1';
+$route['informasi-pmi']         = 'DepanController/VInformasi';
+$route['informasi-pmi/(:any)']  = 'DepanController/OthersInfo/$1';
+$route['stokdarah-pmi']         = 'DepanController/VStokDarah';
+$route['news']                  = 'DepanController/VNews';
+$route['agenda-pmi']            = 'DepanController/VAgendaPMI';
+$route['jadwal']                = 'DepanController/VJadwalDepan';
