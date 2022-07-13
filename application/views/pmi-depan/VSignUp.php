@@ -71,7 +71,7 @@
                     <!--begin::Wrapper-->
                     <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                         <!--begin::Form-->
-                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('register') ?>" method="post" enctype="multipart/form-data">
+                        <form class="form w-100" id="kt_sign_in_form" action="<?= site_url('register') ?>" method="post" enctype="multipart/form-data">
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
@@ -112,7 +112,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="nama_pendonor" placeholder="Masukan Nama" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="nama_pendonor" placeholder="Masukan Nama" autocomplete="off" required/>
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -122,7 +122,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Email</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="email_pendonor" placeholder="Masukan Email" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" type="email" name="email_pendonor" placeholder="Masukan Email" autocomplete="off" required/>
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -139,7 +139,7 @@
                                 </div>
                                 <!--end::Wrapper-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="Masukan Password" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="Masukan Password" required/>
                                 <!--end::Input-->
                             </div>
                             <!--begin::Input group-->
@@ -148,7 +148,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Umur</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="umur_pendonor" placeholder="Masukan Umur" autocomplete="off" />
+                                <input class="form-control form-control-lg form-control-solid" type="number" name="umur_pendonor" placeholder="Masukan Umur"  required/>
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -178,7 +178,7 @@
                                     <span class="required">Jenis Golongan Darah</span>
                                 </label>
                                 <!--end::Label-->
-                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih Jenis Golongan Darah" name="id_jenis_darah">
+                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih Jenis Golongan Darah" name="id_jenis_darah" required>
                                     <option></option>
                                     <option value="1">A</option>
                                     <option value="2">B</option>
