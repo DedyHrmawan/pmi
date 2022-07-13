@@ -1573,7 +1573,7 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4 text-center">
                         <div class="">
-                            <img src="assets/admin/media/books/1.png" alt="image" style="max-width: 500px; min-width:400px;"  />
+                            <img src="assets/admin/media/books/1.png" alt="image" style="max-width: 500px; min-width:400px;" />
                         </div>
                     </div>
                     <!--end::Pic-->
@@ -1677,13 +1677,16 @@
                         </label>
                         <!--end::Label-->
                         <!--begin::Dropzone-->
-                        <div class="dropzone" id="imgBerita">
+                        <div class="dropzone" id="addImgCarousel">
                             <!--begin::Message-->
                             <div class="dz-message needsclick">
                                 <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
                                 <div class="ms-4">
                                     <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
                                     <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
+                                    <div class="fallback">
+                                        <input name="file" type="file" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1702,7 +1705,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <input type="hidden" id="imageBerita" name="link">
+                    <input type="hidden" id="" name="link">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
                 </div>
@@ -1741,17 +1744,19 @@
                         </label>
                         <!--end::Label-->
                         <!--begin::Dropzone-->
-                        <div class="dropzone" id="editimgBerita">
+                        <div class="dropzone" id="editImgCarousel">
                             <!--begin::Message-->
                             <div class="dz-message needsclick">
                                 <!--begin::Icon-->
                                 <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
                                 <!--end::Icon-->
-
                                 <!--begin::Info-->
                                 <div class="ms-4">
                                     <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
                                     <span class="fs-7 fw-bold text-gray-400">Unggah poster Anda di bawah 5 Mb</span>
+                                    <div class="fallback">
+                                        <input name="file" type="file" />
+                                    </div>
                                 </div>
                                 <!--end::Info-->
                             </div>

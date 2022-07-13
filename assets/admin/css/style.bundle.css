@@ -48008,3 +48008,109 @@ body {
 	background-color: #fff;
 	border: 0;
 }
+
+
+		#message-profil {
+			width: 260px;
+			height: 40px;
+			color: #000;
+			padding: 10px;
+			position: relative;
+			margin-top: 10px;
+			float: left;
+			font-size: 1rem;
+			border-radius: 0.475rem;
+			border: 1px solid #000;
+			box-sizing: border-box;
+		}
+
+		#message-profil {
+			margin-top: 20px;
+		}
+
+		#message-profil:after {
+			content: " ";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 1px solid #000;
+			border-left:1px solid #000;
+			border-right:0px solid #000;
+			border-bottom:0px solid #000;
+			bottom: 100%;
+			left: 10%;
+			margin-right: -9px;	
+			transform: rotate(45deg);
+			margin-bottom: -9px;
+			background: #FFF;
+			
+		}
+
+		#message-berita {
+			width: 260px;
+			height: 40px;
+			color: #000;
+			padding: 10px;
+			position: relative;
+			margin-top: 10px;
+			float: left;
+			font-size: 1rem;
+			border-radius: 0.475rem;
+			border: 1px solid #000;
+			box-sizing: border-box;
+		}
+
+		#message-berita {
+			margin-top: 20px;
+		}
+
+		#message-berita:after {
+			content: " ";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 1px solid #000;
+			border-left:1px solid #000;
+			border-right:0px solid #000;
+			border-bottom:0px solid #000;
+			bottom: 100%;
+			left: 10%;
+			margin-right: -9px;	
+			transform: rotate(45deg);
+			margin-bottom: -9px;
+			background: #FFF;
+		}
+		#message-informasi {
+			width: 260px;
+			height: 40px;
+			color: #000;
+			padding: 10px;
+			position: relative;
+			margin-top: 10px;
+			float: left;
+			font-size: 1rem;
+			border-radius: 0.475rem;
+			border: 1px solid #000;
+			box-sizing: border-box;
+		}
+
+		#message-informasi {
+			margin-top: 20px;
+		}
+
+		#message-informasi:after {
+			content: " ";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 1px solid #000;
+			border-left:1px solid #000;
+			border-right:0px solid #000;
+			border-bottom:0px solid #000;
+			bottom: 100%;
+			left: 10%;
+			margin-right: -9px;	
+			transform: rotate(45deg);
+			margin-bottom: -9px;
+			background: #FFF;
+		}
