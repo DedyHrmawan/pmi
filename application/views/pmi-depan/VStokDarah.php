@@ -27,7 +27,7 @@
         <!--begin::Statistics-->
         <div class="d-flex flex-center">
             <div class="table">
-                <table class="table table-row-gray-100 align-middle gy-5 gs-5">
+                <table class="table table-rounded border table-row-gray-100 align-middle gy-5 gs-5">
                     <thead class="p-xxl-5">
                         <tr class="fw-bold fs-4 text-white border-bottom border-gray-200">
                             <th class="mx-10">Produk</th>

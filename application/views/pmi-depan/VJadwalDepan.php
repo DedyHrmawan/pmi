@@ -12,7 +12,7 @@
 			<!--begin::Statistics-->
 			<div class="d-flex flex-center">
 				<div class="table">
-					<table class="table table-row-gray-100 align-middle gy-5 gs-5" id="tableJadwal">
+					<table class="table table-rounded border table-row-gray-100 align-middle gy-5 gs-5" id="tableJadwal">
 						<thead>
 							<tr class="fw-bold fs-6 text-white border-white border-bottom">
 								<th class="min-w-120px">No</th>
