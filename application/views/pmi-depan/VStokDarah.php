@@ -29,7 +29,7 @@
             <div class="table">
                 <table class="table table-row-gray-100 align-middle gy-5 gs-5">
                     <thead class="p-xxl-5">
-                        <tr class="fw-bold fs-2 text-white border-bottom border-gray-200">
+                        <tr class="fw-bold fs-4 text-white border-bottom border-gray-200">
                             <th class="mx-10">Produk</th>
                             <th class="mx-10">A</th>
                             <th class="mx-10">B</th>
@@ -38,7 +38,7 @@
                             <th class="mx-10">Jumlah</th>
                         </tr>
                     </thead>
-                    <tbody class="text-white p-xxl-5 fs-4">
+                    <tbody class="text-white p-xxl-5 fs-6">
                         <?php
                             $count = 0;
                             $limit = 4;
@@ -58,7 +58,7 @@
                                 }
                                 $limit += 4;
                                 echo '
-                                        <td class="text-white fw-bolder fs-4">
+                                        <td class="text-white fw-bolder">
                                             '.$jumlah.'
                                         </td>
                                     </tr>
