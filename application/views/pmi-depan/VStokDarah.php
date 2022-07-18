@@ -27,7 +27,7 @@
         <!--begin::Statistics-->
         <div class="d-flex flex-center">
             <div class="table">
-                <table class="table table-rounded table-striped border gy-7 gs-7">
+                <table class="table table-row-gray-100 align-middle gy-5 gs-5">
                     <thead class="p-xxl-5">
                         <tr class="fw-bold fs-2 text-white border-bottom border-gray-200">
                             <th class="mx-10">Produk</th>
@@ -58,7 +58,7 @@
                                 }
                                 $limit += 4;
                                 echo '
-                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                        <td class="text-white fw-bolder fs-4">
                                             '.$jumlah.'
                                         </td>
                                     </tr>

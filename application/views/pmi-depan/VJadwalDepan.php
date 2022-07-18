@@ -12,9 +12,9 @@
 			<!--begin::Statistics-->
 			<div class="d-flex flex-center">
 				<div class="table">
-					<table class="table table-rounded table-striped border gy-7 gs-7 " id="tableJadwal">
+					<table class="table table-row-gray-100 align-middle gy-5 gs-5" id="tableJadwal">
 						<thead>
-							<tr class="fw-bold fs-6 text-dark border-bottom border-dark">
+							<tr class="fw-bold fs-6 text-white border-white border-bottom">
 								<th class="min-w-120px">No</th>
 								<th class="min-w-120px">Tanggal</th>
 								<th class="min-w-120px">Lokasi</th>
@@ -32,12 +32,12 @@
 									$jamtutup = date("H:i", strtotime($item->jam_tutup));
 									echo'
 										<tr>
-											<td>'.$no.'</td>
-											<td>'.$newDate.'</td>
-											<td>'.$item->lokasi.'</td>
-											<td>'.$item->target.'</td>
-											<td>'.$jambuka.'</td>
-											<td>'.$jamtutup.'</td>
+											<td class="text-white fs-6">'.$no.'</td>
+											<td class="text-white fs-6">'.$newDate.'</td>
+											<td class="text-white fs-6">'.$item->lokasi.'</td>
+											<td class="text-white fs-6">'.$item->target.'</td>
+											<td class="text-white fs-6">'.$jambuka.'</td>
+											<td class="text-white fs-6">'.$jamtutup.'</td>
 										</tr>
 									';
 									$no++;
