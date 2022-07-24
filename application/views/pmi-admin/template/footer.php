@@ -549,65 +549,45 @@
         }
     });
 
-    var myDropzone = new Dropzone("#imgBerita", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
+    //preview sebelum upload berita
+    function previewAddBerita() {
+        document.getElementById("prevAddBerita").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("addImgBerita").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevAddBerita").src = oFREvent.target.result;
+        };
+    };
 
-    var myDropzone = new Dropzone("#editimgBerita", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
+    function previewEditBerita() {
+        document.getElementById("prevEditBerita").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("editImgBerita").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevEditBerita").src = oFREvent.target.result;
+        };
+    };
 
-    var myDropzone = new Dropzone("#addImgCarousel", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
+    //preview sebelum upload carousel
+    function previewAddCarousel() {
+        document.getElementById("prevAddCarousel").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("addImgCarousel").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevAddCarousel").src = oFREvent.target.result;
+        };
+    };
 
-    var myDropzone = new Dropzone("#editImgCarousel", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
+    function previewEditCarousel() {
+        document.getElementById("prevEditCarousel").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("editImgCarousel").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevEditCarousel").src = oFREvent.target.result;
+        };
+    };
+
+
 </script>
 <script>
     // add tiny informasi
