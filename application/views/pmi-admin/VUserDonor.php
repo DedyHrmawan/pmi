@@ -58,23 +58,23 @@
 											<!--begin::Table head-->
 											<thead>
 												<tr class="fw-bolder text-muted">
-													<th class="min-w-120px text-center">NIK</th>
 													<th class="min-w-120px text-center">Nama</th>
 													<th class="min-w-120px text-center">Umur</th>
-													<th class="min-w-120px text-center">Nomor Telp</th>
-													<th class="min-w-120px text-center">Donor Selanjutnya</th>
+													<th class="min-w-120px text-center">Alamat</th>
+													<th class="min-w-120px text-center">Nomor Telepon</th>
+													<th class="min-w-120px text-center">Golongan Darah</th>
 													<th class="min-w-150px text-center">Aksi</th>
 												</tr>
 											</thead>
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody>
-												<!--<tr>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">3505120810990002</td>
+												<tr>
 													<td class="text-dark fw-bolder text-hover-primary fs-6">Dedy Hermawan</td>
 													<td class="text-dark fw-bolder text-hover-primary fs-6">17</td>
+													<td class="text-dark fw-bolder text-hover-primary fs-6">Blitar</td>
 													<td class="text-dark fw-bolder text-hover-primary fs-6">085732694267</td>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">19-04-2022</td>
+													<td class="text-dark fw-bolder text-hover-primary fs-6">A</td>
 													<td class="text-end">
 														<a href="" title="Detail Pendonor" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" data-id="'. $item->id_profil .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailProfil me-1">
 															
@@ -108,7 +108,7 @@
 														</a>
 													</td>
 												</tr>
-												-->
+												
 											</tbody>
 											<!--end::Table body-->
 										</table>

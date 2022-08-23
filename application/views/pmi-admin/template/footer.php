@@ -587,7 +587,24 @@
         };
     };
 
+//preview sebelum upload foto pendonor
+function previewAddFotoUser() {
+        document.getElementById("prevAddFotoUser").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("addImgFotoUser").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevAddFotoUser").src = oFREvent.target.result;
+        };
+    };
 
+    function previewEditFotoUser() {
+        document.getElementById("prevEditFotoUser").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("editImgFotoUser").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevEditFotoUser").src = oFREvent.target.result;
+        };
+    };
 </script>
 <script>
     // add tiny informasi

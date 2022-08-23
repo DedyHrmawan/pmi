@@ -101,7 +101,7 @@ $route['stokdarah/edit']    = 'DarahController/edit';
 $route['stokdarah/delete']  = 'DarahController/delete';
 
 //pendonor
-$route['pendonor']         = 'Welcome/VPendonor';
+$route['VUserDonor']         = 'Welcome/VUserDonor';
 $route['carousel']         = 'Welcome/VCarousel';
 
 //berita

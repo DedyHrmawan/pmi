@@ -122,6 +122,7 @@
 							<!--begin::Toolbar-->
 							<div class="flex-equal text-end ms-1">
 								<a href="<?php echo site_url('login'); ?>" class="btn btn-danger btn-color-white">Sign In</a>
+								<a href="<?php echo site_url('signup'); ?>" class="btn btn-success btn-color-white">Sign Up</a>
 							</div>
 							<!--end::Toolbar-->
 						</div>
