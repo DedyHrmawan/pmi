@@ -102,7 +102,13 @@ $route['stokdarah/delete']  = 'DarahController/delete';
 
 //pendonor
 $route['VUserDonor']         = 'Welcome/VUserDonor';
-$route['carousel']         = 'Welcome/VCarousel';
+
+//carousel
+$route['carousel']         = 'CarouselController/VCarousel';
+$route['carousel/store']   = 'CarouselController/store';
+$route['carousel/ajxGet']  = 'CarouselController/ajxGet';
+$route['carousel/edit']    = 'CarouselController/edit';
+$route['carousel/delete']  = 'CarouselController/delete';
 
 //berita
 $route['berita']         = 'BeritaController/VBerita';
@@ -122,5 +128,6 @@ $route['informasi-pmi']         = 'DepanController/VInformasi';
 $route['informasi-pmi/(:any)']  = 'DepanController/OthersInfo/$1';
 $route['stokdarah-pmi']         = 'DepanController/VStokDarah';
 $route['news']                  = 'DepanController/VNews';
+$route['news/(:any)']           = 'DepanController/OthersNews/$1';
 $route['agenda-pmi']            = 'DepanController/VAgendaPMI';
 $route['jadwal']                = 'DepanController/VJadwalDepan';

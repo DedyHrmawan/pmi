@@ -11,9 +11,11 @@ class DepanController extends CI_Controller
     //depan
 	public function landing()
 	{
-        $jadwalMobil = $this->Depan->getJadwalMobil();				
+        $jadwalMobil = $this->Depan->getJadwalMobil();	
+        $carousel = $this->Depan->getCarousel();					
         $data = array(
-            'jadwal_mobil' => $jadwalMobil
+            'jadwal_mobil' => $jadwalMobil,
+            'carousel' => $carousel
         );			
 		$this->template->depan('pmi-depan/VBeranda', $data);
 	}
@@ -79,7 +81,25 @@ class DepanController extends CI_Controller
 
 	public function VNews()
 	{
-		$this->template->depan('pmi-depan/VBerita');
+        $berita = $this->Depan->getBerita();				
+        $data = array(
+            'berita' => $berita,
+            'list'=> $berita
+        );
+
+		$this->template->depan('pmi-depan/VBerita', $data);
+	}
+
+    public function OthersNews($param)
+	{        
+        $data['filter'] = 'id_berita = '.$param;
+        $berita = $this->Depan->getOtherBerita($data);	
+        $list = $this->Depan->getBerita();			
+        $data = array(
+            'berita' => $berita,
+            'list'=> $list
+        );
+		$this->template->depan('pmi-depan/VBerita', $data);
 	}
 
 	public function VAgendaPMI()
