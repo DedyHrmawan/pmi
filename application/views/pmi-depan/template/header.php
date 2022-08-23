@@ -121,8 +121,9 @@
 							<!--end::Menu wrapper-->
 							<!--begin::Toolbar-->
 							<div class="flex-equal text-end ms-1">
-								<a href="<?php echo site_url('login'); ?>" class="btn btn-danger btn-color-white">Sign In</a>
-								<a href="<?php echo site_url('signup'); ?>" class="btn btn-success btn-color-white">Sign Up</a>
+								<a href="<?php echo site_url('login'); ?>" class="btn btn-danger btn-color-white me-1">Sign In</a>
+								<!-- <a href="<?php echo site_url('signup'); ?>" class="btn btn-success btn-color-white me-1">Sign Up</a> -->
+								<!-- <a href="<?php echo site_url(''); ?>" class="btn btn-danger btn-color-white me-1">Logout</a> -->
 							</div>
 							<!--end::Toolbar-->
 						</div>

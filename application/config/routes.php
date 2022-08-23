@@ -92,33 +92,39 @@ $route['agenda/edit']   = 'AgendaController/edit';
 $route['agenda/delete'] = 'AgendaController/delete';
 
 //stok darah
-$route['stokdarah']         = 'DarahController/VStokDarah';
-$route['stokdarah/addType'] = 'DarahController/addType';
-$route['stokdarah/addStock'] = 'DarahController/addStock';
-$route['stokdarah/ajxGet']  = 'DarahController/ajxGet';
-$route['stokdarah/getStock'] = 'DarahController/getStock';
-$route['stokdarah/edit']    = 'DarahController/edit';
-$route['stokdarah/delete']  = 'DarahController/delete';
+$route['stokdarah']             = 'DarahController/VStokDarah';
+$route['stokdarah/addType']     = 'DarahController/addType';
+$route['stokdarah/addStock']    = 'DarahController/addStock';
+$route['stokdarah/ajxGet']      = 'DarahController/ajxGet';
+$route['stokdarah/getStock']    = 'DarahController/getStock';
+$route['stokdarah/edit']        = 'DarahController/edit';
+$route['stokdarah/delete']      = 'DarahController/delete';
 
 //pendonor
-$route['VUserDonor']         = 'Welcome/VUserDonor';
+$route['listpendonor']          = 'Welcome/VUserDonor';
+
+//data booking admin
+$route['listbooking']           = 'Welcome/VDataBooking';
 
 //carousel
-$route['carousel']         = 'CarouselController/VCarousel';
-$route['carousel/store']   = 'CarouselController/store';
-$route['carousel/ajxGet']  = 'CarouselController/ajxGet';
-$route['carousel/edit']    = 'CarouselController/edit';
-$route['carousel/delete']  = 'CarouselController/delete';
+$route['carousel']              = 'CarouselController/VCarousel';
+$route['carousel/store']        = 'CarouselController/store';
+$route['carousel/ajxGet']       = 'CarouselController/ajxGet';
+$route['carousel/edit']         = 'CarouselController/edit';
+$route['carousel/delete']       = 'CarouselController/delete';
 
 //berita
-$route['berita']         = 'BeritaController/VBerita';
-$route['berita/store']  = 'BeritaController/store';
-$route['berita/ajxGet'] = 'BeritaController/ajxGet';
-$route['berita/edit']   = 'BeritaController/edit';
-$route['berita/delete'] = 'BeritaController/delete';
+$route['berita']                = 'BeritaController/VBerita';
+$route['berita/store']          = 'BeritaController/store';
+$route['berita/ajxGet']         = 'BeritaController/ajxGet';
+$route['berita/edit']           = 'BeritaController/edit';
+$route['berita/delete']         = 'BeritaController/delete';
+
+//laporan keluar
+$route['laporankeluar']         = 'Welcome/VLaporanKeluar'; 
 
 //signup
-$route['signup']         = 'Welcome/VSignUp';
+$route['signup']                = 'Welcome/VSignUp';
 
 //depan
 $route['beranda']               = 'DepanController/landing';
@@ -131,3 +137,6 @@ $route['news']                  = 'DepanController/VNews';
 $route['news/(:any)']           = 'DepanController/OthersNews/$1';
 $route['agenda-pmi']            = 'DepanController/VAgendaPMI';
 $route['jadwal']                = 'DepanController/VJadwalDepan';
+
+$route['blank']                 = 'Welcome/VBlank';
+$route['booking']               = 'Welcome/VBooking';
