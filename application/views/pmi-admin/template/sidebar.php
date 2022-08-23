@@ -96,7 +96,7 @@
                     </a>
                 </div> -->
                 <div class="menu-item">
-                    <a <?= $this->uri->segment(1) == 'pendonor' || $this->uri->segment(1) == '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('pendonor'); ?>" title="Menu berisi data pendonor darah PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1) == 'VUserDonor' || $this->uri->segment(1) == '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('VUserDonor'); ?>" title="Menu berisi data pendonor darah PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen049.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

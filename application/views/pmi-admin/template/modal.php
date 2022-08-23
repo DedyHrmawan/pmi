@@ -864,10 +864,18 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">NIK</span>
+                            <span class="required">Nama</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan NIK" name="" required />
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="" required />
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Email</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="email" class="form-control form-control-solid" placeholder="Masukan Email" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -880,56 +888,10 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Nama</span>
-                        </label>
-                        <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="" required />
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Foto</span>
-                        </label>
-                        <!--end::Label-->
-                        <!--begin::Dropzone-->
-                        <div class="dropzone" id="imgPendonor">
-                            <!--begin::Message-->
-                            <div class="dz-message needsclick">
-                                <!--begin::Icon-->
-                                <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
-                                <!--end::Icon-->
-
-                                <!--begin::Info-->
-                                <div class="ms-4">
-                                    <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Letakkan file di sini atau klik untuk mengunggah.</h3>
-                                    <span class="fs-7 fw-bold text-gray-400">Unggah foto Anda di bawah 2 Mb</span>
-                                </div>
-                                <!--end::Info-->
-                            </div>
-                        </div>
-                        <!--end::Dropzone-->
-                    </div>
-                    <!--end::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Umur</span>
                         </label>
                         <!--end::Label-->
                         <input type="number" class="form-control form-control-solid" placeholder="Masukan Umur" name="" required />
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Jenis Golongan Darah</span>
-                        </label>
-                        <!--end::Label-->
-                        <select name="" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
-                            <option value="1">A</option>
-                            <option value="2">B</option>
-                            <option value="3">AB</option>
-                            <option value="4">O</option>
-                        </select>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -950,28 +912,32 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Donor Terakhir</span>
+                            <span class="required">Golongan Darah</span>
                         </label>
-                        <div class="position-relative d-flex align-items-center">
-                            <!--begin::Datepicker-->
-                            <input id="add_donorTerakhir" class="form-control form-control-solid " placeholder="Tanggal Donor Terakhir" name="jadwal" required />
-                            <!--end::Datepicker-->
-                        </div>
+                        <select class="form-select form-select-solid" name="">
+                            <option value="">A</option>
+                            <option value="">B</option>
+                            <option value="">AB</option>
+                            <option value="">O</option>
+                        </select>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Donor Selanjutnya</span>
+                            <span class="required">Alamat</span>
                         </label>
-                        <div class="position-relative d-flex align-items-center">
-                            <!--begin::Datepicker-->
-                            <input id="add_donorSelanjutnya" class="form-control form-control-solid " placeholder="Tanggal Donor Selanjutnya" name="jadwal" required />
-                            <!--end::Datepicker-->
-                        </div>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" required />
                     </div>
+                    <!-- <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                            <span class="required">Foto Pendonor</span>
+                        </label>
+                        <img class="m-3 mx-auto rounded" id="prevAddFotoUser" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+                        <input type="file" class="form-control form-control-solid" id="addImgFotoUser" onchange="previewAddFotoUser();" required />
+                    </div> -->
                 </form>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
@@ -1006,49 +972,18 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Foto</span>
+                            <span class="required">Nama</span>
                         </label>
                         <!--end::Label-->
-                        <div class="text-center">
-                            <!--begin::Image input-->
-                            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/admin/media/svg/avatars/blank.svg)">
-                                <!--begin::Image preview wrapper-->
-                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/admin/media/avatars/300-1.jpg)"></div>
-                                <!--end::Image preview wrapper-->
-
-                                <!--begin::Edit button-->
-                                <label class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click" title="Change avatar">
-                                    <i class="bi bi-pencil-fill fs-7"></i>
-
-                                    <!--begin::Inputs-->
-                                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                                    <input type="hidden" name="avatar_remove" />
-                                    <!--end::Inputs-->
-                                </label>
-                                <!--end::Edit button-->
-
-                                <!--begin::Cancel button-->
-                                <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" data-bs-dismiss="click" title="Cancel avatar">
-                                    <i class="bi bi-x fs-2"></i>
-                                </span>
-                                <!--end::Cancel button-->
-
-                                <!--begin::Remove button-->
-                                <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" data-bs-dismiss="click" title="Remove avatar">
-                                    <i class="bi bi-x fs-2"></i>
-                                </span>
-                                <!--end::Remove button-->
-                            </div>
-                            <!--end::Image input-->
-                        </div>
+                        <input type="text" class="form-control form-control-solid" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">NIK</span>
+                            <span class="required">Email</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" value="3505129190909001" name="" />
+                        <input type="email" class="form-control form-control-solid" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1056,36 +991,42 @@
                             <span class="required">Password</span>
                         </label>
                         <!--end::Label-->
-                        <input type="password" class="form-control form-control-solid" value="Masukan Password" name="" />
+                        <input type="password" class="form-control form-control-solid" name="" required />
                     </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Nama</span>
-                        </label>
-                        <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" value="Dedy Junaedi" name="" />
-                    </div>
-                    <!--end::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Umur</span>
                         </label>
                         <!--end::Label-->
-                        <input type="number" class="form-control form-control-solid" value="17" name="" />
+                        <input type="number" class="form-control form-control-solid" name="" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Jenis Golongan Darah</span>
+                            <span class="required">Alamat</span>
                         </label>
                         <!--end::Label-->
-                        <select name="" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid" required>
-                            <option value="1">A</option>
-                            <option value="2">B</option>
-                            <option value="3">AB</option>
-                            <option value="4">O</option>
+                        <input type="text" class="form-control form-control-solid" name="" required />
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Nomor Telepon</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="number" class="form-control form-control-solid" name="" required />
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Golongan Darah</span>
+                        </label>
+                        <select class="form-select form-select-solid" name="">
+                            <option value="">A</option>
+                            <option value="">B</option>
+                            <option value="">AB</option>
+                            <option value="">O</option>
                         </select>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
@@ -1094,39 +1035,20 @@
                             <span class="required">Alamat</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" value="Malang" name="" />
+                        <input type="text" class="form-control form-control-solid" name="" required />
                     </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Nomor Telepon</span>
+                    <!-- <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                            <span class="required">Foto Pendonor</span>
                         </label>
-                        <!--end::Label-->
-                        <input type="number" class="form-control form-control-solid" value="0847446746746" name="" />
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Donor Terakhir</span>
-                        </label>
-                        <div class="position-relative d-flex align-items-center">
-                            <!--begin::Datepicker-->
-                            <input id="edit_donorTerakhir" class="form-control form-control-solid " value="Tanggal Donor Terakhir" name="jadwal" />
-                            <!--end::Datepicker-->
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Donor Selanjutnya</span>
-                        </label>
-                        <div class="position-relative d-flex align-items-center">
-                            <!--begin::Datepicker-->
-                            <input id="edit_donorSelanjutnya" class="form-control form-control-solid " value="Tanggal Donor Selanjutnya" name="jadwal" />
-                            <!--end::Datepicker-->
-                        </div>
-                    </div>
+                        <img class="m-3 mx-auto rounded" id="prevEditFotoUser" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+                        <input type="file" class="form-control form-control-solid" id="editImgFotoUser" onchange="previewEditFotoUser();" required />
+                    </div> -->
                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </div>
     </div>

@@ -25,12 +25,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('pmi-admin/VLogin');
 	}
 
-	public function VPendonor()
+	public function VUserDonor()
 	{
 		$data = array(
             'nav_title' => 'Pendonor PMI Kota Malang'
         );			
-		$this->template->admin('pmi-admin/VPendonor', $data);
+		$this->template->admin('pmi-admin/VUserDonor', $data);
 	}
 
 	//signup penodnor
@@ -48,4 +48,12 @@ class Welcome extends CI_Controller {
 		$this->template->admin('pmi-admin/VCarousel', $data);
 	}
 
+	//User Pendonor 
+	public function VPendonor()
+	{
+		$data = array(
+			'nav_title' => 'User Pendonor PMI Kota Malang'
+		);			
+		$this->template->admin('pmi-pendonor/', $data);
+	}
 }
