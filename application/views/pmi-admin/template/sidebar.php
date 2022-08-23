@@ -96,7 +96,7 @@
                     </a>
                 </div> -->
                 <div class="menu-item">
-                    <a <?= $this->uri->segment(1) == 'VUserDonor' || $this->uri->segment(1) == '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('VUserDonor'); ?>" title="Menu berisi data pendonor darah PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a <?= $this->uri->segment(1) == 'listpendonor' || $this->uri->segment(1) == '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('listpendonor'); ?>" title="Menu berisi data pendonor darah PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen049.svg-->
                             <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -107,6 +107,19 @@
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Data Pendonor</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a <?= $this->uri->segment(1) == 'listbooking' || $this->uri->segment(1) == '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('listbooking'); ?>" title="Menu berisi data booking jadwal donor PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen049.svg-->
+                            <span class="svg-icon svg-icon-muted svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path opacity="0.3" d="M20.9 12.9C20.3 12.9 19.9 12.5 19.9 11.9C19.9 11.3 20.3 10.9 20.9 10.9H21.8C21.3 6.2 17.6 2.4 12.9 2V2.9C12.9 3.5 12.5 3.9 11.9 3.9C11.3 3.9 10.9 3.5 10.9 2.9V2C6.19999 2.5 2.4 6.2 2 10.9H2.89999C3.49999 10.9 3.89999 11.3 3.89999 11.9C3.89999 12.5 3.49999 12.9 2.89999 12.9H2C2.5 17.6 6.19999 21.4 10.9 21.8V20.9C10.9 20.3 11.3 19.9 11.9 19.9C12.5 19.9 12.9 20.3 12.9 20.9V21.8C17.6 21.3 21.4 17.6 21.8 12.9H20.9Z" fill="currentColor" />
+                                    <path d="M16.9 10.9H13.6C13.4 10.6 13.2 10.4 12.9 10.2V5.90002C12.9 5.30002 12.5 4.90002 11.9 4.90002C11.3 4.90002 10.9 5.30002 10.9 5.90002V10.2C10.6 10.4 10.4 10.6 10.2 10.9H9.89999C9.29999 10.9 8.89999 11.3 8.89999 11.9C8.89999 12.5 9.29999 12.9 9.89999 12.9H10.2C10.4 13.2 10.6 13.4 10.9 13.6V13.9C10.9 14.5 11.3 14.9 11.9 14.9C12.5 14.9 12.9 14.5 12.9 13.9V13.6C13.2 13.4 13.4 13.2 13.6 12.9H16.9C17.5 12.9 17.9 12.5 17.9 11.9C17.9 11.3 17.5 10.9 16.9 10.9Z" fill="currentColor" />
+                                </svg></span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Data Booking Jadwal</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -133,6 +146,20 @@
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Carousel</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a <?= $this->uri->segment(1) == 'laporankeluar' || $this->uri->segment(1) == '' ? 'class="menu-link active"' : 'class="menu-link"' ?> href="<?php echo site_url('laporankeluar'); ?>" title="Menu berisi laporan PMI Kota Malang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil006.svg-->
+                            <span class="svg-icon svg-icon-muted svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15.5 14C15.5 13.4 14.6 13.5 14 13.5H9.5C8.9 13.5 8.5 13.4 8.5 14C8.5 14.6 8.9 14.5 9.5 14.5H14C14.6 14.5 15.5 14.6 15.5 14Z" fill="currentColor" />
+                                    <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor" />
+                                    <rect x="8" y="13" width="8" height="2" rx="1" fill="currentColor" />
+                                </svg></span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Laporan</span>
                     </a>
                 </div>
                 <div class="menu-item">
