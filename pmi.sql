@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2022 at 11:23 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Waktu pembuatan: 23 Agu 2022 pada 16.55
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `telepon`, `foto`, `hak_akses`, `status`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `telep
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda`
+-- Struktur dari tabel `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -63,7 +63,7 @@ CREATE TABLE `agenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `agenda`
+-- Dumping data untuk tabel `agenda`
 --
 
 INSERT INTO `agenda` (`id_agenda`, `nama_agenda`, `tgl_agenda`, `lokasi_agenda`, `jam_buka`, `jam_tutup`, `status`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `agenda` (`id_agenda`, `nama_agenda`, `tgl_agenda`, `lokasi_agenda`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -87,16 +87,39 @@ CREATE TABLE `berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `deskripsi`, `gambar`, `status`, `penulis_berita`) VALUES
-(4, 'Ada apa nih ?', '2022-07-12', 'Oke', '', 1, 'Giri');
+(2, 'PMI KOTA SURAKARTA AJAK PENDONOR BERBAGI MOMENT DONOR DARAH', '2022-08-23', '<p>PMI KOTA SURAKARTA AJAK PENDONOR BERBAGI MOMENT DONOR DARAH</p>', 'http://localhost/pmi/assets/images/1b0ff079ac308b1a1183b1d53e16022e.jpeg', 1, 'Admin'),
+(4, 'PERINGATI HARI DONOR', '2022-08-23', '<p><span style=\"color: #181c32; font-family: Poppins, Helvetica, sans-serif; font-size: 14.95px; background-color: #ffffff;\">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</span></p>', 'http://localhost/pmi/assets/images/9b11038f21096900e4c16a5599300ed5.jpg', 1, 'Admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `darah`
+-- Struktur dari tabel `carousel`
+--
+
+CREATE TABLE `carousel` (
+  `id_carousel` int(11) NOT NULL,
+  `gambar` text NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `carousel`
+--
+
+INSERT INTO `carousel` (`id_carousel`, `gambar`, `status`) VALUES
+(1, 'http://localhost/pmi/assets/images/3b68cd27bf63a25558cb954c0378302d.jpg', 1),
+(3, 'http://localhost/pmi/assets/images/fbb5211b62ee54ced8bf838d44258d75.jpeg', 1),
+(5, 'http://localhost/pmi/assets/images/80fc3c1a796f897eed37a2759c60c13f.jpg', 1),
+(6, 'http://localhost/pmi/assets/images/582972b0d5f71a149b6f57f61643c13a.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `darah`
 --
 
 CREATE TABLE `darah` (
@@ -106,7 +129,7 @@ CREATE TABLE `darah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `darah`
+-- Dumping data untuk tabel `darah`
 --
 
 INSERT INTO `darah` (`id_darah`, `jenis_darah`, `last_updated`) VALUES
@@ -121,7 +144,7 @@ INSERT INTO `darah` (`id_darah`, `jenis_darah`, `last_updated`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_darah`
+-- Struktur dari tabel `detail_darah`
 --
 
 CREATE TABLE `detail_darah` (
@@ -133,7 +156,7 @@ CREATE TABLE `detail_darah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `detail_darah`
+-- Dumping data untuk tabel `detail_darah`
 --
 
 INSERT INTO `detail_darah` (`id_detail_darah`, `id_darah`, `id_jenis_darah`, `stok`, `updated_at`) VALUES
@@ -169,7 +192,7 @@ INSERT INTO `detail_darah` (`id_detail_darah`, `id_darah`, `id_jenis_darah`, `st
 -- --------------------------------------------------------
 
 --
--- Table structure for table `informasi`
+-- Struktur dari tabel `informasi`
 --
 
 CREATE TABLE `informasi` (
@@ -180,7 +203,7 @@ CREATE TABLE `informasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `informasi`
+-- Dumping data untuk tabel `informasi`
 --
 
 INSERT INTO `informasi` (`id_informasi`, `judul_informasi`, `deskripsi`, `status`) VALUES
@@ -191,7 +214,7 @@ INSERT INTO `informasi` (`id_informasi`, `judul_informasi`, `deskripsi`, `status
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwal_mobil`
+-- Struktur dari tabel `jadwal_mobil`
 --
 
 CREATE TABLE `jadwal_mobil` (
@@ -204,7 +227,7 @@ CREATE TABLE `jadwal_mobil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jadwal_mobil`
+-- Dumping data untuk tabel `jadwal_mobil`
 --
 
 INSERT INTO `jadwal_mobil` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`) VALUES
@@ -214,7 +237,7 @@ INSERT INTO `jadwal_mobil` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `loka
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_darah`
+-- Struktur dari tabel `jenis_darah`
 --
 
 CREATE TABLE `jenis_darah` (
@@ -223,7 +246,7 @@ CREATE TABLE `jenis_darah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jenis_darah`
+-- Dumping data untuk tabel `jenis_darah`
 --
 
 INSERT INTO `jenis_darah` (`id_jenis_darah`, `nama_jenis_darah`) VALUES
@@ -235,7 +258,7 @@ INSERT INTO `jenis_darah` (`id_jenis_darah`, `nama_jenis_darah`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendonor`
+-- Struktur dari tabel `pendonor`
 --
 
 CREATE TABLE `pendonor` (
@@ -253,16 +276,17 @@ CREATE TABLE `pendonor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pendonor`
+-- Dumping data untuk tabel `pendonor`
 --
 
 INSERT INTO `pendonor` (`id_pendonor`, `password`, `nama_pendonor`, `foto_pendonor`, `umur_pendonor`, `id_jenis_darah`, `alamat_pendonor`, `telepon_pendonor`, `donor_terakhir`, `donor_selanjutnya`, `email_pendonor`) VALUES
-(25, 'tes123', 'Dan Giri', 'http://localhost/pmi/uploads/pendonor/1657602538893_DOWNPOUR.jpg', 24, 3, 'Jalan Laks Adi Sucipto 8/25', '081123456', NULL, NULL, 'danngriel@gmail.com');
+(25, 'tes123', 'Dan Giri', 'http://localhost/pmi/uploads/pendonor/1657602538893_DOWNPOUR.jpg', 24, 3, 'Jalan Laks Adi Sucipto 8/25', '081123456', NULL, NULL, 'danngriel@gmail.com'),
+(29, 'tes123', 'Ramadhan Giri Mukti', 'http://localhost/pmi/uploads/pendonor/1661263986049_SS.jpg', 24, 3, 'Jalan Kanan Kiri 12 Malang', '087859935894', NULL, NULL, 'kyurikariko@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profil`
+-- Struktur dari tabel `profil`
 --
 
 CREATE TABLE `profil` (
@@ -273,7 +297,7 @@ CREATE TABLE `profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `profil`
+-- Dumping data untuk tabel `profil`
 --
 
 INSERT INTO `profil` (`id_profil`, `judul_profil`, `deskripsi`, `status`) VALUES
@@ -286,31 +310,37 @@ INSERT INTO `profil` (`id_profil`, `judul_profil`, `deskripsi`, `status`) VALUES
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `agenda`
+-- Indeks untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id_agenda`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
--- Indexes for table `darah`
+-- Indeks untuk tabel `carousel`
+--
+ALTER TABLE `carousel`
+  ADD PRIMARY KEY (`id_carousel`);
+
+--
+-- Indeks untuk tabel `darah`
 --
 ALTER TABLE `darah`
   ADD PRIMARY KEY (`id_darah`);
 
 --
--- Indexes for table `detail_darah`
+-- Indeks untuk tabel `detail_darah`
 --
 ALTER TABLE `detail_darah`
   ADD PRIMARY KEY (`id_detail_darah`),
@@ -318,105 +348,111 @@ ALTER TABLE `detail_darah`
   ADD KEY `id_jenis_darah` (`id_jenis_darah`);
 
 --
--- Indexes for table `informasi`
+-- Indeks untuk tabel `informasi`
 --
 ALTER TABLE `informasi`
   ADD PRIMARY KEY (`id_informasi`);
 
 --
--- Indexes for table `jadwal_mobil`
+-- Indeks untuk tabel `jadwal_mobil`
 --
 ALTER TABLE `jadwal_mobil`
   ADD PRIMARY KEY (`id_mobil`);
 
 --
--- Indexes for table `jenis_darah`
+-- Indeks untuk tabel `jenis_darah`
 --
 ALTER TABLE `jenis_darah`
   ADD PRIMARY KEY (`id_jenis_darah`);
 
 --
--- Indexes for table `pendonor`
+-- Indeks untuk tabel `pendonor`
 --
 ALTER TABLE `pendonor`
   ADD PRIMARY KEY (`id_pendonor`);
 
 --
--- Indexes for table `profil`
+-- Indeks untuk tabel `profil`
 --
 ALTER TABLE `profil`
   ADD PRIMARY KEY (`id_profil`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `agenda`
+-- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
   MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `darah`
+-- AUTO_INCREMENT untuk tabel `carousel`
+--
+ALTER TABLE `carousel`
+  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `darah`
 --
 ALTER TABLE `darah`
   MODIFY `id_darah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `detail_darah`
+-- AUTO_INCREMENT untuk tabel `detail_darah`
 --
 ALTER TABLE `detail_darah`
   MODIFY `id_detail_darah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `informasi`
+-- AUTO_INCREMENT untuk tabel `informasi`
 --
 ALTER TABLE `informasi`
   MODIFY `id_informasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `jadwal_mobil`
+-- AUTO_INCREMENT untuk tabel `jadwal_mobil`
 --
 ALTER TABLE `jadwal_mobil`
   MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `jenis_darah`
+-- AUTO_INCREMENT untuk tabel `jenis_darah`
 --
 ALTER TABLE `jenis_darah`
   MODIFY `id_jenis_darah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pendonor`
+-- AUTO_INCREMENT untuk tabel `pendonor`
 --
 ALTER TABLE `pendonor`
-  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `profil`
+-- AUTO_INCREMENT untuk tabel `profil`
 --
 ALTER TABLE `profil`
   MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `detail_darah`
+-- Ketidakleluasaan untuk tabel `detail_darah`
 --
 ALTER TABLE `detail_darah`
   ADD CONSTRAINT `detail_darah_ibfk_1` FOREIGN KEY (`id_darah`) REFERENCES `darah` (`id_darah`),
