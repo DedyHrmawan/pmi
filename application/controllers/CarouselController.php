@@ -1,71 +1,63 @@
 <?php
-class BeritaController extends CI_Controller
+class CarouselController extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Berita');
+        $this->load->model('Carousel');
         $this->load->library(array('upload', 'image_lib'));
     }
-
-    public function VBerita()
+    
+	public function VCarousel()
 	{
-        $berita = $this->Berita->getAll();				
-        $data = array(
-            'nav_title' => 'Berita PMI Kota Malang',
-            'berita' => $berita
-        );			
-		$this->template->admin('pmi-admin/VBerita', $data);
+        $carousel = $this->Carousel->getAll();
+		$data = array(
+			'nav_title' => 'Carousel Foto Beranda PMI Kota Malang',
+            'carousel' => $carousel
+		);			
+		$this->template->admin('pmi-admin/VCarousel', $data);
 	}
 
     public function store()
     {
         $param = $_POST;        
-
-        $store['judul_berita']  =$param['judul_berita'];
-        $store['penulis_berita']=$param['penulis_berita'];
-        $store['tanggal_berita']=$param['tanggal_berita'];
-        $store['deskripsi']     =$param['deskripsi'];
-        $store['status']        =$param['status'];
+        
+        $store['status'] = $param['status'];
 
         if(!empty($_FILES['file']['name'])){
             $banner = $this->upload_image();
             $store['gambar']    =$banner;
         };
 
-        $this->Berita->insert($store);
-        redirect('berita');
+        $this->Carousel->insert($store);
+        redirect('carousel');
     }    
 
     public function ajxGet(){
-        $data['filter'] = 'id_berita = '.$_POST['id_berita'];
-        echo json_encode($this->Berita->get($data));
+        $data['filter'] = 'id_carousel = '.$_POST['id_carousel'];
+        echo json_encode($this->Carousel->get($data));
     }
 
     public function edit(){
         $param = $_POST;
 
-        $store['judul_berita']  =$param['judul_berita'];
-        $store['penulis_berita']=$param['penulis_berita'];
-        $store['tanggal_berita']=$param['tanggal_berita'];
-        $store['deskripsi']     =$param['deskripsi'];
-        $store['status']        =$param['status'];
-        $store['id_berita']     =$param['id_berita'];
+        $store['status']          = $param['status'];
+        $store['id_carousel']     = $param['id_carousel'];
 
         if(!empty($_FILES['file']['name'])){
             $banner = $this->upload_image();
-            $store['gambar']    =$banner;
+            $store['gambar']    = $banner;
         };
 
-        $this->Berita->update($store);
+        $this->Carousel->update($store);
 
-        redirect('berita');
+        redirect('carousel');
     }
 
     public function delete(){
         $dataDelete = $_POST;
-        $this->Berita->delete($dataDelete);
-        redirect('berita');
+        $this->Carousel->delete($dataDelete);
+        redirect('carousel');
     }
 
     function upload_image(){

@@ -3,19 +3,15 @@
 	<!--begin::Slider-->
 	<div data-tns="true" data-tns-loop="true" data-tns-swipe-angle="false" data-tns-speed="2000" data-tns-autoplay="true" data-tns-autoplay-timeout="5000" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-center="false" data-tns-dots="false" data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
 		<!--begin::Item-->
-		<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-			<img src="<?= base_url(); ?>assets/admin/media/demo1.jpg" width="800" min-width="700" class="card-rounded shadow mw-100" alt="" />
-		</div>
-		<!--end::Item-->
-		<!--begin::Item-->
-		<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-			<img src="<?= base_url(); ?>assets/admin/media/demo2.jpeg" width="800" min-width="700" class=" card-rounded shadow mw-100" alt="" />
-		</div>
-		<!--end::Item-->
-		<!--begin::Item-->
-		<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-			<img src="<?= base_url(); ?>assets/admin/media/demo3.jpg" width="800" min-width="700" class=" card-rounded shadow mw-100" alt="" />
-		</div>
+		<?php
+		foreach($carousel as $item){
+			echo'
+			<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
+				<img src="'.$item->gambar.'" width="800" min-width="700" class="card-rounded shadow mw-100" alt="" />
+			</div>
+			';
+		}
+		?>		
 		<!--end::Item-->
 	</div>
 	<!--end::Slider-->

@@ -41,7 +41,12 @@
 	                                        <!--end::Svg Icon-->
 	                                        <!--end::Icon-->
 	                                        <!--begin::Label-->
-	                                        <span class="fw-bolder text-gray-400">06 April 2021</span>
+	                                        <span class="fw-bolder text-gray-400">
+												<?php 
+    											$newDate = date("d M Y", strtotime($berita[0]->tanggal_berita)); 
+												echo $newDate;  
+												?>
+											</span>
 	                                        <!--end::Label-->
 	                                    </div>
 	                                    <!--end::Item-->
@@ -55,19 +60,19 @@
 	                                            </svg></span>
 	                                        <!--end::Svg Icon-->
 	                                        <!--begin::Label-->
-	                                        <span class="fw-bolder text-gray-400">Vladimir Putin</span>
+	                                        <span class="fw-bolder text-gray-400"><?= $berita[0]->penulis_berita ?></span>
 	                                        <!--end::Label-->
 	                                    </div>
 	                                    <!--end::Item-->
 	                                </div>
 	                                <!--end::Info-->
 	                                <!--begin::Title-->
-	                                <h2 href="#" class="text-dark fs-2 fw-bolder">PMI Kota Malang Joss</h2>
+	                                <h2 href="#" class="text-dark fs-2 fw-bolder"><?= $berita[0]->judul_berita ?></h2>
 	                                    <!--end::Title-->
 	                                    <!--begin::Container-->
 	                                    <div class="overlay mt-8">
 	                                        <!--begin::Image-->
-	                                        <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-350px" style="background-image:url('assets/admin/media/stock/1600x800/img-1.jpg')"></div>
+	                                        <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-350px" style="background-image:url(<?= $berita[0]->gambar ?>)"></div>
 	                                        <!--end::Image-->
 	                                    </div>
 	                                    <!--end::Container-->
@@ -76,7 +81,7 @@
 	                            <!--begin::Description-->
 	                            <div class="fs-5 fw-bold text-dark">
 	                                <!--begin::Text-->
-	                                <p class="mb-17">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</p>
+	                                <?= $berita[0]->deskripsi ?>
 	                                <!--end::Text-->
 	                            </div>
 	                            <!--end::Description-->
@@ -88,21 +93,16 @@
 	                    <div class="flex-column flex-lg-row-auto w-100 w-xl-300px mb-10">
 	                        <!--begin::Catigories-->
 	                        <div class="mb-16">
-	                            <h4 class="text-black mb-7">Daftar Berita</h4>
-	                            <!--begin::Item-->
-	                            <div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
-	                                <!--begin::Text-->
-	                                <a href="#" class="text-muted text-hover-danger pe-2">PERINGATI HARI DONOR</a>
-	                                <!--end::Text-->
-	                            </div>
-	                            <!--end::Item-->
-	                            <!--begin::Item-->
-	                            <div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
-	                                <!--begin::Text-->
-	                                <a href="#" class="text-muted text-hover-danger pe-2">PMI KOTA SURAKARTA AJAK PENDONOR BERBAGI MOMENT DONOR DARAH</a>
-	                                <!--end::Text-->
-	                            </div>
-	                            <!--end::Item-->
+								<h4 class="text-black mb-7">Daftar Berita</h4>
+								<?php
+									foreach($list as $item){
+										echo'
+										<div class="d-flex flex-stack fw-bold fs-5 text-muted mb-4">
+											<a href="'.site_url('news/'.$item->id_berita).'" class="text-muted text-hover-danger pe-2">'.$item->judul_berita.'</a>
+										</div>
+										';
+									}
+								?>
 	                        </div>
 	                        <!--end::Catigories-->
 	                    </div>

@@ -992,7 +992,7 @@
                         </label>
                         <!--end::Label-->
                         <input type="password" class="form-control form-control-solid" name="" required />
-                    </div>
+                    </div>                    
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
@@ -1249,7 +1249,7 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('berita/store') ?>" method="post">
+            <form action="<?= site_url('berita/store') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1295,7 +1295,7 @@
                         <!-- wadah preview -->
                         <img class="m-3 mx-auto rounded" id="prevAddBerita" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
                         <!-- end preview  -->
-                        <input type="file" class="form-control form-control-solid" id="addImgBerita" onchange="previewAddBerita();" required />
+                        <input type="file" class="form-control form-control-solid" name="file" id="addImgBerita" onchange="previewAddBerita();" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1339,7 +1339,7 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('berita/edit') ?>" method="post">
+            <form action="<?= site_url('berita/edit') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1380,13 +1380,13 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
-                            <span class="required">Gambar</span>
+                            <span>Gambar</span>
                         </label>
                         <!--end::Label-->
                         <!-- wadah preview -->
                         <img class="m-3 mx-auto rounded" id="prevEditBerita" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
                         <!-- end preview  -->
-                        <input type="file" class="form-control form-control-solid" id="editImgBerita" onchange="previewEditBerita();" required />
+                        <input type="file" class="form-control form-control-solid" name="file" id="editImgBerita" onchange="previewEditBerita();"/>
                     </div>
                     <!--end::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
@@ -1474,7 +1474,7 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4 text-center">
                         <div class="">
-                            <img src="assets/admin/media/books/1.png" alt="image" style="max-width: 430px; min-width:300px;" />
+                            <img alt="image" id="imgBeritaDetail" style="max-width: 430px; min-width:300px;" />
                         </div>
                     </div>
                     <!--end::Pic-->
@@ -1569,7 +1569,7 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('') ?>" method="post">
+            <form action="<?= site_url('carousel/store') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1580,7 +1580,7 @@
                         <!-- wadah preview -->
                         <img class="m-3 mx-auto rounded" id="prevAddCarousel" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
                         <!-- end preview  -->
-                        <input type="file" class="form-control form-control-solid" id="addImgCarousel" onchange="previewAddCarousel();" required />
+                        <input type="file" name="file" class="form-control form-control-solid" id="addImgCarousel" onchange="previewAddCarousel();" required />
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
@@ -1595,7 +1595,6 @@
                 </div>
 
                 <div class="modal-footer">
-                    <input type="hidden" id="" name="link">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
                 </div>
@@ -1624,19 +1623,19 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('') ?>" method="post">
+            <form action="<?= site_url('carousel/edit') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <!--begin::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
-                            <span class="required">Gambar</span>
+                            <span>Gambar</span>
                         </label>
                         <!--end::Label-->
                         <!-- wadah preview -->
                         <img class="m-3 mx-auto rounded" id="prevEditCarousel" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
                         <!-- end preview  -->
-                        <input type="file" class="form-control form-control-solid" id="editImgCarousel" onchange="previewEditCarousel();" required />
+                        <input type="file" name="file" class="form-control form-control-solid" id="editImgCarousel" onchange="previewEditCarousel();"/>
                     </div>
                     <!--end::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
@@ -1644,7 +1643,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select class="form-select form-select-solid" id="statusBerita_edit" name="status">
+                        <select class="form-select form-select-solid" id="statusCarousel_edit" name="status">
                             <option value="1">Diunggah</option>
                             <option value="2">Diarsipkan</option>
                         </select>
@@ -1652,7 +1651,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <input type="hidden" id="idBerita_edit" name="id_berita">
+                    <input type="hidden" id="idCarousel_edit" name="id_carousel">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
                 </div>
@@ -1681,13 +1680,13 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <form action="<?= site_url('') ?>" method="post">
+            <form action="<?= site_url('carousel/delete') ?>" method="post">
                 <div class="modal-body">
                     <p>Apakah anda yakin ingin menghapus Foto tersebut ?</p>
                 </div>
 
                 <div class="modal-footer">
-                    <input type="hidden" id="hapusBerita_id" name="id_berita">
+                    <input type="hidden" id="hapusCarousel_id" name="id_carousel">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Hapus</button>
                 </div>
@@ -1725,14 +1724,14 @@
                         <h6>Detail Foto</h6>
                         <div class="me-7 mb-4 text-center">
                             <div class="">
-                                <img src="assets/admin/media/demo1.jpg" alt="image" style="max-width: 430px; min-width:300px;" />
+                                <img alt="image" id="imgDetailCarousel" style="max-width: 430px; min-width:300px;" />
                             </div>
                         </div>
                     </div>
                     <!--end::Pic-->
                     <div class="form-group">
                         <h6>Status</h6>
-                        <p id=""><span class="badge badge-success">Diunggah</span></p>
+                        <p id="statusCarouselDetail"><span class="badge badge-success">Diunggah</span></p>
                     </div>
                 </div>
                 <!--end::Card body-->

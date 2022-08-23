@@ -292,6 +292,7 @@
                 $('#deskripsiBerita_detail').html(res[0].deskripsi)
                 $('#penulisBerita_detail').html(res[0].penulis_berita)
                 $('#tanggalBerita_detail').html(res[0].tanggal_berita)
+                $('#imgBeritaDetail').attr("src",res[0].gambar);
                 if (res[0].status == 1) {
                     $('#statusBerita_detail').html('<span class="badge badge-success" >Diunggah</span>')
                 } else {
@@ -314,6 +315,8 @@
                 $('#judulBerita_edit').val(res[0].judul_berita)
                 $('#penulisBerita_edit').val(res[0].penulis_berita)
                 $('#edit_tanggalBerita').val(res[0].tanggal_berita)
+                tinymce.get('deskripsiBerita_edit').setContent(res[0].deskripsi)
+                $('#prevEditBerita').attr("src",res[0].gambar);
                 $('#statusBerita_edit').val(res[0].status).change()
                 $('#idBerita_edit').val(res[0].id_berita)
             }
@@ -323,6 +326,49 @@
     $('#tableBerita tbody').on('click', '.hapusBerita', function() {
         const id = $(this).data("id")
         $('#hapusBerita_id').val(id)
+    })
+
+    //Carousel  
+    $('#tableCarousel tbody').on('click', '.detailCarousel', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('carousel/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_carousel: id
+            },
+            success: res => {
+                $('#imgDetailCarousel').attr("src",res[0].gambar);
+                if (res[0].status == 1) {
+                    $('#statusCarouselDetail').html('<span class="badge badge-success" >Diunggah</span>')
+                } else {
+                    $('#statusCarouselDetail').html('<span class="badge badge-danger" >Diarsipkan</span>')
+                }
+            }
+        })
+    })
+
+    $('#tableCarousel tbody').on('click', '.editCarousel', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('carousel/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_carousel: id
+            },
+            success: res => {
+                $('#prevEditCarousel').attr("src",res[0].gambar);
+                $('#statusCarousel_edit').val(res[0].status).change()
+                $('#idCarousel_edit').val(res[0].id_carousel)
+            }
+        })
+    })
+
+    $('#tableCarousel tbody').on('click', '.hapusCarousel', function() {
+        const id = $(this).data("id")
+        $('#hapusCarousel_id').val(id)
     })
 
     //Agenda
@@ -587,8 +633,8 @@
         };
     };
 
-//preview sebelum upload foto pendonor
-function previewAddFotoUser() {
+    //preview sebelum upload foto pendonor
+    function previewAddFotoUser() {
         document.getElementById("prevAddFotoUser").style.display = "block";
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("addImgFotoUser").files[0]);
