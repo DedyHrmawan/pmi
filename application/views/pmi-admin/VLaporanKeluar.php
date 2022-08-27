@@ -216,7 +216,7 @@
                                 <span class="required">Nama</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="" name="" />
+                            <input type="text" class="form-control form-control-solid"  name="" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -224,7 +224,7 @@
                                 <span class="required">Alamat</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="" name="" />
+                            <input type="text" class="form-control form-control-solid"  name="" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -232,7 +232,7 @@
                                 <span class="required">Instansi</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="" name="" />
+                            <input type="text" class="form-control form-control-solid"  name="" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -240,7 +240,7 @@
                                 <span class="required">Nomor Telepon</span>
                             </label>
                             <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid" id="" name="" />
+                            <input type="number" class="form-control form-control-solid"  name="" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -256,7 +256,7 @@
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="" name="" />
+                            <input type="text" class="form-control form-control-solid"  name="" />
                         </div>
                     </div>
 
@@ -328,35 +328,35 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <h6>Tipe Darah</h6>
-                        <p><span id="">PCR</p>
+                        <p><span >PCR</p>
                     </div>
                     <div class="form-group">
                         <h6>Jenis Golongan Darah</h6>
-                        <p><span id="">A</p>
+                        <p><span >A</p>
                     </div>
                     <div class="form-group">
                         <h6>Nama</h6>
-                        <p id="">Dedy Hermawan</p>
+                        <p >Dedy Hermawan</p>
                     </div>
                     <div class="form-group">
                         <h6>Alamat</h6>
-                        <p><span id="">Blitar</p>
+                        <p><span >Blitar</p>
                     </div>
                     <div class="form-group">
                         <h6>Instansi</h6>
-                        <p><span id="">STIKI Malang</p>
+                        <p><span >STIKI Malang</p>
                     </div>
                     <div class="form-group">
                         <h6>Nomor Telepon</h6>
-                        <p id="">08573526527</p>
+                        <p >08573526527</p>
                     </div>
                     <div class="form-group">
                         <h6>Tanggal</h6>
-                        <p><span id="">20 Agustus 2022</p>
+                        <p><span >20 Agustus 2022</p>
                     </div>
                     <div class="form-group">
                         <h6>Lokasi Donor</h6>
-                        <p id="">UDD PMI Kota Malang</p>
+                        <p >UDD PMI Kota Malang</p>
                     </div>
                 </div>
 
@@ -382,3 +382,142 @@
     <!--end::Scrolltop-->
 </body>
 <!--end::Body-->
+
+<!--begin::Javascript-->
+<script>
+    var hostUrl = "<?= base_url(); ?>assets/";
+</script>
+<!--begin::Global Javascript Bundle(used by all pages)-->
+<script src="<?= base_url(); ?>assets/admin/js/scripts.bundle.js"></script>
+<script src="<?= base_url(); ?>assets/admin/plugins/global/plugins.bundle.js"></script>
+<!--end::Global Javascript Bundle-->
+<!--begin::Page Vendors Javascript(used by this page)-->
+<script src="<?= base_url(); ?>assets/admin/plugins/custom/datatables/datatables.bundle.js"></script>
+<!--end::Page Vendors Javascript-->
+<script type="text/javascript">
+    
+    //chart laporan keluar
+    "use strict";
+    var KTGeneralChartJS = (function() {
+        function a(a = 1, e = 100) {
+            return Math.floor(Math.random() * (e - a) + a);
+        }
+
+        function e(e = 1, t = 100, s = 10) {
+            for (var r = [], l = 0; l < s; l++) r.push(a(e, t));
+            return r;
+        }
+        return {
+            init: function() {
+                (Chart.defaults.font.size = 13),
+                (Chart.defaults.font.family = KTUtil.getCssVariableValue(
+                    "--bs-font-sans-serif"
+                )),
+                (function() {
+                    var a = document.getElementById("laporankeluar"),
+                        t = KTUtil.getCssVariableValue("--bs-primary"),
+                        s = KTUtil.getCssVariableValue("--bs-danger"),
+                        r = KTUtil.getCssVariableValue("--bs-success"),
+                        v = KTUtil.getCssVariableValue("--bs-yellow");
+                    KTUtil.getCssVariableValue("--bs-font-sans-serif");
+                    const l = {
+                        labels: [
+                            "Januari",
+                            "Februari",
+                            "Maret",
+                            "April",
+                            "Mei",
+                            "Juni",
+                            "Juli",
+                            "Agustus",
+                            "September",
+                            "Oktober",
+                            "November",
+                            "Desember",
+                        ],
+                        datasets: [{
+                                label: "A",
+                                data: e(1, 100, 12),
+                                backgroundColor: t,
+                                stack: "Stack 0",
+                            },
+                            {
+                                label: "B",
+                                data: e(1, 100, 12),
+                                backgroundColor: s,
+                                stack: "Stack 1",
+                            },
+                            {
+                                label: "AB",
+                                data: e(1, 100, 12),
+                                backgroundColor: r,
+                                stack: "Stack 2",
+                            },
+                            {
+                                label: "O",
+                                data: e(1, 100, 12),
+                                backgroundColor: v,
+                                stack: "Stack 3",
+                            },
+                        ],
+                    };
+                    new Chart(a, {
+                        type: "bar",
+                        data: l,
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: !1
+                                }
+                            },
+                            responsive: !0,
+                            interaction: {
+                                intersect: !1
+                            },
+                            scales: {
+                                x: {
+                                    stacked: !0
+                                },
+                                y: {
+                                    stacked: !0
+                                }
+                            },
+                        },
+                    });
+                })();
+            },
+        };
+    })();
+    KTUtil.onDOMContentLoaded(function() {
+        KTGeneralChartJS.init();
+    });
+
+    //datatable laporan
+    $('#dataTableLaporanKeluar').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
+    $("#edit_datelaporankeluar").flatpickr();
+</script>
