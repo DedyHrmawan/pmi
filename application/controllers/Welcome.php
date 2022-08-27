@@ -68,4 +68,11 @@ class Welcome extends CI_Controller {
         );			
 		$this->template->admin('pmi-admin/VLaporanKeluar', $data);
 	}
+	public function VLaporanMasuk()
+	{
+		$data = array(
+            'nav_title' => 'Laporan PMI Kota Malang'
+        );			
+		$this->template->admin('pmi-admin/VLaporanMasuk', $data);
+	}
 }

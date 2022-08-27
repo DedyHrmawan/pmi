@@ -103,7 +103,7 @@
 										<!--begin::Menu item-->
 										<div class="menu-item">
 											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('jadwal'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Jadwal Mobil Donor</a>
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6 text-dark text-hover-danger" href="<?php echo site_url('jadwal'); ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Jadwal Donor Darah</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->

@@ -18,7 +18,7 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Laporan Keluar</span>
+                                        <span class="card-label fw-bolder fs-3 mb-1">Laporan Masuk</span>
                                         <span class="text-muted fw-bold fs-7">Berdasarkan Jenis Golongan Darah</span>
                                     </h3>
                                     <!--begin::Toolbar-->
@@ -36,7 +36,7 @@
                                     <!--begin::Card-->
                                     <div class="card card-bordered">
                                         <div class="card-body">
-                                            <canvas id="laporankeluar" class="mh-400px"></canvas>
+                                            <canvas id="laporanmasuk" class="mh-400px"></canvas>
                                         </div>
                                     </div>
                                     <!--end::Card-->
@@ -69,15 +69,15 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Daftar Laporan Darah Keluar</span>
-                                        <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Keluar</span> -->
+                                        <span class="card-label fw-bolder fs-3 mb-1">Daftar Laporan Darah Masuk</span>
+                                        <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Masuk</span> -->
                                     </h3>
                                 </div>
                                 <div class="card-body py-3">
                                     <!--begin::Table container-->
                                     <div class="table-responsive">
                                         <!--begin::Table-->
-                                        <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableLaporanKeluar">
+                                        <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableLaporanMasuk">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted">
@@ -108,7 +108,7 @@
                                                     UDD PMI KOTA MALANG
                                                 </td>
                                                 <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporankeluar" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporankeluar me-1">
+                                                    <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporanmasuk" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporanmasuk me-1">
                                                         <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
                                                         <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                 <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -117,7 +117,7 @@
                                                             </svg></span>
                                                         <!--end::Svg Icon-->
                                                     </a>
-                                                    <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporankeluar" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporankeluar me-1">
+                                                    <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporanmasuk" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporanmasuk me-1">
                                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                         <span class="svg-icon svg-icon-3">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -127,7 +127,7 @@
                                                         </span>
                                                         <!--end::Svg Icon-->
                                                     </a>
-                                                    <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporankeluar" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporankeluar btn-sm">
+                                                    <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporanmasuk" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporanmasuk btn-sm">
                                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                         <span class="svg-icon svg-icon-3">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -163,12 +163,12 @@
     </div>
     <!--end::Root-->
 
-    <!-- begin modal Edit Laporan Keluar -->
-    <div class="modal fade" id="edit_laporankeluar">
+    <!-- begin modal Edit Laporan masuk -->
+    <div class="modal fade" id="edit_laporanmasuk">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="mb-3">Edit Laporan Keluar PMI</h3>
+                    <h3 class="mb-3">Edit Laporan Masuk PMI</h3>
 
                     <!--begin::Close-->
                     <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -248,7 +248,7 @@
                                 <span class="required">Tanggal</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="edit_datelaporankeluar" name="" />
+                            <input type="text" class="form-control form-control-solid" id="edit_datelaporanmasuk" name="" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -269,14 +269,14 @@
             </div>
         </div>
     </div>
-    <!-- end modal Edit Laporan Keluar-->
+    <!-- end modal Edit Laporan masuk-->
 
-    <!-- begin hapus Laporan Keluar-->
-    <div class="modal fade" id="del_laporankeluar">
+    <!-- begin hapus Laporan masuk-->
+    <div class="modal fade" id="del_laporanmasuk">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="mb-3">Hapus Laporan Keluar</h3>
+                    <h3 class="mb-3">Hapus Laporan Masuk</h3>
                     <!--begin::Close-->
                     <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                         <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
@@ -291,7 +291,7 @@
                 </div>
                 <form action="" method="post">
                     <div class="modal-body">
-                        <p>Apakah anda yakin ingin menghapus Laporan Keluar tersebut ?</p>
+                        <p>Apakah anda yakin ingin menghapus Laporan Masuk tersebut ?</p>
                     </div>
 
                     <div class="modal-footer">
@@ -303,14 +303,14 @@
             </div>
         </div>
     </div>
-    <!-- end modal hapus Laporan Keluar -->
+    <!-- end modal hapus Laporan Masuk -->
 
-    <!-- begin modal detail Laporan Keluar-->
-    <div class="modal fade" id="dtl_laporankeluar">
+    <!-- begin modal detail Laporan Masuk-->
+    <div class="modal fade" id="dtl_laporanmasuk">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="mb-3">Detail Laporan Keluar</h3>
+                    <h3 class="mb-3">Detail Laporan Masuk</h3>
 
                     <!--begin::Close-->
                     <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -366,7 +366,7 @@
             </div>
         </div>
     </div>
-    <!-- end modal detail laporan keluar -->
+    <!-- end modal detail laporan masuk -->
 
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
