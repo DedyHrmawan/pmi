@@ -10,7 +10,34 @@
 <script src="<?= base_url(); ?>assets/admin/plugins/custom/datatables/datatables.bundle.js"></script>
 <!--end::Page Vendors Javascript-->
 
-<!--end::Javascript-->
+<script>
+    // Jadwal UDD PMI 
+    $("#add_dateUDD").flatpickr();
+
+    $("#add_jambukaUDD").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+    $("#add_jamtutupUDD").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+
+    $("#edit_dateUDD").flatpickr();
+
+    $("#edit_jambukaUDD").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+    $("#edit_jamtutupUDD").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+    });
+</script>
 <script type="text/javascript">
     // Jadwal mobil donor 
     $("#add_jadwal").flatpickr();
@@ -149,6 +176,33 @@
         const id = $(this).data("id")
         $('#hapusProfil_id').val(id)
     })
+
+    // Jadwal Donor UDD
+    $('#dataTableJadwalUDD').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
 
     //Mobil Donor   
     $('#dataTableMobil').dataTable({
@@ -292,7 +346,7 @@
                 $('#deskripsiBerita_detail').html(res[0].deskripsi)
                 $('#penulisBerita_detail').html(res[0].penulis_berita)
                 $('#tanggalBerita_detail').html(res[0].tanggal_berita)
-                $('#imgBeritaDetail').attr("src",res[0].gambar);
+                $('#imgBeritaDetail').attr("src", res[0].gambar);
                 if (res[0].status == 1) {
                     $('#statusBerita_detail').html('<span class="badge badge-success" >Diunggah</span>')
                 } else {
@@ -316,7 +370,7 @@
                 $('#penulisBerita_edit').val(res[0].penulis_berita)
                 $('#edit_tanggalBerita').val(res[0].tanggal_berita)
                 tinymce.get('deskripsiBerita_edit').setContent(res[0].deskripsi)
-                $('#prevEditBerita').attr("src",res[0].gambar);
+                $('#prevEditBerita').attr("src", res[0].gambar);
                 $('#statusBerita_edit').val(res[0].status).change()
                 $('#idBerita_edit').val(res[0].id_berita)
             }
@@ -339,7 +393,7 @@
                 id_carousel: id
             },
             success: res => {
-                $('#imgDetailCarousel').attr("src",res[0].gambar);
+                $('#imgDetailCarousel').attr("src", res[0].gambar);
                 if (res[0].status == 1) {
                     $('#statusCarouselDetail').html('<span class="badge badge-success" >Diunggah</span>')
                 } else {
@@ -359,7 +413,7 @@
                 id_carousel: id
             },
             success: res => {
-                $('#prevEditCarousel').attr("src",res[0].gambar);
+                $('#prevEditCarousel').attr("src", res[0].gambar);
                 $('#statusCarousel_edit').val(res[0].status).change()
                 $('#idCarousel_edit').val(res[0].id_carousel)
             }
@@ -492,6 +546,9 @@
     $('#edit_tutup').click(function() {
         $('#id_jenis_darah_edit').val(1).change()
     });
+
+    $("#add_stokdarah").flatpickr();
+    $("#out_stokdarah").flatpickr();
 
     //Pendonor
     $('#tablePendonor').dataTable({
@@ -657,11 +714,11 @@
     var addTiny = {
         selector: ".textTiny",
         menubar: false,
-        setup: function (editor) {
-        editor.on('change', function () {
-            tinymce.triggerSave();
-        });
-    },
+        setup: function(editor) {
+            editor.on('change', function() {
+                tinymce.triggerSave();
+            });
+        },
         toolbar: ["styleselect fontselect fontsizeselect",
             "undo redo | cut copy paste | bold italic | link image | alignleft aligncenter alignright alignjustify",
             "bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code"
@@ -670,18 +727,14 @@
 
     tinymce.init(addTiny);
 
-        $("#submitprofil").click(function() {
+    $("#submitprofil").click(function() {
         var editorContent = tinyMCE.get('tinyprofil').getContent();
-        if (editorContent == '' || editorContent == null)
-        {
+        if (editorContent == '' || editorContent == null) {
             // Add error message if not already present
-            if (!$('#message-profil').length)
-            {
+            if (!$('#message-profil').length) {
                 $('<span id="message-profil">Deskripsi Tidak Boleh Kosong !</span>').insertAfter($(tinyMCE.get('tinyprofil').getContainer()));
             }
-        }
-        else
-        {
+        } else {
             // Remove error message
             if ($('#message-profil'))
                 $('#message-profil').remove();
@@ -689,43 +742,284 @@
 
     })
 
-        $("#submitinformasi").click(function() {
+    $("#submitinformasi").click(function() {
         var editorContent = tinyMCE.get('tinyinformasi').getContent();
-        if (editorContent == '' || editorContent == null)
-        {
+        if (editorContent == '' || editorContent == null) {
             // Add error message if not already present
-            if (!$('#message-informasi').length)
-            {
+            if (!$('#message-informasi').length) {
                 $('<span id="message-informasi">Deskripsi Tidak Boleh Kosong !</span>').insertAfter($(tinyMCE.get('tinyinformasi').getContainer()));
             }
-        }
-        else
-        {
+        } else {
             // Remove error message
             if ($('#message-informasi'))
                 $('#message-informasi').remove();
         }
 
     })
-        $("#submitberita").click(function() {
+    $("#submitberita").click(function() {
         var editorContent = tinyMCE.get('tinyberita').getContent();
-        if (editorContent == '' || editorContent == null)
-        {
+        if (editorContent == '' || editorContent == null) {
             // Add error message if not already present
-            if (!$('#message-berita').length)
-            {
+            if (!$('#message-berita').length) {
                 $('<span id="message-informasi">Deskripsi Tidak Boleh Kosong !</span>').insertAfter($(tinyMCE.get('tinyberita').getContainer()));
             }
-        }
-        else
-        {
+        } else {
             // Remove error message
             if ($('#message-berita'))
                 $('#message-berita').remove();
         }
 
     })
-    
+
+    //chart laporan keluar
+    "use strict";
+    var KTGeneralChartJS = (function() {
+        function a(a = 1, e = 100) {
+            return Math.floor(Math.random() * (e - a) + a);
+        }
+
+        function e(e = 1, t = 100, s = 10) {
+            for (var r = [], l = 0; l < s; l++) r.push(a(e, t));
+            return r;
+        }
+        return {
+            init: function() {
+                (Chart.defaults.font.size = 13),
+                (Chart.defaults.font.family = KTUtil.getCssVariableValue(
+                    "--bs-font-sans-serif"
+                )),
+                (function() {
+                    var a = document.getElementById("laporankeluar"),
+                        t = KTUtil.getCssVariableValue("--bs-primary"),
+                        s = KTUtil.getCssVariableValue("--bs-danger"),
+                        r = KTUtil.getCssVariableValue("--bs-success");
+                    v = KTUtil.getCssVariableValue("--bs-yellow");
+                    KTUtil.getCssVariableValue("--bs-font-sans-serif");
+                    const l = {
+                        labels: [
+                            "Januari",
+                            "Februari",
+                            "Maret",
+                            "April",
+                            "Mei",
+                            "Juni",
+                            "Juli",
+                            "Agustus",
+                            "September",
+                            "Oktober",
+                            "November",
+                            "Desember",
+                        ],
+                        datasets: [{
+                                label: "A",
+                                data: e(1, 100, 12),
+                                backgroundColor: t,
+                                stack: "Stack 0",
+                            },
+                            {
+                                label: "B",
+                                data: e(1, 100, 12),
+                                backgroundColor: s,
+                                stack: "Stack 1",
+                            },
+                            {
+                                label: "AB",
+                                data: e(1, 100, 12),
+                                backgroundColor: r,
+                                stack: "Stack 2",
+                            },
+                            {
+                                label: "O",
+                                data: e(1, 100, 12),
+                                backgroundColor: v,
+                                stack: "Stack 3",
+                            },
+                        ],
+                    };
+                    new Chart(a, {
+                        type: "bar",
+                        data: l,
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: !1
+                                }
+                            },
+                            responsive: !0,
+                            interaction: {
+                                intersect: !1
+                            },
+                            scales: {
+                                x: {
+                                    stacked: !0
+                                },
+                                y: {
+                                    stacked: !0
+                                }
+                            },
+                        },
+                    });
+                })();
+            },
+        };
+    })();
+    KTUtil.onDOMContentLoaded(function() {
+        KTGeneralChartJS.init();
+    });
+
+    //datatable laporan
+    $('#dataTableLaporanKeluar').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
+    $("#edit_datelaporankeluar").flatpickr();
+
+    //Laporan Masuk
+    "use strict";
+    var KTGeneralChartJS = (function() {
+        function a(a = 1, e = 100) {
+            return Math.floor(Math.random() * (e - a) + a);
+        }
+
+        function e(e = 1, t = 100, s = 10) {
+            for (var r = [], l = 0; l < s; l++) r.push(a(e, t));
+            return r;
+        }
+        return {
+            init: function() {
+                (Chart.defaults.font.size = 13),
+                (Chart.defaults.font.family = KTUtil.getCssVariableValue(
+                    "--bs-font-sans-serif"
+                )),
+                (function() {
+                    var a = document.getElementById("laporanmasuk"),
+                        t = KTUtil.getCssVariableValue("--bs-primary"),
+                        s = KTUtil.getCssVariableValue("--bs-danger"),
+                        r = KTUtil.getCssVariableValue("--bs-success");
+                    v = KTUtil.getCssVariableValue("--bs-yellow");
+                    KTUtil.getCssVariableValue("--bs-font-sans-serif");
+                    const l = {
+                        labels: [
+                            "Januari",
+                            "Februari",
+                            "Maret",
+                            "April",
+                            "Mei",
+                            "Juni",
+                            "Juli",
+                            "Agustus",
+                            "September",
+                            "Oktober",
+                            "November",
+                            "Desember",
+                        ],
+                        datasets: [{
+                                label: "A",
+                                data: e(1, 100, 12),
+                                backgroundColor: t,
+                                stack: "Stack 0",
+                            },
+                            {
+                                label: "B",
+                                data: e(1, 100, 12),
+                                backgroundColor: s,
+                                stack: "Stack 1",
+                            },
+                            {
+                                label: "AB",
+                                data: e(1, 100, 12),
+                                backgroundColor: r,
+                                stack: "Stack 2",
+                            },
+                            {
+                                label: "O",
+                                data: e(1, 100, 12),
+                                backgroundColor: v,
+                                stack: "Stack 3",
+                            },
+                        ],
+                    };
+                    new Chart(a, {
+                        type: "bar",
+                        data: l,
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: !1
+                                }
+                            },
+                            responsive: !0,
+                            interaction: {
+                                intersect: !1
+                            },
+                            scales: {
+                                x: {
+                                    stacked: !0
+                                },
+                                y: {
+                                    stacked: !0
+                                }
+                            },
+                        },
+                    });
+                })();
+            },
+        };
+    })();
+    KTUtil.onDOMContentLoaded(function() {
+        KTGeneralChartJS.init();
+    });
+
+    //datatable laporan
+    $('#dataTableLaporanMasuk').dataTable({
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_",
+            "zeroRecords": "Tidak ada data",
+            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            },
+
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
+
+    $("#edit_datelaporanmasuk").flatpickr();
 </script>
 </body>
 <!--end::Body-->

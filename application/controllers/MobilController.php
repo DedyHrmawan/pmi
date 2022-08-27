@@ -11,7 +11,7 @@ class MobilController extends CI_Controller
 	{
         $mobil = $this->Mobil->getAll();
 		$data = array(
-            'nav_title' => 'Jadwal Mobil Donor PMI Kota Malang',
+            'nav_title' => 'Jadwal Donor Darah PMI Kota Malang',
             'mobil'   => $mobil
         );			
 		$this->template->admin('pmi-admin/VMobilDonor', $data);

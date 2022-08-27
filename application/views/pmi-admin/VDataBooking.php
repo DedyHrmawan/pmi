@@ -58,9 +58,9 @@
                                                     <th class="min-w-120px">Lokasi</th>
                                                     <th class="min-w-120px">Tanggal</th>
                                                     <th class="min-w-120px">Nama</th>
-                                                    <th class="min-w-150px">Nomor Telepon</th>
+                                                    <th class="min-w-120px">Nomor Telepon</th>
                                                     <th class="min-w-150px">Alamat</th>
-                                                    <th class="min-w-150px">Booking Waktu</th>
+                                                    <th class="min-w-120px">Booking Waktu</th>
                                                 </tr>
                                             </thead>
                                             <!--end::Table head-->

@@ -37,9 +37,9 @@
                         </div>
                     </div>
                     <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nama</label>
+                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nama Lengkap</label>
                         <div class="col-lg-8 fv-row">
-                            <input type="text" name="" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nama" required />
+                            <input type="text" name="" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nama Lengkap" required />
                         </div>
                     </div>
                     <div class="row mb-6">
@@ -55,6 +55,12 @@
                         </div>
                     </div>
                     <div class="row mb-6">
+                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Instansi</label>
+                        <div class="col-lg-8 fv-row">
+                            <input type="text" name="" class="form-control form-control-lg form-control-solid " placeholder="Masukan Instansi" required />
+                        </div>
+                    </div>
+                    <div class="row mb-6">
                         <label class="col-lg-4 col-form-label fw-bold fs-6 required">Booking Waktu</label>
                         <div class="col-lg-8 fv-row">
                             <input id="jam_hadir" class="form-control form-control-solid" placeholder="Masukan Waktu Kehadiran" name="" required />
@@ -64,7 +70,7 @@
                 </div>
                 <!--end::Heading-->
                 <div class="text-center">
-                    <a href="<?php echo site_url('login'); ?>" class="btn btn-danger  btn-color-white me-1">Booking Jadwal</a>
+                    <a href="<?php echo site_url('blank'); ?>" class="btn btn-danger  btn-color-white me-1">Booking Jadwal</a>
                 </div>
             </div>
             <!--end::Card body-->

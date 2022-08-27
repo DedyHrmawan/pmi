@@ -14,7 +14,7 @@
 					<h3 class="fs-2hx text-dark mt-10 mb-20" id="" data-kt-scroll-offset="{default: 100, lg: 150}">Terima kasih atas dukunganmu!</h3>
 					<!--end::Title-->
 					<!--begin::Description-->
-					<div class="fs-5 fw-bold text-dark">Silahkan <a href="<?= base_url('signup'); ?>">Daftar</a> atau <a href="<?= base_url('signup'); ?>">Login</a> terlebih dahulu untuk booking jadwal donor !
+					<div class="fs-5 fw-bold text-dark">Silahkan <a href="<?= base_url('signup'); ?>">Daftar</a> atau <a href="<?= base_url('login'); ?>">Login</a> terlebih dahulu untuk booking jadwal donor !
 					</div>
 					<!--end::Description-->
 				</div>

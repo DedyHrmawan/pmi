@@ -121,7 +121,10 @@ $route['berita/edit']           = 'BeritaController/edit';
 $route['berita/delete']         = 'BeritaController/delete';
 
 //laporan keluar
-$route['laporankeluar']         = 'Welcome/VLaporanKeluar'; 
+$route['laporankeluar']         = 'Welcome/VLaporanKeluar';
+
+//laporan masuk
+$route['laporanmasuk']         = 'Welcome/VLaporanMasuk'; 
 
 //signup
 $route['signup']                = 'Welcome/VSignUp';
