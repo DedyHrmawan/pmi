@@ -93,13 +93,6 @@
         dateFormat: "H:i",
     });
 
-    //pendonor
-    $("#add_donorTerakhir").flatpickr();
-    $("#add_donorSelanjutnya").flatpickr();
-
-    $("#edit_donorTerakhir").flatpickr();
-    $("#edit_donorSelanjutnya").flatpickr();
-
     //berita
     $("#add_tanggalBerita").flatpickr();
     $("#edit_tanggalBerita").flatpickr();
@@ -550,33 +543,6 @@
     $("#add_stokdarah").flatpickr();
     $("#out_stokdarah").flatpickr();
 
-    //Pendonor
-    $('#tablePendonor').dataTable({
-        "language": {
-            "lengthMenu": "Tampilkan _MENU_",
-            "zeroRecords": "Tidak ada data",
-            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
-            "infoEmpty": "Tidak ada data",
-            "infoFiltered": "(filtered from _MAX_ total records)",
-            "search": "Cari",
-            "paginate": {
-                "previous": "Sebelumnya",
-                "next": "Selanjutnya"
-            },
-
-        },
-        "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
-            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
-            ">" +
-            "<'table-responsive'tr>" +
-
-            "<'row'" +
-            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
-            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
-            ">"
-    });
-
     //berita
     $('#tableBerita').dataTable({
         "language": {
@@ -604,24 +570,7 @@
             ">"
     });
 </script>
-
-<!-- upload image di pendonor  -->
 <script>
-    var myDropzone = new Dropzone("#imgPendonor", {
-        url: "http://localhost/pmi/images", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 2, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
-
     var myDropzone = new Dropzone("#imgAgenda", {
         url: "http://localhost/pmi/", // Set the url for your upload script location
         paramName: "file", // The name that will be used to transfer the file
@@ -690,15 +639,7 @@
         };
     };
 
-    //preview sebelum upload foto pendonor
-    function previewAddFotoUser() {
-        document.getElementById("prevAddFotoUser").style.display = "block";
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("addImgFotoUser").files[0]);
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("prevAddFotoUser").src = oFREvent.target.result;
-        };
-    };
+    
 
     function previewEditFotoUser() {
         document.getElementById("prevEditFotoUser").style.display = "block";
@@ -770,256 +711,6 @@
         }
 
     })
-
-    //chart laporan keluar
-    "use strict";
-    var KTGeneralChartJS = (function() {
-        function a(a = 1, e = 100) {
-            return Math.floor(Math.random() * (e - a) + a);
-        }
-
-        function e(e = 1, t = 100, s = 10) {
-            for (var r = [], l = 0; l < s; l++) r.push(a(e, t));
-            return r;
-        }
-        return {
-            init: function() {
-                (Chart.defaults.font.size = 13),
-                (Chart.defaults.font.family = KTUtil.getCssVariableValue(
-                    "--bs-font-sans-serif"
-                )),
-                (function() {
-                    var a = document.getElementById("laporankeluar"),
-                        t = KTUtil.getCssVariableValue("--bs-primary"),
-                        s = KTUtil.getCssVariableValue("--bs-danger"),
-                        r = KTUtil.getCssVariableValue("--bs-success");
-                    v = KTUtil.getCssVariableValue("--bs-yellow");
-                    KTUtil.getCssVariableValue("--bs-font-sans-serif");
-                    const l = {
-                        labels: [
-                            "Januari",
-                            "Februari",
-                            "Maret",
-                            "April",
-                            "Mei",
-                            "Juni",
-                            "Juli",
-                            "Agustus",
-                            "September",
-                            "Oktober",
-                            "November",
-                            "Desember",
-                        ],
-                        datasets: [{
-                                label: "A",
-                                data: e(1, 100, 12),
-                                backgroundColor: t,
-                                stack: "Stack 0",
-                            },
-                            {
-                                label: "B",
-                                data: e(1, 100, 12),
-                                backgroundColor: s,
-                                stack: "Stack 1",
-                            },
-                            {
-                                label: "AB",
-                                data: e(1, 100, 12),
-                                backgroundColor: r,
-                                stack: "Stack 2",
-                            },
-                            {
-                                label: "O",
-                                data: e(1, 100, 12),
-                                backgroundColor: v,
-                                stack: "Stack 3",
-                            },
-                        ],
-                    };
-                    new Chart(a, {
-                        type: "bar",
-                        data: l,
-                        options: {
-                            plugins: {
-                                title: {
-                                    display: !1
-                                }
-                            },
-                            responsive: !0,
-                            interaction: {
-                                intersect: !1
-                            },
-                            scales: {
-                                x: {
-                                    stacked: !0
-                                },
-                                y: {
-                                    stacked: !0
-                                }
-                            },
-                        },
-                    });
-                })();
-            },
-        };
-    })();
-    KTUtil.onDOMContentLoaded(function() {
-        KTGeneralChartJS.init();
-    });
-
-    //datatable laporan
-    $('#dataTableLaporanKeluar').dataTable({
-        "language": {
-            "lengthMenu": "Tampilkan _MENU_",
-            "zeroRecords": "Tidak ada data",
-            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
-            "infoEmpty": "Tidak ada data",
-            "infoFiltered": "(filtered from _MAX_ total records)",
-            "search": "Cari",
-            "paginate": {
-                "previous": "Sebelumnya",
-                "next": "Selanjutnya"
-            },
-
-        },
-        "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
-            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
-            ">" +
-            "<'table-responsive'tr>" +
-
-            "<'row'" +
-            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
-            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
-            ">"
-    });
-
-    $("#edit_datelaporankeluar").flatpickr();
-
-    //Laporan Masuk
-    "use strict";
-    var KTGeneralChartJS = (function() {
-        function a(a = 1, e = 100) {
-            return Math.floor(Math.random() * (e - a) + a);
-        }
-
-        function e(e = 1, t = 100, s = 10) {
-            for (var r = [], l = 0; l < s; l++) r.push(a(e, t));
-            return r;
-        }
-        return {
-            init: function() {
-                (Chart.defaults.font.size = 13),
-                (Chart.defaults.font.family = KTUtil.getCssVariableValue(
-                    "--bs-font-sans-serif"
-                )),
-                (function() {
-                    var a = document.getElementById("laporanmasuk"),
-                        t = KTUtil.getCssVariableValue("--bs-primary"),
-                        s = KTUtil.getCssVariableValue("--bs-danger"),
-                        r = KTUtil.getCssVariableValue("--bs-success");
-                    v = KTUtil.getCssVariableValue("--bs-yellow");
-                    KTUtil.getCssVariableValue("--bs-font-sans-serif");
-                    const l = {
-                        labels: [
-                            "Januari",
-                            "Februari",
-                            "Maret",
-                            "April",
-                            "Mei",
-                            "Juni",
-                            "Juli",
-                            "Agustus",
-                            "September",
-                            "Oktober",
-                            "November",
-                            "Desember",
-                        ],
-                        datasets: [{
-                                label: "A",
-                                data: e(1, 100, 12),
-                                backgroundColor: t,
-                                stack: "Stack 0",
-                            },
-                            {
-                                label: "B",
-                                data: e(1, 100, 12),
-                                backgroundColor: s,
-                                stack: "Stack 1",
-                            },
-                            {
-                                label: "AB",
-                                data: e(1, 100, 12),
-                                backgroundColor: r,
-                                stack: "Stack 2",
-                            },
-                            {
-                                label: "O",
-                                data: e(1, 100, 12),
-                                backgroundColor: v,
-                                stack: "Stack 3",
-                            },
-                        ],
-                    };
-                    new Chart(a, {
-                        type: "bar",
-                        data: l,
-                        options: {
-                            plugins: {
-                                title: {
-                                    display: !1
-                                }
-                            },
-                            responsive: !0,
-                            interaction: {
-                                intersect: !1
-                            },
-                            scales: {
-                                x: {
-                                    stacked: !0
-                                },
-                                y: {
-                                    stacked: !0
-                                }
-                            },
-                        },
-                    });
-                })();
-            },
-        };
-    })();
-    KTUtil.onDOMContentLoaded(function() {
-        KTGeneralChartJS.init();
-    });
-
-    //datatable laporan
-    $('#dataTableLaporanMasuk').dataTable({
-        "language": {
-            "lengthMenu": "Tampilkan _MENU_",
-            "zeroRecords": "Tidak ada data",
-            "info": "Menampilkan _PAGE_ dari _PAGES_ Halaman",
-            "infoEmpty": "Tidak ada data",
-            "infoFiltered": "(filtered from _MAX_ total records)",
-            "search": "Cari",
-            "paginate": {
-                "previous": "Sebelumnya",
-                "next": "Selanjutnya"
-            },
-
-        },
-        "dom": "<'row'" +
-            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
-            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
-            ">" +
-            "<'table-responsive'tr>" +
-
-            "<'row'" +
-            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
-            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
-            ">"
-    });
-
-    $("#edit_datelaporanmasuk").flatpickr();
 </script>
 </body>
 <!--end::Body-->
