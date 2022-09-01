@@ -66,24 +66,34 @@
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    Plaza Araya
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                26 August 2022
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    Dedy Hermawan
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    0857464762762
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    Blitar
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    10:10
-                                                </td>
+                                                <?php
+                                                    foreach($booking as $item){                                                        
+                                                    $newDate = date("d M Y", strtotime($item->tanggal));
+                                                    $datang = date("H:i", strtotime($item->jam_datang));
+                                                        echo'
+                                                            <tr>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                '.$item->lokasi.'
+                                                            </td>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                            '.$newDate.'
+                                                            </td>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                            '.$item->nama.'
+                                                            </td>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                            '.$item->telp.'
+                                                            </td>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                            '.$item->alamat.'
+                                                            </td>
+                                                            <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                            '.$datang.'
+                                                            </td>
+                                                            </tr>
+                                                        ';
+                                                    }
+                                                ?>                                                
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>

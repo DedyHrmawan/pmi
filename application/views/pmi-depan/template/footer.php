@@ -109,11 +109,6 @@
 <!--end::Javascript-->
 
 <script>
-	$("#jam_hadir").flatpickr({
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "H:i",
-    });
 	 $('#tableJadwalDepan').dataTable({
         "info": false,
 		"lengthMenu": [5, 10],

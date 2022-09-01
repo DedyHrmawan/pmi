@@ -6,6 +6,7 @@ class DepanController extends CI_Controller
         parent::__construct();
         $this->load->model('Depan');
         $this->load->model('Darah');
+        $this->load->model('Booking');
     }    
 
     //depan
@@ -109,11 +110,40 @@ class DepanController extends CI_Controller
 
 	public function VJadwalDepan()
 	{
-        $jadwalMobil = $this->Depan->getJadwalMobil();				
+        $jadwalMobil = $this->Depan->getJadwalMobil();
+        $jadwalDonor = $this->Depan->getJadwalDonor();				
         $data = array(
-            'jadwal_mobil' => $jadwalMobil
+            'jadwal_mobil' => $jadwalMobil,
+            'jadwal_donor' => $jadwalDonor
         );			
 		$this->template->depan('pmi-depan/VJadwalDepan',$data);
 	}
 
+    public function VBooking($idjadwal)
+	{				        
+        if (isset($_SESSION['logged_in']) == FALSE) {
+			redirect('blank');
+		};
+        $jadwalMobil = $this->Depan->getJadwal($idjadwal);
+
+        $data = array(
+            'jadwal' => $jadwalMobil
+        );	
+
+		$this->template->depan('pmi-depan/VBooking', $data);
+	}
+
+    public function storeBooking()
+    {
+        $param = $_POST;        
+
+        $this->Booking->insert($param);        
+        $this->session->set_flashdata('success_booking','Berhasil booking untuk '.$param['lokasi'].' pada pukul '.$param['jam_datang']);
+        redirect('jadwal');
+    }    
+
+    public function ajxGet(){
+        $data['filter'] = 'id_mobil = '.$_POST['id_mobil'];
+        echo json_encode($this->Booking->get($data));
+    }
 }

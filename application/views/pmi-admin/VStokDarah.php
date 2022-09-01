@@ -255,7 +255,7 @@
                                 <span class="required">Nama Lengkap</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Lengkap" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Lengkap" name="nama" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -263,7 +263,7 @@
                                 <span class="required">Alamat</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="alamat" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -271,7 +271,7 @@
                                 <span class="required">Instansi</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Instansi" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Instansi" name="instansi" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -279,7 +279,7 @@
                                 <span class="required">Nomor Telepon</span>
                             </label>
                             <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="" />
+                            <input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="telp" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -287,7 +287,7 @@
                                 <span class="required">Tanggal</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" id="add_stokdarah" class="form-control form-control-solid" placeholder="Masukan Tanggal" name="" />
+                            <input type="text" id="add_stokdarah" class="form-control form-control-solid" placeholder="Masukan Tanggal" name="tanggal" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -295,11 +295,12 @@
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi Donor" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi Donor" name="lokasi" />
                         </div>
                     </div>
 
                     <div class="modal-footer">
+                        <input type="hidden" name="tipe" value="1">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
@@ -328,7 +329,7 @@
                     </div>
                     <!--end::Close-->
                 </div>
-                <form action="<?= site_url('stokdarah/edit') ?>" method="post">
+                <form action="<?= site_url('stokdarah/outStock') ?>" method="post">
                     <div class="modal-body">
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -336,7 +337,7 @@
                                 <span class="required">Jenis Darah</span>
                             </label>
                             <!--end::Label-->
-                            <select name="" id="id_darah_edit" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid" disabled>
+                            <select name="id_darah" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
                                 <?php
                                 foreach ($darah as $list) {
                                     echo '
@@ -365,7 +366,7 @@
                                 <span class="required">Nama Lengkap</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Lengkap" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Lengkap" name="nama" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -373,7 +374,7 @@
                                 <span class="required">Alamat</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="alamat" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -381,7 +382,7 @@
                                 <span class="required">Instansi</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Instansi" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Instansi" name="instansi" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -389,7 +390,7 @@
                                 <span class="required">Nomor Telepon</span>
                             </label>
                             <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="" />
+                            <input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="telp" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -397,7 +398,7 @@
                                 <span class="required">Tanggal</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" id="out_stokdarah" class="form-control form-control-solid" placeholder="Masukan Tanggal" name="" />
+                            <input type="text" id="out_stokdarah" class="form-control form-control-solid" placeholder="Masukan Tanggal" name="tanggal" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -405,12 +406,12 @@
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi Donor" name="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi Donor" name="lokasi" />
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="edit_darah" name="id_darah">
+                        <input type="hidden" id="edit_darah" name="tipe" value="2">
                         <button type="button" id="edit_tutup" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>

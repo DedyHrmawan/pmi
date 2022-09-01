@@ -5,6 +5,9 @@ class DarahController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Darah');
+        if (isset($_SESSION['logged_in']) == FALSE || $this->session->userdata('hak_akses') != 1) {
+			redirect('/');
+		};
     }
 
     public function VStokDarah()
@@ -40,7 +43,17 @@ class DarahController extends CI_Controller
     public function addStock()
     {
         $param = $_POST;
-        $this->Darah->update($param['id_darah'],$param['id_jenis_darah'],$param['stok']);
+        $this->Darah->update($param['id_darah'],$param['id_jenis_darah']);
+        $this->Darah->insertLaporan($param);
+
+        redirect('stokdarah');
+    }  
+
+    public function outStock()
+    {
+        $param = $_POST;
+        $this->Darah->updateOut($param['id_darah'],$param['id_jenis_darah']);
+        $this->Darah->insertLaporan($param);
 
         redirect('stokdarah');
     }  
