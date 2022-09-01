@@ -13,10 +13,34 @@ class AuthController extends CI_Controller
     {
         $data = $_POST;
         $user = $this->User->get(['filter' => ['email_admin' => $data['EMAIL_USER']]]);
+        $pendonor = $this->User->getPendonor(['filter' => ['email_pendonor' => $data['EMAIL_USER']]]);
 
         if($user != null){
-            if($data['PASSWORD_USER'] == $user[0]->password){                          
+            if($data['PASSWORD_USER'] == $user[0]->password){    
+                $newdata = array(
+                    'hak_akses' => $user[0]->hak_akses,
+                    'name'      => $user[0]->nama_admin,
+                    'email'     => $user[0]->email_admin,
+                    'id'        => $user[0]->id_admin,
+                    'logged_in' => TRUE
+                );   
+                $this->session->set_userdata($newdata);                   
                 redirect('profil');
+            }else{
+                $this->session->set_flashdata('error_login', 'Email atau password salah!');  
+                redirect('login');
+            }
+        }else if($pendonor != null){
+            if($data['PASSWORD_USER'] == $pendonor[0]->password){    
+                $newdata = array(
+                    'hak_akses' => 2,
+                    'name'      => $pendonor[0]->nama_pendonor,
+                    'email'     => $pendonor[0]->email_pendonor,
+                    'id'        => $pendonor[0]->id_pendonor,
+                    'logged_in' => TRUE
+                );   
+                $this->session->set_userdata($newdata);                   
+                redirect('beranda');
             }else{
                 $this->session->set_flashdata('error_login', 'Email atau password salah!');  
                 redirect('login');
@@ -76,5 +100,11 @@ class AuthController extends CI_Controller
         }else{
             return ['status' => false, 'msg' => "Upload image is required"];
         }         
+    }
+
+    public function logout(){
+        $this->session->sess_destroy();
+
+        redirect('beranda');
     }
 }

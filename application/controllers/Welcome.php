@@ -25,14 +25,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('pmi-admin/VLogin');
 	}
 
-	public function VUserDonor()
-	{
-		$data = array(
-            'nav_title' => 'Pendonor PMI Kota Malang'
-        );			
-		$this->template->admin('pmi-admin/VUserDonor', $data);
-	}
-
 	//signup penodnor
 	public function VSignUp()
 	{
@@ -46,33 +38,10 @@ class Welcome extends CI_Controller {
 	}
 
 	//Booking Page
-	public function VBooking()
-	{
-		$this->template->depan('pmi-depan/VBooking');
-	}
+	
 
 	//Data Booking Admin
-	public function VDataBooking()
-	{
-		$data = array(
-            'nav_title' => 'List Booking Jadwal PMI Kota Malang'
-        );			
-		$this->template->admin('pmi-admin/VDataBooking', $data);
-	}
+	
 
 	//Laporan
-	public function VLaporanKeluar()
-	{
-		$data = array(
-            'nav_title' => 'Laporan PMI Kota Malang'
-        );			
-		$this->template->admin('pmi-admin/VLaporanKeluar', $data);
-	}
-	public function VLaporanMasuk()
-	{
-		$data = array(
-            'nav_title' => 'Laporan PMI Kota Malang'
-        );			
-		$this->template->admin('pmi-admin/VLaporanMasuk', $data);
-	}
 }

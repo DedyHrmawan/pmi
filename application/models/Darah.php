@@ -39,10 +39,23 @@ class Darah extends CI_Model{
         $this->db->insert('detail_darah', $param);
         return $this->db->insert_id();
     }
-    public function update($iddarah,$idjenis,$stok){
+    public function insertLaporan($param){
+        $this->db->insert('laporan', $param);
+        return $this->db->insert_id();
+    }
+    public function updateOut($iddarah,$idjenis){
         $sql = "UPDATE 
         detail_darah
-        SET stok = stok + $stok
+        SET stok = stok - 1
+        WHERE id_darah = $iddarah AND
+        id_jenis_darah = $idjenis";       
+        $this->db->query($sql);
+        return true;
+    }
+    public function update($iddarah,$idjenis){
+        $sql = "UPDATE 
+        detail_darah
+        SET stok = stok + 1
         WHERE id_darah = $iddarah AND
         id_jenis_darah = $idjenis";       
         $this->db->query($sql);

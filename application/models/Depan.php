@@ -7,7 +7,26 @@ class Depan extends CI_Model{
     }
 
     public function getJadwalMobil(){
-        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() ORDER BY jadwal ASC";
+        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() AND tipe=2 ORDER BY jadwal ASC";
+        $res = $this->db->query($sql)->result();
+        return $res;
+    }
+
+    public function getJadwal($param){
+        $sql = "SELECT 
+        id_mobil,
+        target,
+        jadwal,
+        TIME_FORMAT(jam_buka, '%H:%i') as jambuka,
+        TIME_FORMAT(jam_tutup, '%H:%i') as jamtutup,
+        lokasi 
+        FROM jadwal_mobil WHERE id_mobil = $param";
+        $res = $this->db->query($sql)->result();
+        return $res;
+    }
+
+    public function getJadwalDonor(){
+        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() AND tipe=1 ORDER BY jadwal ASC";
         $res = $this->db->query($sql)->result();
         return $res;
     }

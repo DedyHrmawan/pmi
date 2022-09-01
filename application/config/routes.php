@@ -58,6 +58,7 @@ $route['default_controller'] = 'DepanController/landing';
 //authentication
 $route['login']         = 'Welcome/VLogin';
 $route['login/auth']    = 'AuthController/auth';
+$route['logout']        = 'AuthController/logout';
 $route['register']      = 'AuthController/register';
 $route['uploadimage']   = 'AuthController/upload_image';
 
@@ -95,16 +96,21 @@ $route['agenda/delete'] = 'AgendaController/delete';
 $route['stokdarah']             = 'DarahController/VStokDarah';
 $route['stokdarah/addType']     = 'DarahController/addType';
 $route['stokdarah/addStock']    = 'DarahController/addStock';
+$route['stokdarah/outStock']    = 'DarahController/outStock';
 $route['stokdarah/ajxGet']      = 'DarahController/ajxGet';
 $route['stokdarah/getStock']    = 'DarahController/getStock';
 $route['stokdarah/edit']        = 'DarahController/edit';
 $route['stokdarah/delete']      = 'DarahController/delete';
 
 //pendonor
-$route['listpendonor']          = 'Welcome/VUserDonor';
+$route['listpendonor']        = 'PendonorController/VUserDonor';
+$route['listpendonor/store']  = 'PendonorController/store';
+$route['listpendonor/ajxGet'] = 'PendonorController/ajxGet';
+$route['listpendonor/edit']   = 'PendonorController/edit';
+$route['listpendonor/delete'] = 'PendonorController/delete';
 
 //data booking admin
-$route['listbooking']           = 'Welcome/VDataBooking';
+$route['listbooking']           = 'BookingController/VDataBooking';
 
 //carousel
 $route['carousel']              = 'CarouselController/VCarousel';
@@ -121,10 +127,18 @@ $route['berita/edit']           = 'BeritaController/edit';
 $route['berita/delete']         = 'BeritaController/delete';
 
 //laporan keluar
-$route['laporankeluar']         = 'Welcome/VLaporanKeluar';
+$route['laporankeluar']         = 'LaporanController/VLaporanKeluar';
+$route['laporankeluar/ajxGet']  = 'LaporanController/ajxGet';
+$route['laporankeluar/edit']    = 'LaporanController/editKeluar';
+$route['laporankeluar/delete']  = 'LaporanController/deleteKeluar';
+
 
 //laporan masuk
-$route['laporanmasuk']         = 'Welcome/VLaporanMasuk'; 
+$route['laporanmasuk']          = 'LaporanController/VLaporanMasuk'; 
+$route['laporanmasuk/ajxGet']   = 'LaporanController/ajxGet';
+$route['laporanmasuk/edit']     = 'LaporanController/edit';
+$route['laporanmasuk/delete']   = 'LaporanController/delete';
+
 
 //signup
 $route['signup']                = 'Welcome/VSignUp';
@@ -142,4 +156,6 @@ $route['agenda-pmi']            = 'DepanController/VAgendaPMI';
 $route['jadwal']                = 'DepanController/VJadwalDepan';
 
 $route['blank']                 = 'Welcome/VBlank';
-$route['booking']               = 'Welcome/VBooking';
+$route['booking/(:any)']        = 'DepanController/VBooking/$1';
+$route['storeBooking']          = 'DepanController/storeBooking';
+$route['bookingajxGet']         = 'DepanController/ajxGet';

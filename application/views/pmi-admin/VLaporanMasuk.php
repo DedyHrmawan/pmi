@@ -92,53 +92,73 @@
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    PCR
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    A
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    Dedy Hermawan
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    10 Agustus 2022
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    UDD PMI KOTA MALANG
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporanmasuk" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporanmasuk me-1">
-                                                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
-                                                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
-                                                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
-                                                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor" />
-                                                            </svg></span>
-                                                        <!--end::Svg Icon-->
-                                                    </a>
-                                                    <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporanmasuk" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporanmasuk me-1">
-                                                        <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
-                                                        <span class="svg-icon svg-icon-3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
-                                                                <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
-                                                            </svg>
-                                                        </span>
-                                                        <!--end::Svg Icon-->
-                                                    </a>
-                                                    <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporanmasuk" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporanmasuk btn-sm">
-                                                        <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                        <span class="svg-icon svg-icon-3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                            </svg>
-                                                        </span>
-                                                        <!--end::Svg Icon-->
-                                                    </a>
-                                                </td>
+                                                <?php
+                                                    foreach($laporan as $item){
+                                                        $golongan = "";
+                                                        if($item->id_jenis_darah == 1){
+                                                            $golongan = "A";
+                                                        }else if($item->id_jenis_darah == 2){
+                                                            $golongan = "B";
+                                                        }else if($item->id_jenis_darah == 3){
+                                                            $golongan = "AB";
+                                                        }else if($item->id_jenis_darah == 4){
+                                                            $golongan = "O";
+                                                        };
+                                                        echo '
+                                                        <tr>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->jenis_darah.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$golongan.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->nama.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->tanggal.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->lokasi.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporanmasuk" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporanmasuk me-1">
+                                                            <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
+                                                            <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                                                    <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+                                                                    <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor" />
+                                                                </svg></span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
+                                                        <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporanmasuk" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporanmasuk me-1">
+                                                            <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                            <span class="svg-icon svg-icon-3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
+                                                                    <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
+                                                        <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporanmasuk" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporanmasuk btn-sm">
+                                                            <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                                            <span class="svg-icon svg-icon-3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
+                                                                    <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
+                                                                    <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
+                                                    </td>
+                                                    </tr>
+                                                        ';
+                                                    }
+                                                ?>
+                                                
+                                                
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -182,7 +202,7 @@
                     </div>
                     <!--end::Close-->
                 </div>
-                <form action="" method="post">
+                <form action="<?= site_url('laporanmasuk/edit') ?>" method="post">
                     <div class="modal-body">
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -190,11 +210,14 @@
                                 <span class="required">Tipe Golongan Darah</span>
                             </label>
                             <!--end::Label-->
-                            <select name="" class="form-select form-select-sm form-select-solid">
-                                <option value="1">AHF</option>
-                                <option value="2">FFP</option>
-                                <option value="3">PCR</option>
-                                <option value="4">Plasma Konvalesen</option>
+                            <select name="id_darah" id="jenisEditMasuk" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                                <?php
+                                foreach ($darah as $list) {
+                                    echo '
+                                            <option value="' . $list->id_darah . '">' . $list->jenis_darah . '</option>
+                                        ';
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
@@ -203,7 +226,7 @@
                                 <span class="required">Jenis Golongan Darah</span>
                             </label>
                             <!--end::Label-->
-                            <select name="" class="form-select form-select-sm form-select-solid">
+                            <select name="id_jenis_darah" id="darahEditMasuk" class="form-select form-select-sm form-select-solid">
                                 <option value="1">A</option>
                                 <option value="2">B</option>
                                 <option value="3">AB</option>
@@ -216,7 +239,7 @@
                                 <span class="required">Nama</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" id="namaEditMasuk" class="form-control form-control-solid"  name="nama" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -224,7 +247,7 @@
                                 <span class="required">Alamat</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" id="alamatEditMasuk" class="form-control form-control-solid"  name="alamat" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -232,7 +255,7 @@
                                 <span class="required">Instansi</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" id="instansiEditMasuk" class="form-control form-control-solid"  name="instansi" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -240,7 +263,7 @@
                                 <span class="required">Nomor Telepon</span>
                             </label>
                             <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid"  name="" />
+                            <input type="number" id="telpEditMasuk" class="form-control form-control-solid"  name="telp" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -248,7 +271,7 @@
                                 <span class="required">Tanggal</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="edit_datelaporanmasuk" name="" />
+                            <input type="text" class="form-control form-control-solid" id="edit_datelaporanmasuk" name="tanggal" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -256,12 +279,12 @@
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" id="lokasiEditMasuk" class="form-control form-control-solid"  name="lokasi" />
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="" name="" class="form-control">
+                        <input type="hidden" id="idEditMasuk" name="id_laporan" class="form-control">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" id="submitprofil" class="btn btn-primary">Simpan</button>
                     </div>
@@ -289,13 +312,13 @@
                     </div>
                     <!--end::Close-->
                 </div>
-                <form action="" method="post">
+                <form action="<?= site_url('laporanmasuk/delete') ?>" method="post">
                     <div class="modal-body">
                         <p>Apakah anda yakin ingin menghapus Laporan Masuk tersebut ?</p>
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="" name="">
+                        <input type="hidden" id="idHapusMasuk" name="id_laporan">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-primary">Hapus</button>
                     </div>
@@ -328,35 +351,35 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <h6>Tipe Darah</h6>
-                        <p><span >PCR</p>
+                        <p><span id="darahDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Jenis Golongan Darah</h6>
-                        <p><span >A</p>
+                        <p><span id="golDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Nama</h6>
-                        <p >Dedy Hermawan</p>
+                        <p id="namaDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Alamat</h6>
-                        <p><span >Blitar</p>
+                        <p><span id="alamatDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Instansi</h6>
-                        <p><span >STIKI Malang</p>
+                        <p><span id="instansiDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Nomor Telepon</h6>
-                        <p >08573526527</p>
+                        <p id="telpDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Tanggal</h6>
-                        <p><span >20 Agustus 2022</p>
+                        <p><span id="tanggalDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Lokasi Donor</h6>
-                        <p >UDD PMI Kota Malang</p>
+                        <p id="lokasiDetailMasuk"></p>
                     </div>
                 </div>
 
@@ -435,7 +458,7 @@
                         ],
                         datasets: [{
                                 label: "A",
-                                data: e(1, 100, 12),
+                                data: [1,2,3,4,5,6,7,8,9,10,11,12],
                                 backgroundColor: t,
                                 stack: "Stack 0",
                             },
@@ -518,4 +541,62 @@
     });
 
     $("#edit_datelaporanmasuk").flatpickr();
+
+    $('#dataTableLaporanMasuk tbody').on('click', '.dtl_laporanmasuk', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('laporanmasuk/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_laporan: id
+            },
+            success: res => {
+                $('#namaDetailMasuk').html(res[0].nama)
+                $('#darahDetailMasuk').html(res[0].id_darah)
+                $('#alamatDetailMasuk').html(res[0].alamat)
+                $('#instansiDetailMasuk').html(res[0].instansi)
+                $('#telpDetailMasuk').html(res[0].telp)
+                $('#tanggalDetailMasuk').html(res[0].tanggal)
+                $('#lokasiDetailMasuk').html(res[0].lokasi)
+                if (res[0].id_jenis_darah == 1) {
+                    $('#golDetailMasuk').html('A')
+                }else if(res[0].id_jenis_darah == 2){
+                    $('#golDetailMasuk').html('B')
+                }else if(res[0].id_jenis_darah == 3){
+                    $('#golDetailMasuk').html('AB')
+                }else if(res[0].id_jenis_darah == 4){
+                    $('#golDetailMasuk').html('O')
+                }
+            }
+        })
+    })
+
+    $('#dataTableLaporanMasuk tbody').on('click', '.edit_laporanmasuk', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('laporanmasuk/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_laporan: id
+            },
+            success: res => {
+                $('#namaEditMasuk').val(res[0].nama)
+                $('#alamatEditMasuk').val(res[0].alamat)
+                $('#instansiEditMasuk').val(res[0].instansi)
+                $('#telpEditMasuk').val(res[0].telp)
+                $('#edit_datelaporanmasuk').val(res[0].tanggal)
+                $('#lokasiEditMasuk').val(res[0].lokasi)
+                $('#jenisEditMasuk').val(res[0].id_darah).change()
+                $('#darahEditMasuk').val(res[0].id_jenis_darah).change()
+                $('#idEditMasuk').val(res[0].id_laporan)
+            }
+        })
+    })
+
+    $('#dataTableLaporanMasuk tbody').on('click', '.del_laporanmasuk', function() {
+        const id = $(this).data("id")
+        $('#idHapusMasuk').val(id)
+    })
 </script>

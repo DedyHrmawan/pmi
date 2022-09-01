@@ -7,6 +7,12 @@ class Mobil extends CI_Model{
     }
 
     public function getAll(){
+        $this->db->where('tipe',2);
+        $res = $this->db->get('jadwal_mobil')->result();
+        return $res;
+    }
+    public function getUDD(){
+        $this->db->where('tipe',1);
         $res = $this->db->get('jadwal_mobil')->result();
         return $res;
     }

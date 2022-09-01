@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Agu 2022 pada 16.55
+-- Waktu pembuatan: 01 Sep 2022 pada 09.37
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -97,6 +97,24 @@ INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `deskripsi`
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `booking`
+--
+
+CREATE TABLE `booking` (
+  `id_booking` int(11) NOT NULL,
+  `id_pendonor` int(11) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `telp` varchar(16) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `jam_datang` time NOT NULL,
+  `instansi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `carousel`
 --
 
@@ -114,7 +132,7 @@ INSERT INTO `carousel` (`id_carousel`, `gambar`, `status`) VALUES
 (1, 'http://localhost/pmi/assets/images/3b68cd27bf63a25558cb954c0378302d.jpg', 1),
 (3, 'http://localhost/pmi/assets/images/fbb5211b62ee54ced8bf838d44258d75.jpeg', 1),
 (5, 'http://localhost/pmi/assets/images/80fc3c1a796f897eed37a2759c60c13f.jpg', 1),
-(6, 'http://localhost/pmi/assets/images/582972b0d5f71a149b6f57f61643c13a.jpg', 1);
+(6, 'http://localhost/pmi/assets/images/582972b0d5f71a149b6f57f61643c13a.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -160,12 +178,12 @@ CREATE TABLE `detail_darah` (
 --
 
 INSERT INTO `detail_darah` (`id_detail_darah`, `id_darah`, `id_jenis_darah`, `stok`, `updated_at`) VALUES
-(5, 1, 1, 10, '2022-07-12 05:28:06'),
+(5, 1, 1, 10, '2022-08-29 18:42:30'),
 (6, 1, 3, 31, '2022-07-12 05:28:06'),
-(7, 1, 2, 32, '2022-07-12 05:28:06'),
+(7, 1, 2, 33, '2022-08-29 18:35:53'),
 (8, 1, 4, 4, '2022-07-12 05:28:06'),
 (21, 9, 1, 10, '2022-07-12 05:28:06'),
-(22, 9, 2, 13, '2022-07-12 05:28:06'),
+(22, 9, 2, 12, '2022-08-29 18:42:57'),
 (23, 9, 3, 35, '2022-07-12 05:28:50'),
 (24, 9, 4, 33, '2022-07-12 05:28:06'),
 (25, 10, 1, 15, '2022-07-12 08:29:19'),
@@ -223,16 +241,18 @@ CREATE TABLE `jadwal_mobil` (
   `jam_tutup` time NOT NULL,
   `jadwal` date NOT NULL,
   `lokasi` varchar(100) NOT NULL,
-  `target` int(11) NOT NULL
+  `target` int(11) NOT NULL,
+  `tipe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `jadwal_mobil`
 --
 
-INSERT INTO `jadwal_mobil` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`) VALUES
-(1, '13:00:00', '17:00:00', '2022-07-30', 'Taman Anggrek', 50),
-(3, '10:40:00', '16:00:00', '2022-07-28', 'Plaza Araya (Samping Burger King)', 50);
+INSERT INTO `jadwal_mobil` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`, `tipe`) VALUES
+(1, '13:00:00', '17:00:00', '2022-09-30', 'Taman Anggrek', 50, 2),
+(3, '10:40:00', '16:00:00', '2022-09-30', 'Plaza Araya (Samping Burger King)', 50, 2),
+(9, '09:00:00', '14:00:00', '2022-09-30', 'UDD PMI Kota Malang', 50, 1);
 
 -- --------------------------------------------------------
 
@@ -254,6 +274,33 @@ INSERT INTO `jenis_darah` (`id_jenis_darah`, `nama_jenis_darah`) VALUES
 (2, 'B'),
 (3, 'AB'),
 (4, 'O');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id_laporan` int(11) NOT NULL,
+  `id_darah` int(11) NOT NULL,
+  `id_jenis_darah` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `instansi` varchar(100) NOT NULL,
+  `telp` varchar(16) NOT NULL,
+  `tanggal` date NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `tipe` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `laporan`
+--
+
+INSERT INTO `laporan` (`id_laporan`, `id_darah`, `id_jenis_darah`, `nama`, `alamat`, `instansi`, `telp`, `tanggal`, `lokasi`, `tipe`) VALUES
+(1, 1, 1, 'Dani', 'Alamamant', 'OkE', '0878599435593', '2022-08-29', 'UDD PMI Kota Malang', 1),
+(3, 12, 3, 'Hiens', 'Alamamant', 'OkE', '123123123', '2022-08-29', 'UDD PMI Kota Malang', 2);
 
 -- --------------------------------------------------------
 
@@ -280,8 +327,7 @@ CREATE TABLE `pendonor` (
 --
 
 INSERT INTO `pendonor` (`id_pendonor`, `password`, `nama_pendonor`, `foto_pendonor`, `umur_pendonor`, `id_jenis_darah`, `alamat_pendonor`, `telepon_pendonor`, `donor_terakhir`, `donor_selanjutnya`, `email_pendonor`) VALUES
-(25, 'tes123', 'Dan Giri', 'http://localhost/pmi/uploads/pendonor/1657602538893_DOWNPOUR.jpg', 24, 3, 'Jalan Laks Adi Sucipto 8/25', '081123456', NULL, NULL, 'danngriel@gmail.com'),
-(29, 'tes123', 'Ramadhan Giri Mukti', 'http://localhost/pmi/uploads/pendonor/1661263986049_SS.jpg', 24, 3, 'Jalan Kanan Kiri 12 Malang', '087859935894', NULL, NULL, 'kyurikariko@gmail.com');
+(29, 'tes123', 'Ramadhan Giri Mukti', 'http://localhost/pmi/assets/images/default.jpg', 23, 3, 'Jalan Kanan Kiri 12 Malang', '087859935894', NULL, NULL, 'kyurikariko@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -328,6 +374,12 @@ ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
+-- Indeks untuk tabel `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id_booking`);
+
+--
 -- Indeks untuk tabel `carousel`
 --
 ALTER TABLE `carousel`
@@ -366,6 +418,12 @@ ALTER TABLE `jenis_darah`
   ADD PRIMARY KEY (`id_jenis_darah`);
 
 --
+-- Indeks untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id_laporan`);
+
+--
 -- Indeks untuk tabel `pendonor`
 --
 ALTER TABLE `pendonor`
@@ -400,6 +458,12 @@ ALTER TABLE `berita`
   MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT untuk tabel `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT untuk tabel `carousel`
 --
 ALTER TABLE `carousel`
@@ -427,7 +491,7 @@ ALTER TABLE `informasi`
 -- AUTO_INCREMENT untuk tabel `jadwal_mobil`
 --
 ALTER TABLE `jadwal_mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_darah`
@@ -436,10 +500,16 @@ ALTER TABLE `jenis_darah`
   MODIFY `id_jenis_darah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT untuk tabel `pendonor`
 --
 ALTER TABLE `pendonor`
-  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `profil`

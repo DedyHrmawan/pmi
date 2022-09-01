@@ -121,7 +121,21 @@
 							<!--end::Menu wrapper-->
 							<!--begin::Toolbar-->
 							<div class="flex-equal text-end ms-1">
-								<a href="<?php echo site_url('login'); ?>" class="btn btn-danger btn-color-white me-1">Sign In</a>
+								<?php 
+									$link_login = site_url('login');
+									$link_logout = site_url('logout');
+									if (isset($_SESSION['logged_in']) == FALSE) {
+										echo'											
+											<a href="'.$link_login.'" class="btn btn-danger btn-color-white me-1">Sign In</a>
+										';
+									}else{										
+										$str = explode(" ",$_SESSION['name']);
+										echo'
+											<b>Hi, '.$str[0].'&nbsp;</b>
+											<a href="'.$link_logout.'" class="btn btn-danger btn-color-white me-1">Logout</a>
+										';
+									};
+								?>
 								<!-- <a href="<?php echo site_url('signup'); ?>" class="btn btn-success btn-color-white me-1">Sign Up</a> -->
 								<!-- <a href="<?php echo site_url(''); ?>" class="btn btn-danger btn-color-white me-1">Logout</a> -->
 							</div>

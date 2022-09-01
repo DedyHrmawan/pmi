@@ -92,23 +92,37 @@
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    PCR
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    A
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    Dedy Hermawan
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    10 Agustus 2022
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    UDD PMI KOTA MALANG
-                                                </td>
-                                                <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                    <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporankeluar" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporankeluar me-1">
+                                                <?php
+                                                    foreach($laporan as $item){
+                                                        $golongan = "";
+                                                        if($item->id_jenis_darah == 1){
+                                                            $golongan = "A";
+                                                        }else if($item->id_jenis_darah == 2){
+                                                            $golongan = "B";
+                                                        }else if($item->id_jenis_darah == 3){
+                                                            $golongan = "AB";
+                                                        }else if($item->id_jenis_darah == 4){
+                                                            $golongan = "O";
+                                                        };
+                                                        echo '
+                                                        <tr>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->jenis_darah.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$golongan.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->nama.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->tanggal.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        '.$item->lokasi.'
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                    <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporankeluar" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporankeluar me-1">
                                                         <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
                                                         <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                 <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -117,7 +131,7 @@
                                                             </svg></span>
                                                         <!--end::Svg Icon-->
                                                     </a>
-                                                    <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporankeluar" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporankeluar me-1">
+                                                    <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporankeluar" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporankeluar me-1">
                                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                         <span class="svg-icon svg-icon-3">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -127,7 +141,7 @@
                                                         </span>
                                                         <!--end::Svg Icon-->
                                                     </a>
-                                                    <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporankeluar" data-id="" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporankeluar btn-sm">
+                                                    <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporankeluar" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporankeluar btn-sm">
                                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                         <span class="svg-icon svg-icon-3">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -139,6 +153,10 @@
                                                         <!--end::Svg Icon-->
                                                     </a>
                                                 </td>
+                                                </tr>
+                                                        ';
+                                                    }
+                                                ?>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -182,7 +200,7 @@
                     </div>
                     <!--end::Close-->
                 </div>
-                <form action="" method="post">
+                <form action="<?= site_url('laporankeluar/edit') ?>" method="post">
                     <div class="modal-body">
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -190,11 +208,14 @@
                                 <span class="required">Tipe Golongan Darah</span>
                             </label>
                             <!--end::Label-->
-                            <select name="" class="form-select form-select-sm form-select-solid">
-                                <option value="1">AHF</option>
-                                <option value="2">FFP</option>
-                                <option value="3">PCR</option>
-                                <option value="4">Plasma Konvalesen</option>
+                            <select name="id_darah" id="jenisEditKeluar" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                                <?php
+                                foreach ($darah as $list) {
+                                    echo '
+                                            <option value="' . $list->id_darah . '">' . $list->jenis_darah . '</option>
+                                        ';
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
@@ -203,7 +224,7 @@
                                 <span class="required">Jenis Golongan Darah</span>
                             </label>
                             <!--end::Label-->
-                            <select name="" class="form-select form-select-sm form-select-solid">
+                            <select name="id_jenis_darah" id="darahEditKeluar" class="form-select form-select-sm form-select-solid">
                                 <option value="1">A</option>
                                 <option value="2">B</option>
                                 <option value="3">AB</option>
@@ -216,7 +237,7 @@
                                 <span class="required">Nama</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" class="form-control form-control-solid" id="namaEditKeluar" name="nama" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -224,7 +245,7 @@
                                 <span class="required">Alamat</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" class="form-control form-control-solid" id="alamatEditKeluar" name="alamat" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -232,7 +253,7 @@
                                 <span class="required">Instansi</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" class="form-control form-control-solid" id="instansiEditKeluar" name="instansi" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -240,7 +261,7 @@
                                 <span class="required">Nomor Telepon</span>
                             </label>
                             <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid"  name="" />
+                            <input type="number" class="form-control form-control-solid" id="telpEditKeluar" name="telp" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -248,7 +269,7 @@
                                 <span class="required">Tanggal</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" id="edit_datelaporankeluar" name="" />
+                            <input type="text" class="form-control form-control-solid" id="edit_datelaporankeluar" name="tanggal" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -256,12 +277,12 @@
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid"  name="" />
+                            <input type="text" class="form-control form-control-solid" id="lokasiEditKeluar" name="lokasi" />
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="" name="" class="form-control">
+                        <input type="hidden" id="idEditKeluar" name="id_laporan" class="form-control">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" id="submitprofil" class="btn btn-primary">Simpan</button>
                     </div>
@@ -289,13 +310,13 @@
                     </div>
                     <!--end::Close-->
                 </div>
-                <form action="" method="post">
+                <form action="<?= site_url('laporankeluar/delete') ?>" method="post">
                     <div class="modal-body">
                         <p>Apakah anda yakin ingin menghapus Laporan Keluar tersebut ?</p>
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="" name="">
+                        <input type="hidden" id="idHapusKeluar" name="id_laporan">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-primary">Hapus</button>
                     </div>
@@ -328,35 +349,35 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <h6>Tipe Darah</h6>
-                        <p><span >PCR</p>
+                        <p><span id="darahDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Jenis Golongan Darah</h6>
-                        <p><span >A</p>
+                        <p><span id="golDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Nama</h6>
-                        <p >Dedy Hermawan</p>
+                        <p id="namaDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Alamat</h6>
-                        <p><span >Blitar</p>
+                        <p><span id="alamatDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Instansi</h6>
-                        <p><span >STIKI Malang</p>
+                        <p><span id="instansiDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Nomor Telepon</h6>
-                        <p >08573526527</p>
+                        <p id="telpDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Tanggal</h6>
-                        <p><span >20 Agustus 2022</p>
+                        <p><span id="tanggalDetailKeluar"></p>
                     </div>
                     <div class="form-group">
                         <h6>Lokasi Donor</h6>
-                        <p >UDD PMI Kota Malang</p>
+                        <p id="lokasiDetailKeluar"></p>
                     </div>
                 </div>
 
@@ -520,4 +541,62 @@
     });
 
     $("#edit_datelaporankeluar").flatpickr();
+
+    $('#dataTableLaporanKeluar tbody').on('click', '.dtl_laporankeluar', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('laporanmasuk/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_laporan: id
+            },
+            success: res => {
+                $('#namaDetailKeluar').html(res[0].nama)
+                $('#darahDetailKeluar').html(res[0].id_darah)
+                $('#alamatDetailKeluar').html(res[0].alamat)
+                $('#instansiDetailKeluar').html(res[0].instansi)
+                $('#telpDetailKeluar').html(res[0].telp)
+                $('#tanggalDetailKeluar').html(res[0].tanggal)
+                $('#lokasiDetailKeluar').html(res[0].lokasi)
+                if (res[0].id_jenis_darah == 1) {
+                    $('#golDetailKeluar').html('A')
+                }else if(res[0].id_jenis_darah == 2){
+                    $('#golDetailKeluar').html('B')
+                }else if(res[0].id_jenis_darah == 3){
+                    $('#golDetailKeluar').html('AB')
+                }else if(res[0].id_jenis_darah == 4){
+                    $('#golDetailKeluar').html('O')
+                }
+            }
+        })
+    })
+
+    $('#dataTableLaporanKeluar tbody').on('click', '.edit_laporankeluar', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('laporankeluar/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_laporan: id
+            },
+            success: res => {
+                $('#namaEditKeluar').val(res[0].nama)
+                $('#alamatEditKeluar').val(res[0].alamat)
+                $('#instansiEditKeluar').val(res[0].instansi)
+                $('#telpEditKeluar').val(res[0].telp)
+                $('#edit_datelaporankeluar').val(res[0].tanggal)
+                $('#lokasiEditKeluar').val(res[0].lokasi)
+                $('#jenisEditKeluar').val(res[0].id_darah).change()
+                $('#darahEditKeluar').val(res[0].id_jenis_darah).change()
+                $('#idEditKeluar').val(res[0].id_laporan)
+            }
+        })
+    })
+
+    $('#dataTableLaporanKeluar tbody').on('click', '.del_laporankeluar', function() {
+        const id = $(this).data("id")
+        $('#idHapusKeluar').val(id)
+    })
 </script>

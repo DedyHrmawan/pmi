@@ -253,6 +253,36 @@
         $('#hapusmobil_id').val(id)
     })
 
+    //Jadwal UDD
+    $('#dataTableJadwalUDD tbody').on('click', '.editJadwal', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('mobildonor/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_mobil: id
+            },
+            success: res => {
+                $('#lokasi_edit').val(res[0].lokasi)
+                $('#edit_jadwal').val(res[0].jadwal)
+                $('#edit_jambuka').val(res[0].jambuka)
+                $('#target_edit').val(res[0].target)
+                $('#edit_jamtutup').val(res[0].jamtutup)
+                $('#editmobil_id').val(res[0].id_mobil)
+            }
+        })
+    })
+
+    $('#dataTableJadwalUDD tbody').on('click', '.hapusJadwal', function() {
+        const id = $(this).data("id")
+        const name = $(this).data("name")
+        const jadwal = $(this).data("jadwal")
+        $('#lokasi_text').html(name)
+        $('#jadwal_text').html(jadwal)
+        $('#hapusmobil_id').val(id)
+    })
+
     //Informasi  
     $('#informasiTable tbody').on('click', '.detailInfo', function() {
         const id = $(this).data('id');
@@ -322,6 +352,64 @@
     $('#informasiTable tbody').on('click', '.hapusInfo', function() {
         const id = $(this).data("id")
         $('#hapusInfo_id').val(id)
+    })
+
+    //Pendonor  
+    $('#tablePendonor tbody').on('click', '.mdl_detailpendonor', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('listpendonor/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_pendonor: id
+            },
+            success: res => {
+                $('#namaDetailPendonor').html(res[0].nama_pendonor)
+                $('#umurDetailPendonor').html(res[0].umur_pendonor)
+                $('#alamatDetailPendonor').html(res[0].alamat_pendonor)
+                $('#teleponDetailPendonor').html(res[0].telepon_pendonor)
+                $('#terakhirDetailPendonor').html(res[0].donor_terakhir)
+                $('#imgDetailPendonor').attr("src", res[0].foto_pendonor)
+                $('#selanjutnyaDetailPendonor').html(res[0].donor_selanjutnya)
+                if (res[0].id_jenis_darah == 1) {
+                    $('#darahDetailPendonor').html('A')
+                }else if(res[0].id_jenis_darah == 2){
+                    $('#darahDetailPendonor').html('B')
+                }else if(res[0].id_jenis_darah == 3){
+                    $('#darahDetailPendonor').html('AB')
+                }else if(res[0].id_jenis_darah == 4){
+                    $('#darahDetailPendonor').html('O')
+                }
+            }
+        })
+    })
+
+    $('#tablePendonor tbody').on('click', '.editPendonor', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('listpendonor/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_pendonor: id
+            },
+            success: res => {
+                $('#namaPendonor_edit').val(res[0].nama_pendonor)
+                $('#emailPendonor_edit').val(res[0].email_pendonor)
+                $('#passwordPendonor_edit').val(res[0].password)
+                $('#umurPendonor_edit').val(res[0].umur_pendonor)
+                $('#alamatPendonor_edit').val(res[0].alamat_pendonor)
+                $('#teleponPendonor_edit').val(res[0].telepon_pendonor)
+                $('#darahPendonor_edit').val(res[0].id_jenis_darah).change()
+                $('#ideditPendonor').val(res[0].id_pendonor)
+            }
+        })
+    })
+
+    $('#tablePendonor tbody').on('click', '.hapusPendonor', function() {
+        const id = $(this).data("id")
+        $('#idhapusPendonor').val(id)
     })
 
     //Berita  

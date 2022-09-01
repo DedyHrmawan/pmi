@@ -5,6 +5,9 @@ class AgendaController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Agenda');
+        if (isset($_SESSION['logged_in']) == FALSE || $this->session->userdata('hak_akses') != 1) {
+			redirect('/');
+		};
     }
 
     public function VAgenda()

@@ -69,46 +69,61 @@
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody>
-												<tr>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">Dedy Hermawan</td>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">17</td>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">Blitar</td>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">085732694267</td>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">A</td>
-													<td class="text-end">
-														<a href="" title="Detail Pendonor" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" data-id="'. $item->id_profil .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailProfil me-1">
+												<?php
+													foreach($pendonor as $item){
+														$jenis = "";
+														if($item->id_jenis_darah == 1){
+															$jenis = "A";
+														}else if($item->id_jenis_darah == 2){	
+															$jenis = "B";
+														}else if($item->id_jenis_darah == 3){	
+															$jenis = "AB";
+														}else if($item->id_jenis_darah == 4){	
+															$jenis = "O";
+														}
+														echo'															
+															<tr>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->nama_pendonor.'</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->umur_pendonor.'</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->alamat_pendonor.'</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->telepon_pendonor.'</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$jenis.'</td>
+															<td class="text-end">
+															<a href="" title="Detail Pendonor" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" data-id="'. $item->id_pendonor .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailpendonor me-1">
 
-															<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
-																	<rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
-																	<rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor" />
-																</svg></span>
+																<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+																		<rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+																		<rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor" />
+																	</svg></span>
 
-														</a>
-														<a href="" title="Edit Pendonor" data-bs-toggle="modal" data-bs-target="#editPendonor" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+															</a>
+															<a href="" title="Edit Pendonor" data-bs-toggle="modal" data-bs-target="#editPendonor" data-id="'. $item->id_pendonor .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editPendonor me-1">
 
-															<span class="svg-icon svg-icon-3">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
-																	<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
-																</svg>
-															</span>
+																<span class="svg-icon svg-icon-3">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
+																		<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
+																	</svg>
+																</span>
 
-														</a>
-														<a href="#" title="Hapus Pendonor" data-bs-toggle="modal" data-bs-target="#hapusPendonor" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+															</a>
+															<a href="#" title="Hapus Pendonor" data-bs-toggle="modal" data-bs-target="#hapusPendonor" data-id="'. $item->id_pendonor .'" class="btn btn-icon btn-bg-light btn-active-color-primary hapusPendonor btn-sm">
 
-															<span class="svg-icon svg-icon-3">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-																	<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-																	<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-																</svg>
-															</span>
+																<span class="svg-icon svg-icon-3">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
+																		<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
+																		<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
+																	</svg>
+																</span>
 
-														</a>
-													</td>
-												</tr>
-
+															</a>
+														</td>
+													</tr>
+														';
+													}
+												?>
 											</tbody>
 											<!--end::Table body-->
 										</table>
@@ -167,14 +182,14 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="" method="post">
+					<form action="<?= site_url('listpendonor/store') ?>" method="post">
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Nama</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="" required />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="nama_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -182,7 +197,7 @@
 								<span class="required">Email</span>
 							</label>
 							<!--end::Label-->
-							<input type="email" class="form-control form-control-solid" placeholder="Masukan Email" name="" required />
+							<input type="email" class="form-control form-control-solid" placeholder="Masukan Email" name="email_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -190,7 +205,7 @@
 								<span class="required">Password</span>
 							</label>
 							<!--end::Label-->
-							<input type="password" class="form-control form-control-solid" placeholder="Masukan Password" name="" required />
+							<input type="password" class="form-control form-control-solid" placeholder="Masukan Password" name="password" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -198,7 +213,7 @@
 								<span class="required">Umur</span>
 							</label>
 							<!--end::Label-->
-							<input type="number" class="form-control form-control-solid" placeholder="Masukan Umur" name="" required />
+							<input type="number" class="form-control form-control-solid" placeholder="Masukan Umur" name="umur_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -206,7 +221,7 @@
 								<span class="required">Alamat</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" required />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="alamat_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -214,27 +229,19 @@
 								<span class="required">Nomor Telepon</span>
 							</label>
 							<!--end::Label-->
-							<input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="" required />
+							<input type="number" class="form-control form-control-solid" placeholder="Masukan Nomor Telepon" name="telepon_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Golongan Darah</span>
 							</label>
-							<select class="form-select form-select-solid" name="">
-								<option value="">A</option>
-								<option value="">B</option>
-								<option value="">AB</option>
-								<option value="">O</option>
+							<select class="form-select form-select-solid" name="id_jenis_darah">
+								<option value="1">A</option>
+								<option value="2">B</option>
+								<option value="3">AB</option>
+								<option value="4">O</option>
 							</select>
-						</div>
-						<div class="d-flex flex-column mb-8 fv-row">
-							<!--begin::Label-->
-							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
-								<span class="required">Alamat</span>
-							</label>
-							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukan Alamat" name="" required />
 						</div>
 						<!-- <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
@@ -243,7 +250,6 @@
                         <img class="m-3 mx-auto rounded" id="prevAddFotoUser" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
                         <input type="file" class="form-control form-control-solid" id="addImgFotoUser" onchange="previewAddFotoUser();" required />
                     </div> -->
-					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
@@ -275,14 +281,14 @@
 					<!--end::Close-->
 				</div>
 				<div class="modal-body">
-					<form action="" method="post">
+					<form action="<?= site_url('listpendonor/edit') ?>" method="post">
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Nama</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" name="" required />
+							<input type="text" id="namaPendonor_edit" class="form-control form-control-solid" name="nama_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -290,7 +296,7 @@
 								<span class="required">Email</span>
 							</label>
 							<!--end::Label-->
-							<input type="email" class="form-control form-control-solid" name="" required />
+							<input type="email" id="emailPendonor_edit" class="form-control form-control-solid" name="email_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -298,7 +304,7 @@
 								<span class="required">Password</span>
 							</label>
 							<!--end::Label-->
-							<input type="password" class="form-control form-control-solid" name="" required />
+							<input type="password" id="passwordPendonor_edit" class="form-control form-control-solid" name="password" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -306,7 +312,7 @@
 								<span class="required">Umur</span>
 							</label>
 							<!--end::Label-->
-							<input type="number" class="form-control form-control-solid" name="" required />
+							<input type="number" id="umurPendonor_edit" class="form-control form-control-solid" name="umur_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -314,7 +320,7 @@
 								<span class="required">Alamat</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" name="" required />
+							<input type="text" id="alamatPendonor_edit" class="form-control form-control-solid" name="alamat_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -322,27 +328,19 @@
 								<span class="required">Nomor Telepon</span>
 							</label>
 							<!--end::Label-->
-							<input type="number" class="form-control form-control-solid" name="" required />
+							<input type="number" id="teleponPendonor_edit" class="form-control form-control-solid" name="telepon_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Golongan Darah</span>
 							</label>
-							<select class="form-select form-select-solid" name="">
-								<option value="">A</option>
-								<option value="">B</option>
-								<option value="">AB</option>
-								<option value="">O</option>
+							<select class="form-select form-select-solid" id="darahPendonor_edit" name="id_jenis_darah">
+								<option value="1">A</option>
+								<option value="2">B</option>
+								<option value="3">AB</option>
+								<option value="4">O</option>
 							</select>
-						</div>
-						<div class="d-flex flex-column mb-8 fv-row">
-							<!--begin::Label-->
-							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
-								<span class="required">Alamat</span>
-							</label>
-							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" name="" required />
 						</div>
 						<!-- <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
@@ -351,12 +349,13 @@
                         <img class="m-3 mx-auto rounded" id="prevEditFotoUser" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
                         <input type="file" class="form-control form-control-solid" id="editImgFotoUser" onchange="previewEditFotoUser();" required />
                     </div> -->
-					</form>
 				</div>
 				<div class="modal-footer">
+					<input type="hidden" id="ideditPendonor" name="id_pendonor">
 					<button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
 					<button type="submit" class="btn btn-primary">Simpan</button>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -381,13 +380,13 @@
 					</div>
 					<!--end::Close-->
 				</div>
-				<form action="<?= site_url('') ?>" method="post">
+				<form action="<?= site_url('listpendonor/delete') ?>" method="post">
 					<div class="modal-body">
 						<p>Apakah anda yakin ingin menghapus Pendonor tersebut ?</p>
 					</div>
 
 					<div class="modal-footer">
-						<input type="hidden" id="" name="">
+						<input type="hidden" id="idhapusPendonor" name="id_pendonor">
 						<button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
 						<button type="submit" class="btn btn-primary">Hapus</button>
 					</div>
@@ -423,23 +422,11 @@
 						<!--begin: Pic-->
 						<div class="me-7 mb-4 text-center">
 							<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-								<img src="assets/admin/media/avatars/300-1.jpg" alt="image" />
+								<img id="imgDetailPendonor" alt="image" />
 								<div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px"></div>
 							</div>
 						</div>
 						<!--end::Pic-->
-						<!--begin::Row-->
-						<div class="row mb-5 mt-5">
-							<!--begin::Label-->
-							<label class="col-lg-4 fw-bold text-muted">NIK</label>
-							<!--end::Label-->
-							<!--begin::Col-->
-							<div class="col-lg-8">
-								<span class="fw-bold fs-6 text-gray-800">3505120810990002</span>
-							</div>
-							<!--end::Col-->
-						</div>
-						<!--end::Row-->
 						<!--begin::Input group-->
 						<div class="row mb-5">
 							<!--begin::Label-->
@@ -447,7 +434,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span class="fw-bold text-gray-800 fs-6">Dedy Hermawan</span>
+								<span id="namaDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -459,7 +446,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span class="fw-bold text-gray-800 fs-6">17</span>
+								<span id="umurDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -471,7 +458,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span class="fw-bold text-gray-800 fs-6">A</span>
+								<span  id="darahDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -483,7 +470,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span class="fw-bold text-gray-800 fs-6">Jl. Suwondo no 25 RT 01 RW 04</span>
+								<span id="alamatDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -496,7 +483,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 d-flex align-items-center">
-								<span class="fw-bold fs-6 text-gray-800 me-2">044 3276 454 935</span>
+								<span id="teleponDetailPendonor" class="fw-bold fs-6 text-gray-800 me-2"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -508,7 +495,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span class="fw-bold text-gray-800 fs-6">19-02-2022</span>
+								<span id="terakhirDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -520,7 +507,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span class="fw-bold text-gray-800 fs-6">19-02-2022</span>
+								<span id="selanjutnyaDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
