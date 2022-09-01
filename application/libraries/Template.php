@@ -13,7 +13,7 @@ class Template
         $this->_ci->load->view($content, $data); // Content
         $this->_ci->load->view('pmi-admin/template/sidebar', $data); // sidebar
         $this->_ci->load->view('pmi-admin/template/modal', $data); // Modal
-        $this->_ci->load->view('pmi-admin/template/footer', $data); // Footer
+        // $this->_ci->load->view('pmi-admin/template/footer', $data); // Footer
     }
 
     function depan($content, $data = null){

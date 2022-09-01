@@ -8,10 +8,6 @@
             <div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
                 <!--begin::Brand-->
                 <div class="aside-logo flex-column-auto" id="kt_aside_logo">
-                    <!--begin::Logo-->
-                    <a href="../../demo1/dist/index.html">
-                        <img alt="Logo" src="assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
-                    </a>
                     <!--end::Logo-->
                     <!--begin::Aside toggler-->
                     <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
@@ -44,7 +40,7 @@
                                     <h3 class="card-title align-items-start flex-column">
                                         <span class="card-label fw-bolder fs-3 mb-1">Foto Beranda</span>
                                     </h3>
-                                    <div class="card-toolbar">   
+                                    <div class="card-toolbar">
                                         <a href="#" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#mdl_addcarousel">Tambah Foto</a>
                                     </div>
                                 </div>
@@ -67,26 +63,26 @@
                                             <!--begin::Table body-->
                                             <tbody>
                                                 <?php
-                                                    foreach($carousel as $item){
-                                                        $status = "";
-                                                        $text = "";
-                                                        if($item->status == 1){
-                                                            $status = "badge badge-success";
-                                                            $text = "Diunggah";
-                                                        }else{
-                                                            $status = "badge badge-danger";
-                                                            $text = "Diarsipkan";
-                                                        }
-                                                        echo'
+                                                foreach ($carousel as $item) {
+                                                    $status = "";
+                                                    $text = "";
+                                                    if ($item->status == 1) {
+                                                        $status = "badge badge-success";
+                                                        $text = "Diunggah";
+                                                    } else {
+                                                        $status = "badge badge-danger";
+                                                        $text = "Diarsipkan";
+                                                    }
+                                                    echo '
                                                             <tr>
                                                             <td class="min-w-120px text-center">
-                                                                <img src="'.$item->gambar.'" alt="thumbnail" class="rounded img-thumbnail" width="100px"></a>
+                                                                <img src="' . $item->gambar . '" alt="thumbnail" class="rounded img-thumbnail" width="100px"></a>
                                                             </td>
                                                             <td class="min-w-120px text-center">
-                                                                <span class="'.$status.'">'.$text.'</span>
+                                                                <span class="' . $status . '">' . $text . '</span>
                                                             </td>
                                                             <td class="text-center">
-                                                                <a href="" title="Detail Foto" data-bs-toggle="modal" data-bs-target="#detailCarousel" data-id="'.$item->id_carousel.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 detailCarousel">
+                                                                <a href="" title="Detail Foto" data-bs-toggle="modal" data-bs-target="#detailCarousel" data-id="' . $item->id_carousel . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 detailCarousel">
                                                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
                                                                     <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                             <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -95,7 +91,7 @@
                                                                         </svg></span>
                                                                     <!--end::Svg Icon-->
                                                                 </a>
-                                                                <a href="" title="Edit Foto" data-bs-toggle="modal" data-bs-target="#editCarousel" data-id="'.$item->id_carousel.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 editCarousel">
+                                                                <a href="" title="Edit Foto" data-bs-toggle="modal" data-bs-target="#editCarousel" data-id="' . $item->id_carousel . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 editCarousel">
                                                                     <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                                     <span class="svg-icon svg-icon-3">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -105,7 +101,7 @@
                                                                     </span>
                                                                     <!--end::Svg Icon-->
                                                                 </a>
-                                                                <a href="#" title="Hapus Foto" data-bs-toggle="modal" data-bs-target="#hapusCarousel" data-id="'.$item->id_carousel.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm hapusCarousel">
+                                                                <a href="#" title="Hapus Foto" data-bs-toggle="modal" data-bs-target="#hapusCarousel" data-id="' . $item->id_carousel . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm hapusCarousel">
                                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                                     <span class="svg-icon svg-icon-3">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -119,7 +115,7 @@
                                                             </td>
                                                         </tr>
                                                         ';
-                                                    }
+                                                }
                                                 ?>
                                             </tbody>
                                             <!--end::Table body-->
@@ -171,4 +167,5 @@
         <!--end::Svg Icon-->
     </div>
     <!--end::Scrolltop-->
+    <?php $this->load->view('pmi-admin/template/footer') ?>
 </body>
