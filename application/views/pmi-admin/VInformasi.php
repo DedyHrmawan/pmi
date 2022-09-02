@@ -65,15 +65,15 @@
                                                 <?php
                                                 foreach ($informasi as $item) {
                                                     $status = "";
-													$text = "";
-													if($item->status == 1){
-														$status = "badge badge-success";
-														$text = "Diunggah";
-													}else{
-														$status = "badge badge-danger";
-														$text = "Diarsipkan";
-													}
-													$desc = mb_strimwidth($item->deskripsi, 0, 180, "...");
+                                                    $text = "";
+                                                    if ($item->status == 1) {
+                                                        $status = "badge badge-success";
+                                                        $text = "Diunggah";
+                                                    } else {
+                                                        $status = "badge badge-danger";
+                                                        $text = "Diarsipkan";
+                                                    }
+                                                    $desc = mb_strimwidth($item->deskripsi, 0, 180, "...");
                                                     echo '
                                                     <tr>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
@@ -83,7 +83,7 @@
                                                             ' . $desc . '
                                                         </td>
                                                         <td class="text-dark text-hover-primary fs-6">
-                                                            <span class="'.$status.'">'.$text.'</span>
+                                                            <span class="' . $status . '">' . $text . '</span>
 														</td>
                                                         <td class="text-end">
                                                             <a href="" title="Detail Informasi" data-bs-toggle="modal" data-bs-target="#detailInfo" data-id="' . $item->id_informasi . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm detailInfo me-1">
@@ -158,6 +158,202 @@
     </div>
     <!--end::Root-->
 
+    <!-- begin modal Tambah Informasi -->
+    <div class="modal fade" id="mdl_addinfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Tambah Informasi PMI</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('informasi/store') ?>" method="post">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Judul</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul" name="judul_informasi" required />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Deskripsi</span>
+                            </label>
+                            <!--end::Label-->
+                            <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Deskripsi" id="tinyinformasi" type="text" name="deskripsi" cols="30" rows="10" required></textarea>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Status</span>
+                            </label>
+                            <select class="form-select form-select-solid" name="status" required>
+                                <option value="1">Diunggah</option>
+                                <option value="2">Diarsipkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" id="submitinformasi" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal tambah Informasi-->
+
+    <!-- begin modal Edit Informasi -->
+    <div class="modal fade" id="editInfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Edit Profil PMI</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('informasi/edit') ?>" method="post">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Judul</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" name="judul_informasi" id="judul_edit" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Deskripsi</span>
+                            </label>
+                            <!--end::Label-->
+                            <textarea class="form-control form-control-solid textTiny" type="text" name="deskripsi" id="deskripsiInfo_edit" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Status</span>
+                            </label>
+                            <select class="form-select form-select-solid" name="status" id="statusInfo_edit">
+                                <option value="1">Diunggah</option>
+                                <option value="2">Diarsipkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="idInfo_edit" name="id_informasi">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" id="submitinformasi" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal Edit Informasi-->
+
+    <!-- begin modal hapus Informasi-->
+    <div class="modal fade" id="hapusInfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Hapus Informasi</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('informasi/delete') ?>" method="post">
+                    <div class="modal-body">
+                        <p>Apakah anda yakin ingin menghapus Informasi tersebut ?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="hapusInfo_id" name="id_informasi">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal hapus Informasi -->
+
+    <!-- begin modal detail Informasi-->
+    <div class="modal fade" id="detailInfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Detail Informasi</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <h6>Judul</h6>
+                        <p><span id="detail_judul"></span></p>
+                    </div>
+                    <div class="form-group">
+                        <h6>Deskripsi</h6>
+                        <p><span id="detail_deskripsi"></span></p>
+                    </div>
+                    <div class="form-group">
+                        <h6>Status</h6>
+                        <p id="statusInfo_detail"><span class="badge badge-success">Tampil</span></p>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal detail Informasi -->
 
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">

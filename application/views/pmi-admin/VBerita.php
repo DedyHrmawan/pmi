@@ -65,28 +65,28 @@
                                             <!--begin::Table body-->
                                             <tbody>
                                                 <?php
-                                                    foreach($berita as $item){
-                                                        $status = "";
-                                                        $text = "";
-                                                        if($item->status == 1){
-                                                            $status = "badge badge-success";
-                                                            $text = "Diunggah";
-                                                        }else{
-                                                            $status = "badge badge-danger";
-                                                            $text = "Diarsipkan";
-                                                        }
-                                                        $desc = mb_strimwidth($item->deskripsi, 0, 170, "...");
-                                                        echo'
+                                                foreach ($berita as $item) {
+                                                    $status = "";
+                                                    $text = "";
+                                                    if ($item->status == 1) {
+                                                        $status = "badge badge-success";
+                                                        $text = "Diunggah";
+                                                    } else {
+                                                        $status = "badge badge-danger";
+                                                        $text = "Diarsipkan";
+                                                    }
+                                                    $desc = mb_strimwidth($item->deskripsi, 0, 170, "...");
+                                                    echo '
                                                         <tr>
-                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->judul_berita.'</td>
-                                                        <td class="text-dark text-hover-primary fs-6">'.$item->penulis_berita.'</td>
-                                                        <td class="text-dark text-hover-primary fs-6">'.$item->tanggal_berita.'</td>
-                                                        <td class="text-dark text-hover-primary fs-6">'.$desc.'</td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->judul_berita . '</td>
+                                                        <td class="text-dark text-hover-primary fs-6">' . $item->penulis_berita . '</td>
+                                                        <td class="text-dark text-hover-primary fs-6">' . $item->tanggal_berita . '</td>
+                                                        <td class="text-dark text-hover-primary fs-6">' . $desc . '</td>
                                                         <td class="text-dark text-hover-primary fs-6">
-                                                            <span class="'.$status.'">'.$text.'</span>
+                                                            <span class="' . $status . '">' . $text . '</span>
                                                         </td>
                                                         <td class="text-end">
-                                                            <a href="" title="Detail Berita" data-bs-toggle="modal" data-bs-target="#detailBerita" data-id="'.$item->id_berita.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm detailBerita me-1">
+                                                            <a href="" title="Detail Berita" data-bs-toggle="modal" data-bs-target="#detailBerita" data-id="' . $item->id_berita . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm detailBerita me-1">
                                                                 <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
                                                                 <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -95,7 +95,7 @@
                                                                     </svg></span>
                                                                 <!--end::Svg Icon-->
                                                             </a>
-                                                            <a href="" title="Edit Berita" data-bs-toggle="modal" data-bs-target="#editBerita" data-id="'.$item->id_berita.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editBerita me-1">
+                                                            <a href="" title="Edit Berita" data-bs-toggle="modal" data-bs-target="#editBerita" data-id="' . $item->id_berita . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editBerita me-1">
                                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                                 <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -105,7 +105,7 @@
                                                                 </span>
                                                                 <!--end::Svg Icon-->
                                                             </a>
-                                                            <a href="#" title="Hapus Berita" data-bs-toggle="modal" data-bs-target="#hapusBerita" data-id="'.$item->id_berita.'" class="btn btn-icon btn-bg-light btn-active-color-primary hapusBerita btn-sm">
+                                                            <a href="#" title="Hapus Berita" data-bs-toggle="modal" data-bs-target="#hapusBerita" data-id="' . $item->id_berita . '" class="btn btn-icon btn-bg-light btn-active-color-primary hapusBerita btn-sm">
                                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                                 <span class="svg-icon svg-icon-3">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -119,8 +119,8 @@
                                                         </td>
                                                     </tr>
                                                     ';
-                                                    }
-                                                ?>                                                
+                                                }
+                                                ?>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -158,6 +158,325 @@
     </div>
     <!--end::Root-->
 
+    <!-- begin modal Tambah Berita -->
+    <div class="modal fade" id="mdl_addBerita">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Tambah Berita PMI</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('berita/store') ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Judul Berita</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Judul Berita" name="judul_berita" required />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Penulis</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Nama Penulis" name="penulis_berita" required />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Tanggal</span>
+                            </label>
+                            <div class="position-relative d-flex align-items-center">
+                                <!--begin::Datepicker-->
+                                <input id="add_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tanggal_berita" required />
+                                <!--end::Datepicker-->
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Isi Berita</span>
+                            </label>
+                            <!--end::Label-->
+                            <textarea class="form-control form-control-solid tox-target textTiny" placeholder="Masukan Isi Berita" id="tinyberita" name="deskripsi" cols="30" rows="10" required></textarea>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                                <span class="required">Gambar</span>
+                            </label>
+                            <!--end::Label-->
+                            <!-- wadah preview -->
+                            <img class="m-3 mx-auto rounded" id="prevAddBerita" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+                            <!-- end preview  -->
+                            <input type="file" class="form-control form-control-solid" name="file" id="addImgBerita" onchange="previewAddBerita();" required />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Status</span>
+                            </label>
+                            <select class="form-select form-select-solid" name="status">
+                                <option value="1">Diunggah</option>
+                                <option value="2">Diarsipkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="imageBerita" name="link">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal tambah Berita-->
+
+    <!-- begin modal Edit Berita -->
+    <div class="modal fade" id="editBerita">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Edit Berita PMI</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('berita/edit') ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Judul Berita</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" id="judulBerita_edit" placeholder="Judul Berita" name="judul_berita" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Penulis</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" id="penulisBerita_edit" placeholder="Nama Penulis" name="penulis_berita" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Tanggal</span>
+                            </label>
+                            <div class="position-relative d-flex align-items-center">
+                                <!--begin::Datepicker-->
+                                <input id="edit_tanggalBerita" class="form-control form-control-solid " placeholder="Pilih Tanggal" name="tanggal_berita" />
+                                <!--end::Datepicker-->
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Isi Berita</span>
+                            </label>
+                            <!--end::Label-->
+                            <textarea class="form-control form-control-solid textTiny" id="deskripsiBerita_edit" name="deskripsi" cols="30" rows="10"></textarea>
+                        </div>
+                        <!--begin::Input group-->
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                                <span>Gambar</span>
+                            </label>
+                            <!--end::Label-->
+                            <!-- wadah preview -->
+                            <img class="m-3 mx-auto rounded" id="prevEditBerita" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+                            <!-- end preview  -->
+                            <input type="file" class="form-control form-control-solid" name="file" id="editImgBerita" onchange="previewEditBerita();" />
+                        </div>
+                        <!--end::Input group-->
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Status</span>
+                            </label>
+                            <select class="form-select form-select-solid" id="statusBerita_edit" name="status">
+
+                                <option value="1">Diunggah</option>
+                                <option value="2">Diarsipkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="idBerita_edit" name="id_berita">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal Edit Berita-->
+
+    <!-- begin hapus Berita-->
+    <div class="modal fade" id="hapusBerita">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Hapus Berita</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('berita/delete') ?>" method="post">
+                    <div class="modal-body">
+                        <p>Apakah anda yakin ingin menghapus Berita tersebut ?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="hapusBerita_id" name="id_berita">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal hapus Berita -->
+
+    <!-- begin modal detail Berita-->
+    <div class="modal fade" id="detailBerita">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Detail Berita</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+
+                <div class="modal-body">
+                    <!--begin::Card body-->
+                    <div class="card-body">
+                        <!--begin: Pic-->
+                        <div class="me-7 mb-4 text-center">
+                            <div class="">
+                                <img alt="image" id="imgBeritaDetail" style="max-width: 430px; min-width:300px;" />
+                            </div>
+                        </div>
+                        <!--end::Pic-->
+                        <!--begin::Row-->
+                        <div class="row mb-5 mt-5">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-bold text-muted">Judul</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800" id="judulBerita_detail"></span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Input group-->
+                        <div class="row mb-5">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-bold text-muted">Penulis</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-bold text-gray-800 fs-6" id="penulisBerita_detail"></span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-5">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-bold text-muted">Tanggal</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-bold text-gray-800 fs-6" id="tanggalBerita_detail"></span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-5">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-bold text-muted">Isi Berita</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-bold text-gray-800 fs-6" id="deskripsiBerita_detail"></span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-5">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-bold text-muted">Status</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <p id="statusBerita_detail"></p>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal detail Berita -->
 
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">

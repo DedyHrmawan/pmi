@@ -155,6 +155,201 @@
     <!--end::Root-->
 
 
+    <!-- begin modal Tambah Foto Carousel -->
+    <div class="modal fade" id="mdl_addcarousel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Tambah Foto Beranda</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('carousel/store') ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                                <span class="required">Gambar</span>
+                            </label>
+                            <!--end::Label-->
+                            <!-- wadah preview -->
+                            <img class="m-3 mx-auto rounded" id="prevAddCarousel" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+                            <!-- end preview  -->
+                            <input type="file" name="file" class="form-control form-control-solid" id="addImgCarousel" onchange="previewAddCarousel();" required />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Status</span>
+                            </label>
+                            <select class="form-select form-select-solid" name="status">
+                                <option value="1">Diunggah</option>
+                                <option value="2">Diarsipkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal tambah Foto Carousel-->
+
+    <!-- begin modal Edit Foto Carousel -->
+    <div class="modal fade" id="editCarousel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Edit Foto Beranda</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('carousel/edit') ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <!--begin::Input group-->
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+                                <span>Gambar</span>
+                            </label>
+                            <!--end::Label-->
+                            <!-- wadah preview -->
+                            <img class="m-3 mx-auto rounded" id="prevEditCarousel" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+                            <!-- end preview  -->
+                            <input type="file" name="file" class="form-control form-control-solid" id="editImgCarousel" onchange="previewEditCarousel();" />
+                        </div>
+                        <!--end::Input group-->
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Status</span>
+                            </label>
+                            <select class="form-select form-select-solid" id="statusCarousel_edit" name="status">
+                                <option value="1">Diunggah</option>
+                                <option value="2">Diarsipkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="idCarousel_edit" name="id_carousel">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" id="submitberita" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal Edit Foto Carousel-->
+
+    <!-- begin hapus Foto Carousel-->
+    <div class="modal fade" id="hapusCarousel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Hapus Foto</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('carousel/delete') ?>" method="post">
+                    <div class="modal-body">
+                        <p>Apakah anda yakin ingin menghapus Foto tersebut ?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="hapusCarousel_id" name="id_carousel">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal hapus Foto Carousel -->
+
+    <!-- begin modal detail Foto Carousel-->
+    <div class="modal fade" id="detailCarousel">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Detail Foto</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+
+                <div class="modal-body">
+                    <!--begin::Card body-->
+                    <div class="card-body">
+                        <!--begin: Pic-->
+                        <div class="form-group">
+                            <h6>Detail Foto</h6>
+                            <div class="me-7 mb-4 text-center">
+                                <div class="">
+                                    <img alt="image" id="imgDetailCarousel" style="max-width: 430px; min-width:300px;" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Pic-->
+                        <div class="form-group">
+                            <h6>Status</h6>
+                            <p id="statusCarouselDetail"><span class="badge badge-success">Diunggah</span></p>
+                        </div>
+                    </div>
+                    <!--end::Card body-->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal detail Foto Carousel -->
+
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
         <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
