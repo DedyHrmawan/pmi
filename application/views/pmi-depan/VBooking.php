@@ -13,69 +13,74 @@
                     <h5 class="fs-1 text-dark mt-10 mb-20" id="">Silahkan mengisi form isian dibawah ini untuk booking jadwal donor !</h5>
                     <!--end::Title-->
                     <form action="<?= site_url('storeBooking') ?>" method="post">
-                        <?php                             
-                            $newDate = date("d F Y", strtotime($jadwal[0]->jadwal));
-                            $jambuka = date("H:i", strtotime($jadwal[0]->jambuka));
-                            $jamtutup = date("H:i", strtotime($jadwal[0]->jamtutup));
+                        <?php
+                        $newDate = date("d F Y", strtotime($jadwal[0]->jadwal));
+                        $jambuka = date("H:i", strtotime($jadwal[0]->jambuka));
+                        $jamtutup = date("H:i", strtotime($jadwal[0]->jamtutup));
                         ?>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6">Lokasi</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" name="lokasi" class="form-control form-control-lg form-control-solid " value="<?= $jadwal[0]->lokasi ?>" readonly />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Lokasi</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="lokasi" class="form-control form-control-lg form-control-solid " value="<?= $jadwal[0]->lokasi ?>" readonly />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6">Tanggal</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" class="form-control form-control-lg form-control-solid " value="<?= $newDate ?>" readonly />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Tanggal</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" class="form-control form-control-lg form-control-solid " value="<?= $newDate ?>" readonly />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6">Jam Buka</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" name="" class="form-control form-control-lg form-control-solid " value="<?= $jambuka ?>" readonly />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Jam Buka</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="" class="form-control form-control-lg form-control-solid " value="<?= $jambuka ?>" readonly />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6">Jam Tutup</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" name="" class="form-control form-control-lg form-control-solid " value="<?= $jamtutup ?>" readonly />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Jam Tutup</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="" class="form-control form-control-lg form-control-solid " value="<?= $jamtutup ?>" readonly />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nama Lengkap</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" name="nama" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nama Lengkap" required />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nama Lengkap</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="nama" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nama Lengkap" required />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nomor Telepon</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="number" name="telp" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nomor Telepon" required />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nomor Telepon</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="number" name="telp" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nomor Telepon" required />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Alamat</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" name="alamat" class="form-control form-control-lg form-control-solid " placeholder="Masukan Alamat" required />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6 required">Alamat</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid " placeholder="Masukan Alamat" required />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Instansi</label>
-                        <div class="col-lg-8 fv-row">
-                            <input type="text" name="instansi" class="form-control form-control-lg form-control-solid " placeholder="Masukan Instansi" required />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6 required">Instansi</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="instansi" class="form-control form-control-lg form-control-solid " placeholder="Masukan Instansi" required />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 required">Booking Waktu</label>
-                        <div class="col-lg-8 fv-row">
-                            <input id="jam_hadir" class="form-control form-control-solid" placeholder="Masukan Waktu Kehadiran" name="jam_datang" required />
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6 required">Booking Waktu</label>
+                            <div class="col-lg-8 fv-row">
+                                <input id="jam_hadir" class="form-control form-control-solid" placeholder="Masukan Waktu Kehadiran" name="jam_datang" required />
+                            </div>
                         </div>
-                    </div>
-                    
+                        <div class="form-check form-check-custom form-check-solid">
+                            <input class="form-check-input " type="checkbox" value="" id="CheckDatang" required/>
+                            <label class="form-check-label" for="CheckDatang">
+                                Data yang saya masukan adalah benar dan saya menyetujui dan bersedia datang ke Unit Donor Darah untuk melakukan Check-Up dan Donor Darah.
+                            </label>
+                        </div>
                 </div>
                 <!--end::Heading-->
-                <div class="text-center">                    
+                <div class="text-center">
                     <input type="hidden" name="tanggal" value="<?= $jadwal[0]->jadwal ?>">
                     <input type="hidden" name="id_pendonor" value="<?= $_SESSION['id'] ?>">
                     <button type="submit" class="btn btn-danger  btn-color-white me-1">Booking Jadwal</button>
@@ -103,11 +108,11 @@
 
 <script src="<?= base_url(); ?>assets/admin/plugins/global/plugins.bundle.js"></script>
 <script>
-	$("#jam_hadir").flatpickr({
+    $("#jam_hadir").flatpickr({
         enableTime: true,
         noCalendar: true,
         dateFormat: "H:i",
-    	minTime: "<?= $jambuka ?>",
-    	maxTime: "<?= $jamtutup ?>",
+        minTime: "<?= $jambuka ?>",
+        maxTime: "<?= $jamtutup ?>",
     });
 </script>
