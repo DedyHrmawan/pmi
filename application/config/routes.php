@@ -98,6 +98,7 @@ $route['stokdarah/addType']     = 'DarahController/addType';
 $route['stokdarah/addStock']    = 'DarahController/addStock';
 $route['stokdarah/outStock']    = 'DarahController/outStock';
 $route['stokdarah/ajxGet']      = 'DarahController/ajxGet';
+$route['stokdarah/ajxGetDarah'] = 'DarahController/ajxGetDarah';
 $route['stokdarah/getStock']    = 'DarahController/getStock';
 $route['stokdarah/edit']        = 'DarahController/edit';
 $route['stokdarah/delete']      = 'DarahController/delete';

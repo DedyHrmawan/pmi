@@ -585,9 +585,9 @@
             ">"
     });
 
-    $('#tableStok tbody').on('click', '.hapusStok', function() {
+    $('#tableStok tbody').on('click', '.hapusProduk', function() {
         const id = $(this).data("id")
-        $('#hapusStok_id').val(id)
+        $('#idHapusProduk').val(id)
     })
 
     $('#tableStok tbody').on('click', '.editStok', function() {
@@ -603,6 +603,22 @@
                 $('#id_darah_edit').val(res[0].id_darah).change()
                 $('#stok_edit').val(res[0].stok)
                 $('#edit_darah').val(res[0].id_darah)
+            }
+        })
+    })
+
+    $('#tableStok tbody').on('click', '.editProduk', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('stokdarah/ajxGetDarah') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_darah: id
+            },
+            success: res => {
+                $('#jenisdarahEdit').val(res[0].jenis_darah)
+                $('#idEditProduk').val(res[0].id_darah)
             }
         })
     })

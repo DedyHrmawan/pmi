@@ -63,13 +63,18 @@ class DarahController extends CI_Controller
         echo json_encode($this->Darah->get($data));
     }
 
+    public function ajxGetDarah(){
+        $data['filter'] = 'id_darah = '.$_POST['id_darah'];
+        echo json_encode($this->Darah->getAjx($data));
+    }
+
     public function getStock(){        
         echo json_encode($this->Darah->getStock($_POST['id_darah'],$_POST['id_jenis_darah']));
     }
 
     public function edit(){
         $dataEdit = $_POST;
-        $this->Darah->edit($dataEdit['id_darah'],$dataEdit['id_jenis_darah'],$dataEdit['stok']);
+        $this->Darah->editDarah($dataEdit);
 
         redirect('stokdarah');
     }
