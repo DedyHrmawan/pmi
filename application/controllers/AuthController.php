@@ -14,13 +14,14 @@ class AuthController extends CI_Controller
         $data = $_POST;
         $user = $this->User->get(['filter' => ['email_admin' => $data['EMAIL_USER']]]);
         $pendonor = $this->User->getPendonor(['filter' => ['email_pendonor' => $data['EMAIL_USER']]]);
-
+        
         if($user != null){
             if($data['PASSWORD_USER'] == $user[0]->password){    
                 $newdata = array(
                     'hak_akses' => $user[0]->hak_akses,
                     'name'      => $user[0]->nama_admin,
                     'email'     => $user[0]->email_admin,
+                    'avatar'    => base_url().'/assets/images/default.jpg',
                     'id'        => $user[0]->id_admin,
                     'logged_in' => TRUE
                 );   
@@ -36,7 +37,14 @@ class AuthController extends CI_Controller
                     'hak_akses' => 2,
                     'name'      => $pendonor[0]->nama_pendonor,
                     'email'     => $pendonor[0]->email_pendonor,
+                    'avatar'    => $pendonor[0]->foto_pendonor,
                     'id'        => $pendonor[0]->id_pendonor,
+                    'umur'      => $pendonor[0]->umur_pendonor,
+                    'goldar'    => $pendonor[0]->id_jenis_darah,
+                    'alamat'    => $pendonor[0]->alamat_pendonor,
+                    'telp'      => $pendonor[0]->telepon_pendonor,
+                    'donkir'    => $pendonor[0]->donor_terakhir,
+                    'donlan'    => $pendonor[0]->donor_selanjutnya,
                     'logged_in' => TRUE
                 );   
                 $this->session->set_userdata($newdata);                   

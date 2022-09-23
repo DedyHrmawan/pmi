@@ -22,6 +22,11 @@ class Darah extends CI_Model{
         $res    = $this->db->get_where('detail_darah', $filter)->result();
         return $res;
     }
+    public function getAjx($param){
+        $filter = !empty($param['filter'])? $param['filter'] : '';
+        $res    = $this->db->get_where('darah', $filter)->result();
+        return $res;
+    }
     public function getUpdated(){
         $sql = "SELECT updated_at FROM detail_darah ORDER BY updated_at DESC LIMIT 1;";
         $result = $this->db->query($sql);
@@ -68,6 +73,10 @@ class Darah extends CI_Model{
         WHERE id_darah = $iddarah AND
         id_jenis_darah = $idjenis";       
         $this->db->query($sql);
+        return true;
+    }
+    public function editDarah($param){
+        $this->db->where('id_darah', $param['id_darah'])->update('darah', $param);
         return true;
     }
     public function delete($param){
