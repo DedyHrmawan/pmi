@@ -132,6 +132,7 @@ $route['laporankeluar']         = 'LaporanController/VLaporanKeluar';
 $route['laporankeluar/ajxGet']  = 'LaporanController/ajxGet';
 $route['laporankeluar/edit']    = 'LaporanController/editKeluar';
 $route['laporankeluar/delete']  = 'LaporanController/deleteKeluar';
+$route['laporankeluar/keluarChart']   = 'LaporanController/keluarChart';
 
 
 //laporan masuk
@@ -139,6 +140,7 @@ $route['laporanmasuk']          = 'LaporanController/VLaporanMasuk';
 $route['laporanmasuk/ajxGet']   = 'LaporanController/ajxGet';
 $route['laporanmasuk/edit']     = 'LaporanController/edit';
 $route['laporanmasuk/delete']   = 'LaporanController/delete';
+$route['laporanmasuk/masukChart']   = 'LaporanController/masukChart';
 
 
 //signup
@@ -160,3 +162,6 @@ $route['blank']                 = 'Welcome/VBlank';
 $route['booking/(:any)']        = 'DepanController/VBooking/$1';
 $route['storeBooking']          = 'DepanController/storeBooking';
 $route['bookingajxGet']         = 'DepanController/ajxGet';
+
+//EMAIL
+$route['sendMail']              = 'EmailController/reminderEmail';

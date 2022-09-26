@@ -14,10 +14,12 @@ class LaporanController extends CI_Controller
 	{
         $laporan = $this->Laporan->getMasuk();
         $darah = $this->Laporan->getDarah();
+        $tahun = $this->Laporan->getYear();
 		$data = array(
             'nav_title' => 'Laporan PMI Kota Malang',
             'laporan' => $laporan,
-            'darah' => $darah
+            'darah' => $darah,
+            'tahun' => $tahun
         );			
 		$this->template->admin('pmi-admin/VLaporanMasuk', $data);
 	}
@@ -26,10 +28,12 @@ class LaporanController extends CI_Controller
 	{
         $laporan = $this->Laporan->getKeluar();
         $darah = $this->Laporan->getDarah();
+        $tahun = $this->Laporan->getYear();
 		$data = array(
             'nav_title' => 'Laporan PMI Kota Malang',
             'laporan' => $laporan,
-            'darah' => $darah
+            'darah' => $darah,
+            'tahun' => $tahun
         );			
 		$this->template->admin('pmi-admin/VLaporanKeluar', $data);
 	}
@@ -71,5 +75,213 @@ class LaporanController extends CI_Controller
         $dataDelete = $_POST;
         $this->Laporan->delete($dataDelete);
         redirect('laporankeluar');
+    }
+
+    public function masukChart(){     
+        isset($_POST["year"]) ? $year = $_POST["year"] : $year = date("Y");
+        
+        $monthly = $this->Laporan->getDarahMasuk($year); 
+
+        $bar_graph = "";
+        $darahA = "";
+        $darahAB = "";
+        $darahB = "";
+        $darahO = "";
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 1) {
+                    $darahA .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahA = substr($darahA, 0, -1);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 2) {
+                    $darahB .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahB .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahB = substr($darahB, 0, -1);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 3) {
+                    $darahAB .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahAB .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahAB = substr($darahAB, 0, -1);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 4) {
+                    $darahO .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahO .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahO = substr($darahO, 0, -1);
+
+        $bar_graph = '
+        <canvas id="graph" data-settings=
+        \'
+            {
+                "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", 
+                "Aug", "Sep", "Oct", "Nov", "Des"],
+                "datasets":[{
+                    "label": "A",
+                    "data": [' . $darahA . '],
+                    "backgroundColor": "#0099ff",
+                    "stack": "Stack 0"
+                    },
+                    {
+                    "label": "B",
+                    "data": [' . $darahB . '],
+                    "backgroundColor": "#e30d00",
+                    "stack": "Stack 1"
+                    },
+                    {
+                    "label": "AB",
+                    "data": [' . $darahAB . '],
+                    "backgroundColor": "#0d976f",
+                    "stack": "Stack 2"
+                    },
+                    {
+                    "label": "O",
+                    "data": [' . $darahO . '],
+                    "backgroundColor": "#ffcc00",
+                    "stack": "Stack 3"
+                }]
+            }
+        \'
+        ></canvas>';
+
+        echo $bar_graph;
+    }
+
+    public function keluarChart(){     
+        isset($_POST["year"]) ? $year = $_POST["year"] : $year = date("Y");
+        
+        $monthly = $this->Laporan->getDarahKeluar($year); 
+
+        $bar_graph = "";
+        $darahA = "";
+        $darahAB = "";
+        $darahB = "";
+        $darahO = "";
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 1) {
+                    $darahA .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahA = substr($darahA, 0, -1);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 2) {
+                    $darahB .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahB .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahB = substr($darahB, 0, -1);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 3) {
+                    $darahAB .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahAB .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahAB = substr($darahAB, 0, -1);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 4) {
+                    $darahO .= '"' . $item->TOTAL . '",';
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahO .= '"' . 0 . '",';
+                    break;
+                }
+            }
+        }
+        $darahO = substr($darahO, 0, -1);
+
+        $bar_graph = '
+        <canvas id="graph" data-settings=
+        \'
+            {
+                "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", 
+                "Aug", "Sep", "Oct", "Nov", "Des"],
+                "datasets":[{
+                    "label": "A",
+                    "data": [' . $darahA . '],
+                    "backgroundColor": "#0099ff",
+                    "stack": "Stack 0"
+                    },
+                    {
+                    "label": "B",
+                    "data": [' . $darahB . '],
+                    "backgroundColor": "#e30d00",
+                    "stack": "Stack 1"
+                    },
+                    {
+                    "label": "AB",
+                    "data": [' . $darahAB . '],
+                    "backgroundColor": "#0d976f",
+                    "stack": "Stack 2"
+                    },
+                    {
+                    "label": "O",
+                    "data": [' . $darahO . '],
+                    "backgroundColor": "#ffcc00",
+                    "stack": "Stack 3"
+                }]
+            }
+        \'
+        ></canvas>';
+
+        echo $bar_graph;
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Sep 2022 pada 09.37
+-- Waktu pembuatan: 26 Sep 2022 pada 03.28
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -151,13 +151,12 @@ CREATE TABLE `darah` (
 --
 
 INSERT INTO `darah` (`id_darah`, `jenis_darah`, `last_updated`) VALUES
-(1, 'AHF', '2022-07-05 11:46:23'),
+(1, 'AHF', '2022-09-25 09:32:44'),
 (9, 'Plasma Konvalesen', '2022-07-05 12:16:51'),
 (10, 'FFP', '2022-07-12 08:28:25'),
 (11, 'PCR', '2022-07-12 08:28:41'),
 (12, 'PRC', '2022-07-12 08:28:48'),
-(13, 'TC', '2022-07-12 08:28:55'),
-(14, 'WB', '2022-07-12 08:28:59');
+(13, 'TC', '2022-07-12 08:28:55');
 
 -- --------------------------------------------------------
 
@@ -201,11 +200,7 @@ INSERT INTO `detail_darah` (`id_detail_darah`, `id_darah`, `id_jenis_darah`, `st
 (37, 13, 1, 25, '2022-07-12 08:29:56'),
 (38, 13, 2, 2, '2022-07-12 08:29:59'),
 (39, 13, 3, 0, '2022-07-12 08:28:56'),
-(40, 13, 4, 31, '2022-07-12 08:30:03'),
-(41, 14, 1, 27, '2022-07-12 08:30:07'),
-(42, 14, 2, 13, '2022-07-12 08:30:34'),
-(43, 14, 3, 26, '2022-07-12 08:30:55'),
-(44, 14, 4, 42, '2022-07-12 08:30:37');
+(40, 13, 4, 31, '2022-07-12 08:30:03');
 
 -- --------------------------------------------------------
 
@@ -294,14 +289,6 @@ CREATE TABLE `laporan` (
   `tipe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `laporan`
---
-
-INSERT INTO `laporan` (`id_laporan`, `id_darah`, `id_jenis_darah`, `nama`, `alamat`, `instansi`, `telp`, `tanggal`, `lokasi`, `tipe`) VALUES
-(1, 1, 1, 'Dani', 'Alamamant', 'OkE', '0878599435593', '2022-08-29', 'UDD PMI Kota Malang', 1),
-(3, 12, 3, 'Hiens', 'Alamamant', 'OkE', '123123123', '2022-08-29', 'UDD PMI Kota Malang', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -327,7 +314,8 @@ CREATE TABLE `pendonor` (
 --
 
 INSERT INTO `pendonor` (`id_pendonor`, `password`, `nama_pendonor`, `foto_pendonor`, `umur_pendonor`, `id_jenis_darah`, `alamat_pendonor`, `telepon_pendonor`, `donor_terakhir`, `donor_selanjutnya`, `email_pendonor`) VALUES
-(29, 'tes123', 'Ramadhan Giri Mukti', 'http://localhost/pmi/assets/images/default.jpg', 23, 3, 'Jalan Kanan Kiri 12 Malang', '087859935894', NULL, NULL, 'kyurikariko@gmail.com');
+(29, 'tes123', 'Sihono', 'http://localhost/pmi/assets/images/default.jpg', 23, 3, 'Jalan Kanan Kiri 12 Malang', '087859935894', '2022-09-30', '2022-12-29', 'kyurikariko@gmail.com'),
+(32, 'aaaaaa', 'Giri', 'http://localhost/pmi/uploads/pendonor/1663753083206_fr_bust_ch_031_00.png', 21, 3, 'Jalan Laks Adi Sucipto 8/25', '1231231312', '2022-09-30', '2022-12-29', 'imayidid@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -461,7 +449,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT untuk tabel `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `carousel`
@@ -503,13 +491,13 @@ ALTER TABLE `jenis_darah`
 -- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendonor`
 --
 ALTER TABLE `pendonor`
-  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT untuk tabel `profil`

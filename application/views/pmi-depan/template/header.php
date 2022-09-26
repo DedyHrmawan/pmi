@@ -151,7 +151,7 @@
 											<div class="separator my-2"></div> 
 											<div class="menu-item px-5 text-center">
 										';
-									if($_SESSION['avatar'] == 2){
+									if($_SESSION['hak_akses'] == 2){
 										echo '
 											<a href="" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" data-id="" class="btn btn-sm btn-info btn-color-white">Profil</a>';
 									};
@@ -280,7 +280,8 @@
 											<span id="" class="fw-bold text-gray-800 fs-6">
 												<?php 
 													if($_SESSION['donkir'] != null){
-														echo $_SESSION['donkir'];
+														$date=date_create($_SESSION['donkir']);
+														echo date_format($date,"d M Y");
 													}else{
 														echo '-';
 													}
@@ -300,7 +301,8 @@
 											<span id="" class="fw-bold text-gray-800 fs-6">
 												<?php 
 													if($_SESSION['donlan'] != null){
-														echo $_SESSION['donlan'];
+														$date=date_create($_SESSION['donlan']);
+														echo date_format($date,"d M Y");
 													}else{
 														echo '-';
 													}
