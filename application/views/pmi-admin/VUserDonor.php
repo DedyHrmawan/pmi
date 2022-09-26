@@ -40,10 +40,30 @@
 										<span class="card-label fw-bolder fs-3 mb-1">Pendonor PMI Kota Malang</span>
 									</h3>
 									<div class="card-toolbar">
-										<a href="#" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#mdl_addpendonor">Tambah Pendonor</a>
-									</div>
+										<a href="#" class="btn btn-success ms-xl-4" data-bs-toggle="modal" data-bs-target="#kirimEmail">Kirim Email Pengingat</a>
+										<a href="#" class="btn btn-primary ms-xl-4" data-bs-toggle="modal" data-bs-target="#mdl_addpendonor">Tambah Pendonor</a>
+									</div>									
 								</div>
-								<!--end::Header-->
+								<!--end::Header-->								
+								<?php
+								if ($this->session->flashdata('success_email')) {
+									echo '
+									<div class="alert alert-success d-flex align-items-center p-4 mx-8 mt-4">
+										<div class="d-flex flex-column">
+											<span>' . $this->session->flashdata('success_email') . '</span>
+										</div>
+									</div>
+									';
+								}else if($this->session->flashdata('error_email')){
+									echo '
+									<div class="alert alert-danger d-flex align-items-center p-4 mx-8 mt-4">
+										<div class="d-flex flex-column">
+											<span>' . $this->session->flashdata('error_email') . '</span>
+										</div>
+									</div>
+									';
+								}
+								?>
 								<!--begin::Body-->
 								<div class="card-body py-3">
 									<!--begin::Table container-->
@@ -390,6 +410,40 @@
 		</div>
 	</div>
 	<!-- end modal hapus Pendonor -->
+
+	<!-- begin email reminder -->
+    <div class="modal fade" tabindex="-1" id="kirimEmail">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Kirim Pengingat Untuk Pendonor</h3>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <form action="<?= site_url('sendMail') ?>" method="post">
+                    <div class="modal-body">
+                        <p>Apakah anda yakin ingin mengirim Email pengingat untuk Pendonor ?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Kirim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal email reminder -->
 
 	<!-- begin modal detail Pendonor-->
 	<div class="modal fade" id="mdl_detailpendonor">

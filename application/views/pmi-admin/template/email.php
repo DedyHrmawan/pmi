@@ -46,11 +46,10 @@
     <body>
         <header>
             <img style="width: 40%;" src="https://mediacenter.malangkota.go.id/wp-content/uploads/2015/10/logo-pmi-310x165.jpg" alt="">
-        <!-- <img alt="Logo" src="<?= base_url(); ?>assets/admin/media/logo-pmi.svg" class="h-50px logo" /> -->
         </header>
         <article>
-            <p>Yth. Bapak/Ibu <strong>Dedy Hermawan</strong></p>
-            <p>Kami dari UDD PMI Kota Malang ingin mengingatkan bahwa Bapak/Ibu Dedy Hermawan sudah bisa melakukan donor darah lagi, karena sudah 3 bulan sejak Bapak/Ibu terakhir donor pada tanggal 20 Januari 2022.</p>
+            <p>Yth. Bapak/Ibu <strong><?= $name ?></strong></p>
+            <p>Kami dari UDD PMI Kota Malang ingin mengingatkan bahwa Bapak/Ibu <?= $name ?> sudah bisa melakukan donor darah lagi, karena sudah lebih dari 3 bulan sejak Bapak/Ibu terakhir melakukan donor darah pada tanggal <?= $donor ?>.</p>
             <p>Untuk informasi jadwal donor darah bisa dilihat dengan menekan tombol atau link dibawah ini. </p>
             <br>
             <a class="btn btn-primary" href="<?php echo site_url('jadwal'); ?>">Jadwal Donor Darah</a>

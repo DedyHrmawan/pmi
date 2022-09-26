@@ -135,9 +135,14 @@ class DepanController extends CI_Controller
 
     public function storeBooking()
     {
-        $param = $_POST;        
+        $param = $_POST;       
+        
+        $date = new DateTime($param['tanggal']);
+        $date->add(new DateInterval('P90D'));
+        $date = $date->format('Y-m-d');
 
-        $this->Booking->insert($param);        
+        $this->Booking->insert($param);
+        $this->db->where('id_pendonor', $param['id_pendonor'])->update('pendonor', ['donor_terakhir' => $param['tanggal'],'donor_selanjutnya' => $date]);        
         $this->session->set_flashdata('success_booking','Berhasil booking untuk '.$param['lokasi'].' pada pukul '.$param['jam_datang']);
         redirect('jadwal');
     }    

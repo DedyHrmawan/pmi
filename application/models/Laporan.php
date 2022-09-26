@@ -38,4 +38,40 @@ class Laporan extends CI_Model{
         $this->db->where($param)->delete('laporan');
         return true;
     }
+
+    public function getDarahMasuk($param){
+        $sql = "SELECT         
+        id_jenis_darah,
+        COUNT(id_laporan) as TOTAL,
+        MONTH(tanggal) as BULAN
+        FROM laporan 
+        WHERE tipe = 1 AND YEAR(tanggal) = '$param'
+        GROUP BY id_jenis_darah, MONTH(tanggal)
+        ORDER BY MONTH(tanggal)";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+    
+    public function getDarahKeluar($param){
+        $sql = "SELECT         
+        id_jenis_darah,
+        COUNT(id_laporan) as TOTAL,
+        MONTH(tanggal) as BULAN
+        FROM laporan 
+        WHERE tipe = 2 AND YEAR(tanggal) = '$param'
+        GROUP BY id_jenis_darah, MONTH(tanggal)
+        ORDER BY MONTH(tanggal)";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+
+    public function getYear(){
+        $sql = "SELECT         
+        YEAR(tanggal) as TAHUN
+        FROM laporan
+        GROUP BY YEAR(tanggal)
+        ORDER BY YEAR(tanggal) ASC";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
 }

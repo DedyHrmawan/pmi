@@ -23,10 +23,19 @@
                                     </h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar" data-kt-buttons="true">
-                                        <select class="form-select form-select-solid" data-control="select2" data-placeholder="Tahun">
-                                            <option></option>
-                                            <option value="1">2021</option>
-                                            <option value="2">2022</option>
+                                        <select class="form-select form-select-solid" data-control="select2" id="pilYear" data-placeholder="Tahun">
+                                            <option ></option>
+                                            <?php
+                                            $sel = "";
+                                            foreach ($tahun as $items) {
+                                                if($items->TAHUN == date('Y')){
+                                                    $sel = "selected";
+                                                }else{
+                                                    $sel = "";
+                                                };
+                                                echo '<option value="' . $items->TAHUN . '" '.$sel.'>' . $items->TAHUN . '</option>';
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                     <!--end::Toolbar-->
@@ -36,7 +45,8 @@
                                     <!--begin::Card-->
                                     <div class="card card-bordered">
                                         <div class="card-body">
-                                            <canvas id="laporanmasuk" class="mh-400px"></canvas>
+                                            <div class="mb-5" id="divGraph">
+                                            </div>
                                         </div>
                                     </div>
                                     <!--end::Card-->
@@ -417,101 +427,61 @@
 <script src="<?= base_url(); ?>assets/admin/plugins/custom/datatables/datatables.bundle.js"></script>
 <!--end::Page Vendors Javascript-->
 <script type="text/javascript">
-    //Laporan Masuk
-    "use strict";
-    var KTGeneralChartJS = (function() {
-        function a(a = 1, e = 100) {
-            return Math.floor(Math.random() * (e - a) + a);
+    //laporan masuk
+    $.ajax({
+        url: "<?= site_url('laporanmasuk/masukChart') ?>",
+        type: "post",
+        success: function(bar_graph) {
+            $("#divGraph").html(bar_graph);
+            var monGraphData = JSON.parse($("#graph").data("settings"));
+            $("#graph").chart = new Chart($("#graph"), {
+                type: "bar",
+                data: monGraphData,
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    },
+                    scale: {
+                        ticks: {
+                        precision: 0
+                        }
+                    }
+                }
+            });
         }
+    });   
 
-        function e(e = 1, t = 100, s = 10) {
-            for (var r = [], l = 0; l < s; l++) r.push(a(e, t));
-            return r;
-        }
-        return {
-            init: function() {
-                (Chart.defaults.font.size = 13),
-                (Chart.defaults.font.family = KTUtil.getCssVariableValue(
-                    "--bs-font-sans-serif"
-                )),
-                (function() {
-                    var a = document.getElementById("laporanmasuk"),
-                        t = KTUtil.getCssVariableValue("--bs-primary"),
-                        s = KTUtil.getCssVariableValue("--bs-danger"),
-                        r = KTUtil.getCssVariableValue("--bs-success"),
-                        v = KTUtil.getCssVariableValue("--bs-yellow");
-                    KTUtil.getCssVariableValue("--bs-font-sans-serif");
-                    const l = {
-                        labels: [
-                            "Januari",
-                            "Februari",
-                            "Maret",
-                            "April",
-                            "Mei",
-                            "Juni",
-                            "Juli",
-                            "Agustus",
-                            "September",
-                            "Oktober",
-                            "November",
-                            "Desember",
-                        ],
-                        datasets: [{
-                                label: "A",
-                                data: [1,2,3,4,5,6,7,8,9,10,11,12],
-                                backgroundColor: t,
-                                stack: "Stack 0",
-                            },
-                            {
-                                label: "B",
-                                data: e(1, 100, 12),
-                                backgroundColor: s,
-                                stack: "Stack 1",
-                            },
-                            {
-                                label: "AB",
-                                data: e(1, 100, 12),
-                                backgroundColor: r,
-                                stack: "Stack 2",
-                            },
-                            {
-                                label: "O",
-                                data: e(1, 100, 12),
-                                backgroundColor: v,
-                                stack: "Stack 3",
-                            },
-                        ],
-                    };
-                    new Chart(a, {
-                        type: "bar",
-                        data: l,
-                        options: {
-                            plugins: {
-                                title: {
-                                    display: !1
-                                }
-                            },
-                            responsive: !0,
-                            interaction: {
-                                intersect: !1
-                            },
-                            scales: {
-                                x: {
-                                    stacked: !0
-                                },
-                                y: {
-                                    stacked: !0
-                                }
-                            },
-                        },
-                    });
-                })();
+    $("#pilYear").change(function() {
+        $.ajax({
+            url: "<?= site_url('laporanmasuk/masukChart') ?>",
+            type: "post",
+            data: {
+                year: $(this).val()
             },
-        };
-    })();
-    KTUtil.onDOMContentLoaded(function() {
-        KTGeneralChartJS.init();
-    });
+            success: function(bar_graph) {
+                $("#divGraph").html(bar_graph);
+                var monGraphData = JSON.parse($("#graph").data("settings"));
+                $("#graph").chart = new Chart($("#graph"), {
+                    type: "bar",
+                    data: monGraphData,
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scale: {
+                            ticks: {
+                            precision: 0
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    }); 
 
     //datatable laporan
     $('#dataTableLaporanMasuk').dataTable({
