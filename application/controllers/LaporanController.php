@@ -284,4 +284,126 @@ class LaporanController extends CI_Controller
 
         echo $bar_graph;
     }
+
+    public function getDataPrint(){  
+        isset($_POST["year"]) ? $year = $_POST["year"] : $year = date("Y");
+        
+        $monthly = $this->Laporan->getDarahMasuk($year); 
+        $darahA = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 1) {
+                    $darahA[$bulan-1] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$bulan-1] = 0;
+                    break;
+                }
+            }
+        }
+
+        $counter = 12;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 2) {
+                    $darahA[$counter] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$counter] = 0;
+                    break;
+                }
+            }
+            $counter++;
+        }
+
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 3) {
+                    $darahA[$counter] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$counter] = 0;
+                    break;
+                }
+            }
+            $counter++;
+        }
+
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 4) {
+                    $darahA[$counter] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$counter] = 0;
+                    break;
+                }
+            }
+            $counter++;
+        }
+        echo json_encode($darahA);
+    }
+
+    public function getDataPrintKeluar(){  
+        isset($_POST["year"]) ? $year = $_POST["year"] : $year = date("Y");
+        
+        $monthly = $this->Laporan->getDarahKeluar($year); 
+        $darahA = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+
+        $bulan = 1;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 1) {
+                    $darahA[$bulan-1] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$bulan-1] = 0;
+                    break;
+                }
+            }
+        }
+
+        $counter = 12;
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 2) {
+                    $darahA[$counter] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$counter] = 0;
+                    break;
+                }
+            }
+            $counter++;
+        }
+
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 3) {
+                    $darahA[$counter] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$counter] = 0;
+                    break;
+                }
+            }
+            $counter++;
+        }
+
+        for ($bulan = 1; $bulan <= 12; $bulan++) {
+            foreach ($monthly as $item) {
+                if ($bulan == $item->BULAN && $item->id_jenis_darah == 4) {
+                    $darahA[$counter] = $item->TOTAL;
+                    break;
+                } else if ($item->BULAN > $bulan) {
+                    $darahA[$counter] = 0;
+                    break;
+                }
+            }
+            $counter++;
+        }
+        echo json_encode($darahA);
+    }
 }

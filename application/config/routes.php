@@ -133,6 +133,7 @@ $route['laporankeluar/ajxGet']  = 'LaporanController/ajxGet';
 $route['laporankeluar/edit']    = 'LaporanController/editKeluar';
 $route['laporankeluar/delete']  = 'LaporanController/deleteKeluar';
 $route['laporankeluar/keluarChart']   = 'LaporanController/keluarChart';
+$route['laporankeluar/getPrint']     = 'LaporanController/getDataPrintKeluar';
 
 
 //laporan masuk
@@ -141,6 +142,7 @@ $route['laporanmasuk/ajxGet']   = 'LaporanController/ajxGet';
 $route['laporanmasuk/edit']     = 'LaporanController/edit';
 $route['laporanmasuk/delete']   = 'LaporanController/delete';
 $route['laporanmasuk/masukChart']   = 'LaporanController/masukChart';
+$route['laporanmasuk/getPrint']     = 'LaporanController/getDataPrint';
 
 
 //signup
