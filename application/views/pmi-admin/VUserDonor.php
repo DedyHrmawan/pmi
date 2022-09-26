@@ -479,6 +479,17 @@
 						<!--begin::Input group-->
 						<div class="row mb-5">
 							<!--begin::Label-->
+							<label class="col-lg-4 fw-bold text-muted">Email</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8 fv-row">
+								<span id="" class="fw-bold text-gray-800 fs-6"></span>
+							</div>
+							<!--end::Col-->
+						</div>
+						<!--begin::Input group-->
+						<div class="row mb-5">
+							<!--begin::Label-->
 							<label class="col-lg-4 fw-bold text-muted">Nama</label>
 							<!--end::Label-->
 							<!--begin::Col-->

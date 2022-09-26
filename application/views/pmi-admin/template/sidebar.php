@@ -54,7 +54,7 @@
                                 </svg></span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Jadwal Mobil Donor</span>
+                        <span class="menu-title">Jadwal Donor Darah</span>
                     </a>
                 </div>
                 <div class="menu-item">
