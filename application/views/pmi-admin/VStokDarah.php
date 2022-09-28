@@ -296,8 +296,22 @@
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Lokasi Donor</span>
                             </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi Donor" name="lokasi" />
+                            <select name="lokasi" aria-label="Pilih Lokasi" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                                <?php
+                                if($lokasi != NULL){
+                                    foreach ($lokasi as $list) {
+                                        echo '
+                                                <option value="' . $list->lokasi . '">' . $list->lokasi . '</option>
+                                            ';
+                                    }
+                                }else if($lokasi == NULL){
+                                    echo '
+                                        <option value="UDD PMI Kota Malang">UDD PMI Kota Malang</option>
+                                    ';
+                                }
+                                
+                                ?>
+                            </select>
                         </div>
                     </div>
 

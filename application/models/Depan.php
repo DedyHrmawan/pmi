@@ -72,4 +72,13 @@ class Depan extends CI_Model{
         $res = $this->db->query($sql)->result();
         return $res;
     }
+
+    public function getPendonorInfo($param){
+        $sql = "SELECT p.*, b.tanggal as tgl_booking, b.lokasi as lokasi_booking, b.jam_datang as pukul, b.status as status_booking
+        FROM pendonor p
+        LEFT JOIN booking b ON p.id_pendonor = b.id_pendonor
+        WHERE p.id_pendonor='$param'";
+        $res = $this->db->query($sql)->result();
+        return $res;
+    }
 }

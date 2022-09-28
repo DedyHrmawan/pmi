@@ -93,7 +93,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="flex-equal text-end ms-1">
+							<div id="userPanel" class="flex-equal text-end ms-1">
 								<?php
 								$link_login = site_url('login');
 								$link_logout = site_url('logout');
@@ -126,7 +126,7 @@
 										';
 									if ($_SESSION['hak_akses'] == 2) {
 										echo '
-											<a href="" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" style="width: 10rem;" data-id="" class="btn btn-sm btn-info btn-color-white m-2">
+											<a href="" data-bs-toggle="modal" data-bs-target="#depanDetailPendonor" style="width: 10rem;" data-id="'.$_SESSION['id'].'" class="btn btn-sm btn-info btn-color-white m-2 depanDetailPendonor">
 											<span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 												<path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"/>
 												<path d="M12.0006 11.1542C13.1434 11.1542 14.0777 10.22 14.0777 9.0771C14.0777 7.93424 13.1434 7 12.0006 7C10.8577 7 9.92348 7.93424 9.92348 9.0771C9.92348 10.22 10.8577 11.1542 12.0006 11.1542Z" fill="currentColor"/>
@@ -134,7 +134,7 @@
 											</span>
 											Profil</a>';
 										echo '
-											<a href="" data-bs-toggle="modal" data-bs-target="#mdl_editpendonor" style="width: 10rem;" data-id="" class="btn btn-sm btn-warning btn-color-white m-2">
+											<a href="" data-bs-toggle="modal" data-bs-target="#depanEditPendonor" style="width: 10rem;" data-id="'.$_SESSION['id'].'" class="btn btn-sm btn-warning btn-color-white m-2 depanEditPendonor">
 											<span class="svg-icon svg-icon-2">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 													<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
@@ -168,7 +168,7 @@
 				<!--end::Header-->
 
 				<!-- begin modal detail Pendonor-->
-				<div class="modal fade" tabindex="-1" id="mdl_detailpendonor">
+				<div class="modal fade" tabindex="-1" id="depanDetailPendonor">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -196,80 +196,51 @@
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Email</label>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6"><?= $_SESSION['email'] ?></span>
+											<span id="depanDetailEmail" class="fw-bold text-gray-800 fs-6"></span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Nama</label>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6"><?= $_SESSION['name'] ?></span>
+											<span id="depanDetailNama" class="fw-bold text-gray-800 fs-6"></span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Umur</label>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6"><?= $_SESSION['umur'] ?></span>
+											<span id="depanDetailUmur" class="fw-bold text-gray-800 fs-6"></span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Golongan Darah</label>
-										<?php
-										$goldar = "";
-										if ($_SESSION['goldar'] == 1) {
-											$goldar = "A";
-										}elseif ($_SESSION['goldar'] == 2) {
-											$goldar = "B";
-										}elseif ($_SESSION['goldar'] == 3) {
-											$goldar = "AB";
-										}elseif ($_SESSION['goldar'] == 4) {
-											$goldar = "O";
-										}
-										;
-										?>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6"><?= $goldar ?></span>
+											<span id="depanDetailGoldar" class="fw-bold text-gray-800 fs-6"></span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Alamat</label>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6"><?= $_SESSION['alamat'] ?></span>
+											<span id="depanDetailAlamat" class="fw-bold text-gray-800 fs-6"></span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Nomor Telepon
 											<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Nomor telepon harus aktif !"></i></label>
 										<div class="col-lg-8 d-flex align-items-center">
-											<span id="" class="fw-bold fs-6 text-gray-800 me-2"><?= $_SESSION['telp'] ?></span>
+											<span id="depanDetailTelp" class="fw-bold fs-6 text-gray-800 me-2"></span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Donor Terakhir</label>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6">
-												<?php
-												if ($_SESSION['donkir'] != null) {
-													$date = date_create($_SESSION['donkir']);
-													echo date_format($date, "d M Y");
-												} else {
-													echo '-';
-												}
-												?>
+											<span id="depanDetailDonkir" class="fw-bold text-gray-800 fs-6">
 											</span>
 										</div>
 									</div>
 									<div class="row mb-5">
 										<label class="col-lg-4 fw-bold text-muted">Donor Selanjutnya</label>
 										<div class="col-lg-8 fv-row">
-											<span id="" class="fw-bold text-gray-800 fs-6">
-												<?php
-												if ($_SESSION['donlan'] != null) {
-													$date = date_create($_SESSION['donlan']);
-													echo date_format($date, "d M Y");
-												} else {
-													echo '-';
-												}
-												?>
+											<span id="depanDetailDonlan" class="fw-bold text-gray-800 fs-6">
 											</span>
 										</div>
 									</div>
@@ -277,7 +248,7 @@
 										<label class="col-lg-4 fw-bold text-muted">Booking</label>
 										<div class="col-lg-8 fv-row">
 											<span id="" class="fw-bold text-gray-800 fs-6">
-												<label class="fw-bold text-muted">Anda telah booking donor darah di Taman Anggrek pada tanggal 20 September 2022 Pukul 08:00 WIB, jadi silahkan datang tepat waktu sesuai jadwal booking anda. Terima kasih.</label>
+												<label id="booking_value" class="fw-bold text-muted"></label>
 											</span>
 										</div>
 									</div>
@@ -293,7 +264,7 @@
 				<!-- end modal detail pendonor -->
 
 				<!-- begin modal Edit Profil -->
-				<div class="modal fade" id="mdl_editpendonor">
+				<div class="modal fade" id="depanEditPendonor">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -308,18 +279,24 @@
 							</div>
 
 							<div class="modal-body">
-								<form action="<?= site_url('') ?>" method="post">
+								<form action="<?= site_url('depan/editProfil') ?>" method="post">
 									<div class="d-flex flex-column mb-8 fv-row">
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 											<span class="required">Nama</span>
 										</label>
-										<input type="text" class="form-control form-control-solid" value="Dedy Hermawan" name="" required />
+										<input type="text" id="depanEditNama" class="form-control form-control-solid" name="nama_pendonor" required />
+									</div>
+									<div class="d-flex flex-column mb-8 fv-row">
+										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+											<span class="required">Email</span>
+										</label>
+										<input type="text" id="depanEditEmail" class="form-control form-control-solid" name="email_pendonor" required />
 									</div>
 									<div class="d-flex flex-column mb-8 fv-row">
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 											<span class="required">Umur</span>
 										</label>
-										<input type="number" class="form-control form-control-solid" value="10" name="" required />
+										<input type="number" id="depanEditUmur" class="form-control form-control-solid" name="umur_pendonor" required />
 									</div>
 									<div class="d-flex flex-column mb-8 fv-row">
 										<!--begin::Label-->
@@ -327,7 +304,7 @@
 											<span class="required">Jenis Golongan Darah</span>
 										</label>
 										<!--end::Label-->
-										<select name="id_jenis_darah" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+										<select id="depanJenisDarah" name="id_jenis_darah" aria-label="Pilih Jenis Darah" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
 											<option value="1">A</option>
 											<option value="2">B</option>
 											<option value="3">AB</option>
@@ -338,17 +315,18 @@
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 											<span class="required">Alamat</span>
 										</label>
-										<input type="text" class="form-control form-control-solid" value="Blitar" name="" required />
+										<input type="text" id="depanEditAlamat" class="form-control form-control-solid" name="alamat_pendonor" required />
 									</div>
 									<div class="d-flex flex-column mb-8 fv-row">
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 											<span class="required">Nomor Telepon</span>
 										</label>
-										<input type="text" class="form-control form-control-solid" value="085732694267" name="" required />
+										<input type="text" id="depanEditTelp" class="form-control form-control-solid" name="telepon_pendonor" required />
 									</div>
 							</div>
 
 							<div class="modal-footer">
+								<input type="hidden" id="depanEditId" name="id_pendonor">
 								<button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
 								<button type="submit" id="submitprofil" class="btn btn-primary">Simpan</button>
 							</div>

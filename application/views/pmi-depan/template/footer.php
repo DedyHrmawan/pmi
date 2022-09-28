@@ -151,6 +151,62 @@
             "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
             ">"
     });
+
+	$('#userPanel').on('click', '.depanEditPendonor', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('depanPendonor/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_pendonor: id
+            },
+            success: res => {
+                $('#depanEditNama').val(res[0].nama_pendonor)
+                $('#depanEditEmail').val(res[0].email_pendonor)
+                $('#depanEditUmur').val(res[0].umur_pendonor)
+                $('#depanEditAlamat').val(res[0].alamat_pendonor)
+                $('#depanEditTelp').val(res[0].telepon_pendonor)
+                $('#depanJenisDarah').val(res[0].id_jenis_darah).change()
+                $('#depanEditId').val(res[0].id_pendonor)
+            }
+        })
+    })
+
+	$('#userPanel').on('click', '.depanDetailPendonor', function() {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "<?= site_url('depanPendonor/ajxGet') ?>",
+            type: "post",
+            dataType: 'json',
+            data: {
+                id_pendonor: id
+            },
+            success: res => {
+				$('#depanDetailNama').html(res[0].nama_pendonor)
+                $('#depanDetailEmail').html(res[0].email_pendonor)
+                $('#depanDetailUmur').html(res[0].umur_pendonor)
+                $('#depanDetailAlamat').html(res[0].alamat_pendonor)
+                $('#depanDetailTelp').html(res[0].telepon_pendonor)
+                $('#depanDetailDonkir').html(res[0].donor_terakhir)
+                $('#depanDetailDonlan').html(res[0].donor_selanjutnya)
+                if (res[0].id_jenis_darah == 1) {
+                    $('#depanDetailGoldar').html('A')
+                }else if(res[0].id_jenis_darah == 2){
+                    $('#depanDetailGoldar').html('B')
+                }else if(res[0].id_jenis_darah == 3){
+                    $('#depanDetailGoldar').html('AB')
+                }else if(res[0].id_jenis_darah == 4){
+                    $('#depanDetailGoldar').html('O')
+                };
+				if(res[0].tgl_booking == null){
+					$('#booking_value').html('-')
+				}else if(res[0].tgl_booking != null){
+					$('#booking_value').html(`Anda telah booking donor darah di ${res[0].lokasi_booking} pada tanggal ${res[0].tgl_booking} Pukul ${res[0].pukul} WIB, jadi silahkan datang tepat waktu sesuai jadwal booking anda. Terima kasih.`)
+				}              
+            }
+        })
+    })
 </script>
 <script>
     grecaptcha.ready(function () {

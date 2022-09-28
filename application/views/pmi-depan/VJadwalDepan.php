@@ -18,6 +18,14 @@
 					</div>
 				</div>
 				';
+			}else if($this->session->flashdata('error_booking')){
+				echo '
+				<div class="alert alert-danger d-flex align-items-center p-5 mb-10">
+					<div class="d-flex flex-column">
+						<span>' . $this->session->flashdata('error_booking') . '</span>
+					</div>
+				</div>
+				';
 			}
 			?>
 			<!--begin::Statistics-->

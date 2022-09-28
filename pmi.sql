@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Sep 2022 pada 03.28
+-- Waktu pembuatan: 28 Sep 2022 pada 05.01
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -109,7 +109,8 @@ CREATE TABLE `booking` (
   `telp` varchar(16) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `jam_datang` time NOT NULL,
-  `instansi` varchar(100) NOT NULL
+  `instansi` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -177,13 +178,13 @@ CREATE TABLE `detail_darah` (
 --
 
 INSERT INTO `detail_darah` (`id_detail_darah`, `id_darah`, `id_jenis_darah`, `stok`, `updated_at`) VALUES
-(5, 1, 1, 10, '2022-08-29 18:42:30'),
-(6, 1, 3, 31, '2022-07-12 05:28:06'),
+(5, 1, 1, 13, '2022-09-26 10:47:58'),
+(6, 1, 3, 33, '2022-09-26 10:58:16'),
 (7, 1, 2, 33, '2022-08-29 18:35:53'),
 (8, 1, 4, 4, '2022-07-12 05:28:06'),
 (21, 9, 1, 10, '2022-07-12 05:28:06'),
-(22, 9, 2, 12, '2022-08-29 18:42:57'),
-(23, 9, 3, 35, '2022-07-12 05:28:50'),
+(22, 9, 2, 13, '2022-09-26 10:26:56'),
+(23, 9, 3, 34, '2022-09-26 10:23:18'),
 (24, 9, 4, 33, '2022-07-12 05:28:06'),
 (25, 10, 1, 15, '2022-07-12 08:29:19'),
 (26, 10, 2, 12, '2022-07-12 08:29:21'),
@@ -245,7 +246,7 @@ CREATE TABLE `jadwal_mobil` (
 --
 
 INSERT INTO `jadwal_mobil` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`, `tipe`) VALUES
-(1, '13:00:00', '17:00:00', '2022-09-30', 'Taman Anggrek', 50, 2),
+(1, '13:00:00', '17:00:00', '2022-09-28', 'Taman Anggrek', 50, 2),
 (3, '10:40:00', '16:00:00', '2022-09-30', 'Plaza Araya (Samping Burger King)', 50, 2),
 (9, '09:00:00', '14:00:00', '2022-09-30', 'UDD PMI Kota Malang', 50, 1);
 
@@ -289,6 +290,21 @@ CREATE TABLE `laporan` (
   `tipe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `laporan`
+--
+
+INSERT INTO `laporan` (`id_laporan`, `id_darah`, `id_jenis_darah`, `nama`, `alamat`, `instansi`, `telp`, `tanggal`, `lokasi`, `tipe`) VALUES
+(14, 1, 1, 'Geeree', 'Jalan Kanan Kiri', 'STIKI', '087869920182', '2022-09-26', 'Taman Anggrek', 1),
+(15, 1, 1, 'Hiens', 'Alamamant', 'OkE', '232232', '2023-12-21', 'ASDASDAS', 1),
+(16, 1, 1, 'asdasdsa', 'asdasdasd', 'asdasd', '232323232', '2022-09-30', 'Taman Anggrek 2', 2),
+(17, 9, 3, 'asdadasd', 'sadasdasd', 'asdasdas', '232323232', '2022-08-09', 'adasdasd', 2),
+(18, 1, 3, 'asasdasdasd', 'sadasdasd', 'sadasdasdsa', '232323', '2022-09-21', '2323232', 1),
+(19, 9, 2, 'wqewqewqeqwe', 'wqewqeqwewq', 'SADASD', '23232323232323', '2022-07-11', 'wqeqwewqewq', 1),
+(20, 1, 1, 'asdasdasd', 'asdasdasd', 'sadasdasd', '2323232', '2022-07-01', 'sadasdasd', 1),
+(21, 1, 1, 'asdasads', 'asdasdsa', '232323', '2323232', '2022-06-01', 'UDD PMI Kota Malang 2', 1),
+(22, 1, 3, 'Geeree', 'asdasdasd', 'sadasdasd', '23223232', '2022-09-21', '323232', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -314,8 +330,8 @@ CREATE TABLE `pendonor` (
 --
 
 INSERT INTO `pendonor` (`id_pendonor`, `password`, `nama_pendonor`, `foto_pendonor`, `umur_pendonor`, `id_jenis_darah`, `alamat_pendonor`, `telepon_pendonor`, `donor_terakhir`, `donor_selanjutnya`, `email_pendonor`) VALUES
-(29, 'tes123', 'Sihono', 'http://localhost/pmi/assets/images/default.jpg', 23, 3, 'Jalan Kanan Kiri 12 Malang', '087859935894', '2022-09-30', '2022-12-29', 'kyurikariko@gmail.com'),
-(32, 'aaaaaa', 'Giri', 'http://localhost/pmi/uploads/pendonor/1663753083206_fr_bust_ch_031_00.png', 21, 3, 'Jalan Laks Adi Sucipto 8/25', '1231231312', '2022-09-30', '2022-12-29', 'imayidid@gmail.com');
+(29, 'tes123', 'Dann Griel', 'http://localhost/pmi/assets/images/default.jpg', 23, 1, 'Jalan Laks Adi Sucipto 8/25', '0895399176918', '2022-03-30', '2022-06-29', 'kyurikariko@gmail.com'),
+(32, 'aaaaaa', 'Giri', 'http://localhost/pmi/uploads/pendonor/1663753083206_fr_bust_ch_031_00.png', 21, 3, 'Jalan Laks Adi Sucipto 8/25', '1231231312', NULL, NULL, 'imayidid@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -449,7 +465,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT untuk tabel `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `carousel`
@@ -491,7 +507,7 @@ ALTER TABLE `jenis_darah`
 -- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendonor`

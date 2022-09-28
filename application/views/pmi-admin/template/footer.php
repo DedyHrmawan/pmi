@@ -366,6 +366,7 @@
             },
             success: res => {
                 $('#namaDetailPendonor').html(res[0].nama_pendonor)
+                $('#emailDetailPendonor').html(res[0].email_pendonor)
                 $('#umurDetailPendonor').html(res[0].umur_pendonor)
                 $('#alamatDetailPendonor').html(res[0].alamat_pendonor)
                 $('#teleponDetailPendonor').html(res[0].telepon_pendonor)
@@ -643,6 +644,17 @@
     $('#edit_tutup').click(function() {
         $('#id_jenis_darah_edit').val(1).change()
     });
+
+    $('#tableBooking tbody').on('click', '.selesaiDonor', function() {
+        const idPendonor = $(this).data("pendonor");
+        const idBooking = $(this).data("booking");
+        const tanggal = $(this).data("tanggal");
+        const name = $(this).data("name");
+        $('#selesaiIdPendonor').val(idPendonor)
+        $('#selesaiIdBooking').val(idBooking)
+        $('#selesaiTanggal').val(tanggal)
+        $('#namaSelesai').html(name)
+    })
 
     $("#add_stokdarah").flatpickr();
     $("#out_stokdarah").flatpickr();

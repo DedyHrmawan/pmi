@@ -12,11 +12,24 @@ class BookingController extends CI_Controller
 
     public function VDataBooking()
 	{
-        $booking = $this->Booking->getAll();	
+        $bookingNOW = $this->Booking->getBookingNOW();
+        $bookingDONE = $this->Booking->getBookingDONE();	
 		$data = array(
             'nav_title' => 'List Booking Jadwal PMI Kota Malang',
-            'booking' => $booking
+            'bookingNOW' => $bookingNOW,
+            'bookingDONE' => $bookingDONE
         );			
 		$this->template->admin('pmi-admin/VDataBooking', $data);
 	}
+
+    public function selesaiDonor(){
+        $param = $_POST;
+
+        $date = new DateTime($param['tanggal']);
+        $date->add(new DateInterval('P90D'));
+        $date = $date->format('Y-m-d');
+		
+        $this->db->where('id_booking', $param['id_booking'])->update('booking', ['status' => 2]);
+        $this->db->where('id_pendonor', $param['id_pendonor'])->update('pendonor', ['donor_terakhir' => $param['tanggal'],'donor_selanjutnya' => $date]);
+    }
 }
