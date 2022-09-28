@@ -47,7 +47,7 @@ class EmailController extends CI_Controller
 				$mail->isHTML(true);
 	
 				$data['name'] = $item->nama_pendonor;
-				$data['donor'] = $item->donor_selanjutnya;
+				$data['donor'] = $item->donor_terakhir;
 				$mailContent =  $this->load->view('pmi-admin/template/email', $data,true);
 				$mail->Body = $mailContent;
 	

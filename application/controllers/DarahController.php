@@ -15,11 +15,13 @@ class DarahController extends CI_Controller
         $darah = $this->Darah->getAll();
         $detail = $this->Darah->getDetailDarah();
         $updated = $this->Darah->getUpdated();
+        $lokasi = $this->Darah->getLokasi();
 		$data = array(
             'nav_title' => 'Stok Darah PMI Kota Malang',
             'darah' => $darah,
             'detail'=> $detail,
-            'last_update'=> $updated
+            'last_update'=> $updated,
+            'lokasi' => $lokasi
         );			
 		$this->template->admin('pmi-admin/VStokDarah', $data);
 	}

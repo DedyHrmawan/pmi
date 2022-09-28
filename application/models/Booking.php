@@ -11,6 +11,18 @@ class Booking extends CI_Model{
         $res = $this->db->get('booking')->result();
         return $res;
     }
+    public function getBookingNOW(){
+        $this->db->where('status', 1);
+        $this->db->order_by('tanggal', 'DESC');
+        $res = $this->db->get('booking')->result();
+        return $res;
+    }
+    public function getBookingDONE(){
+        $this->db->where('status', 2);
+        $this->db->order_by('tanggal', 'DESC');
+        $res = $this->db->get('booking')->result();
+        return $res;
+    }
     public function get($param){
         $filter = !empty($param['filter'])? $param['filter'] : '';
         $res    = $this->db->get_where('booking', $filter)->result();

@@ -36,13 +36,8 @@ class AuthController extends CI_Controller
                 $newdata = array(
                     'hak_akses' => 2,
                     'name'      => $pendonor[0]->nama_pendonor,
-                    'email'     => $pendonor[0]->email_pendonor,
                     'avatar'    => $pendonor[0]->foto_pendonor,
                     'id'        => $pendonor[0]->id_pendonor,
-                    'umur'      => $pendonor[0]->umur_pendonor,
-                    'goldar'    => $pendonor[0]->id_jenis_darah,
-                    'alamat'    => $pendonor[0]->alamat_pendonor,
-                    'telp'      => $pendonor[0]->telepon_pendonor,
                     'donkir'    => $pendonor[0]->donor_terakhir,
                     'donlan'    => $pendonor[0]->donor_selanjutnya,
                     'logged_in' => TRUE

@@ -483,7 +483,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span id="" class="fw-bold text-gray-800 fs-6"></span>
+								<span id="emailDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>

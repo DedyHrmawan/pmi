@@ -112,6 +112,7 @@ $route['listpendonor/delete'] = 'PendonorController/delete';
 
 //data booking admin
 $route['listbooking']           = 'BookingController/VDataBooking';
+$route['booking/selesaiDonor']  = 'BookingController/selesaiDonor';
 
 //carousel
 $route['carousel']              = 'CarouselController/VCarousel';
@@ -164,6 +165,8 @@ $route['blank']                 = 'Welcome/VBlank';
 $route['booking/(:any)']        = 'DepanController/VBooking/$1';
 $route['storeBooking']          = 'DepanController/storeBooking';
 $route['bookingajxGet']         = 'DepanController/ajxGet';
+$route['depanPendonor/ajxGet']  = 'DepanController/ajxGetPendonor';
+$route['depan/editProfil']      = 'DepanController/edit';
 
 //EMAIL
 $route['sendMail']              = 'EmailController/reminderEmail';

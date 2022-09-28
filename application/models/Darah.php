@@ -75,6 +75,11 @@ class Darah extends CI_Model{
         $this->db->query($sql);
         return true;
     }
+    public function getLokasi(){
+        $sql = "SELECT lokasi from jadwal_mobil WHERE jadwal > NOW() - INTERVAL 1 DAY";       
+        $res = $this->db->query($sql)->result();
+        return $res;
+    }
     public function editDarah($param){
         $this->db->where('id_darah', $param['id_darah'])->update('darah', $param);
         return true;

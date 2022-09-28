@@ -40,7 +40,7 @@
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                foreach ($booking as $item) {
+                                                foreach ($bookingNOW as $item) {
                                                     $newDate = date("d M Y", strtotime($item->tanggal));
                                                     $datang = date("H:i", strtotime($item->jam_datang));
                                                     echo '
@@ -64,7 +64,7 @@
                                                             ' . $datang . '
                                                             </td>
                                                             <td class="text-end">
-                                                                <a href="#" title="Selesai Donor" data-bs-toggle="modal" data-bs-target="#selesaiDonor" data-id="' . $item->id_pendonor . '" class="btn btn-icon btn-bg-light btn-active-color-primary hapusPendonor btn-sm">
+                                                                <a href="#" title="Selesai Donor" data-bs-toggle="modal" data-bs-target="#selesaiDonor" data-booking="' . $item->id_booking . '" data-tanggal="' . $item->tanggal . '" data-pendonor="' . $item->id_pendonor . '" data-name="' . $item->nama . '" class="btn btn-icon btn-bg-light btn-active-color-primary selesaiDonor btn-sm">
                                                                 <span class="svg-icon svg-icon-2x"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559 11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066 17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303 7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor"/>
                                                                     </svg>
@@ -108,7 +108,7 @@
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                foreach ($booking as $item) {
+                                                foreach ($bookingDONE as $item) {
                                                     $newDate = date("d M Y", strtotime($item->tanggal));
                                                     $datang = date("H:i", strtotime($item->jam_datang));
                                                     echo '
@@ -169,12 +169,14 @@
                             </svg></span>
                     </div>
                  </div>
-                 <form action="<?= site_url('') ?>" method="post">
+                 <form action="<?= site_url('booking/selesaiDonor') ?>" method="post">
                     <div class="modal-body">
-                        <p>Apakah pendonor dengan nama Dedy Hermawan sudah selesai melakukan donor darah ?</p>
+                        <p>Apakah pendonor dengan nama <b><span id="namaSelesai"></span></b> sudah selesai melakukan donor darah ?</p>
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" id="" name="">
+                        <input type="hidden" id="selesaiTanggal" name="tanggal">
+                        <input type="hidden" id="selesaiIdPendonor" name="id_pendonor">
+                        <input type="hidden" id="selesaiIdBooking" name="id_booking">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>

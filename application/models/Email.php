@@ -9,10 +9,10 @@ class Email extends CI_Model{
     public function getPendonor(){
         $sql = "SELECT id_pendonor,
         nama_pendonor,
-        donor_selanjutnya,
+        donor_terakhir,
         email_pendonor 
         FROM pendonor 
-        WHERE donor_selanjutnya < NOW()";
+        WHERE donor_selanjutnya < NOW() OR donor_terakhir IS NULL";
         $result = $this->db->query($sql)->result();
         return $result;
     }

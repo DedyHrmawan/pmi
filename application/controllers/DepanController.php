@@ -6,6 +6,7 @@ class DepanController extends CI_Controller
         parent::__construct();
         $this->load->model('Depan');
         $this->load->model('Darah');
+        $this->load->model('Pendonor');
         $this->load->model('Booking');
     }    
 
@@ -135,14 +136,9 @@ class DepanController extends CI_Controller
 
     public function storeBooking()
     {
-        $param = $_POST;       
-        
-        $date = new DateTime($param['tanggal']);
-        $date->add(new DateInterval('P90D'));
-        $date = $date->format('Y-m-d');
+        $param = $_POST;           
 
-        $this->Booking->insert($param);
-        $this->db->where('id_pendonor', $param['id_pendonor'])->update('pendonor', ['donor_terakhir' => $param['tanggal'],'donor_selanjutnya' => $date]);        
+        $this->Booking->insert($param);                
         $this->session->set_flashdata('success_booking','Berhasil booking untuk '.$param['lokasi'].' pada pukul '.$param['jam_datang']);
         redirect('jadwal');
     }    
@@ -150,5 +146,41 @@ class DepanController extends CI_Controller
     public function ajxGet(){
         $data['filter'] = 'id_mobil = '.$_POST['id_mobil'];
         echo json_encode($this->Booking->get($data));
+    }
+
+    public function ajxGetPendonor(){
+        $dataPendonor = $this->Depan->getPendonorInfo($_POST['id_pendonor']);
+        
+        
+        if($dataPendonor[0]->donor_terakhir != NULL){
+            $date = new DateTime($dataPendonor[0]->donor_terakhir);        
+            $date = $date->format('d F Y');
+            $dataPendonor[0]->donor_terakhir = $date;
+        }else{
+            $dataPendonor[0]->donor_terakhir = "-";
+        }
+
+        if($dataPendonor[0]->donor_selanjutnya != NULL){
+            $date = new DateTime($dataPendonor[0]->donor_selanjutnya);        
+            $date = $date->format('d F Y');
+            $dataPendonor[0]->donor_selanjutnya = $date;
+        }else{
+            $dataPendonor[0]->donor_selanjutnya = "-";
+        }     
+
+        if($dataPendonor[0]->tgl_booking != NULL){            
+            $date = new DateTime($dataPendonor[0]->tgl_booking);        
+            $date = $date->format('d F Y');
+            $dataPendonor[0]->tgl_booking = $date;
+        }
+
+        echo json_encode($dataPendonor);
+    }
+
+    public function edit(){
+        $dataEdit = $_POST;
+        $this->Pendonor->update($dataEdit);
+
+        redirect('/');
     }
 }
