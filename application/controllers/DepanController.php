@@ -168,10 +168,14 @@ class DepanController extends CI_Controller
             $dataPendonor[0]->donor_selanjutnya = "-";
         }     
 
-        if($dataPendonor[0]->tgl_booking != NULL){            
-            $date = new DateTime($dataPendonor[0]->tgl_booking);        
-            $date = $date->format('d F Y');
-            $dataPendonor[0]->tgl_booking = $date;
+        if($dataPendonor[0]->tgl_booking != NULL){  
+            if($dataPendonor[0]->status_booking == 1){
+                $date = new DateTime($dataPendonor[0]->tgl_booking);        
+                $date = $date->format('d F Y');
+                $dataPendonor[0]->tgl_booking = $date;
+            }else{
+                $dataPendonor[0]->tgl_booking = NULL;
+            } 
         }
 
         echo json_encode($dataPendonor);
