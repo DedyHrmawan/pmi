@@ -77,7 +77,9 @@ class Depan extends CI_Model{
         $sql = "SELECT p.*, b.tanggal as tgl_booking, b.lokasi as lokasi_booking, b.jam_datang as pukul, b.status as status_booking
         FROM pendonor p
         LEFT JOIN booking b ON p.id_pendonor = b.id_pendonor
-        WHERE p.id_pendonor='$param'";
+        WHERE p.id_pendonor='$param'
+        ORDER BY b.tanggal DESC
+        LIMIT 1";
         $res = $this->db->query($sql)->result();
         return $res;
     }

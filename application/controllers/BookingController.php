@@ -31,7 +31,7 @@ class BookingController extends CI_Controller
 		
         $this->db->where('id_booking', $param['id_booking'])->update('booking', ['status' => 2]);
         $this->db->where('id_pendonor', $param['id_pendonor'])->update('pendonor', ['donor_terakhir' => $param['tanggal'],'donor_selanjutnya' => $date]);
-		
+        
         redirect('listbooking');
-	}
+    }
 }
