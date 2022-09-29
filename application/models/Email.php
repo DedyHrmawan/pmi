@@ -12,7 +12,7 @@ class Email extends CI_Model{
         donor_terakhir,
         email_pendonor 
         FROM pendonor 
-        WHERE donor_selanjutnya < NOW() OR donor_terakhir IS NULL";
+        WHERE donor_selanjutnya - INTERVAL 3 DAY < NOW() OR donor_terakhir IS NULL";
         $result = $this->db->query($sql)->result();
         return $result;
     }
