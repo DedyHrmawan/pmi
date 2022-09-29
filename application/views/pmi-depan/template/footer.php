@@ -202,7 +202,7 @@
 				if(res[0].tgl_booking == null){
 					$('#booking_value').html('-')
 				}else if(res[0].tgl_booking != null){
-					$('#booking_value').html(`Anda telah booking donor darah di ${res[0].lokasi_booking} pada tanggal ${res[0].tgl_booking} Pukul ${res[0].pukul} WIB, jadi silahkan datang tepat waktu sesuai jadwal booking anda. Terima kasih.`)
+					$('#booking_value').html(`Anda telah booking donor darah di ${res[0].lokasi_booking} pada tanggal ${res[0].tgl_booking} Pukul ${res[0].pukul} WIB, jadi silahkan datang 15 menit sebelum jadwal booking yang sudah Anda tentukan. Terima kasih.`)
 				}              
             }
         })

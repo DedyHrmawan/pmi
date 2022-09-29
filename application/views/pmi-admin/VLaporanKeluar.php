@@ -193,8 +193,8 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Laporan Keluar</span>
-                                        <span class="text-muted fw-bold fs-7">Berdasarkan Jenis Golongan Darah</span>
+                                        <span class="card-label fw-bolder fs-1 mb-1">Laporan Keluar</span>
+                                        <span class="text-muted fw-bold fs-4">Berdasarkan Jenis Golongan Darah</span>
                                     </h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar" data-kt-buttons="true">
@@ -254,7 +254,7 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Daftar Laporan Darah Keluar</span>
+                                        <span class="card-label fw-bolder fs-1 mb-1">Daftar Laporan Darah Keluar</span>
                                         <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Keluar</span> -->
                                     </h3>
                                 </div>
@@ -457,11 +457,9 @@
                             <input type="text" class="form-control form-control-solid" id="edit_datelaporankeluar" name="tanggal" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Lokasi Donor</span>
                             </label>
-                            <!--end::Label-->
                             <input type="text" class="form-control form-control-solid" id="lokasiEditKeluar" name="lokasi" />
                         </div>
                     </div>

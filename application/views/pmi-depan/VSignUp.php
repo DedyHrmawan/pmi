@@ -112,7 +112,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="nama_pendonor" placeholder="Masukan Nama" autocomplete="off" required/>
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="nama_pendonor" placeholder="Masukan Nama" autocomplete="off" required />
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -122,7 +122,7 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Email</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="email" name="email_pendonor" placeholder="Masukan Email" autocomplete="off" required/>
+                                <input class="form-control form-control-lg form-control-solid" type="email" name="email_pendonor" placeholder="Masukan Email" autocomplete="off" required />
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
@@ -139,7 +139,7 @@
                                 </div>
                                 <!--end::Wrapper-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="Masukan Password" required/>
+                                <input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="Masukan Password" required />
                                 <!--end::Input-->
                             </div>
                             <!--begin::Input group-->
@@ -148,28 +148,23 @@
                                 <label class="form-label fs-6 fw-bolder text-dark">Umur</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="umur_pendonor" placeholder="Masukan Umur"  required/>
+                                <input class="form-control form-control-lg form-control-solid" type="number" name="umur_pendonor" placeholder="Masukan Umur" required />
                                 <!--end::Input-->
                             </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
                             <div class="fv-row mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fs-6 fw-bolder text-dark">Alamat</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="text" name="alamat_pendonor" placeholder="Masukan Alamat" required />
-                                <!--end::Input-->
+                            <label class="form-label fs-6 fw-bolder text-dark mb-1">Alamat</label>
+                            <div class="form-floating">
+                                <input class="form-control form-control-lg form-control-solid" id="floatingInputValue" type="text" name="alamat_pendonor" required />
+                                <label class="fs-5" for="floatingInputValue">Silahkan masukan alamat lengkap Anda !</label>
                             </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
+                            </div>
+                            <!-- <div class="fv-row mb-10">
+                                <label class="form-label fs-6 fw-bolder text-dark mb-1">Alamat</label>
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="alamat_pendonor" placeholder="Masukan Alamat Lengkap" required />
+                            </div> -->
                             <div class="fv-row mb-10">
-                                <!--begin::Label-->
                                 <label class="form-label fs-6 fw-bolder text-dark">Nomor Telepon</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input class="form-control form-control-lg form-control-solid" type="number" name="telepon_pendonor" placeholder="Masukan Nomor Telepon" required/>
-                                <!--end::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="number" name="telepon_pendonor" placeholder="Masukan Nomor Telepon" required />
                             </div>
                             <!--end::Input group-->
                             <div class="fv-row mb-10">
@@ -198,7 +193,7 @@
                                     <!--begin::Message-->
                                     <div class="dz-message" data-dz-message><span>Click or Drop photo here to upload</span></div>
                                     <div class="fallback">
-                                        <input name="file" type="file"/>
+                                        <input name="file" type="file" />
                                     </div>
                                 </div>
                                 <!--end::Dropzone-->
@@ -250,12 +245,12 @@
             maxFiles: 1,
             maxFilesize: 5, // MB
             addRemoveLinks: true,
-            renameFile: function (file) {                
-                let anu = new Date().getTime() + '_' + file.name;                
-                $('#imageupload').val("<?= site_url() ?>uploads/pendonor/"+anu);
+            renameFile: function(file) {
+                let anu = new Date().getTime() + '_' + file.name;
+                $('#imageupload').val("<?= site_url() ?>uploads/pendonor/" + anu);
                 return anu;
             },
-            accept: function(file, done) {                
+            accept: function(file, done) {
                 done();
             }
         });

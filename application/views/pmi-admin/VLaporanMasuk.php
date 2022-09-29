@@ -195,8 +195,8 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Laporan Masuk</span>
-                                        <span class="text-muted fw-bold fs-7">Berdasarkan Jenis Golongan Darah</span>
+                                        <span class="card-label fw-bolder fs-1 mb-1">Laporan Masuk</span>
+                                        <span class="text-muted fw-bold fs-4">Berdasarkan Jenis Golongan Darah</span>
                                     </h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar" data-kt-buttons="true">
@@ -256,7 +256,7 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bolder fs-3 mb-1">Daftar Laporan Darah Masuk</span>
+                                        <span class="card-label fw-bolder fs-1 mb-1">Daftar Laporan Darah Masuk</span>
                                         <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Masuk</span> -->
                                     </h3>
                                 </div>
