@@ -296,7 +296,7 @@
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Lokasi Donor</span>
                             </label>
-                            <select name="lokasi" aria-label="Pilih Lokasi" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                            <select name="lokasi" aria-label="Pilih Lokasi" class="form-select form-select-sm form-select-solid">
                                 <?php
                                 if($lokasi != NULL){
                                     foreach ($lokasi as $list) {
@@ -416,14 +416,12 @@
                             <!--end::Label-->
                             <input type="text" id="out_stokdarah" class="form-control form-control-solid" placeholder="Masukan Tanggal" name="tanggal" />
                         </div>
-                        <div class="d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
+                        <!-- <div class="d-flex flex-column mb-8 fv-row">
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Lokasi Donor</span>
                             </label>
-                            <!--end::Label-->
                             <input type="text" class="form-control form-control-solid" placeholder="Masukan Lokasi Donor" name="lokasi" />
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="modal-footer">

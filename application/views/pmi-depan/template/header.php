@@ -188,9 +188,8 @@
 							<div class="modal-body">
 								<div class="card-body">
 									<div class="me-7 mb-4 text-center">
-										<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-											<img id="imgDetailPendonor" src="<?= $_SESSION['avatar'] ?>" alt="image" />
-											<div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px"></div>
+										<div class="position-relative" >
+											<img id="imgDetailPendonor" style="max-width: 430px; min-width:300px;" src="<?= $_SESSION['avatar'] ?>" alt="image" />
 										</div>
 									</div>
 									<div class="row mb-5">

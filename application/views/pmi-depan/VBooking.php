@@ -45,19 +45,19 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nama Lengkap</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="nama" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nama Lengkap" required />
+                                <input type="text" name="nama" class="form-control form-control-lg form-control-solid " value="" readonly />
                             </div>
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label fw-bold fs-6 required">Nomor Telepon</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="telp" class="form-control form-control-lg form-control-solid " placeholder="Masukan Nomor Telepon" required />
+                                <input type="number" name="telp" class="form-control form-control-lg form-control-solid " value="" readonly />
                             </div>
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label fw-bold fs-6 required">Alamat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid " placeholder="Masukan Alamat" required />
+                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid " value="" readonly />
                             </div>
                         </div>
                         <div class="row mb-6">
