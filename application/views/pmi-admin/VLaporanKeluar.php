@@ -270,7 +270,7 @@
                                                     <th class="min-w-120px">Jenis Golongan Darah</th>
                                                     <th class="min-w-120px">Nama</th>
                                                     <th class="min-w-120px">Tanggal</th>
-                                                    <th class="min-w-120px">Lokasi Donor</th>
+                                                    <!-- <th class="min-w-120px">Lokasi Donor</th> -->
                                                     <th class="min-w-150px">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -302,9 +302,6 @@
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                         '.$item->tanggal.'
-                                                        </td>
-                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$item->lokasi.'
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                     <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporankeluar" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporankeluar me-1">
@@ -456,12 +453,12 @@
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid" id="edit_datelaporankeluar" name="tanggal" />
                         </div>
-                        <div class="d-flex flex-column mb-8 fv-row">
+                        <!-- <div class="d-flex flex-column mb-8 fv-row">
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <input type="text" class="form-control form-control-solid" id="lokasiEditKeluar" name="lokasi" />
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="modal-footer">
@@ -557,10 +554,6 @@
                     <div class="form-group">
                         <h6>Tanggal</h6>
                         <p><span id="tanggalDetailKeluar"></p>
-                    </div>
-                    <div class="form-group">
-                        <h6>Lokasi Donor</h6>
-                        <p id="lokasiDetailKeluar"></p>
                     </div>
                 </div>
 
@@ -701,7 +694,6 @@
                 $('#instansiDetailKeluar').html(res[0].instansi)
                 $('#telpDetailKeluar').html(res[0].telp)
                 $('#tanggalDetailKeluar').html(res[0].tanggal)
-                $('#lokasiDetailKeluar').html(res[0].lokasi)
                 if (res[0].id_jenis_darah == 1) {
                     $('#golDetailKeluar').html('A')
                 }else if(res[0].id_jenis_darah == 2){
@@ -730,7 +722,6 @@
                 $('#instansiEditKeluar').val(res[0].instansi)
                 $('#telpEditKeluar').val(res[0].telp)
                 $('#edit_datelaporankeluar').val(res[0].tanggal)
-                $('#lokasiEditKeluar').val(res[0].lokasi)
                 $('#jenisEditKeluar').val(res[0].id_darah).change()
                 $('#darahEditKeluar').val(res[0].id_jenis_darah).change()
                 $('#idEditKeluar').val(res[0].id_laporan)
