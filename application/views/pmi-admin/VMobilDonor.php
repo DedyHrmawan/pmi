@@ -67,6 +67,7 @@
                                             <tbody>
                                             <?php
                                             foreach ($udd as $item) {
+                                                $newDate = date("d M Y", strtotime($item->jadwal));
                                                 $jambuka = date("H:i", strtotime($item->jam_buka));
                                                 $jamtutup = date("H:i", strtotime($item->jam_tutup));
                                                 echo '
@@ -75,7 +76,7 @@
                                                             ' . $item->lokasi . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                            ' . $item->jadwal . '
+                                                            ' . $newDate . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                             ' . $item->target . '
@@ -178,6 +179,7 @@
                                         <tbody>
                                             <?php
                                             foreach ($mobil as $item) {
+                                                $newDate = date("d M Y", strtotime($item->jadwal));
                                                 $jambuka = date("H:i", strtotime($item->jam_buka));
                                                 $jamtutup = date("H:i", strtotime($item->jam_tutup));
                                                 echo '
@@ -186,7 +188,7 @@
                                                 ' . $item->lokasi . '
                                             </td>
                                             <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                ' . $item->jadwal . '
+                                                ' . $newDate . '
                                             </td>
                                             <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                 ' . $item->target . '

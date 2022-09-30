@@ -7,7 +7,7 @@ class Depan extends CI_Model{
     }
 
     public function getJadwalMobil(){
-        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() AND tipe=2 ORDER BY jadwal ASC";
+        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() - INTERVAL 1 DAY AND tipe=2 ORDER BY jadwal ASC";
         $res = $this->db->query($sql)->result();
         return $res;
     }
@@ -26,7 +26,7 @@ class Depan extends CI_Model{
     }
 
     public function getJadwalDonor(){
-        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() AND tipe=1 ORDER BY jadwal ASC";
+        $sql = "SELECT * FROM jadwal_mobil WHERE jadwal > NOW() - INTERVAL 1 DAY AND tipe=1 ORDER BY jadwal ASC";
         $res = $this->db->query($sql)->result();
         return $res;
     }
