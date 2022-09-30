@@ -151,6 +151,27 @@
             "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
             ">"
     });
+	 $('#tableJadwalMobil').dataTable({
+        "info": false,
+		"lengthMenu": [10,25,50,100],
+		"pagelength": 5,
+		"language": {
+            "zeroRecords": "Tidak ada data",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "Cari",
+        },
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-content-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">"
+    });
 
 	$('#userPanel').on('click', '.depanEditPendonor', function() {
         const id = $(this).data('id');

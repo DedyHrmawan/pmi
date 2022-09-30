@@ -11,8 +11,16 @@
 <!--end::Page Vendors Javascript-->
 
 <script>
+    $(".newDateFormat").flatpickr({
+        dateFormat: "d M Y",
+        altInput: true,
+    });
+</script>
+<script>
     // Jadwal UDD PMI 
-    $("#add_dateUDD").flatpickr();
+    $("#add_dateUDD").flatpickr({
+        dateFormat: "d M Y",
+    });
 
     $("#add_jambukaUDD").flatpickr({
         enableTime: true,
@@ -25,7 +33,9 @@
         dateFormat: "H:i",
     });
 
-    $("#edit_dateUDD").flatpickr();
+    $("#edit_dateUDD").flatpickr({
+        dateFormat: "d M Y",
+    });
 
     $("#edit_jambukaUDD").flatpickr({
         enableTime: true,
@@ -40,7 +50,9 @@
 </script>
 <script type="text/javascript">
     // Jadwal mobil donor 
-    $("#add_jadwal").flatpickr();
+    $("#add_jadwal").flatpickr({
+        dateFormat: "d M Y",
+    });
 
     $("#add_jambuka").flatpickr({
         enableTime: true,
@@ -53,7 +65,9 @@
         dateFormat: "H:i",
     });
 
-    $("#edit_jadwal").flatpickr();
+    $("#edit_jadwal").flatpickr({
+        dateFormat: "d M Y",
+    });
 
     $("#edit_jambuka").flatpickr({
         enableTime: true,
@@ -375,11 +389,11 @@
                 $('#selanjutnyaDetailPendonor').html(res[0].donor_selanjutnya)
                 if (res[0].id_jenis_darah == 1) {
                     $('#darahDetailPendonor').html('A')
-                }else if(res[0].id_jenis_darah == 2){
+                } else if (res[0].id_jenis_darah == 2) {
                     $('#darahDetailPendonor').html('B')
-                }else if(res[0].id_jenis_darah == 3){
+                } else if (res[0].id_jenis_darah == 3) {
                     $('#darahDetailPendonor').html('AB')
-                }else if(res[0].id_jenis_darah == 4){
+                } else if (res[0].id_jenis_darah == 4) {
                     $('#darahDetailPendonor').html('O')
                 }
             }
@@ -755,7 +769,7 @@
         };
     };
 
-    
+
 
     function previewEditFotoUser() {
         document.getElementById("prevEditFotoUser").style.display = "block";
