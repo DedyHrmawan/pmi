@@ -282,6 +282,7 @@
                                                 <?php
                                                     foreach($laporan as $item){
                                                         $golongan = "";
+                                                        $newDate = date("d M Y", strtotime($item->tanggal));
                                                         if($item->id_jenis_darah == 1){
                                                             $golongan = "A";
                                                         }else if($item->id_jenis_darah == 2){
@@ -303,7 +304,7 @@
                                                         '.$item->nama.'
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$item->tanggal.'
+                                                        '.$newDate.'
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                         '.$item->lokasi.'
@@ -687,7 +688,9 @@
             ">"
     });
 
-    $("#edit_datelaporanmasuk").flatpickr();
+    $("#edit_datelaporanmasuk").flatpickr({
+        dateFormat: "d M Y",
+    });
 
     $('#dataTableLaporanMasuk tbody').on('click', '.dtl_laporanmasuk', function() {
         const id = $(this).data('id');
@@ -700,7 +703,20 @@
             },
             success: res => {
                 $('#namaDetailMasuk').html(res[0].nama)
-                $('#darahDetailMasuk').html(res[0].id_darah)
+                // $('#darahDetailMasuk').html(res[0].id_darah)
+                if (res[0].id_darah == 1) {
+                    $('#darahDetailMasuk').html('AHF')
+                }else if(res[0].id_darah == 9){
+                    $('#darahDetailMasuk').html('Plasma Konvalesen')
+                }else if(res[0].id_darah == 10){
+                    $('#darahDetailMasuk').html('FFP')
+                }else if(res[0].id_darah == 11){
+                    $('#darahDetailMasuk').html('PCR')
+                }else if(res[0].id_darah == 12){
+                    $('#darahDetailMasuk').html('PRC')
+                }else if(res[0].id_darah == 13){
+                    $('#darahDetailMasuk').html('TC')
+                }
                 $('#alamatDetailMasuk').html(res[0].alamat)
                 $('#instansiDetailMasuk').html(res[0].instansi)
                 $('#telpDetailMasuk').html(res[0].telp)

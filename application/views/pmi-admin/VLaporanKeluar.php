@@ -280,6 +280,7 @@
                                                 <?php
                                                     foreach($laporan as $item){
                                                         $golongan = "";
+                                                        $newDate = date("d M Y", strtotime($item->tanggal));
                                                         if($item->id_jenis_darah == 1){
                                                             $golongan = "A";
                                                         }else if($item->id_jenis_darah == 2){
@@ -301,7 +302,7 @@
                                                         '.$item->nama.'
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$item->tanggal.'
+                                                        '.$newDate.'
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
                                                     <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporankeluar" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporankeluar me-1">
@@ -676,7 +677,9 @@
             ">"
     });
 
-    $("#edit_datelaporankeluar").flatpickr();
+    $("#edit_datelaporankeluar").flatpickr({
+        dateFormat: "d M Y",
+    });
 
     $('#dataTableLaporanKeluar tbody').on('click', '.dtl_laporankeluar', function() {
         const id = $(this).data('id');

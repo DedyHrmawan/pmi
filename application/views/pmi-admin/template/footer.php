@@ -11,12 +11,6 @@
 <!--end::Page Vendors Javascript-->
 
 <script>
-    $(".newDateFormat").flatpickr({
-        dateFormat: "d M Y",
-        altInput: true,
-    });
-</script>
-<script>
     // Jadwal UDD PMI 
     $("#add_dateUDD").flatpickr({
         dateFormat: "d M Y",

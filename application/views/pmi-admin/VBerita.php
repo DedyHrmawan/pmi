@@ -68,6 +68,7 @@
                                                 foreach ($berita as $item) {
                                                     $status = "";
                                                     $text = "";
+                                                    $newDate = date("d M Y", strtotime($item->tanggal_berita));
                                                     if ($item->status == 1) {
                                                         $status = "badge badge-success";
                                                         $text = "Diunggah";
@@ -80,7 +81,7 @@
                                                         <tr>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->judul_berita . '</td>
                                                         <td class="text-dark text-hover-primary fs-6">' . $item->penulis_berita . '</td>
-                                                        <td class="text-dark text-hover-primary fs-6">' . $item->tanggal_berita . '</td>
+                                                        <td class="text-dark text-hover-primary fs-6">' . $newDate. '</td>
                                                         <td class="text-dark text-hover-primary fs-6">' . $desc . '</td>
                                                         <td class="text-dark text-hover-primary fs-6">
                                                             <span class="' . $status . '">' . $text . '</span>
