@@ -26,6 +26,8 @@ class MobilController extends CI_Controller
     {
         $param = $_POST;
 
+        $date=date_create($param['jadwal']);
+        $param['jadwal'] = date_format($date,"Y-m-d");
         $this->Mobil->insert($param);
         redirect('mobildonor');
     }    
@@ -36,6 +38,9 @@ class MobilController extends CI_Controller
 
     public function edit(){
         $dataEdit = $_POST;
+        
+        $date=date_create($dataEdit['jadwal']);
+        $dataEdit['jadwal'] = date_format($date,"Y-m-d");
         $this->Mobil->update($dataEdit);
 
         redirect('mobildonor');
