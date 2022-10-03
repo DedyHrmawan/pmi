@@ -703,20 +703,7 @@
             },
             success: res => {
                 $('#namaDetailMasuk').html(res[0].nama)
-                // $('#darahDetailMasuk').html(res[0].id_darah)
-                if (res[0].id_darah == 1) {
-                    $('#darahDetailMasuk').html('AHF')
-                }else if(res[0].id_darah == 9){
-                    $('#darahDetailMasuk').html('Plasma Konvalesen')
-                }else if(res[0].id_darah == 10){
-                    $('#darahDetailMasuk').html('FFP')
-                }else if(res[0].id_darah == 11){
-                    $('#darahDetailMasuk').html('PCR')
-                }else if(res[0].id_darah == 12){
-                    $('#darahDetailMasuk').html('PRC')
-                }else if(res[0].id_darah == 13){
-                    $('#darahDetailMasuk').html('TC')
-                }
+                $('#darahDetailMasuk').html(res[0].nama_darah)         
                 $('#alamatDetailMasuk').html(res[0].alamat)
                 $('#instansiDetailMasuk').html(res[0].instansi)
                 $('#telpDetailMasuk').html(res[0].telp)

@@ -692,7 +692,7 @@
             },
             success: res => {
                 $('#namaDetailKeluar').html(res[0].nama)
-                $('#darahDetailKeluar').html(res[0].id_darah)
+                $('#darahDetailKeluar').html(res[0].nama_darah)
                 $('#alamatDetailKeluar').html(res[0].alamat)
                 $('#instansiDetailKeluar').html(res[0].instansi)
                 $('#telpDetailKeluar').html(res[0].telp)

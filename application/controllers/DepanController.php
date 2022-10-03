@@ -125,7 +125,23 @@ class DepanController extends CI_Controller
         if (isset($_SESSION['logged_in']) == FALSE) {
 			redirect('blank');
 		};
+        $id = $_SESSION['id'];
         $jadwalMobil = $this->Depan->getJadwal($idjadwal);
+        $query = "SELECT * FROM booking where id_pendonor='$id' and status = 1 ORDER BY tanggal DESC";        
+        $result = $this->db->query($query)->result();
+        
+        if($_SESSION['donlan'] > $jadwalMobil[0]->jadwal){
+            $this->session->set_flashdata('error_booking','Maaf, anda masih belum dapat melakukan booking dikarenakan belum melewati jadwal donor selanjutnya(90 hari setelah donor sebelumnya)');
+            redirect('jadwal');
+        }
+
+        if(!empty($result)){
+            $date = date_create($result[0]->tanggal);
+            $tanggal = date_format($date,"d F Y");
+
+            $this->session->set_flashdata('error_booking','Anda sudah melakukan booking di '.$result[0]->lokasi.' pada tanggal '.$tanggal.' pukul '.$result[0]->jam_datang.' jadi silahkan datang sesuai jadwal, Terima kasih.');
+            redirect('jadwal');
+        }
 
         $data = array(
             'jadwal' => $jadwalMobil

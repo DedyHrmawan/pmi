@@ -48,7 +48,10 @@ class LaporanController extends CI_Controller
 
     public function ajxGet(){
         $data['filter'] = 'id_laporan = '.$_POST['id_laporan'];
-        echo json_encode($this->Laporan->get($data));
+        $dataHasil = $this->Laporan->get($data);
+        $namaDarah = $this->db->where('id_darah', $dataHasil[0]->id_darah)->get('darah')->result();
+        $dataHasil[0]->nama_darah = $namaDarah[0]->jenis_darah;
+        echo json_encode($dataHasil);
     }
 
     public function edit(){

@@ -30,7 +30,16 @@ class PendonorController extends CI_Controller
 
     public function ajxGet(){
         $data['filter'] = 'id_pendonor = '.$_POST['id_pendonor'];
-        echo json_encode($this->Pendonor->get($data));
+        $dataHasil = $this->Pendonor->get($data);
+
+        if(!empty($dataHasil[0]->donor_terakhir)){
+            $date=date_create($dataHasil[0]->donor_terakhir);
+            $dataHasil[0]->donor_terakhir = date_format($date,"d F Y");
+
+            $date=date_create($dataHasil[0]->donor_selanjutnya);
+            $dataHasil[0]->donor_selanjutnya = date_format($date,"d F Y");
+        }
+        echo json_encode($dataHasil);
     }
 
     public function edit(){
