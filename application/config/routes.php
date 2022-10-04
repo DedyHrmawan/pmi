@@ -144,6 +144,7 @@ $route['laporanmasuk/edit']     = 'LaporanController/edit';
 $route['laporanmasuk/delete']   = 'LaporanController/delete';
 $route['laporanmasuk/masukChart']   = 'LaporanController/masukChart';
 $route['laporanmasuk/getPrint']     = 'LaporanController/getDataPrint';
+$route['laporanmasuk/printLaporan']     = 'LaporanController/generate_pdf';
 
 
 //signup

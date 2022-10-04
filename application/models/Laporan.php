@@ -7,7 +7,12 @@ class Laporan extends CI_Model{
     }
 
     public function getMasuk(){
-        $sql = "SELECT l.*,d.jenis_darah FROM laporan l,darah d WHERE l.id_darah = d.id_darah AND l.tipe=1";       
+        $sql = "SELECT l.*,d.jenis_darah FROM laporan l,darah d WHERE l.id_darah = d.id_darah AND l.tipe=1 ORDER BY tanggal ASC";       
+        $res = $this->db->query($sql)->result();
+        return $res;
+    }
+    public function getDownloadData($tipe,$bulan,$tahun){
+        $sql = "SELECT l.*,d.jenis_darah FROM laporan l,darah d WHERE l.id_darah = d.id_darah AND l.tipe='$tipe' AND YEAR(tanggal)=$tahun AND MONTH(tanggal)=$bulan ORDER BY tanggal ASC";       
         $res = $this->db->query($sql)->result();
         return $res;
     }
