@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Sep 2022 pada 05.01
+-- Waktu pembuatan: 04 Okt 2022 pada 04.26
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -112,6 +112,15 @@ CREATE TABLE `booking` (
   `instansi` varchar(100) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `booking`
+--
+
+INSERT INTO `booking` (`id_booking`, `id_pendonor`, `lokasi`, `tanggal`, `nama`, `telp`, `alamat`, `jam_datang`, `instansi`, `status`) VALUES
+(14, 29, 'UDD PMI Kota Malang', '2022-03-30', 'Tes', '087859935894', 'Tes', '12:00:00', 'TES', 2),
+(15, 29, 'UDD PMI Kota Malang', '2022-09-30', 'Tes', '1239712837128', 'TES', '12:00:00', 'TES', 2),
+(17, 29, 'UDD PMI Kota Malang', '2022-10-02', 'Dann Griel', '0895399176918', 'Jalan Laks Adi Sucipto 8/25', '12:00:00', 'STIKI', 2);
 
 -- --------------------------------------------------------
 
@@ -247,8 +256,9 @@ CREATE TABLE `jadwal_mobil` (
 
 INSERT INTO `jadwal_mobil` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`, `tipe`) VALUES
 (1, '13:00:00', '17:00:00', '2022-09-28', 'Taman Anggrek', 50, 2),
-(3, '10:40:00', '16:00:00', '2022-09-30', 'Plaza Araya (Samping Burger King)', 50, 2),
-(9, '09:00:00', '14:00:00', '2022-09-30', 'UDD PMI Kota Malang', 50, 1);
+(3, '10:40:00', '16:00:00', '2022-10-31', 'Plaza Araya (Samping Burger King)', 50, 2),
+(9, '09:00:00', '14:00:00', '2022-10-31', 'UDD PMI Kota Malang', 50, 1),
+(10, '12:00:00', '16:00:00', '2022-10-02', 'UDD PMI Kota Malang', 50, 1);
 
 -- --------------------------------------------------------
 
@@ -297,13 +307,58 @@ CREATE TABLE `laporan` (
 INSERT INTO `laporan` (`id_laporan`, `id_darah`, `id_jenis_darah`, `nama`, `alamat`, `instansi`, `telp`, `tanggal`, `lokasi`, `tipe`) VALUES
 (14, 1, 1, 'Geeree', 'Jalan Kanan Kiri', 'STIKI', '087869920182', '2022-09-26', 'Taman Anggrek', 1),
 (15, 1, 1, 'Hiens', 'Alamamant', 'OkE', '232232', '2023-12-21', 'ASDASDAS', 1),
-(16, 1, 1, 'asdasdsa', 'asdasdasd', 'asdasd', '232323232', '2022-09-30', 'Taman Anggrek 2', 2),
+(16, 1, 1, 'asdasdsa', 'asdasdasd', 'asdasd', '0878599358994', '2022-09-30', 'Taman Anggrek 2', 2),
 (17, 9, 3, 'asdadasd', 'sadasdasd', 'asdasdas', '232323232', '2022-08-09', 'adasdasd', 2),
 (18, 1, 3, 'asasdasdasd', 'sadasdasd', 'sadasdasdsa', '232323', '2022-09-21', '2323232', 1),
 (19, 9, 2, 'wqewqewqeqwe', 'wqewqeqwewq', 'SADASD', '23232323232323', '2022-07-11', 'wqeqwewqewq', 1),
 (20, 1, 1, 'asdasdasd', 'asdasdasd', 'sadasdasd', '2323232', '2022-07-01', 'sadasdasd', 1),
 (21, 1, 1, 'asdasads', 'asdasdsa', '232323', '2323232', '2022-06-01', 'UDD PMI Kota Malang 2', 1),
-(22, 1, 3, 'Geeree', 'asdasdasd', 'sadasdasd', '23223232', '2022-09-21', '323232', 1);
+(22, 1, 3, 'Geeree', 'asdasdasd', 'sadasdasd', '23223232', '2022-09-21', '323232', 1),
+(23, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(24, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(25, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(26, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(27, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(28, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(29, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(30, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(31, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(32, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(33, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(34, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(35, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(36, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(37, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(38, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(39, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(40, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(41, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(42, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(43, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(44, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(45, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(46, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(47, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(48, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(49, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(50, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(51, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(52, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(53, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(54, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(55, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(56, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(57, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(58, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(59, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(60, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(61, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(62, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(63, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(64, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(65, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(66, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1),
+(67, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1);
 
 -- --------------------------------------------------------
 
@@ -330,7 +385,7 @@ CREATE TABLE `pendonor` (
 --
 
 INSERT INTO `pendonor` (`id_pendonor`, `password`, `nama_pendonor`, `foto_pendonor`, `umur_pendonor`, `id_jenis_darah`, `alamat_pendonor`, `telepon_pendonor`, `donor_terakhir`, `donor_selanjutnya`, `email_pendonor`) VALUES
-(29, 'tes123', 'Dann Griel', 'http://localhost/pmi/assets/images/default.jpg', 23, 1, 'Jalan Laks Adi Sucipto 8/25', '0895399176918', '2022-03-30', '2022-06-29', 'kyurikariko@gmail.com'),
+(29, 'tes123', 'Dann Griel', 'http://localhost/pmi/assets/images/default.jpg', 23, 1, 'Jalan Laks Adi Sucipto 8/25', '0895399176918', '2022-06-30', '2022-10-02', 'kyurikariko@gmail.com'),
 (32, 'aaaaaa', 'Giri', 'http://localhost/pmi/uploads/pendonor/1663753083206_fr_bust_ch_031_00.png', 21, 3, 'Jalan Laks Adi Sucipto 8/25', '1231231312', NULL, NULL, 'imayidid@gmail.com');
 
 -- --------------------------------------------------------
@@ -465,7 +520,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT untuk tabel `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `carousel`
@@ -495,7 +550,7 @@ ALTER TABLE `informasi`
 -- AUTO_INCREMENT untuk tabel `jadwal_mobil`
 --
 ALTER TABLE `jadwal_mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_darah`
@@ -507,7 +562,7 @@ ALTER TABLE `jenis_darah`
 -- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendonor`
