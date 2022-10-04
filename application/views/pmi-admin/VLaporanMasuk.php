@@ -259,6 +259,9 @@
                                         <span class="card-label fw-bolder fs-1 mb-1">Daftar Laporan Darah Masuk</span>
                                         <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Masuk</span> -->
                                     </h3>
+                                    <div style="text-align:right;">
+                                        <a data-bs-toggle="modal" data-bs-target="#downloadPDF" class="btn btn-danger" ><i class="fas fa-file-download"></i>Download Laporan</a>
+                                    </div>   
                                 </div>
                                 <div class="card-body py-3">
                                     <!--begin::Table container-->
@@ -578,6 +581,70 @@
         </div>
     </div>
     <!-- end modal detail laporan masuk -->
+
+    <!-- modal download  -->
+    <div class="modal fade" id="downloadPDF">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Download PDF</h3>
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                    </div>
+                 </div>
+                 <form action="<?= site_url('laporanmasuk/printLaporan') ?>" method="post">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Tahun</span>
+                            </label>
+                            <select name="tahun" class="form-select form-select-sm form-select-solid">
+                                <?php
+                                    $sel = "";
+                                    foreach ($tahun as $items) {
+                                        if($items->TAHUN == date('Y')){
+                                            $sel = "selected";
+                                        }else{
+                                            $sel = "";
+                                        };
+                                        echo '<option value="' . $items->TAHUN . '" '.$sel.'>' . $items->TAHUN . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Bulan</span>
+                            </label>
+                            <select name="bulan" class="form-select form-select-sm form-select-solid">
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="tipe" value="1">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button class="btn btn-danger" type="submit" id="laporanPdf"><i class="fas fa-file-download"></i>Download Laporan</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">

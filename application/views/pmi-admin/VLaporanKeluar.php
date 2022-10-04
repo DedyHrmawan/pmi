@@ -173,18 +173,12 @@
 </script>
 
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
-    <!--begin::Main-->
-    <!--begin::Root-->
+   
     <div class="d-flex flex-column flex-root">
-        <!--begin::Page-->
         <div class="page d-flex flex-row flex-column-fluid">
-            <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                <!--begin::Content-->
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    <!--begin::Post-->
                     <div class="post d-flex flex-column-fluid" id="kt_post">
-                        <!--begin::Container-->
                         <div id="kt_content_container" class="container-xxl">
                             <div style="text-align:right;">
                                 <button class="btn btn-danger" type="button" style="margin-top:-6.5rem !important" id="btnPdf" onclick="makePDF()"><i class="fas fa-file-download"></i>Download PDF</button>
@@ -224,46 +218,33 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Card-->
                                 </div>
                             </div>
-                            <!--end::Charts Widget 2-->
                         </div>
-                        <!--end::Container-->
                     </div>
-                    <!--end::Post-->
                 </div>
-                <!--end::Content-->
-
             </div>
-            <!--end::Wrapper-->
 
         </div>
-        <!--end::Page-->
-        <!--begin::Page-->
         <div class="page d-flex flex-row flex-column-fluid">
-            <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                <!--begin::Content-->
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    <!--begin::Post-->
                     <div class="post d-flex flex-column-fluid" id="kt_post">
-                        <!--begin::Container-->
                         <div id="kt_content_container" class="container-xxl">
                             <div class="card card-xl-stretch mb-5 mb-xl-8 mt-n21">
-                                <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
                                         <span class="card-label fw-bolder fs-1 mb-1">Daftar Laporan Darah Keluar</span>
                                         <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Keluar</span> -->
                                     </h3>
+                                    <div style="text-align:right;">
+                                        <a data-bs-toggle="modal" data-bs-target="#downloadPDF" class="btn btn-danger" ><i class="fas fa-file-download"></i>Download Laporan</a>
+                                    </div> 
                                 </div>
                                 <div class="card-body py-3">
                                     <!--begin::Table container-->
                                     <div class="table-responsive">
-                                        <!--begin::Table-->
                                         <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableLaporanKeluar">
-                                            <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted">
                                                     <th class="min-w-120px">Tipe</th>
@@ -274,8 +255,6 @@
                                                     <th class="min-w-150px">Aksi</th>
                                                 </tr>
                                             </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
                                             <tbody>
                                                 <?php
                                                     foreach($laporan as $item){
@@ -341,26 +320,16 @@
                                                     }
                                                 ?>
                                             </tbody>
-                                            <!--end::Table body-->
                                         </table>
-                                        <!--end::Table-->
                                     </div>
-                                    <!--end::Table container-->
                                 </div>
                             </div>
-                            <!--end::Charts Widget 2-->
                         </div>
-                        <!--end::Container-->
                     </div>
-                    <!--end::Post-->
                 </div>
-                <!--end::Content-->
-
             </div>
-            <!--end::Wrapper-->
 
         </div>
-        <!--end::Page-->
     </div>
     <!--end::Root-->
 
@@ -565,6 +534,70 @@
         </div>
     </div>
     <!-- end modal detail laporan keluar -->
+
+    <!-- modal download  -->
+    <div class="modal fade" id="downloadPDF">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-3">Download PDF</h3>
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+                            </svg></span>
+                    </div>
+                 </div>
+                 <form action="<?= site_url('laporanmasuk/printLaporan') ?>" method="post">
+                    <div class="modal-body">
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Tahun</span>
+                            </label>
+                            <select name="tahun" class="form-select form-select-sm form-select-solid">
+                                <?php
+                                    $sel = "";
+                                    foreach ($tahun as $items) {
+                                        if($items->TAHUN == date('Y')){
+                                            $sel = "selected";
+                                        }else{
+                                            $sel = "";
+                                        };
+                                        echo '<option value="' . $items->TAHUN . '" '.$sel.'>' . $items->TAHUN . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Bulan</span>
+                            </label>
+                            <select name="bulan" class="form-select form-select-sm form-select-solid">
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="tipe" value="2">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button class="btn btn-danger" type="submit" id="laporanPdf"><i class="fas fa-file-download"></i>Download Laporan</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
