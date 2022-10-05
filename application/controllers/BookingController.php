@@ -12,7 +12,7 @@ class BookingController extends CI_Controller
 
     public function VDataBooking()
 	{
-        $this->db->query("DELETE FROM booking WHERE tanggal < NOW() AND status = 1");
+        $this->db->query("DELETE FROM booking WHERE tanggal < NOW() - INTERVAL 1 DAY AND status = 1");
         $bookingNOW = $this->Booking->getBookingNOW();
         $bookingDONE = $this->Booking->getBookingDONE();	
 		$data = array(

@@ -42,9 +42,9 @@
 									<div class="card-toolbar">
 										<a href="#" class="btn btn-success ms-xl-4" data-bs-toggle="modal" data-bs-target="#kirimEmail">Kirim Email Pengingat</a>
 										<a href="#" class="btn btn-primary ms-xl-4" data-bs-toggle="modal" data-bs-target="#mdl_addpendonor">Tambah Pendonor</a>
-									</div>									
+									</div>
 								</div>
-								<!--end::Header-->								
+								<!--end::Header-->
 								<?php
 								if ($this->session->flashdata('success_email')) {
 									echo '
@@ -54,7 +54,7 @@
 										</div>
 									</div>
 									';
-								}else if($this->session->flashdata('error_email')){
+								} else if ($this->session->flashdata('error_email')) {
 									echo '
 									<div class="alert alert-danger d-flex align-items-center p-4 mx-8 mt-4">
 										<div class="d-flex flex-column">
@@ -85,26 +85,26 @@
 											<!--begin::Table body-->
 											<tbody>
 												<?php
-													foreach($pendonor as $item){
-														$jenis = "";
-														if($item->id_jenis_darah == 1){
-															$jenis = "A";
-														}else if($item->id_jenis_darah == 2){	
-															$jenis = "B";
-														}else if($item->id_jenis_darah == 3){	
-															$jenis = "AB";
-														}else if($item->id_jenis_darah == 4){	
-															$jenis = "O";
-														}
-														echo'															
+												foreach ($pendonor as $item) {
+													$jenis = "";
+													if ($item->id_jenis_darah == 1) {
+														$jenis = "A";
+													} else if ($item->id_jenis_darah == 2) {
+														$jenis = "B";
+													} else if ($item->id_jenis_darah == 3) {
+														$jenis = "AB";
+													} else if ($item->id_jenis_darah == 4) {
+														$jenis = "O";
+													}
+													echo '															
 															<tr>
-															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->nama_pendonor.'</td>
-															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->umur_pendonor.'</td>
-															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->alamat_pendonor.'</td>
-															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$item->telepon_pendonor.'</td>
-															<td class="text-dark fw-bolder text-hover-primary fs-6">'.$jenis.'</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->nama_pendonor . '</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->umur_pendonor . '</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->alamat_pendonor . '</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->telepon_pendonor . '</td>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $jenis . '</td>
 															<td class="text-end">
-															<a href="" title="Detail Pendonor" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" data-id="'. $item->id_pendonor .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailpendonor me-1">
+															<a href="" title="Detail Pendonor" data-bs-toggle="modal" data-bs-target="#mdl_detailpendonor" data-id="' . $item->id_pendonor . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm mdl_detailpendonor me-1">
 
 																<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 																		<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -113,7 +113,7 @@
 																	</svg></span>
 
 															</a>
-															<a href="" title="Edit Pendonor" data-bs-toggle="modal" data-bs-target="#editPendonor" data-id="'. $item->id_pendonor .'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editPendonor me-1">
+															<a href="" title="Edit Pendonor" data-bs-toggle="modal" data-bs-target="#editPendonor" data-id="' . $item->id_pendonor . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm editPendonor me-1">
 
 																<span class="svg-icon svg-icon-3">
 																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -123,7 +123,7 @@
 																</span>
 
 															</a>
-															<a href="#" title="Hapus Pendonor" data-bs-toggle="modal" data-bs-target="#hapusPendonor" data-id="'. $item->id_pendonor .'" class="btn btn-icon btn-bg-light btn-active-color-primary hapusPendonor btn-sm">
+															<a href="#" title="Hapus Pendonor" data-bs-toggle="modal" data-bs-target="#hapusPendonor" data-id="' . $item->id_pendonor . '" class="btn btn-icon btn-bg-light btn-active-color-primary hapusPendonor btn-sm">
 
 																<span class="svg-icon svg-icon-3">
 																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -137,7 +137,7 @@
 														</td>
 													</tr>
 														';
-													}
+												}
 												?>
 											</tbody>
 											<!--end::Table body-->
@@ -199,19 +199,22 @@
 				<div class="modal-body">
 					<form action="<?= site_url('listpendonor/store') ?>" method="post">
 						<div class="d-flex flex-column mb-8 fv-row">
-							<!--begin::Label-->
+							<label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+								<span>Foto Profil</span>
+							</label>
+							<img class="m-3 mx-auto rounded" id="prevAddFotoPendonor" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+							<input type="file" name="" class="form-control form-control-solid" id="addImgPendonor" onchange="previewAddFotoPendonor();" />
+						</div>
+						<div class="d-flex flex-column mb-8 fv-row">
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Nama</span>
 							</label>
-							<!--end::Label-->
 							<input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="nama_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
-							<!--begin::Label-->
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Email</span>
 							</label>
-							<!--end::Label-->
 							<input type="email" class="form-control form-control-solid" placeholder="Masukan Email" name="email_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
@@ -297,6 +300,13 @@
 				</div>
 				<div class="modal-body">
 					<form action="<?= site_url('listpendonor/edit') ?>" method="post">
+					<div class="d-flex flex-column mb-8 fv-row">
+							<label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+								<span>Foto Profil</span>
+							</label>
+							<img class="m-3 mx-auto rounded" id="prevEditFotoPendonor" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+							<input type="file" name="" class="form-control form-control-solid" id="editImgPendonor" onchange="previewEditFotoPendonor();" />
+						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
@@ -412,38 +422,38 @@
 	<!-- end modal hapus Pendonor -->
 
 	<!-- begin email reminder -->
-    <div class="modal fade" tabindex="-1" id="kirimEmail">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="mb-3">Kirim Pengingat Untuk Pendonor</h3>
+	<div class="modal fade" tabindex="-1" id="kirimEmail">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="mb-3">Kirim Pengingat Untuk Pendonor</h3>
 
-                    <!--begin::Close-->
-                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
-                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
-                                <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
-                                <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
-                            </svg></span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Close-->
-                </div>
-                <form action="<?= site_url('sendMail') ?>" method="post">
-                    <div class="modal-body">
-                        <p>Apakah anda yakin ingin mengirim Email pengingat untuk Pendonor ?</p>
-                    </div>
+					<!--begin::Close-->
+					<div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+						<!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen040.svg-->
+						<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+								<rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor" />
+								<rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
+							</svg></span>
+						<!--end::Svg Icon-->
+					</div>
+					<!--end::Close-->
+				</div>
+				<form action="<?= site_url('sendMail') ?>" method="post">
+					<div class="modal-body">
+						<p>Apakah anda yakin ingin mengirim Email pengingat untuk Pendonor ?</p>
+					</div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Kirim</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- end modal email reminder -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+						<button type="submit" class="btn btn-primary">Kirim</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end modal email reminder -->
 
 	<!-- begin modal detail Pendonor-->
 	<div class="modal fade" id="mdl_detailpendonor">
@@ -518,7 +528,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<span  id="darahDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
+								<span id="darahDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -627,6 +637,4 @@
 			"<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
 			">"
 	});
-
-	
 </script>
