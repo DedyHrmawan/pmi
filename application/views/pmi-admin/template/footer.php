@@ -763,14 +763,30 @@
         };
     };
 
-
-
     function previewEditFotoUser() {
         document.getElementById("prevEditFotoUser").style.display = "block";
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("editImgFotoUser").files[0]);
         oFReader.onload = function(oFREvent) {
             document.getElementById("prevEditFotoUser").src = oFREvent.target.result;
+        };
+    };
+
+    function previewAddFotoPendonor() {
+        document.getElementById("prevAddFotoPendonor").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("addImgPendonor").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevAddFotoPendonor").src = oFREvent.target.result;
+        };
+    };
+
+    function previewEditFotoPendonor() {
+        document.getElementById("prevEditFotoPendonor").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("editImgPendonor").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevEditFotoPendonor").src = oFREvent.target.result;
         };
     };
 </script>

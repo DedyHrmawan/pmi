@@ -228,6 +228,15 @@
             }
         })
     })
+	
+	function previewEditDepanUser() {
+        document.getElementById("prevEditUserDepan").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("editImgUserDepan").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("prevEditUserDepan").src = oFREvent.target.result;
+        };
+    };
 </script>
 <script>
     grecaptcha.ready(function () {

@@ -126,7 +126,7 @@
 										';
 									if ($_SESSION['hak_akses'] == 2) {
 										echo '
-											<a href="" data-bs-toggle="modal" data-bs-target="#depanDetailPendonor" style="width: 10rem;" data-id="'.$_SESSION['id'].'" class="btn btn-sm btn-info btn-color-white m-2 depanDetailPendonor">
+											<a href="" data-bs-toggle="modal" data-bs-target="#depanDetailPendonor" style="width: 10rem;" data-id="' . $_SESSION['id'] . '" class="btn btn-sm btn-info btn-color-white m-2 depanDetailPendonor">
 											<span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 												<path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"/>
 												<path d="M12.0006 11.1542C13.1434 11.1542 14.0777 10.22 14.0777 9.0771C14.0777 7.93424 13.1434 7 12.0006 7C10.8577 7 9.92348 7.93424 9.92348 9.0771C9.92348 10.22 10.8577 11.1542 12.0006 11.1542Z" fill="currentColor"/>
@@ -134,7 +134,7 @@
 											</span>
 											Profil</a>';
 										echo '
-											<a href="" data-bs-toggle="modal" data-bs-target="#depanEditPendonor" style="width: 10rem;" data-id="'.$_SESSION['id'].'" class="btn btn-sm btn-warning btn-color-white m-2 depanEditPendonor">
+											<a href="" data-bs-toggle="modal" data-bs-target="#depanEditPendonor" style="width: 10rem;" data-id="' . $_SESSION['id'] . '" class="btn btn-sm btn-warning btn-color-white m-2 depanEditPendonor">
 											<span class="svg-icon svg-icon-2">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 													<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
@@ -188,7 +188,7 @@
 							<div class="modal-body">
 								<div class="card-body">
 									<div class="me-7 mb-4 text-center">
-										<div class="position-relative" >
+										<div class="position-relative">
 											<img id="imgDetailPendonor" style="max-width: 430px; min-width:300px;" src="<?= $_SESSION['avatar'] ?>" alt="image" />
 										</div>
 									</div>
@@ -280,6 +280,13 @@
 							<div class="modal-body">
 								<form action="<?= site_url('depan/editProfil') ?>" method="post">
 									<div class="d-flex flex-column mb-8 fv-row">
+										<div class="d-flex flex-column mb-8 fv-row">
+											<label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
+												<span>Foto Profil</span>
+											</label>
+											<img class="m-3 mx-auto rounded" id="prevEditUserDepan" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
+											<input type="file" name="" class="form-control form-control-solid" id="editImgUserDepan" onchange="previewEditDepanUser();" />
+										</div>
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 											<span class="required">Nama</span>
 										</label>
