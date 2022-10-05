@@ -458,6 +458,33 @@ class LaporanController extends CI_Controller
 		
 		// ---------------------------------------------------------
         $dataString = "";
+        $month = "";
+
+        if($param['bulan'] == 1){
+            $month = "Januari";
+        }else if($param['bulan'] == 2){
+            $month = "Februari";
+        }else if($param['bulan'] == 3){
+            $month = "Maret";
+        }else if($param['bulan'] == 4){
+            $month = "April";
+        }else if($param['bulan'] == 5){
+            $month = "Mei";
+        }else if($param['bulan'] == 6){
+            $month = "Juni";
+        }else if($param['bulan'] == 7){
+            $month = "Juli";
+        }else if($param['bulan'] == 8){
+            $month = "Agustus";
+        }else if($param['bulan'] == 9){
+            $month = "September";
+        }else if($param['bulan'] == 10){
+            $month = "Oktober";
+        }else if($param['bulan'] == 11){
+            $month = "November";
+        }else if($param['bulan'] == 12){
+            $month = "Desember";
+        }
 		$laporanmasuk = $this->Laporan->getDownloadData($param['tipe'],$param['bulan'],$param['tahun']);
         foreach($laporanmasuk as $sf){
             $date=date_create($sf->tanggal);
@@ -471,32 +498,6 @@ class LaporanController extends CI_Controller
                 $gol = "AB";
             }else if($sf->id_jenis_darah == 4){
                 $gol = "O";
-            }
-            $month = "";
-            if($param['bulan'] == 1){
-                $month = "Januari";
-            }else if($param['bulan'] == 2){
-                $month = "Februari";
-            }else if($param['bulan'] == 3){
-                $month = "Maret";
-            }else if($param['bulan'] == 4){
-                $month = "April";
-            }else if($param['bulan'] == 5){
-                $month = "Mei";
-            }else if($param['bulan'] == 6){
-                $month = "Juni";
-            }else if($param['bulan'] == 7){
-                $month = "Juli";
-            }else if($param['bulan'] == 8){
-                $month = "Agustus";
-            }else if($param['bulan'] == 9){
-                $month = "September";
-            }else if($param['bulan'] == 10){
-                $month = "Oktober";
-            }else if($param['bulan'] == 11){
-                $month = "November";
-            }else if($param['bulan'] == 12){
-                $month = "Desember";
             }
 
             $dataString = $dataString."
