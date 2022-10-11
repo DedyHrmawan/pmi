@@ -404,6 +404,7 @@
                 id_pendonor: id
             },
             success: res => {
+                $('#prevEditFotoPendonor').attr("src", res[0].foto_pendonor);
                 $('#namaPendonor_edit').val(res[0].nama_pendonor)
                 $('#emailPendonor_edit').val(res[0].email_pendonor)
                 $('#passwordPendonor_edit').val(res[0].password)
