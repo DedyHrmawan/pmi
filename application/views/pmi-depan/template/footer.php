@@ -182,9 +182,11 @@
             data: {
                 id_pendonor: id
             },
-            success: res => {
+            success: res => {                
+                $('#prevEditUserDepan').attr("src", res[0].foto_pendonor);
                 $('#depanEditNama').val(res[0].nama_pendonor)
                 $('#depanEditEmail').val(res[0].email_pendonor)
+                $('#depanEditPassword').val(res[0].password)
                 $('#depanEditUmur').val(res[0].umur_pendonor)
                 $('#depanEditAlamat').val(res[0].alamat_pendonor)
                 $('#depanEditTelp').val(res[0].telepon_pendonor)

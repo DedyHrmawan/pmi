@@ -278,14 +278,15 @@
 							</div>
 
 							<div class="modal-body">
-								<form action="<?= site_url('depan/editProfil') ?>" method="post">
+								<form action="<?= site_url('depan/editProfil') ?>" method="post" enctype="multipart/form-data">
 									<div class="d-flex flex-column mb-8 fv-row">
 										<div class="d-flex flex-column mb-8 fv-row">
+											<span><i>*silahkan login ulang setelah mengubah info profil</i></span>
 											<label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
 												<span>Foto Profil</span>
 											</label>
 											<img class="m-3 mx-auto rounded" id="prevEditUserDepan" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
-											<input type="file" name="" class="form-control form-control-solid" id="editImgUserDepan" onchange="previewEditDepanUser();" />
+											<input type="file" name="file" class="form-control form-control-solid" id="editImgUserDepan" onchange="previewEditDepanUser();" />
 										</div>
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 											<span class="required">Nama</span>
@@ -297,6 +298,14 @@
 											<span class="required">Email</span>
 										</label>
 										<input type="text" id="depanEditEmail" class="form-control form-control-solid" name="email_pendonor" required />
+									</div>									
+									<div class="d-flex flex-column mb-8 fv-row">
+										<!--begin::Label-->
+										<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+											<span class="required">Password</span>
+										</label>
+										<!--end::Label-->
+										<input type="password" id="depanEditPassword" class="form-control form-control-solid" name="password" required />
 									</div>
 									<div class="d-flex flex-column mb-8 fv-row">
 										<label class="d-flex align-items-center fs-6 fw-bold mb-2">

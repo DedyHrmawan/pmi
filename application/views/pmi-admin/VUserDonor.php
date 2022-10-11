@@ -197,13 +197,13 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="<?= site_url('listpendonor/store') ?>" method="post">
+					<form action="<?= site_url('listpendonor/store') ?>" method="post" enctype="multipart/form-data">
 						<div class="d-flex flex-column mb-8 fv-row">
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
 								<span>Foto Profil</span>
 							</label>
 							<img class="m-3 mx-auto rounded" id="prevAddFotoPendonor" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
-							<input type="file" name="" class="form-control form-control-solid" id="addImgPendonor" onchange="previewAddFotoPendonor();" />
+							<input type="file" name="file" class="form-control form-control-solid" id="addImgPendonor" onchange="previewAddFotoPendonor();" />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
@@ -299,13 +299,13 @@
 					<!--end::Close-->
 				</div>
 				<div class="modal-body">
-					<form action="<?= site_url('listpendonor/edit') ?>" method="post">
+					<form action="<?= site_url('listpendonor/edit') ?>" method="post" enctype="multipart/form-data">
 					<div class="d-flex flex-column mb-8 fv-row">
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2 mt-2">
 								<span>Foto Profil</span>
 							</label>
 							<img class="m-3 mx-auto rounded" id="prevEditFotoPendonor" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
-							<input type="file" name="" class="form-control form-control-solid" id="editImgPendonor" onchange="previewEditFotoPendonor();" />
+							<input type="file" name="file" class="form-control form-control-solid" id="editImgPendonor" onchange="previewEditFotoPendonor();" />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
