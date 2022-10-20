@@ -373,6 +373,7 @@
                 id_pendonor: id
             },
             success: res => {
+                $('#nikDetailPendonor').html(res[0].nik_pendonor)
                 $('#namaDetailPendonor').html(res[0].nama_pendonor)
                 $('#emailDetailPendonor').html(res[0].email_pendonor)
                 $('#umurDetailPendonor').html(res[0].umur_pendonor)
@@ -405,6 +406,7 @@
             },
             success: res => {
                 $('#prevEditFotoPendonor').attr("src", res[0].foto_pendonor);
+                $('#nikPendonor_edit').val(res[0].nik_pendonor)
                 $('#namaPendonor_edit').val(res[0].nama_pendonor)
                 $('#emailPendonor_edit').val(res[0].email_pendonor)
                 $('#passwordPendonor_edit').val(res[0].password)

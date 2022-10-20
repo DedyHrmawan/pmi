@@ -59,6 +59,7 @@ class AuthController extends CI_Controller
     public function register(){        
         $param = $_POST;
 
+        $store['nik_pendonor']      = $_POST['nik_pendonor'];
         $store['nama_pendonor']     = $_POST['nama_pendonor'];
         $store['email_pendonor']    = $_POST['email_pendonor'];
         $store['password']          = $_POST['password'];
@@ -66,7 +67,11 @@ class AuthController extends CI_Controller
         $store['alamat_pendonor']   = $_POST['alamat_pendonor'];
         $store['telepon_pendonor']  = $_POST['telepon_pendonor'];
         $store['id_jenis_darah']    = $_POST['id_jenis_darah'];
-        $store['foto_pendonor']     = $_POST['link'];
+
+        if(!empty($_FILES['file']['name'])){
+            $banner = $this->upload_image();
+            $store['foto_pendonor']    =$banner;
+        };
 
         $this->User->signup($store);
         $this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
@@ -76,9 +81,9 @@ class AuthController extends CI_Controller
     }
 
     function upload_image(){
-        $config['upload_path'] = './uploads/pendonor/'; //path folder
-        $config['allowed_types'] = 'jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-        $config['encrypt_name'] = FALSE; //Enkripsi nama yang terupload
+        $config['upload_path'] = './assets/images/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
  
         $this->upload->initialize($config);
         if(!empty($_FILES['file']['name'])){
@@ -87,23 +92,22 @@ class AuthController extends CI_Controller
                 $gbr = $this->upload->data();
                 //Compress Image
                 $config['image_library']='gd2';
-                $config['source_image']='./uploads/pendonor/'.$gbr['file_name'];
+                $config['source_image']='./assets/images/'.$gbr['file_name'];
                 $config['create_thumb']= FALSE;
                 $config['maintain_ratio']= true;
-                $config['width']= 600;
-                $config['new_image']= './uploads/pendonor/'.$gbr['file_name'];
+                // $config['quality']= '100%';
+                //$config['width']= 600;
+                // $config['height']= 400;
+                $config['new_image']= './assets/images/'.$gbr['file_name'];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
  
                 $gambar=$gbr['file_name'];
 
-                return ['status' => true, 'link' => base_url('uploads/pendonor/'.$gambar)];
-            }else{
-                return ['status' => false, 'msg' => $this->upload->display_errors()];
-            }
-                      
+                return base_url('assets/images/'.$gambar);
+            }                      
         }else{
-            return ['status' => false, 'msg' => "Upload image is required"];
+            return base_url('assets/images/default.jpg');
         }         
     }
 

@@ -8,12 +8,12 @@ class Mobil extends CI_Model{
 
     public function getAll(){
         $this->db->where('tipe',2);
-        $res = $this->db->get('jadwal_mobil')->result();
+        $res = $this->db->get('jadwal_donor')->result();
         return $res;
     }
     public function getUDD(){
         $this->db->where('tipe',1);
-        $res = $this->db->get('jadwal_mobil')->result();
+        $res = $this->db->get('jadwal_donor')->result();
         return $res;
     }
     public function get($param){
@@ -24,20 +24,20 @@ class Mobil extends CI_Model{
         TIME_FORMAT(jam_buka, '%H:%i') as jambuka,
         TIME_FORMAT(jam_tutup, '%H:%i') as jamtutup,
         lokasi 
-        FROM jadwal_mobil WHERE id_mobil = $param";
+        FROM jadwal_donor WHERE id_mobil = $param";
         $res = $this->db->query($sql)->result();
         return $res;
     }
     public function insert($param){
-        $this->db->insert('jadwal_mobil', $param);
+        $this->db->insert('jadwal_donor', $param);
         return $this->db->insert_id();
     }
     public function update($param){
-        $this->db->where('id_mobil', $param['id_mobil'])->update('jadwal_mobil', $param);
+        $this->db->where('id_mobil', $param['id_mobil'])->update('jadwal_donor', $param);
         return true;
     }
     public function delete($param){
-        $this->db->where($param)->delete('jadwal_mobil');
+        $this->db->where($param)->delete('jadwal_donor');
         return true;
     }
 }

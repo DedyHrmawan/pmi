@@ -254,6 +254,14 @@
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">NIK</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukan NIK" name="nik_pendonor" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Nama Lengkap</span>
                             </label>
                             <!--end::Label-->
