@@ -76,7 +76,7 @@ class Darah extends CI_Model{
         return true;
     }
     public function getLokasi(){
-        $sql = "SELECT lokasi from jadwal_mobil WHERE jadwal > NOW() - INTERVAL 1 DAY";       
+        $sql = "SELECT lokasi from jadwal_donor WHERE jadwal > NOW() - INTERVAL 1 DAY";       
         $res = $this->db->query($sql)->result();
         return $res;
     }

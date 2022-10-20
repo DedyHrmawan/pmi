@@ -109,6 +109,14 @@
                             <!--begin::Input group-->
                             <div class="fv-row mb-10">
                                 <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark">NIK</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="nik_pendonor" placeholder="Masukan NIK" autocomplete="off" required />
+                                <!--end::Input-->
+                            </div>
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
                                 <label class="form-label fs-6 fw-bolder text-dark">Nama</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
@@ -189,13 +197,8 @@
                                 </label>
                                 <!--end::Label-->
                                 <!--begin::Dropzone-->
-                                <div class="dropzone" id="fotoPendonor">
-                                    <!--begin::Message-->
-                                    <div class="dz-message" data-dz-message><span>Click or Drop photo here to upload</span></div>
-                                    <div class="fallback">
-                                        <input name="file" type="file" />
-                                    </div>
-                                </div>
+                                <img class="m-3 mx-auto rounded" id="prevAddFotoRegister" alt="" style="max-width: 200px; min-width: 50px; max-height: 200px; min-height: 50;" />
+                                <input type="file" name="file" class="form-control form-control-solid" id="addImgRegister" onchange="previewAddFotoRegister();" />
                                 <!--end::Dropzone-->
                             </div>
 
@@ -238,22 +241,15 @@
     <script src="<?= base_url() ?>assets/admin/js/custom/authentication/sign-in/general.js"></script>
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
-    <script>
-        var myDropzone = new Dropzone("#fotoPendonor", {
-            url: "<?= site_url('uploadimage') ?>", // Set the url for your upload script location
-            paramName: "file", // The name that will be used to transfer the file
-            maxFiles: 1,
-            maxFilesize: 5, // MB
-            addRemoveLinks: true,
-            renameFile: function(file) {
-                let anu = new Date().getTime() + '_' + file.name;
-                $('#imageupload').val("<?= site_url() ?>uploads/pendonor/" + anu);
-                return anu;
-            },
-            accept: function(file, done) {
-                done();
-            }
-        });
+    <script>     
+        function previewAddFotoRegister() {
+            document.getElementById("prevAddFotoRegister").style.display = "block";
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("addImgRegister").files[0]);
+            oFReader.onload = function(oFREvent) {
+                document.getElementById("prevAddFotoRegister").src = oFREvent.target.result;
+            };
+        };
     </script>
 </body>
 <!--end::Body-->

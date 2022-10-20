@@ -24,6 +24,7 @@ class PendonorController extends CI_Controller
     public function store()
     {
         $param = $_POST;
+        $store['nik_pendonor']      =$param['nik_pendonor'];
         $store['nama_pendonor']     =$param['nama_pendonor'];
         $store['email_pendonor']    =$param['email_pendonor'];
         $store['password']          =$param['password'];
@@ -59,6 +60,7 @@ class PendonorController extends CI_Controller
         $param = $_POST;
 
         $store['id_pendonor']       =$param['id_pendonor'];
+        $store['nik_pendonor']      =$param['nik_pendonor'];
         $store['nama_pendonor']     =$param['nama_pendonor'];
         $store['email_pendonor']    =$param['email_pendonor'];
         $store['password']          =$param['password'];

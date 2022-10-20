@@ -207,6 +207,12 @@
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+								<span class="required">NIK</span>
+							</label>
+							<input type="text" class="form-control form-control-solid" placeholder="Masukan NIK" name="nik_pendonor" required />
+						</div>
+						<div class="d-flex flex-column mb-8 fv-row">
+							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 								<span class="required">Nama</span>
 							</label>
 							<input type="text" class="form-control form-control-solid" placeholder="Masukan Nama" name="nama_pendonor" required />
@@ -306,6 +312,14 @@
 							</label>
 							<img class="m-3 mx-auto rounded" id="prevEditFotoPendonor" alt="" style="max-width: 450px; min-width: 250px; max-height: 450px; min-height: 250;" />
 							<input type="file" name="file" class="form-control form-control-solid" id="editImgPendonor" onchange="previewEditFotoPendonor();" />
+						</div>
+						<div class="d-flex flex-column mb-8 fv-row">
+							<!--begin::Label-->
+							<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+								<span class="required">NIK</span>
+							</label>
+							<!--end::Label-->
+							<input type="text" id="nikPendonor_edit" class="form-control form-control-solid" name="nik_pendonor" required />
 						</div>
 						<div class="d-flex flex-column mb-8 fv-row">
 							<!--begin::Label-->
@@ -487,6 +501,16 @@
 						</div>
 						<!--end::Pic-->
 						<!--begin::Input group-->
+						<div class="row mb-5">
+							<!--begin::Label-->
+							<label class="col-lg-4 fw-bold text-muted">NIK</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8 fv-row">
+								<span id="nikDetailPendonor" class="fw-bold text-gray-800 fs-6"></span>
+							</div>
+							<!--end::Col-->
+						</div>
 						<div class="row mb-5">
 							<!--begin::Label-->
 							<label class="col-lg-4 fw-bold text-muted">Email</label>

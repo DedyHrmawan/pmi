@@ -427,6 +427,14 @@
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">NIK</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" id="nikEditMasuk" class="form-control form-control-solid"  name="nik_pendonor" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Nama</span>
                             </label>
                             <!--end::Label-->
@@ -547,6 +555,10 @@
                     <div class="form-group">
                         <h6>Jenis Golongan Darah</h6>
                         <p><span id="golDetailMasuk"></p>
+                    </div>                    
+                    <div class="form-group">
+                        <h6>NIK</h6>
+                        <p id="nikDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Nama</h6>
@@ -769,6 +781,7 @@
                 id_laporan: id
             },
             success: res => {
+                $('#nikDetailMasuk').html(res[0].nik_pendonor)
                 $('#namaDetailMasuk').html(res[0].nama)
                 $('#darahDetailMasuk').html(res[0].nama_darah)         
                 $('#alamatDetailMasuk').html(res[0].alamat)
@@ -799,6 +812,7 @@
                 id_laporan: id
             },
             success: res => {
+                $('#nikEditMasuk').val(res[0].nik_pendonor)
                 $('#namaEditMasuk').val(res[0].nama)
                 $('#alamatEditMasuk').val(res[0].alamat)
                 $('#instansiEditMasuk').val(res[0].instansi)
