@@ -4,15 +4,59 @@
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script type="text/javascript">
-	window.html2canvas = html2canvas;
-	window.jsPDF = window.jspdf.jsPDF;
+    window.html2canvas = html2canvas;
+    window.jsPDF = window.jspdf.jsPDF;
 
-	function makePDF(){
-        var janA = 0;var febA = 0;var marA = 0;var aprA = 0;var meiA = 0;var junA = 0;var julA = 0;var augA = 0;var sepA = 0;var octA = 0;var novA = 0;var desA = 0;
-        var janB = 0;var febB = 0;var marB = 0;var aprB = 0;var meiB = 0;var junB = 0;var julB = 0;var augB = 0;var sepB = 0;var octB = 0;var novB = 0;var desB = 0;
-        var janAB = 0;var febAB = 0;var marAB = 0;var aprAB = 0;var meiAB = 0;var junAB = 0;var julAB = 0;var augAB = 0;var sepAB = 0;var octAB = 0;var novAB = 0;var desAB = 0;
-        var janO = 0;var febO = 0;var marO = 0;var aprO = 0;var meiO = 0;var junO = 0;var julO = 0;var augO = 0;var sepO = 0;var octO = 0;var novO = 0;var desO = 0;
-        
+    function makePDF() {
+        var janA = 0;
+        var febA = 0;
+        var marA = 0;
+        var aprA = 0;
+        var meiA = 0;
+        var junA = 0;
+        var julA = 0;
+        var augA = 0;
+        var sepA = 0;
+        var octA = 0;
+        var novA = 0;
+        var desA = 0;
+        var janB = 0;
+        var febB = 0;
+        var marB = 0;
+        var aprB = 0;
+        var meiB = 0;
+        var junB = 0;
+        var julB = 0;
+        var augB = 0;
+        var sepB = 0;
+        var octB = 0;
+        var novB = 0;
+        var desB = 0;
+        var janAB = 0;
+        var febAB = 0;
+        var marAB = 0;
+        var aprAB = 0;
+        var meiAB = 0;
+        var junAB = 0;
+        var julAB = 0;
+        var augAB = 0;
+        var sepAB = 0;
+        var octAB = 0;
+        var novAB = 0;
+        var desAB = 0;
+        var janO = 0;
+        var febO = 0;
+        var marO = 0;
+        var aprO = 0;
+        var meiO = 0;
+        var junO = 0;
+        var julO = 0;
+        var augO = 0;
+        var sepO = 0;
+        var octO = 0;
+        var novO = 0;
+        var desO = 0;
+
 
         $.ajax({
             url: "<?= site_url('laporanmasuk/getPrint') ?>",
@@ -21,117 +65,161 @@
                 year: $("#pilYear").val()
             },
             success: function(json) {
-                var obj=jQuery.parseJSON(json);
-                janA = obj[0];febA = obj[1];marA = obj[2];aprA = obj[3];meiA = obj[4];junA = obj[5];julA = obj[6];augA = obj[7];sepA = obj[8];octA = obj[9];novA = obj[10];desA = obj[11];
-                janB = obj[12];febB = obj[13];marB = obj[14];aprB = obj[15];meiB = obj[16];junB = obj[17];julB = obj[18];augB = obj[19];sepB = obj[20];octB = obj[21];novB = obj[22];desB = obj[23];
-                janAB = obj[24];febAB = obj[25];marAB = obj[26];aprAB = obj[27];meiAB = obj[28];junAB = obj[29];julAB = obj[30];augAB = obj[31];sepAB = obj[32];octAB = obj[33];novAB = obj[34];desAB = obj[35];
-                janO = obj[36];febO = obj[37];marO = obj[38];aprO = obj[39];meiO = obj[40];junO = obj[41];julO = obj[42];augO = obj[43];sepO = obj[44];octO = obj[45];novO = obj[46];desO = obj[47];
+                var obj = jQuery.parseJSON(json);
+                janA = obj[0];
+                febA = obj[1];
+                marA = obj[2];
+                aprA = obj[3];
+                meiA = obj[4];
+                junA = obj[5];
+                julA = obj[6];
+                augA = obj[7];
+                sepA = obj[8];
+                octA = obj[9];
+                novA = obj[10];
+                desA = obj[11];
+                janB = obj[12];
+                febB = obj[13];
+                marB = obj[14];
+                aprB = obj[15];
+                meiB = obj[16];
+                junB = obj[17];
+                julB = obj[18];
+                augB = obj[19];
+                sepB = obj[20];
+                octB = obj[21];
+                novB = obj[22];
+                desB = obj[23];
+                janAB = obj[24];
+                febAB = obj[25];
+                marAB = obj[26];
+                aprAB = obj[27];
+                meiAB = obj[28];
+                junAB = obj[29];
+                julAB = obj[30];
+                augAB = obj[31];
+                sepAB = obj[32];
+                octAB = obj[33];
+                novAB = obj[34];
+                desAB = obj[35];
+                janO = obj[36];
+                febO = obj[37];
+                marO = obj[38];
+                aprO = obj[39];
+                meiO = obj[40];
+                junO = obj[41];
+                julO = obj[42];
+                augO = obj[43];
+                sepO = obj[44];
+                octO = obj[45];
+                novO = obj[46];
+                desO = obj[47];
             }
         });
-		var doc = new jsPDF();
-		const date = new Date();
+        var doc = new jsPDF();
+        const date = new Date();
         const newDate = getFullDate(date);
-		doc.setFont("helvetica", "bold");
-		doc.setFontSize(12);
-		doc.text(`Laporan Darah Masuk - ${newDate}`, 20, 20);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(12);
+        doc.text(`Laporan Darah Masuk - ${newDate}`, 20, 20);
 
-		html2canvas(document.querySelector("#capture"),{
-			allowTaint:true,
-			useCORS: true,
-			scale: 6
-		}).then(canvas => {               
-			var img = canvas.toDataURL("image/jpeg");
-			doc.addImage(img,'JPEG',5,25,200,0);	 
-                       
+        html2canvas(document.querySelector("#capture"), {
+            allowTaint: true,
+            useCORS: true,
+            scale: 6
+        }).then(canvas => {
+            var img = canvas.toDataURL("image/jpeg");
+            doc.addImage(img, 'JPEG', 5, 25, 200, 0);
+
             doc.setFont("helvetica", "normal");
-		    doc.setFontSize(12);
-		    doc.text(`Januari`, 20, 175);          
-		    doc.text(`A    : ${janA}`, 20, 180);           
-		    doc.text(`B    : ${janB}`, 20, 185);           
-		    doc.text(`AB  : ${janAB}`, 20, 190);          
-		    doc.text(`O    : ${janO}`, 20, 195);
+            doc.setFontSize(12);
+            doc.text(`Januari`, 20, 175);
+            doc.text(`A    : ${janA}`, 20, 180);
+            doc.text(`B    : ${janB}`, 20, 185);
+            doc.text(`AB  : ${janAB}`, 20, 190);
+            doc.text(`O    : ${janO}`, 20, 195);
 
-            doc.text(`Februari`, 50, 175);       
-		    doc.text(`A    : ${febA}`, 50, 180);           
-		    doc.text(`B    : ${febB}`, 50, 185);           
-		    doc.text(`AB  : ${febAB}`, 50, 190);          
-		    doc.text(`O    : ${febO}`, 50, 195);
+            doc.text(`Februari`, 50, 175);
+            doc.text(`A    : ${febA}`, 50, 180);
+            doc.text(`B    : ${febB}`, 50, 185);
+            doc.text(`AB  : ${febAB}`, 50, 190);
+            doc.text(`O    : ${febO}`, 50, 195);
 
-            doc.text(`Maret`, 80, 175);            
-		    doc.text(`A    : ${marA}`, 80, 180);           
-		    doc.text(`B    : ${marB}`, 80, 185);           
-		    doc.text(`AB  : ${marAB}`, 80, 190);          
-		    doc.text(`O    : ${marO}`, 80, 195);
+            doc.text(`Maret`, 80, 175);
+            doc.text(`A    : ${marA}`, 80, 180);
+            doc.text(`B    : ${marB}`, 80, 185);
+            doc.text(`AB  : ${marAB}`, 80, 190);
+            doc.text(`O    : ${marO}`, 80, 195);
 
-            doc.text(`April`, 110, 175);           
-		    doc.text(`A    : ${aprA}`, 110, 180);           
-		    doc.text(`B    : ${aprB}`, 110, 185);           
-		    doc.text(`AB  : ${aprAB}`, 110, 190);          
-		    doc.text(`O    : ${aprO}`, 110, 195);
+            doc.text(`April`, 110, 175);
+            doc.text(`A    : ${aprA}`, 110, 180);
+            doc.text(`B    : ${aprB}`, 110, 185);
+            doc.text(`AB  : ${aprAB}`, 110, 190);
+            doc.text(`O    : ${aprO}`, 110, 195);
 
-            doc.text(`Mei`, 140, 175);             
-		    doc.text(`A    : ${meiA}`, 140, 180);           
-		    doc.text(`B    : ${meiB}`, 140, 185);           
-		    doc.text(`AB  : ${meiAB}`, 140, 190);          
-		    doc.text(`O    : ${meiO}`, 140, 195);
+            doc.text(`Mei`, 140, 175);
+            doc.text(`A    : ${meiA}`, 140, 180);
+            doc.text(`B    : ${meiB}`, 140, 185);
+            doc.text(`AB  : ${meiAB}`, 140, 190);
+            doc.text(`O    : ${meiO}`, 140, 195);
 
-            doc.text(`Juni`, 170, 175);             
-		    doc.text(`A    : ${junA}`, 170, 180);           
-		    doc.text(`B    : ${junB}`, 170, 185);           
-		    doc.text(`AB  : ${junAB}`, 170, 190);          
-		    doc.text(`O    : ${junO}`, 170, 195);
+            doc.text(`Juni`, 170, 175);
+            doc.text(`A    : ${junA}`, 170, 180);
+            doc.text(`B    : ${junB}`, 170, 185);
+            doc.text(`AB  : ${junAB}`, 170, 190);
+            doc.text(`O    : ${junO}`, 170, 195);
 
-            doc.text(`Juli`, 20, 215);             
-		    doc.text(`A    : ${julA}`, 20, 220);           
-		    doc.text(`B    : ${julB}`, 20, 225);           
-		    doc.text(`AB  : ${julAB}`, 20, 230);          
-		    doc.text(`O    : ${julO}`, 20, 235);
+            doc.text(`Juli`, 20, 215);
+            doc.text(`A    : ${julA}`, 20, 220);
+            doc.text(`B    : ${julB}`, 20, 225);
+            doc.text(`AB  : ${julAB}`, 20, 230);
+            doc.text(`O    : ${julO}`, 20, 235);
 
-            doc.text(`Agustus`, 50, 215);       
-		    doc.text(`A    : ${augA}`, 50, 220);           
-		    doc.text(`B    : ${augB}`, 50, 225);           
-		    doc.text(`AB  : ${augAB}`, 50, 230);          
-		    doc.text(`O    : ${augO}`, 50, 235);
+            doc.text(`Agustus`, 50, 215);
+            doc.text(`A    : ${augA}`, 50, 220);
+            doc.text(`B    : ${augB}`, 50, 225);
+            doc.text(`AB  : ${augAB}`, 50, 230);
+            doc.text(`O    : ${augO}`, 50, 235);
 
-            doc.text(`September`, 80, 215);       
-		    doc.text(`A    : ${sepA}`, 80, 220);           
-		    doc.text(`B    : ${sepB}`, 80, 225);           
-		    doc.text(`AB  : ${sepAB}`, 80, 230);          
-		    doc.text(`O    : ${sepO}`, 80, 235);
+            doc.text(`September`, 80, 215);
+            doc.text(`A    : ${sepA}`, 80, 220);
+            doc.text(`B    : ${sepB}`, 80, 225);
+            doc.text(`AB  : ${sepAB}`, 80, 230);
+            doc.text(`O    : ${sepO}`, 80, 235);
 
-            doc.text(`Oktober`, 110, 215);       
-		    doc.text(`A    : ${octA}`, 110, 220);           
-		    doc.text(`B    : ${octB}`, 110, 225);           
-		    doc.text(`AB  : ${octAB}`, 110, 230);          
-		    doc.text(`O    : ${octO}`, 110, 235);
+            doc.text(`Oktober`, 110, 215);
+            doc.text(`A    : ${octA}`, 110, 220);
+            doc.text(`B    : ${octB}`, 110, 225);
+            doc.text(`AB  : ${octAB}`, 110, 230);
+            doc.text(`O    : ${octO}`, 110, 235);
 
-            doc.text(`November`, 140, 215);       
-		    doc.text(`A    : ${novA}`, 140, 220);           
-		    doc.text(`B    : ${novB}`, 140, 225);           
-		    doc.text(`AB  : ${novAB}`, 140, 230);          
-		    doc.text(`O    : ${novO}`, 140, 235);
+            doc.text(`November`, 140, 215);
+            doc.text(`A    : ${novA}`, 140, 220);
+            doc.text(`B    : ${novB}`, 140, 225);
+            doc.text(`AB  : ${novAB}`, 140, 230);
+            doc.text(`O    : ${novO}`, 140, 235);
 
-            doc.text(`Desember`, 170, 215);       
-		    doc.text(`A    : ${desA}`, 170, 220);           
-		    doc.text(`B    : ${desB}`, 170, 225);           
-		    doc.text(`AB  : ${desAB}`, 170, 230);          
-		    doc.text(`O    : ${desO}`, 170, 235);
+            doc.text(`Desember`, 170, 215);
+            doc.text(`A    : ${desA}`, 170, 220);
+            doc.text(`B    : ${desB}`, 170, 225);
+            doc.text(`AB  : ${desAB}`, 170, 230);
+            doc.text(`O    : ${desO}`, 170, 235);
 
-            doc.save(`LAPORAN DARAH MASUK - ${newDate}.pdf`);		
-		});
-	}
+            doc.save(`LAPORAN DARAH MASUK - ${newDate}.pdf`);
+        });
+    }
 
     const getFullDate = (dateObj) => {
-        const date  = dateObj.getDate()
+        const date = dateObj.getDate()
         const month = getMonthName(dateObj.getMonth())
-        const year  = dateObj.getFullYear()
+        const year = dateObj.getFullYear()
 
         return `${date} ${month} ${year}`
     }
 
     const getMonthName = (month) => {
         let res
-        switch(month){
+        switch (month) {
             case 0:
                 res = "January"
                 break;
@@ -177,8 +265,8 @@
     <!--begin::Main-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
-        <!--begin::Page-->        
-        
+        <!--begin::Page-->
+
         <div class="page d-flex flex-row flex-column-fluid">
             <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
@@ -190,8 +278,8 @@
                         <div id="kt_content_container" class="container-xxl">
                             <div style="text-align:right;">
                                 <button class="btn btn-danger" type="button" style="margin-top:-6.5rem !important" id="btnPdf" onclick="makePDF()"><i class="fas fa-file-download"></i>Download PDF</button>
-                            </div>                        
-                            <div id="capture"  class="card card-xl-stretch mt-n0">                           
+                            </div>
+                            <div id="capture" class="card card-xl-stretch mt-n0">
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
@@ -201,16 +289,16 @@
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar" data-kt-buttons="true">
                                         <select class="form-select form-select-solid" data-control="select2" id="pilYear" data-placeholder="Tahun">
-                                            <option ></option>
+                                            <option></option>
                                             <?php
                                             $sel = "";
                                             foreach ($tahun as $items) {
-                                                if($items->TAHUN == date('Y')){
+                                                if ($items->TAHUN == date('Y')) {
                                                     $sel = "selected";
-                                                }else{
+                                                } else {
                                                     $sel = "";
                                                 };
-                                                echo '<option value="' . $items->TAHUN . '" '.$sel.'>' . $items->TAHUN . '</option>';
+                                                echo '<option value="' . $items->TAHUN . '" ' . $sel . '>' . $items->TAHUN . '</option>';
                                             }
                                             ?>
                                         </select>
@@ -260,8 +348,8 @@
                                         <!-- <span class="text-muted fw-bold fs-7">Laporan Darah Masuk</span> -->
                                     </h3>
                                     <div style="text-align:right;">
-                                        <a data-bs-toggle="modal" data-bs-target="#downloadPDF" class="btn btn-danger" ><i class="fas fa-file-download"></i>Download Laporan</a>
-                                    </div>   
+                                        <a data-bs-toggle="modal" data-bs-target="#downloadPDF" class="btn btn-danger"><i class="fas fa-file-download"></i>Download Laporan</a>
+                                    </div>
                                 </div>
                                 <div class="card-body py-3">
                                     <!--begin::Table container-->
@@ -271,9 +359,10 @@
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted">
+                                                    <th class="min-w-120px">NIK</th>
+                                                    <th class="min-w-120px">Nama</th>
                                                     <th class="min-w-120px">Tipe</th>
                                                     <th class="min-w-120px">Jenis Golongan Darah</th>
-                                                    <th class="min-w-120px">Nama</th>
                                                     <th class="min-w-120px">Tanggal</th>
                                                     <th class="min-w-120px">Lokasi Donor</th>
                                                     <th class="min-w-150px">Aksi</th>
@@ -283,37 +372,40 @@
                                             <!--begin::Table body-->
                                             <tbody>
                                                 <?php
-                                                    foreach($laporan as $item){
-                                                        $golongan = "";
-                                                        $newDate = date("d M Y", strtotime($item->tanggal));
-                                                        if($item->id_jenis_darah == 1){
-                                                            $golongan = "A";
-                                                        }else if($item->id_jenis_darah == 2){
-                                                            $golongan = "B";
-                                                        }else if($item->id_jenis_darah == 3){
-                                                            $golongan = "AB";
-                                                        }else if($item->id_jenis_darah == 4){
-                                                            $golongan = "O";
-                                                        };
-                                                        echo '
+                                                foreach ($laporan as $item) {
+                                                    $golongan = "";
+                                                    $newDate = date("d M Y", strtotime($item->tanggal));
+                                                    if ($item->id_jenis_darah == 1) {
+                                                        $golongan = "A";
+                                                    } else if ($item->id_jenis_darah == 2) {
+                                                        $golongan = "B";
+                                                    } else if ($item->id_jenis_darah == 3) {
+                                                        $golongan = "AB";
+                                                    } else if ($item->id_jenis_darah == 4) {
+                                                        $golongan = "O";
+                                                    };
+                                                    echo '
                                                         <tr>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$item->jenis_darah.'
+                                                        ' . $item->nik_pendonor . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$golongan.'
+                                                        ' . $item->nama . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$item->nama.'
+                                                        ' . $item->jenis_darah . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$newDate.'
+                                                        ' . $golongan . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        '.$item->lokasi.'
+                                                        ' . $newDate . '
                                                         </td>
                                                         <td class="text-dark fw-bolder text-hover-primary fs-6">
-                                                        <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporanmasuk" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporanmasuk me-1">
+                                                        ' . $item->lokasi . '
+                                                        </td>
+                                                        <td class="text-dark fw-bolder text-hover-primary fs-6">
+                                                        <a href="" title="Detail Laporan" data-bs-toggle="modal" data-bs-target="#dtl_laporanmasuk" data-id="' . $item->id_laporan . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm dtl_laporanmasuk me-1">
                                                             <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen045.svg-->
                                                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
@@ -322,7 +414,7 @@
                                                                 </svg></span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-                                                        <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporanmasuk" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporanmasuk me-1">
+                                                        <a href="" title="Edit Laporan" data-bs-toggle="modal" data-bs-target="#edit_laporanmasuk" data-id="' . $item->id_laporan . '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm edit_laporanmasuk me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -332,7 +424,7 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-                                                        <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporanmasuk" data-id="'.$item->id_laporan.'" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporanmasuk btn-sm">
+                                                        <a href="#" title="Hapus Laporan" data-bs-toggle="modal" data-bs-target="#del_laporanmasuk" data-id="' . $item->id_laporan . '" class="btn btn-icon btn-bg-light btn-active-color-primary del_laporanmasuk btn-sm">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -346,10 +438,10 @@
                                                     </td>
                                                     </tr>
                                                         ';
-                                                    }
+                                                }
                                                 ?>
-                                                
-                                                
+
+
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -398,6 +490,22 @@
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">NIK</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" id="nikEditMasuk" class="form-control form-control-solid" name="nik_pendonor" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Nama</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" id="namaEditMasuk" class="form-control form-control-solid" name="nama" />
+                        </div>
+                        <div class="d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Tipe Golongan Darah</span>
                             </label>
                             <!--end::Label-->
@@ -427,26 +535,10 @@
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                <span class="required">NIK</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" id="nikEditMasuk" class="form-control form-control-solid"  name="nik_pendonor" />
-                        </div>
-                        <div class="d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                <span class="required">Nama</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" id="namaEditMasuk" class="form-control form-control-solid"  name="nama" />
-                        </div>
-                        <div class="d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Alamat</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" id="alamatEditMasuk" class="form-control form-control-solid"  name="alamat" />
+                            <input type="text" id="alamatEditMasuk" class="form-control form-control-solid" name="alamat" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -454,7 +546,7 @@
                                 <span class="required">Instansi</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" id="instansiEditMasuk" class="form-control form-control-solid"  name="instansi" />
+                            <input type="text" id="instansiEditMasuk" class="form-control form-control-solid" name="instansi" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -462,7 +554,7 @@
                                 <span class="required">Nomor Telepon</span>
                             </label>
                             <!--end::Label-->
-                            <input type="number" id="telpEditMasuk" class="form-control form-control-solid"  name="telp" />
+                            <input type="number" id="telpEditMasuk" class="form-control form-control-solid" name="telp" />
                         </div>
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
@@ -478,7 +570,7 @@
                                 <span class="required">Lokasi Donor</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" id="lokasiEditMasuk" class="form-control form-control-solid"  name="lokasi" />
+                            <input type="text" id="lokasiEditMasuk" class="form-control form-control-solid" name="lokasi" />
                         </div>
                     </div>
 
@@ -549,20 +641,20 @@
 
                 <div class="modal-body">
                     <div class="form-group">
-                        <h6>Tipe Darah</h6>
-                        <p><span id="darahDetailMasuk"></p>
-                    </div>
-                    <div class="form-group">
-                        <h6>Jenis Golongan Darah</h6>
-                        <p><span id="golDetailMasuk"></p>
-                    </div>                    
-                    <div class="form-group">
                         <h6>NIK</h6>
                         <p id="nikDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Nama</h6>
                         <p id="namaDetailMasuk"></p>
+                    </div>
+                    <div class="form-group">
+                        <h6>Tipe Darah</h6>
+                        <p><span id="darahDetailMasuk"></p>
+                    </div>
+                    <div class="form-group">
+                        <h6>Jenis Golongan Darah</h6>
+                        <p><span id="golDetailMasuk"></p>
                     </div>
                     <div class="form-group">
                         <h6>Alamat</h6>
@@ -607,8 +699,8 @@
                                 <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor" />
                             </svg></span>
                     </div>
-                 </div>
-                 <form action="<?= site_url('laporanmasuk/printLaporan') ?>" method="post">
+                </div>
+                <form action="<?= site_url('laporanmasuk/printLaporan') ?>" method="post">
                     <div class="modal-body">
                         <div class="d-flex flex-column mb-8 fv-row">
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
@@ -616,15 +708,15 @@
                             </label>
                             <select name="tahun" class="form-select form-select-sm form-select-solid">
                                 <?php
-                                    $sel = "";
-                                    foreach ($tahun as $items) {
-                                        if($items->TAHUN == date('Y')){
-                                            $sel = "selected";
-                                        }else{
-                                            $sel = "";
-                                        };
-                                        echo '<option value="' . $items->TAHUN . '" '.$sel.'>' . $items->TAHUN . '</option>';
-                                    }
+                                $sel = "";
+                                foreach ($tahun as $items) {
+                                    if ($items->TAHUN == date('Y')) {
+                                        $sel = "selected";
+                                    } else {
+                                        $sel = "";
+                                    };
+                                    echo '<option value="' . $items->TAHUN . '" ' . $sel . '>' . $items->TAHUN . '</option>';
+                                }
                                 ?>
                             </select>
                         </div>
@@ -702,13 +794,13 @@
                     },
                     scale: {
                         ticks: {
-                        precision: 0
+                            precision: 0
                         }
                     }
                 }
             });
         }
-    });   
+    });
 
     $("#pilYear").change(function() {
         $.ajax({
@@ -731,14 +823,14 @@
                         },
                         scale: {
                             ticks: {
-                            precision: 0
+                                precision: 0
                             }
                         }
                     }
                 });
             }
         });
-    }); 
+    });
 
     //datatable laporan
     $('#dataTableLaporanMasuk').dataTable({
@@ -783,7 +875,7 @@
             success: res => {
                 $('#nikDetailMasuk').html(res[0].nik_pendonor)
                 $('#namaDetailMasuk').html(res[0].nama)
-                $('#darahDetailMasuk').html(res[0].nama_darah)         
+                $('#darahDetailMasuk').html(res[0].nama_darah)
                 $('#alamatDetailMasuk').html(res[0].alamat)
                 $('#instansiDetailMasuk').html(res[0].instansi)
                 $('#telpDetailMasuk').html(res[0].telp)
@@ -791,11 +883,11 @@
                 $('#lokasiDetailMasuk').html(res[0].lokasi)
                 if (res[0].id_jenis_darah == 1) {
                     $('#golDetailMasuk').html('A')
-                }else if(res[0].id_jenis_darah == 2){
+                } else if (res[0].id_jenis_darah == 2) {
                     $('#golDetailMasuk').html('B')
-                }else if(res[0].id_jenis_darah == 3){
+                } else if (res[0].id_jenis_darah == 3) {
                     $('#golDetailMasuk').html('AB')
-                }else if(res[0].id_jenis_darah == 4){
+                } else if (res[0].id_jenis_darah == 4) {
                     $('#golDetailMasuk').html('O')
                 }
             }
