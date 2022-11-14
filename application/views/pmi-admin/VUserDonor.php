@@ -73,6 +73,7 @@
 											<!--begin::Table head-->
 											<thead>
 												<tr class="fw-bolder text-muted">
+													<th class="min-w-120px text-center">NIK</th>
 													<th class="min-w-120px text-center">Nama</th>
 													<th class="min-w-120px text-center">Umur</th>
 													<th class="min-w-120px text-center">Alamat</th>
@@ -98,6 +99,7 @@
 													}
 													echo '															
 															<tr>
+															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->nik_pendonor. '</td>
 															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->nama_pendonor . '</td>
 															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->umur_pendonor . '</td>
 															<td class="text-dark fw-bolder text-hover-primary fs-6">' . $item->alamat_pendonor . '</td>
