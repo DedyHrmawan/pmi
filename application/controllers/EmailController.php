@@ -41,6 +41,8 @@ class EmailController extends CI_Controller
 
 		if($listSend != NULL){
 			foreach($listSend as $item){
+				$mail->ClearAddresses();
+				$mail->ClearAllRecipients();
 				$mail->addAddress($item->email_pendonor); 
 				$mail->Subject = 'Reminder Donor Darah'; 
 	
