@@ -108,7 +108,7 @@
 
 <script>
     //Profil
-    $('#dataTableProfil').dataTable({
+	$('#dataTableProfil').dataTable({
         "language": {
             "lengthMenu": "Tampilkan _MENU_",
             "zeroRecords": "Tidak ada data",
@@ -698,36 +698,6 @@
     });
 </script>
 <script>
-    var myDropzone = new Dropzone("#imgAgenda", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
-
-    var myDropzone = new Dropzone("#editImgAgenda", {
-        url: "http://localhost/pmi/", // Set the url for your upload script location
-        paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 1,
-        maxFilesize: 5, // MB
-        addRemoveLinks: true,
-        accept: function(file, done) {
-            if (file.name == "wow.jpg") {
-                done("Naha, you don't.");
-            } else {
-                done();
-            }
-        }
-    });
-
     //preview sebelum upload berita
     function previewAddBerita() {
         document.getElementById("prevAddBerita").style.display = "block";
