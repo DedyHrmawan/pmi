@@ -17,6 +17,7 @@ class Depan extends CI_Model{
         id_mobil,
         target,
         jadwal,
+        terisi,
         TIME_FORMAT(jam_buka, '%H:%i') as jambuka,
         TIME_FORMAT(jam_tutup, '%H:%i') as jamtutup,
         lokasi 
@@ -82,5 +83,14 @@ class Depan extends CI_Model{
         LIMIT 1";
         $res = $this->db->query($sql)->result();
         return $res;
+    }
+
+    public function updateJadwal($idmobil){
+        $sql = "UPDATE 
+        jadwal_donor
+        SET terisi = terisi + 1
+        WHERE id_mobil = $idmobil ";       
+        $this->db->query($sql);
+        return true;
     }
 }

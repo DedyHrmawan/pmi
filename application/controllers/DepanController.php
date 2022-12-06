@@ -152,10 +152,21 @@ class DepanController extends CI_Controller
 
     public function storeBooking()
     {
-        $param = $_POST;           
+        $param = $_POST;     
+        $idmobil = $param['id_mobil'];
+        unset($param['id_mobil']);      
 
         $this->Booking->insert($param);                
         $this->session->set_flashdata('success_booking','Berhasil booking untuk '.$param['lokasi'].' pada pukul '.$param['jam_datang']);
+
+        $this->Depan->updateJadwal($idmobil);
+        
+        $item = $this->Depan->getJadwal($idmobil);
+        if($item[0]->target == $item[0]->terisi){
+            $this->db->where('id_mobil', $idmobil);
+            $this->db->delete('jadwal_donor');
+        }
+
         redirect('jadwal');
     }    
 

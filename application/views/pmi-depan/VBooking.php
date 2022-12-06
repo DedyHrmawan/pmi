@@ -82,6 +82,7 @@
                 <!--end::Heading-->
                 <div class="text-center">
                     <input type="hidden" name="tanggal" value="<?= $jadwal[0]->jadwal ?>">
+                    <input type="hidden" name="id_mobil" value="<?= $jadwal[0]->id_mobil ?>">
                     <input type="hidden" name="id_pendonor" value="<?= $_SESSION['id'] ?>">
                     <button type="submit" class="btn btn-danger  btn-color-white me-1">Booking Jadwal</button>
                 </div>

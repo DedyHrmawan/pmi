@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Okt 2022 pada 11.44
+-- Waktu pembuatan: 06 Des 2022 pada 10.48
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -43,8 +43,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `telepon`, `foto`, `hak_akses`, `status`) VALUES
-(1, 'Dan Giri', 'danngriel@gmail.com', 'tes123', '087859935894', '', 1, 1),
-(2, 'Admin', 'admin@gmail.com', 'admin', '087850123132', '', 1, 1);
+(1, 'Sihono', 'sihono37@gmail.com', 'adminsio', '085790768626', '', 1, 1),
+(2, 'Admin', 'admin@gmail.com', 'admin', '085790768626', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -91,8 +91,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `deskripsi`, `gambar`, `status`, `penulis_berita`) VALUES
-(2, 'PMI KOTA SURAKARTA AJAK PENDONOR BERBAGI MOMENT DONOR DARAH', '2022-08-23', '<p>PMI KOTA SURAKARTA AJAK PENDONOR BERBAGI MOMENT DONOR DARAH</p>', 'http://localhost/pmi/assets/images/1b0ff079ac308b1a1183b1d53e16022e.jpeg', 1, 'Admin'),
-(4, 'PERINGATI HARI DONOR', '2022-08-23', '<p><span style=\"color: #181c32; font-family: Poppins, Helvetica, sans-serif; font-size: 14.95px; background-color: #ffffff;\">Palang Merah Indonesia Kota Administrasi Jakarta Selatan (PMI Jaksel) melaksanakan pelantikan 8 kepengurusan PMI Tingkat Kecamatan se-Jakarta Selatan. Pelantikan bertempat di Ruang Pola Kantor Walikota Jakarta Selatan, Jalan Prapanca Raya, Kebayoran Baru, Jakarta Selatan, Senin (27/6/2022).</span></p>', 'http://localhost/pmi/assets/images/9b11038f21096900e4c16a5599300ed5.jpg', 1, 'Admin');
+(7, 'Pengurus PMI Kota Malang Masa Bhakti 2022-2027 Dikukuhkan', '2022-05-13', '<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">Ketua Palang Merah Indonesia (PMI) Jawa Timur, H. Imam Utomo, melantik pengurus&nbsp; PMI Kota Malang Masa Bhakti 2022 - 2027, di Hotel Santika Malang, Jumat (13/5/2022).</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">Imam Utomo menyampaikan terima kasih kepada pengurus baru yang telah dilantik, dan berharap semoga ke depan bisa menjalankan amanah dan kepercayaan masyarakat. Tak lupa kepada para pengurus lama juga&nbsp; disampaikan terimakasih atas pengabdiannya selama menjalakan tugas.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">Lebih lanjut ia mengatakan, semua yang ada di forum ini adalah relawan. Tidak ada sesuatu di PMI karena PMI adalah organisasi sosial. Sesuai UU No. 1 tahun 2018 tentang Kepalangmerahan. Dimana disitu ada 5 tugas pokok dan 3 tugas tambahan, ditambah tugas-tugas PMI Pusat berdasarkan AD/ART.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">&ldquo;Tugas PMI itu yang pokok adalah donor darah dan tugas bencana alam. Selama ini untuk provinsi Jawa Timur selalu dilihat oleh seluruh PMI di Indonesia. Artinya PMI Jatim menjadi barometer,&ldquo; ujarnya.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">Pada kesempatan tersebut juga disampaikan apresiasi kepada PMI&nbsp; Kota dan Kabupaten Malang khususnya dalam pelaksanaan donor darah yang selama ini sudah berjalan cukup baik. Bahkan&nbsp; BPOM juga memberikan penilaian yang baik kepada Jawa Timur, tegas mantan Gubernur Jatim dua periode tersebut.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">&ldquo;Tindakan, respon dan aksi cepat penanganan bencana alam oleh PMI kota dan kabupaten Malang tergolong bagus. Hal tersebut terlihat dari upaya penanganan bencana Semeru di Lumajang dengan pendirian posko mandiri,&rdquo; tegasnya</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">Selain itui, Imam Utomo juga menyampaikan persoalan perlunya para relawan mempunyai sertifikasi. Bila belum ada sertifikasi, segera diusulkan ke provinsi agar diikutkan dalam pelatihan baik bagian dapur, kesehatannya dan evakuasi. Jangan sampai ada relawan yang dikirim ke wilayah bencana malah menjadi beban.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-size: 16px; line-height: 1.8; color: #3a3a3a; font-family: \'source sans pro\', sans-serif; background-color: #ffffff; text-align: justify;\">&ldquo;Dalam penanganan bencana alam PMI, jangan meninggalkan BPBD setempat. Jangan bertindak sendiri. Agar berjalan lancar. PMI Pusat sudah memberikan kepercayaan Jawa Timur sangat baik agar tetap dijaga, &ldquo; pungkasnya.</p>', 'https://pmi.kawankitasolusindo.com/assets/images/38f91e9b558c37a1cd2c7a3b7035f8ab.jpg', 1, 'Admin'),
+(8, 'Pendonor Darah 75 Kali Terima Penghargaan dari PMI Kota Malang', '2022-08-18', '<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Wali Kota Sutiaji berharap dengan adanya kegiatan ini bisa menjadi motivasi bagi yang lain untuk mau secara sukarela melakukan aksi sosial, yakni donor darah. Donor darah itu merupakan kegiatan yang sangat mulia, tanpa pamrih memupuk sifat peduli untuk membantu.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">&ldquo;Semoga semua yang melakukan donor terus mendapatkan bimbingan, hidayah, maunah dan juga selalu diberikan kesehatan serta rida dari Allah SWT,&rdquo; jelas Sutiaji.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Sutiaji menambahkan, ucapan selamat bagi para peserta yang sudah melakukan donor darah sebanyak 75 kali maupun yang melakukan donor plasma konvalesen. Mudah-mudahan apa yang sudah di darma baktikan untuk nusa dan bangsa, bisa menyelamatkan nyawa orang lain.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">&ldquo;Keikhlasan para pendonor sangat luar biasa, tidak bisa diganti dengan yang lain. Semoga ini menjadi amal ibadah yang tidak akan pernah terputus pahalanya,&rdquo; terang Sutiaji.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Demikian juga untuk pengurus Palang Merah Indonesia (PMI) dan Perhimpunan Donor Darah Indonesia (PPDI) yang terus mendorong terpenuhinya kebutuhan darah dari masyarakat. PMI Kota Malang tidak hanya melayani permintaan darah dari Kota Malang, namun juga dari Malang Raya, Blitar, Probolinggo, dan berbagai daerah di Jawa Timur.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Sekretaris PMI Kota Malang, Samsul Hadi mengatakan, kegiatan ini dilakukan setiap tahun untuk memberikan penghargaan kepada masyarakat yang aktif melakukan donor darah. &ldquo;Kegiatan ini rutin untuk pendonor 50 kali dan 75 kali diberikan, namun saat pandemi Covid-19 harus tertunda,&rdquo; terang Samsul.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Samsul menjelaskan, kegiatan hari ini juga merupakan ajang kesempatan untuk melakukan evaluasi penyediaan stok darah di Kota Malang. Di mana stok darah di Kota Malang untuk jangka waktu 14 hari ke depan masih dalam kondisi aman.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">&ldquo;Keamanan stok darah tidak lepas dari wujud nyata kesediaan para relawan untuk melakukan donor darah,&rdquo; terang Samsul.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Baik itu relawan dari TNI/Polri, perusahaan, bank, instansi pemerintah, hingga kampus-kampus di Kota Malang yang mendukung penyediaan darah. Donor darah tidak diperjualbelikan, di mana kontraknya dengan rumah sakit. &ldquo;Penyediaan darah sudah update setiap hari, darah apa yang tersedia,&rdquo; terang Samsul.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; color: #63636a; font-family: Poppins, Arial, serif; font-size: 14px; background-color: #ffffff;\">Penghargaan ini diberikan kepada 76 orang. Di mana yang 50 orang adalah pendonor darah yang sudah 75 kali melakukan donor darah selebihnya adalah pendonor darah plasma konvalesen. Keberhasilan ini tidak lepas dari kepedulian yang luar biasa masyarakat Kota Malang.&nbsp;</p>', 'https://pmi.kawankitasolusindo.com/assets/images/ddaa4c1afb30a1cdfb8dad5c2b9fac8e.jpeg', 1, 'Admin');
 
 -- --------------------------------------------------------
 
@@ -113,15 +113,6 @@ CREATE TABLE `booking` (
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `booking`
---
-
-INSERT INTO `booking` (`id_booking`, `id_pendonor`, `lokasi`, `tanggal`, `nama`, `telp`, `alamat`, `jam_datang`, `instansi`, `status`) VALUES
-(14, 29, 'UDD PMI Kota Malang', '2022-03-30', 'Tes', '087859935894', 'Tes', '12:00:00', 'TES', 2),
-(15, 29, 'UDD PMI Kota Malang', '2022-09-30', 'Tes', '1239712837128', 'TES', '12:00:00', 'TES', 2),
-(17, 29, 'UDD PMI Kota Malang', '2022-10-02', 'Dann Griel', '0895399176918', 'Jalan Laks Adi Sucipto 8/25', '12:00:00', 'STIKI', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -139,10 +130,12 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id_carousel`, `gambar`, `status`) VALUES
-(1, 'http://localhost/pmi/assets/images/3b68cd27bf63a25558cb954c0378302d.jpg', 1),
-(3, 'http://localhost/pmi/assets/images/fbb5211b62ee54ced8bf838d44258d75.jpeg', 1),
-(5, 'http://localhost/pmi/assets/images/80fc3c1a796f897eed37a2759c60c13f.jpg', 1),
-(6, 'http://localhost/pmi/assets/images/582972b0d5f71a149b6f57f61643c13a.jpg', 2);
+(7, 'https://pmi.kawankitasolusindo.com/assets/images/4fc48357511abffe82d39b7080c17a43.jpg', 1),
+(8, 'https://pmi.kawankitasolusindo.com/assets/images/a787f54be29480ae6207ecde3bb9ec1e.jpg', 1),
+(9, 'https://pmi.kawankitasolusindo.com/assets/images/ab499aa00b74c6c0d6f75712fee3c995.jpg', 1),
+(10, 'https://pmi.kawankitasolusindo.com/assets/images/290c5635887ec5adc46c32b09bb8c599.jpg', 1),
+(11, 'https://pmi.kawankitasolusindo.com/assets/images/e5a24deef9957842d71778825c6e80e6.jpg', 1),
+(12, 'https://pmi.kawankitasolusindo.com/assets/images/da4b4aeb5fa8a9ab51bfe95603f043c1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -161,12 +154,12 @@ CREATE TABLE `darah` (
 --
 
 INSERT INTO `darah` (`id_darah`, `jenis_darah`, `last_updated`) VALUES
-(1, 'AHF', '2022-09-25 09:32:44'),
-(9, 'Plasma Konvalesen', '2022-07-05 12:16:51'),
-(10, 'FFP', '2022-07-12 08:28:25'),
-(11, 'PCR', '2022-07-12 08:28:41'),
-(12, 'PRC', '2022-07-12 08:28:48'),
-(13, 'TC', '2022-07-12 08:28:55');
+(1, 'WB', '2022-10-25 13:22:00'),
+(9, 'TC', '2022-10-25 13:25:12'),
+(10, 'PRC', '2022-10-25 13:25:09'),
+(11, 'FFP Fraksionasi', '2022-10-25 13:22:43'),
+(12, 'FFP', '2022-10-25 13:24:53'),
+(13, 'AHF', '2022-10-25 13:25:04');
 
 -- --------------------------------------------------------
 
@@ -187,30 +180,30 @@ CREATE TABLE `detail_darah` (
 --
 
 INSERT INTO `detail_darah` (`id_detail_darah`, `id_darah`, `id_jenis_darah`, `stok`, `updated_at`) VALUES
-(5, 1, 1, 15, '2022-10-20 08:50:29'),
-(6, 1, 3, 33, '2022-09-26 10:58:16'),
-(7, 1, 2, 33, '2022-08-29 18:35:53'),
-(8, 1, 4, 4, '2022-07-12 05:28:06'),
-(21, 9, 1, 10, '2022-07-12 05:28:06'),
-(22, 9, 2, 13, '2022-09-26 10:26:56'),
-(23, 9, 3, 34, '2022-09-26 10:23:18'),
-(24, 9, 4, 33, '2022-07-12 05:28:06'),
-(25, 10, 1, 15, '2022-07-12 08:29:19'),
-(26, 10, 2, 12, '2022-07-12 08:29:21'),
-(27, 10, 3, 15, '2022-07-12 08:29:24'),
-(28, 10, 4, 32, '2022-07-12 08:29:29'),
-(29, 11, 1, 12, '2022-07-12 08:29:33'),
-(30, 11, 2, 15, '2022-07-12 08:29:36'),
-(31, 11, 3, 16, '2022-07-12 08:29:38'),
-(32, 11, 4, 23, '2022-07-12 08:29:40'),
-(33, 12, 1, 53, '2022-07-12 08:29:43'),
-(34, 12, 2, 22, '2022-07-12 08:29:45'),
-(35, 12, 3, 17, '2022-07-12 08:29:48'),
-(36, 12, 4, 8, '2022-07-12 08:29:53'),
-(37, 13, 1, 25, '2022-07-12 08:29:56'),
-(38, 13, 2, 2, '2022-07-12 08:29:59'),
+(5, 1, 1, 1, '2022-11-08 23:58:33'),
+(6, 1, 3, 0, '2022-10-23 14:10:57'),
+(7, 1, 2, 0, '2022-10-23 14:11:06'),
+(8, 1, 4, 0, '2022-10-23 14:11:15'),
+(21, 9, 1, 1, '2022-11-08 23:59:32'),
+(22, 9, 2, 0, '2022-10-23 14:11:30'),
+(23, 9, 3, 0, '2022-10-23 14:11:39'),
+(24, 9, 4, 0, '2022-10-23 14:11:52'),
+(25, 10, 1, 1, '2022-11-09 00:00:46'),
+(26, 10, 2, 0, '2022-10-23 14:12:38'),
+(27, 10, 3, 0, '2022-10-23 14:12:48'),
+(28, 10, 4, 0, '2022-10-23 14:16:49'),
+(29, 11, 1, 0, '2022-10-23 14:16:55'),
+(30, 11, 2, 0, '2022-10-23 14:17:02'),
+(31, 11, 3, 0, '2022-10-23 14:17:37'),
+(32, 11, 4, 0, '2022-10-23 14:17:47'),
+(33, 12, 1, 0, '2022-10-23 14:17:53'),
+(34, 12, 2, 0, '2022-10-23 14:18:01'),
+(35, 12, 3, 0, '2022-10-23 14:18:11'),
+(36, 12, 4, 0, '2022-10-23 14:18:20'),
+(37, 13, 1, 0, '2022-10-23 14:18:28'),
+(38, 13, 2, 0, '2022-10-23 14:18:43'),
 (39, 13, 3, 0, '2022-07-12 08:28:56'),
-(40, 13, 4, 31, '2022-07-12 08:30:03');
+(40, 13, 4, 0, '2022-10-23 14:18:57');
 
 -- --------------------------------------------------------
 
@@ -247,18 +240,19 @@ CREATE TABLE `jadwal_donor` (
   `jadwal` date NOT NULL,
   `lokasi` varchar(100) NOT NULL,
   `target` int(11) NOT NULL,
-  `tipe` int(11) NOT NULL
+  `tipe` int(11) NOT NULL,
+  `terisi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `jadwal_donor`
 --
 
-INSERT INTO `jadwal_donor` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`, `tipe`) VALUES
-(1, '13:00:00', '17:00:00', '2022-09-28', 'Taman Anggrek', 50, 2),
-(3, '10:40:00', '16:00:00', '2022-10-31', 'Plaza Araya (Samping Burger King)', 50, 2),
-(9, '09:00:00', '14:00:00', '2022-10-31', 'UDD PMI Kota Malang', 50, 1),
-(10, '12:00:00', '16:00:00', '2022-10-02', 'UDD PMI Kota Malang', 50, 1);
+INSERT INTO `jadwal_donor` (`id_mobil`, `jam_buka`, `jam_tutup`, `jadwal`, `lokasi`, `target`, `tipe`, `terisi`) VALUES
+(1, '13:00:00', '17:00:00', '2022-09-28', 'Taman Anggrek', 50, 2, 0),
+(3, '10:40:00', '16:00:00', '2022-10-31', 'Plaza Araya (Samping Burger King)', 50, 2, 0),
+(9, '09:00:00', '14:00:00', '2022-10-31', 'UDD PMI Kota Malang', 50, 1, 0),
+(10, '12:00:00', '16:00:00', '2022-10-02', 'UDD PMI Kota Malang', 50, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -306,61 +300,9 @@ CREATE TABLE `laporan` (
 --
 
 INSERT INTO `laporan` (`id_laporan`, `id_darah`, `id_jenis_darah`, `nama`, `alamat`, `instansi`, `telp`, `tanggal`, `lokasi`, `tipe`, `nik_pendonor`) VALUES
-(14, 1, 1, 'Geeree', 'Jalan Kanan Kiri', 'STIKI', '087869920182', '2022-09-26', 'Taman Anggrek', 1, ''),
-(15, 1, 1, 'Hiens', 'Alamamant', 'OkE', '232232', '2023-12-21', 'ASDASDAS', 1, ''),
-(16, 1, 1, 'asdasdsa', 'asdasdasd', 'asdasd', '0878599358994', '2022-09-30', 'Taman Anggrek 2', 2, ''),
-(17, 9, 3, 'asdadasd', 'sadasdasd', 'asdasdas', '232323232', '2022-08-09', 'adasdasd', 2, ''),
-(18, 1, 3, 'asasdasdasd', 'sadasdasd', 'sadasdasdsa', '232323', '2022-09-21', '2323232', 1, ''),
-(19, 9, 2, 'wqewqewqeqwe', 'wqewqeqwewq', 'SADASD', '23232323232323', '2022-07-11', 'wqeqwewqewq', 1, ''),
-(20, 1, 1, 'asdasdasd', 'asdasdasd', 'sadasdasd', '2323232', '2022-07-01', 'sadasdasd', 1, ''),
-(21, 1, 1, 'asdasads', 'asdasdsa', '232323', '2323232', '2022-06-01', 'UDD PMI Kota Malang 2', 1, '2322323232'),
-(22, 1, 3, 'Geeree', 'asdasdasd', 'sadasdasd', '23223232', '2022-09-21', '323232', 1, ''),
-(23, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(24, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(25, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(26, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(27, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(28, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(29, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(30, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(31, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(32, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(33, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(34, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(35, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(36, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(37, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(38, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(39, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(40, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(41, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(42, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(43, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(44, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(45, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(46, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(47, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(48, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(49, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(50, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(51, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(52, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(53, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(54, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(55, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(56, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(57, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(58, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(59, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(60, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(61, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(62, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(63, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(64, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(65, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(66, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(67, 1, 2, 'Geeree', 'Tes', 'Tes', '087859935894', '2022-10-03', 'UDD PMI Kota Malang', 1, ''),
-(68, 1, 1, 'Hiens', 'Malang', 'STIKI', '08112345678', '2022-10-20', 'Plaza Araya (Samping Burger King)', 1, '3531234521241');
+(70, 1, 1, 'Guest 7', 'Jl. Wiromargo', 'Masyarakat', '081998765234', '2022-11-01', 'UDD PMI Kota Malang', 1, '01234567890007'),
+(71, 9, 1, 'Guest 8', 'Jl. Ade Irma Suryani', 'Jl. Ade Irma SuryaniMasyarakat', '081345765345', '2022-11-02', 'UDD PMI Kota Malang', 1, '01234567890008'),
+(72, 10, 1, 'Guest 9', 'Jl. Syarif Al-Qodri', 'Masyarakat', '081876567432', '2022-11-03', 'UDD PMI Kota Malang', 1, '01234567890009');
 
 -- --------------------------------------------------------
 
@@ -388,10 +330,12 @@ CREATE TABLE `pendonor` (
 --
 
 INSERT INTO `pendonor` (`id_pendonor`, `password`, `nama_pendonor`, `foto_pendonor`, `umur_pendonor`, `id_jenis_darah`, `alamat_pendonor`, `telepon_pendonor`, `donor_terakhir`, `donor_selanjutnya`, `email_pendonor`, `nik_pendonor`) VALUES
-(29, '1234', 'Dann Griel', 'http://localhost/pmi/assets/images/0b42ec2e0633b421831d087d31cc6db5.png', 23, 1, 'Jalan Laks Adi Sucipto 8/25', '0895399176918', '2022-06-30', '2022-10-02', 'kyurikariko@gmail.com', '2323232323'),
-(32, 'aaaaaa', 'Giri', 'http://localhost/pmi/uploads/pendonor/1663753083206_fr_bust_ch_031_00.png', 21, 3, 'Jalan Laks Adi Sucipto 8/25', '081231231312', NULL, NULL, 'imayidid@gmail.com', '35312345212412'),
-(35, 'dadadada', 'Dan Giri', 'http://localhost/pmi/assets/images/a30cbc73b1954f58dd728b0d51726ca2.png', 22, 3, 'Jalan Laks Adi Sucipto 8/25', '0895399176918', NULL, NULL, 'dadad@gmail.com', '1234567890'),
-(37, 'qweqwe', 'Hiens Prim', 'http://localhost/pmi/assets/images/0d5447978356593d5e9ec27afaa6dcc7.png', 22, 3, 'Malang', '08323232323', NULL, NULL, 'qweqwe@gmail.com', '323232323232323');
+(44, '12345', 'Sihono', 'https://pmi.kawankitasolusindo.com/assets/images/5bb0b0c7cda7e7126c7328af0cb04e73.png', 21, 1, 'Jl. Yulius Usman', '081654987452', '2022-05-01', '2022-08-31', 'sihono37@gmail.com', '01234567890001'),
+(45, '12345', 'Guest 2', 'https://pmi.kawankitasolusindo.com/assets/images/5cf0977785e64d5ab6befc85dfce599d.png', 21, 1, 'Jl. Sukarjo Wiryopranoto', '081254234765', NULL, NULL, 'akuntuyulcok01@gmail.com', '01234567890002'),
+(46, '12345', 'Guest 3', 'https://pmi.kawankitasolusindo.com/assets/images/197f2c319c12d3186c6a68df2d3908b9.png', 21, 1, 'Jl. Kyai Tamin', '081543765987', NULL, NULL, 'lbastard87@gmail.com', '01234567890003'),
+(47, '12345', 'Guest 4', 'https://pmi.kawankitasolusindo.com/assets/images/5e6c7922587a357c52597f4f43bb3539.png', 22, 1, 'Jl. Sersan Harun', '081654863109', NULL, NULL, 'lbastard37@gmail.com', '01234567890004'),
+(48, '12345', 'Guest 5', 'https://pmi.kawankitasolusindo.com/assets/images/5728d6a863f7ff4e3ede0995d6e0d835.png', 20, 1, 'Jl. Kopral Usman', '081354726099', NULL, NULL, 'guest5@gmail.com', '01234567890005'),
+(49, '12345', 'Guest 6', 'https://pmi.kawankitasolusindo.com/assets/images/559f907562e86a37b6aa3832262d0d5a.png', 23, 1, 'Jl. Pasar Besar', '081098897765', NULL, NULL, 'guest6@gmail.com', '01234567890006');
 
 -- --------------------------------------------------------
 
@@ -411,9 +355,8 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`id_profil`, `judul_profil`, `deskripsi`, `status`) VALUES
-(1, 'Profil UDD Kota Malang', '<p>Pada th.1955 PMI bertempat di Jl.Embong Ploso 7 &ndash; 9 dan dr.Payma diganti oleh dr.Suharyono. Dr. Payma meninggal dunia di negeri Belanda waktu menuntut ilmu.</p>\r\n<p>Memasuki th.1972 dr. Suharyono diganti dr.Alfian dan sesudah dilakukan perluasan gedung diberi nama : Dinas Transfusi Darah. Lokasi ini diperluas areanya dengan menguasai Jl.Embong Ploso no 11 &ndash; 15.</p>\r\n<p>Dengan perluasan ini: kegiatan donor darah ditempatkan Jl.Embong Ploso 7&ndash;9 dan untuk ruang Laboratorium di Jl.Embong Ploso 11&ndash;15.</p>', 1),
-(2, 'Visi & Misi', '<p>Siap dengan darah yang aman, cukup dan setiap saat dengan Pelayanan Prima mengikuti Perkembangan Teknologi Mutakhir mengacu Managemen Mutu</p>', 1),
-(7, 'Raft', '<p>Mari kita berseluncur</p>\r\n<p>Oke...</p>', 2);
+(9, 'Profil UDD PMI Kota Malang', '<p>Palang Merah Indonesia Daerah Jawa Timur berdiri pada tahun 1960 dipimpin oleh seorang Komisaris yaitu dr. Angka Nitisastro dipilih melalui Musyawarah Daerah (MUSDA) PMI Jatim bertempat di Lembaga Kesehatan Negata (LKN) terletak di jalan Indrapura Surabaya. Sedangkan Markas Daerah pada waktu itu masih bergabung menjadi satu dengan Markas Cabang di Jalan Tunjungan No. 53 Surabaya pada tahun 1960. Kemudian pindah lagi ke Jl. Tunjungan 61 pada tahun 1963 dari Jl. Tunjungan 61 pindah ke Jl. Cempaka No. 2 tahun 1970. Pada tahun 1975 Markas PMI Daerah pindah ke Jl. Kalibokor No. 161 Surabaya, dan tahun 2003 Markas PMI Daerah Jawa Timur pindah lagi ke jl. Karang Menjangan No. 22 hingga sekarang ini. Sebutan PMI Daerah Jawa Timur sejak tahun 2010 berganti nama menjadi PMI Provinsi Jawa Timur.</p>', 1),
+(10, 'Visi & Misi', '<p><strong>VISI</strong></p>\r\n<p><span style=\"color: #222222; font-family: Muli; font-size: 17px; background-color: #ffffff;\">Terwujudnya PMI yang profesional dan berintegritas serta bergerak bersama masyarakat.</span></p>\r\n<p>&nbsp;</p>\r\n<p><strong>MISI</strong></p>\r\n<ol style=\"box-sizing: border-box; padding: 0px; margin-bottom: 26px; margin-left: auto; margin-right: auto; color: #222222; font-family: Muli; font-size: 17px; background-color: #ffffff;\">\r\n<li style=\"box-sizing: border-box; line-height: inherit; margin-left: 21px; margin-bottom: 10px;\">MEMELIHARA reputasi organisasi PMI di tingkat Nasional dan Internasional.</li>\r\n<li style=\"box-sizing: border-box; line-height: inherit; margin-left: 21px; margin-bottom: 0px;\">MENJADI organisasi kemanusiaan terdepan yang memberikan layanan berkualitas kepada masyarakat sesuai dengan prinsip-prinsip dasar Gerakan Palang Merah dan Bulan Sabit Merah</li>\r\n</ol>', 1);
 
 --
 -- Indexes for dumped tables
@@ -519,7 +462,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `booking`
@@ -531,7 +474,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT untuk tabel `carousel`
 --
 ALTER TABLE `carousel`
-  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `darah`
@@ -567,19 +510,19 @@ ALTER TABLE `jenis_darah`
 -- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendonor`
 --
 ALTER TABLE `pendonor`
-  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_pendonor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

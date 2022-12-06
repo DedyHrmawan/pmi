@@ -7,13 +7,13 @@ class Mobil extends CI_Model{
     }
 
     public function getAll(){
-        $this->db->where('tipe',2);
-        $res = $this->db->get('jadwal_donor')->result();
+        $sql = "SELECT * FROM jadwal_donor WHERE jadwal > NOW() - INTERVAL 1 DAY AND tipe=2 ORDER BY jadwal ASC";
+        $res = $this->db->query($sql)->result();
         return $res;
     }
     public function getUDD(){
-        $this->db->where('tipe',1);
-        $res = $this->db->get('jadwal_donor')->result();
+        $sql = "SELECT * FROM jadwal_donor WHERE jadwal > NOW() - INTERVAL 1 DAY AND tipe=1 ORDER BY jadwal ASC";
+        $res = $this->db->query($sql)->result();
         return $res;
     }
     public function get($param){
